@@ -1,0 +1,6 @@
+whitelist-remove: " Removed in whitelist"
+whitelist-add: " Added to whitelist"
+whitelist-zero: " No one whitelisted!"
+whitelist-no: " Not in whitelist"
+whitelist-yes: " this man is whitelisted."
+whitelist-user: "Whitelisted user"
