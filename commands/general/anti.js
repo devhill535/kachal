@@ -19,7 +19,7 @@ module.exports = {
       .setColor(Color)
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
       .setTitle("list of all Command Security")
-      .setDescription(`Guardian: **antichannel, antirole, antiban, antikick, antispam, antibot, antiinvite-link**`)
+      .setDescription(`Guardian: **antichannel, antirole, antiban, antikick, antispam, antibot**`)
   message.channel.send(embed); 
     }
 }
