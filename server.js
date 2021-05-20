@@ -68,16 +68,6 @@ bot.on("ready", () => {
     }; setInterval(randomStatus, 5000)
 })
 
-////////
-
-bot.on('message', message => {
-  if(message.channel.type == 'dm'){
-    if(message.author.id === bot.user.id) return;
-    let log = bot.users.cache.get('738478465870987425')
-    if(log) return log.send(message.content)
-  }
-})
-
 //=============================== - [ ghostping ] - ===================================//
 
 
@@ -105,87 +95,6 @@ bot.on("messageUpdate", (message, newMessage) => {
 });
 
            
-////////
-
-bot.on('message', async(message) => {
-    if(message.author.bot) return;
-    if(message.content.startsWith(prefix + 'antiinvite-link on')) {
-        if (message.author.id !== message.guild.ownerID) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`This command is only for guildOwner`));
-        message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`<a:true:836711495478804520> AntiInvite-Link Is **Enabled**`));
-        antilinks.findOne({Guild: message.guild.id}, (err, doc) => {
-            if(err) console.error(err);
-            if(!doc) {
-                let newLinks = new antilinks({
-                    Guild: message.guild.id,
-                    run: 'on'
-                })
-                newLinks.save();
-                message.channel.send(``);
-            } else {
-                doc.run = 'on';
-                doc.save();
-                message.channel.send(``);
-            }
-        })}    
-});
-
-bot.on('message', async(message) => {
-    if(message.author.bot) return;
-    if(message.content.startsWith(prefix + 'antiinvite-link off')) {
-        if (message.author.id !== message.guild.ownerID) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`This command is only for guildOwner`));
-        message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`<a:false:836711508246659109> AntiInvite-Link Is **Disabled**`));
-        antilinks.findOne({Guild: message.guild.id}, (err, doc) => {
-            if(err) console.error(err);
-            if(!doc) {
-                let newLinks = new antilinks({
-                    Guild: message.guild.id,
-                    run: 'off'
-                })
-                newLinks.save();
-                message.channel.send(``);
-            } else {
-                doc.run = 'off';
-                doc.save();
-                message.channel.send(``);
-            }
-        })
-    }    
-});
-bot.on('message', async(message) => {
-    let data = await antilinks.findOne({Guild: message.guild.id});
-    if(data.run === 'off') return;
-    if(data.run === 'on') {
-        if(links(message.content) === true) {
-            message.delete()       
-            try {
-                let muterole = message.guild.roles.cache.find(ro => ro.name === 'Muted');
-                if(!muterole) {
-                    message.guild.roles.create({
-                        data: {
-                            name: 'Muted',
-                            color: '#0000000',
-                            permissions: []
-                        }
-                    })
-                } else {
-                    message.guild.member(message.author).roles.add(muterole);
-                }
-            } catch(err) {
-                console.log(err);
-            }
-    }
-}
-})
-
-function links(str) {
-    let regexp = /^(?:(?:discord.gg?|https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-    if(regexp.test(str)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
 
 //=============================== - [ Info ] - ===================================//
 
