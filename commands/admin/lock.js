@@ -1,3 +1,6 @@
+const Discord = require('discord.js')
+const { Color } = require("../../config.js");
+
 module.exports = {
   name: "lock",
   aliases: ["close"],
