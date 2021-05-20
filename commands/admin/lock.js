@@ -16,7 +16,7 @@ module.exports = {
         SEND_MESSAGES: false
       })
       .then(() => {
-        message.channel.send(bot.reva.get(data.lang, "admin","lock_message", { 
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","lock_message", { 
           channel: `<#${message.channel.id}>`
         }));
      });
