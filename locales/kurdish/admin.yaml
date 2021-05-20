@@ -1,0 +1,5 @@
+allbots_embed: "** بۆت دۆزرایەوە %{botSize}** \n ${botList}"
+lock_message: "🔒** %{channel} داخرا.**"
+unlock_message: "🔓** %{channel} کرایەوە.**"
+prefix_length: " پێویستە پرێفیکسەکە لە  %{number} کەم تر بێت "
+prefix_embed: " پڕفیکسە تازەکەی ئەم سێرڤەرە  %{prefix}"
