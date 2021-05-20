@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const db = require('quick.db')
 const { Color } = require("./config.js");
-const antilinks = require('./models/antilinks');
 const fs = require("fs");
 const request = require("request");
 const prefix = "s!";
