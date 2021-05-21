@@ -27,7 +27,7 @@ module.exports = {
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Language list is :\n **english** ,**kurdish** ,**arabic**`));
       } else {
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`
-          Usage : s!language <language>`
+          Please Type\n \`s!lang english\` \n \`s!lang kurdish\` \n \`s!lang arabic\``
         ));
      }
   }
