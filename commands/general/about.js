@@ -35,7 +35,7 @@ module.exports = {
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setThumbnail(bot.user.displayAvatarURL())
-        .addField(`❕Bot Tag`,`${bot.author.tag}`)
+        .addField(`❕Bot Tag`,`${bot.user.tag}`)
         .addField(`💳Bot ID`,`${bot.user.id}`)
         .addField(`🔗Bot Prefix`,`[ s! ]`)
         .addField(`🔋Uptime`,`${duration(bot.uptime)}`)
