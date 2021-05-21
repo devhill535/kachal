@@ -1,7 +1,7 @@
 module.exports = {
   name: "add-prime",
   aliases: ["prime"],
-  enabled: true,			
+  enabled: false,			
   memberPermissions: [ "SEND_MESSAGES" ],			
   botPermissions: [ "SEND_MESSAGES" ],		
   ownerOnly: true,			
