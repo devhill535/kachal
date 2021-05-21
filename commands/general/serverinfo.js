@@ -69,7 +69,7 @@ module.exports = {
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
   cooldown: 3000,
-  run: async (client, message, args, dev) => {
+  run: async (client, message, args, dev, data) => {
 
 		const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 
@@ -81,7 +81,7 @@ module.exports = {
 
 		const embed = new MessageEmbed()
                         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-			.setDescription(`**Guild information for __${message.guild.name}__**`)
+			.setTitle(bot.reva.get(data.lang, "general","guild_info"))
 
 			.setColor(Color)
 
