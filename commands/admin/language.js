@@ -17,7 +17,7 @@ module.exports = {
       if (!args[1])
         return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Usage : s!language [english/kurdish/arabic]`));
       let data = await Lang.findOne({ guildID: message.guild.id })
-      if (args[1].toLowerCase() === "english" || args[1].toLowerCase() === "kurdish") {
+      if (args[1].toLowerCase() === "english" || args[1].toLowerCase() === "kurdish" || args[1].toLowerCase() === "arabic") {
         data.language = args[1].toLowerCase();
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`
           Your server language is **${data.language}**`
