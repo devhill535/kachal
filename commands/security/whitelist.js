@@ -62,7 +62,7 @@ module.exports = {
         };
       } else if (!args[1]) {
         if (dataa.whitelist.length === 0) return message.reply(bot.reva.get(data.lang, "security","whitelist-zero"));
-       let arrayOfCustomCommands = dataa.whitelist.map(w => `=> <@${w.type}> - ${w.type}`)
+       let arrayOfCustomCommands = dataa.whitelist.map(w => `⇰ <@${w.type}> - ${w.type}`)
         
         let embed = new Discord.MessageEmbed()
       .setTitle(bot.reva.get(data.lang, "security","whitelist-user"))
