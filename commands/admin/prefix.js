@@ -21,8 +21,8 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(bot.reva.get(data.lang, "admin", "prefix_embed" + args[1]))
-        message.channel.send(embed)
+        .setDescription(bot.reva.get(data.lang, "admin", "prefix_embed") + args[1])
+        message.channel.send(embed);
         dataa.prefix = args[1];
         dataa.save();
     }};
