@@ -25,13 +25,13 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
   ownerOnly: false,            
   cooldown: 2000,
-  run: async (bot, message, args, dev) => {
+  run: async (bot, message, args, dev, data) => {
  
     const created = moment(bot.user.createdAt).format("YYYY-MM-DD");
 
      
        let embed = new Discord.MessageEmbed()
-        .setTitle(`${bot.user.username} Info`)
+        .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setThumbnail(bot.user.displayAvatarURL())
