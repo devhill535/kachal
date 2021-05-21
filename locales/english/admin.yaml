@@ -1,4 +1,6 @@
-lock_message: "🔒 %{channel} has been locked \n\n Reason\n %{reason}"
-unlock_message: "🔓 %{channel} has been unlocked \n\n Reason\n %{reason}"
+lock_message: "🔒 %{channel} has been locked"
+unlock_message: "🔓 %{channel} has been unlocked"
+lockall_message: "🔒 Locked all channels"
+unlockall_message: "🔒 Unlocked all channels"
 prefix_length: " You need set prefix lower %{number} length"
 prefix_embed: "new prefix inthis guild is %{prefix}"
