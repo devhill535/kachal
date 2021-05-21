@@ -1,2 +1,2 @@
 help_embed: "You can get more help by typing:\n **s!help <command>**"
-anti_embed; "list of all commands security"
+anti_embed: "list of all commands security"
