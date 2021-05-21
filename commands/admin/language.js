@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["lang"], 
   description: "To change language", 
   usage: ["language <language>"], 
-  enabled: true,
+  enabled: false,
   memberPermissions: [ "ADMINISTRATOR" ],	
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
   ownerOnly: false,
