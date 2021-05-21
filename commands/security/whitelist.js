@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "trusted",
-  aliases: ["trust"],
+  name: "whitelist",
+  aliases: ["wl"],
   description: "Security will ignore trusted users",
   usage: ["s!trusted [add/remove] [@User]"],
   category: ["Security"],
