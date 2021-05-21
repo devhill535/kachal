@@ -8,7 +8,7 @@ module.exports = {
   description: "To change language", 
   usage: ["language <language>"],
   category: ["Moderation"],
-  enabled: false,
+  enabled: true,
   memberPermissions: [ "ADMINISTRATOR" ],	
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
   ownerOnly: false,
