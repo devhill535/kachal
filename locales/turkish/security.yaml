@@ -1,6 +1,6 @@
 whitelist-remove: " Beyaz listede kaldırıldı"
 whitelist-add: " Beyaz listeye eklendi"
-whitelist-zero: " Beyaz listeye eklendi!"
+whitelist-zero: " Kimse beyaz listede yok!"
 whitelist-no: " Beyaz listede yok"
 whitelist-yes: " Bu adam beyaz listede"
 whitelist-user: "Beyaz Listedeki Kullanıcı"
