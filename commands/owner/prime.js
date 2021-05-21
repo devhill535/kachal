@@ -20,7 +20,7 @@ module.exports = {
               D = time.getDate(),
               H = time.getHours(),
               m = time.getMinutes()
-      message.channel.send(`prime bot in this server end in: ${Y}/${M}/${D} \`${H}:${m}\``)
+      message.channel.send(`prime bot in this server end in: ${Y}/${M}/${D} \`${H}:${M}\``)
           } else {
             message.channel.send("this server don't have a prime bot") 
           }
