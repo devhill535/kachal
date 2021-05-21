@@ -69,7 +69,7 @@ module.exports = {
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
   cooldown: 3000,
-  run: async (client, message, args, dev, data) => {
+  run: async (bot, message, args, dev, data) => {
 
 		const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 
