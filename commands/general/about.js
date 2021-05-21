@@ -35,14 +35,14 @@ module.exports = {
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setThumbnail(bot.user.displayAvatarURL())
-        .addField(`Bot Name`,`${bot.user.username}`)
-        .addField(`Bot ID`,`${bot.user.id}`)
-        .addField(`Bot Prefix`,`[ s! ]`)
-        .addField(`Uptime`,`${duration(bot.uptime)}`)
-        .addField(`Guilds`,`${bot.guilds.cache.size}`)
-        .addField(`Ping`,`${Math.round(bot.ws.ping)}ms`)
-        .addField(`Version`,`2.7.3`)
-        .addField(`Discord.js`,`${Discord.version}`)
+        .addField(`❕Bot Tag`,`${bot.author.tag}`)
+        .addField(`💳Bot ID`,`${bot.user.id}`)
+        .addField(`🔗Bot Prefix`,`[ s! ]`)
+        .addField(`🔋Uptime`,`${duration(bot.uptime)}`)
+        .addField(`🌐Guilds`,`${bot.guilds.cache.size}`)
+        .addField(`🏓Ping`,`${Math.round(bot.ws.ping)}ms`)
+        .addField(`🗃Version`,`2.7.3`)
+        .addField(`📂Discord.js`,`${Discord.version}`)
       message.channel.send(embed);
     }
 }
