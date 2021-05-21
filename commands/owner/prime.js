@@ -8,10 +8,10 @@ module.exports = {
   cooldown: 1000,
   run: async (bot, message, args, dev) => {
     if (!args[1]) return;
-    if (args[1]==="time") {
+    if (args[1]=== "time") {
       let data = await Prime.findOne({ guildID: message.guild.id });
       if (data) {
-        if (data.log==="enable") {
+        if (data.log=== "enable") {
           let date = parseInt(data.time);
           
           let time = new Date(date)
@@ -20,7 +20,7 @@ module.exports = {
               D = time.getDate(),
               H = time.getHours(),
               m = time.getMinutes()
-      message.channel.send(`prime bot in this server end in: ${Y}/${M}/${D} \`${H}:${M}\``)
+      message.channel.send(`prime bot in this server end in: ${Y}/${M}/${D} \`${H}:${m}\``)
           } else {
             message.channel.send("this server don't have a prime bot") 
           }
