@@ -1,0 +1,5 @@
+allbots_embed: "**Found %{botSize} bots in this Server** \n ${botList}"
+lock_message: "🔒** %{channel} has been locked.** <:defendersucces:817012966955417670>"
+unlock_message: "🔓** %{channel} has been unlocked.** <:defendersucces:817012966955417670>"
+prefix_length: " You need set prefix lower %{number} length"
+prefix_embed: "new prefix inthis guild is %{prefix}"
