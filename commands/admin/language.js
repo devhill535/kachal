@@ -3,10 +3,10 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "language",
-  aliases: ["lang"], 
+  name: "lang",
+  aliases: ["language"], 
   description: "To change language", 
-  usage: ["language <language>"],
+  usage: ["s!lang <language>"],
   category: ["Moderation"],
   enabled: true,
   memberPermissions: [ "ADMINISTRATOR" ],	
@@ -20,11 +20,11 @@ module.exports = {
       if (args[1].toLowerCase() === "english" || args[1].toLowerCase() === "kurdish") {
         data.language = args[1].toLowerCase();
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`
-          Your server language is \`${data.language}\``
+          Your server language is **${data.language}**`
         ));
       data.save();
       } else if (args[1] === "list") {
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Language list is :\n \`english\` ,\`kurdish\``));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Language list is :\n **english** ,**kurdish**`));
       } else {
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`
           Usage : s!language <language>`
