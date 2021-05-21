@@ -18,7 +18,8 @@ module.exports = {
 const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
- .addField("Do you want protect your server invite me",("[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)"))
+ .setTitle(bot.reva.get(data.lang, "general","help_embed"))
+ .setDescription(`[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
 message.channel.send(embed);
     }
 }
