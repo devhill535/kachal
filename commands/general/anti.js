@@ -13,12 +13,12 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
   ownerOnly: false,            
   cooldown: 2000,
-  run: async (bot, message, args, dev) => {
+  run: async (bot, message, args, dev, data) => {
   
   let embed = new Discord.MessageEmbed()
       .setColor(Color)
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-      .setTitle("list of all Command Security")
+      .setTitle(bot.reva.get(data.lang, "general","anti_embed"))
       .setDescription(`Guardian: **antichannel, antirole, antiban, antikick, antispam, antibot**`)
   message.channel.send(embed); 
     }
