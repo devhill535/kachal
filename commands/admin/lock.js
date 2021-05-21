@@ -13,7 +13,9 @@ module.exports = {
   ownerOnly: false,			
   cooldown: 6000,
   run: async (bot, message, args, dev, data) => {
-   
+       
+      let reason = args.slice(1).join(` `);
+      if(!reason) reason = 'Nothing..'
   message.channel
       .updateOverwrite(message.guild.id, {
         SEND_MESSAGES: false
