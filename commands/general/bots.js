@@ -13,14 +13,14 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],		
   ownerOnly: false,			
   cooldown: 2000,
-  run: async (bot, message, args, dev) => {
+  run: async (bot, message, args, dev, data) => {
   
     let i = 1;
    const botssize = message.guild.members.cache
       .filter(m => m.user.bot)
       .map(m => `${i++} - <@${m.id}>`);
     const embed = new Discord.MessageEmbed()
-      .setTitle("Bot List")
+      .setTitle(bot.reva.get(data.lang, "general","botlist"))
       .setDescription(
         `[ ${
           message.guild.members.cache.filter(m => m.user.bot).size
