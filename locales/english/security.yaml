@@ -1,4 +1,4 @@
-enable: "You have **enabled** "
+test: "You have **enabled**"
 disable: "You have **disable** "
 change: ":lock: | changed to ⇏ %{num}"
 whitelist-remove: " Removed in whitelist"
