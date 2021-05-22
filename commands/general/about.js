@@ -39,6 +39,7 @@ module.exports = {
         .addField(`💳Bot ID`,`${bot.user.id}`)
         .addField(`🔗Bot Prefix`,`[ s! ]`)
         .addField(`🔋Uptime`,`${duration(bot.uptime)}`)
+        .addField(`📆Created At`,`${created}`)
         .addField(`🌐Guilds`,`${bot.guilds.cache.size}`)
         .addField(`🏓Ping`,`${Math.round(bot.ws.ping)}ms`)
         .addField(`🗃Version`,`2.7.3`)
