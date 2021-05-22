@@ -31,7 +31,7 @@ module.exports = {
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-        .setDescription(``<a:true:836711495478804520> Anti-Ban Is **Enabled**` `);
+        .setDescription(`<a:false:836711508246659109> Anti-Ban Is **Disabled**`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
