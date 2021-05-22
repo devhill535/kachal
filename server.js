@@ -62,7 +62,7 @@ bot.on("ready", () => {
 
 bot.on("ready", () => {
     function randomStatus() {
-        let status = [`${bot.guilds.cache.size} Guilds - v2.7.3`, `s!help`, `The Av Development`]
+        let status = [`${bot.guilds.cache.size} Guilds  [v2.7.3]`, `s!help`, `The Av Development`]
         let rstatus = Math.floor(Math.random() * status.length);
         bot.user.setActivity(status[rstatus], {type: "PLAYING"});    
     }; setInterval(randomStatus, 5000)
@@ -75,7 +75,7 @@ bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
   if (message.mentions.users.first()) {
-    message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
+    message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
         message.mentions.users.first().username
       }`
     ));
@@ -86,7 +86,7 @@ bot.on("messageDelete", (message) => {
 bot.on("messageUpdate", (message, newMessage) => {
   if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
-    message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif") .setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
+    message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif") .setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
         message.mentions.users.first().username
       }`
     ));
@@ -101,7 +101,7 @@ bot.on("messageUpdate", (message, newMessage) => {
 bot.on("message", async message => {
   if (message.content.startsWith(`<@${bot.user.id}>`)) {
     let help = new Discord.MessageEmbed()
-      .setColor("#37383b")
+      .setColor("BLUE")
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
       .setThumbnail(bot.user.avatarURL())
       .setTitle("Anti Vandalism")
