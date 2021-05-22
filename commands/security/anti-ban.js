@@ -39,7 +39,7 @@ module.exports = {
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setTitle("<a:false:836711508246659109> Invalid Usage")
-        .setDescription(`error syntax <a:false:836711508246659109>\n s!antiban[`on`,`off`,`<number>`]`
+        .setDescription(`error syntax <a:false:836711508246659109>\n s!antiban [\`on\`,\`off\`,\`<number>\`]`
         );
       return message.channel.send(embed2);
     }
