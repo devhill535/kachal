@@ -31,7 +31,7 @@ module.exports = {
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-        .setDescription(`<a:false:836711508246659109> Anti-Ban Is **Disabled**`);
+        .setDescription(bot.reva.get(data.lang, "security","disable", {name: "anti ban"}));
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
@@ -48,8 +48,7 @@ module.exports = {
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-      .setDescription(`Successfully changed to ${guild.ban.lmite} <:punish:836022893691011092>
-`);
+      .setDescription(bot.reva.get(data.lang, "security","change", {num : dataa.ban.lmite}));
     return message.channel.send(embed3);
  } 
 };
