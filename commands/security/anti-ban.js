@@ -23,7 +23,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-        .setDescription(bot.reva.get(data.lang, "security","enable"));
+        .setDescription(bot.reva.get(data.lang, "security","test"));
       return message.channel.send(embed);
      } else if (args[1] === "off") {
        guild.ban.onoff = "off";
@@ -31,7 +31,7 @@ module.exports = {
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-        .setDescription(bot.reva.get(data.lang, "security","disable"));
+        .setDescription(``);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
@@ -48,7 +48,7 @@ module.exports = {
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-      .setDescription(bot.reva.get(data.lang, "security","change", {num : `${guild.ban.lmite}`}));
+      .setDescription(``);
     return message.channel.send(embed3);
  } 
 };
