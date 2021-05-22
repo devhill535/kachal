@@ -14,7 +14,7 @@ module.exports = {
   ownerOnly: false,
   guilOwnerOnly: true,
   cooldown: 3000,
-  run: async (bot, message, args) => {
+  run: async (bot, message, args, data) => {
     let guild = await Guild.findOne({ guildID: message.guild.id });
      let num = args[1];
     if (args[1] === "on") {
@@ -23,7 +23,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-        .setDescription(`<a:true:836711495478804520> Anti-Ban Is **Enabled**`);
+        .setDescription(bot.reva.get(data.lang, "security","enable", {name: "anti ban"}));
       return message.channel.send(embed);
      } else if (args[1] === "off") {
        guild.ban.onoff = "off";
