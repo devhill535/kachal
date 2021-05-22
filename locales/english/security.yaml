@@ -1,4 +1,6 @@
 enable: "You have **enabled** the %{name} <:defendersucces:817012966955417670>"
+disable: "You have **disable** the %{name} <:defendersucces:817012966955417670>"
+change: ":lock: | changed to ⇏ %{num}"
 whitelist-remove: " Removed in whitelist"
 whitelist-add: " Added to whitelist"
 whitelist-zero: " No one whitelisted!"
