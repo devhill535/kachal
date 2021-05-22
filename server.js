@@ -75,7 +75,7 @@ bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
   if (message.mentions.users.first()) {
-    message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setTitle("GhostPing Detected!").setDescription(`**Offender**\n ${message.author} \n**Message Content** \n ${
+    message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
         message.mentions.users.first().username
       }`
     ));
@@ -86,7 +86,7 @@ bot.on("messageDelete", (message) => {
 bot.on("messageUpdate", (message, newMessage) => {
   if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
-    message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif") .setTitle("GhostPing Detected!").setDescription(`**Offender**\n ${message.author} \n**Message Content** \n ${
+    message.channel.send(new Discord.MessageEmbed().setColor("#37383b").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif") .setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
         message.mentions.users.first().username
       }`
     ));
