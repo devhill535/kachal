@@ -16,10 +16,20 @@ module.exports = {
   run: async (bot, message, args) => {
 
  let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
-   let flags = message.flags.toArray();
+   
+   if (message.presence.status === "dnd") message.presence.status = "Do Not Disturb";
+    if (message.presence.status === "idle") message.presence.status = "Idle";
+    if (message.presence.status === "online") message.presence.status = "Online";
+    if (message.presence.status === "offline") message.presence.status = "Offline";
+
+
+    let flags = message.flags.toArray();
     if(message.flags.toArray() < 1) flags = "None";
     let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
-    const embed = new MessageEmbed()
+    let status = message.presence.status;
+
+
+      const embed = new MessageEmbed()
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
       .setColor(Color)
       .setThumbnail(member.user.displayAvatarURL())
