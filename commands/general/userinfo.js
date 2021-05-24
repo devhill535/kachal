@@ -16,8 +16,8 @@ module.exports = {
   run: async (bot, message, args) => {
 
  let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
-   let flags = target.flags.toArray();
-    if(target.flags.toArray() < 1) flags = "None";
+   let flags = member.flags.toArray();
+    if(member.flags.toArray() < 1) flags = "None";
     
     const embed = new MessageEmbed()
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
