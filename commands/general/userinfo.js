@@ -36,6 +36,7 @@ module.exports = {
       .addField("Username", member.user.tag, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
+      .addField("Status", `${status}`, true)
       .addField("Flags", `${flags}`, true)
       .addField("Joined At", member.joinedAt.toDateString())
       .addField("Created At", member.user.createdAt.toDateString())
