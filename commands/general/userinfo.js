@@ -17,16 +17,10 @@ module.exports = {
 
  let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
    
-   if (message.presence.status === "dnd") message.presence.status = "Do Not Disturb";
-    if (message.presence.status === "idle") message.presence.status = "Idle";
-    if (message.presence.status === "online") message.presence.status = "Online";
-    if (message.presence.status === "offline") message.presence.status = "Offline";
-
-
+  
     let flags = message.flags.toArray();
     if(message.flags.toArray() < 1) flags = "None";
     let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
-    let status = message.presence.status;
 
 
       const embed = new MessageEmbed()
@@ -36,7 +30,6 @@ module.exports = {
       .addField("Username", member.user.tag, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
-      .addField("Status", `${status}`, true)
       .addField("Flags", `${flags}`, true)
       .addField("Joined At", member.joinedAt.toDateString())
       .addField("Created At", member.user.createdAt.toDateString())
