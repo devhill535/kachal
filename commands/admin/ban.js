@@ -14,13 +14,13 @@ module.exports = {
     run: async (client, args, message, dev) => {
     const member = this.getMemberFromMention(message, args[0]) || message.guild.members.cache.get(args[0]);
     if (!member)
-      return this.sendErrorMessage(message, 0, 'Please mention a user or provide a valid user ID');
+      return message.channel.send(`Please mention a user or provide a valid user ID`);
     if (member === message.member)
-      return this.sendErrorMessage(message, 0, 'You cannot ban yourself'); 
+      return message.channel.send(`You cannot ban yourself`); 
     if (member.roles.highest.position >= message.member.roles.highest.position)
-      return this.sendErrorMessage(message, 0, 'You cannot ban someone with an equal or higher role');
+      return message.channel.send(`You cannot ban someone with an equal or higher role`);
     if (!member.bannable)
-      return this.sendErrorMessage(message, 0, 'Provided member is not bannable');
+      return message.channel.send(`Provided member is not bannable`);
 
     let reason = args.slice(1).join(' ');
     if (!reason) reason = '`None`';
