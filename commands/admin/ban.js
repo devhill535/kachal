@@ -12,7 +12,7 @@ module.exports = {
     ownerOnly: false,
     cooldown: 6000,
     run: async (client, args, message, dev) => {
-    const member = this.getMemberFromMention(message, args[0]) || message.guild.members.cache.get(args[0]);
+    let member = message.mentions.members.first();
     if (!member)
       return message.channel.send(`Please mention a user or provide a valid user ID`);
     if (member === message.member)
