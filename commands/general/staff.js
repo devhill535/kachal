@@ -1,9 +1,11 @@
+const fs = require("fs");
+const Discord = require("discord.js")
 module.exports = {
   name: "staff",
   aliases: ["close"],
   enabled: true,			  
-  memberPermissions: [ "MANAGE_MESSAGES","MANAGE_CHANNELS" ],			
-  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],		
+  memberPermissions: [ "MANAGE_MESSAGES" ],			
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],		
   ownerOnly: false,			
   cooldown: 10000,
   run: async (bot, message, args, dev) => {
