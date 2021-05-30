@@ -99,7 +99,7 @@ bot.on("messageUpdate", (message, newMessage) => {
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
-  if (message.content.startsWith(`<@${bot.user.id}>`)) {
+  if (message.content.startsWith(`^<@!?${bot.user.id}>( |)$`)) {
     let help = new Discord.MessageEmbed()
       .setColor("BLUE")
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
