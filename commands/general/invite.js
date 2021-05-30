@@ -23,7 +23,7 @@ const embed = new Discord.MessageEmbed()
 message.channel.send(embed);
     }
 }
-                const inviteLink =  || `https://discordapp.com/oauth2/authorize?client_id=${this.client.user.id}&scope=bot&permissions=2146958847`;
+               /* const inviteLink =  || `https://discordapp.com/oauth2/authorize?client_id=${this.client.user.id}&scope=bot&permissions=2146958847`;
 
 		if(args[0] && args[0] === "copy"){
 			return message.channel.send(inviteLink);
@@ -32,4 +32,4 @@ message.channel.send(embed);
 		const embed = new Discord.MessageEmbed()
 			
 			.addField("Link bot", inviteLink)
-			
+			*/
