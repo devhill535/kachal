@@ -62,7 +62,7 @@ bot.on("ready", () => {
 
 bot.on("ready", () => {
     function randomStatus() {
-        let status = [`${bot.guilds.cache.size} Guilds | v2.7.3`, `s!help`, `The Av Development`]
+        let status = [`${bot.guilds.cache.size} Guilds  |  v2.7.3`, `s!help`, `The Av Development`]
         let rstatus = Math.floor(Math.random() * status.length);
         bot.user.setActivity(status[rstatus], {type: "PLAYING"});    
     }; setInterval(randomStatus, 5000)
@@ -105,7 +105,7 @@ bot.on("message", async message => {
       .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
       .setThumbnail(bot.user.avatarURL())
       .setTitle("Anti Vandalism")
-      .setDescription(`Hello: ${message.author.tag}\nDo you want protect your server invite me [Link](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)\nTo show commands list type:\n ${prefix}help, ${prefix}help <command>`)
+      .setDescription(`Hello: **${message.author.tag}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`)
     message.channel.send(help);
   }
 });
