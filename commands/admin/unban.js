@@ -50,10 +50,10 @@ module.exports = {
         "Please Give Valid Member ID Or Member Is Not Banned!"
       );
 
-    let Reason = args.slice(1).join(" ") || "With out reason";
+
 
     try {
-      message.guild.members.unban(Member.user.id, Reason);
+      message.guild.members.unban(Member.user.id);
     } catch (error) {
       return message.channel.send(
         `I Can't Unban That Member Maybe Member Is Not Banned Or Some Error!`
