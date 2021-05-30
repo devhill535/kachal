@@ -22,9 +22,9 @@ module.exports = {
      .setDescription(`
 [ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/SCvu2jCF7v) - [ Website ](https://zalmanti25.wixsite.com/my-site)
 `)
-     .addField("General", "`invite`,`support`,`about`,`userinfo`,`ping`,`serverinfo`,`bots`,`vote`")
-     .addField("Moderation", "`kick`,`ban`,`lock`,`unlock`,`lockall`,`unlockall`,`prefix`,`clear`,`unbanall`,`mute`,`lang`")
-     .addField("Security", "`anti`,`settings`,`punishment`,`whitelist`")
+     .addField("ℹ️ General", "`invite`,`support`,`about`,`userinfo`,`ping`,`serverinfo`,`bots`,`vote`")
+     .addField("⚙️ Moderation", "`kick`,`ban`,`lock`,`unlock`,`lockall`,`unlockall`,`prefix`,`clear`,`unbanall`,`mute`,`lang`")
+     .addField("🔨 Security", "`anti`,`settings`,`punishment`,`whitelist`")
   message.channel.send(embed)
        } else {
       let  command = args[1]
