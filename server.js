@@ -98,9 +98,9 @@ bot.on("messageUpdate", (message, newMessage) => {
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
-  if (message.content.startsWith(`<@${bot.user.id}>`)) {
+  if (message.content.startsWith(`^<@!?${bot.user.id}>( |)`)) {
      
-    message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
+    message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${data.guild.prefix}\` Use \`${data.guild.prefix}help\` to get the list of the commands!`);
   }
 });
 ////////////
