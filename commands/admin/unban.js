@@ -11,7 +11,7 @@ module.exports = {
     botPermissions: ["SEND_MESSAGES", "EMBED_LINKS", "BAN_MEMBERS"],
     ownerOnly: false,
     cooldown: 6000,
-    run: async (bot, arge, message, dev) => {
+    run: async (client, arge, message, dev) => {
   if (!message.member.hasPermission("BAN_MEMBERS"))
       return message.channel.send(
         `You Don't Have Permission To Use This Command!`
