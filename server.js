@@ -61,10 +61,10 @@ bot.on("ready", () => {
 
 bot.on("ready", () => {
     function randomStatus() {
-        let status = [`${bot.guilds.cache.size} Guilds  |  v2.7.3`, `s!help`, `The Av Development`]
+        let status = [`s!help on ${bot.guilds.cache.size} Servers | v2.7.3`, `s!help | v2.7.3`]
         let rstatus = Math.floor(Math.random() * status.length);
         bot.user.setActivity(status[rstatus], {type: "PLAYING"});    
-    }; setInterval(randomStatus, 5000)
+    }; setInterval(randomStatus, 3000)
 })
 
 //=============================== - [ ghostping ] - ===================================//
