@@ -18,8 +18,7 @@ module.exports = {
  let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
    
   
-    let flags = message.flags.toArray();
-    if(message.flags.toArray() < 1) flags = "None";
+   
     let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 
 
@@ -32,7 +31,7 @@ module.exports = {
       .addField("Flags", `${flags}`, true)
       .addField("Joined At", member.joinedAt.toDateString())
       .addField("Created At", member.user.createdAt.toDateString())
-      .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('> <@&')}>`)
+      .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('None')}>`)
    message.channel.send(embed);
  }
 }
