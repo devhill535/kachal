@@ -14,7 +14,6 @@ module.exports = {
  const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setThumbnail(`https://cdn.discordapp.com/attachments/818177981884923964/843887454348247100/image0.png`)
- .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
  .setTitle(bot.reva.get(data.lang, "general","vote"))
  .setDescription("[ Top.gg ](https://top.gg/bot/711328570374619207) \n - \n [ Discord.ly ](https://discord.ly/anti-vandalism)")
 
