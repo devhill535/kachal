@@ -29,14 +29,14 @@ async run(message,bot) {
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
    
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
-  if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`This command is **Disable** for now`));
+  if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#8c8c8c").setDescription(`This command is **Disable** for now`));
   let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
   data.ww = Ww;
-  if (command.ownerOnly && !Ww.worldWhitelist.find((c) => c.type === message.author.id)) return await message.channel.send(new Discord.MessageEmbed().setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setColor("#37383b").setDescription(`This command is only for owner the bot`));
+  if (command.ownerOnly && !Ww.worldWhitelist.find((c) => c.type === message.author.id)) return await message.channel.send(new Discord.MessageEmbed().setColor("#8c8c8c").setDescription(`This command is only for owner the bot`));
   if (command.guilOwnerOnly) {
       if (message.author.id !== message.guild.ownerID &&
        !Ww.worldWhitelist.find((c) => c.type === message.author.id)
-      ) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`This command is only for guildOwner`));
+      ) return message.channel.send(new Discord.MessageEmbed().setColor("#8c8c8c").setDescription(`This command is only for guildOwner`));
 	  }
   let neededPermissions = [];
 	  if(!command.botPermissions.includes("EMBED_LINKS")){
@@ -57,7 +57,7 @@ async run(message,bot) {
 		  }
 	  });
 	  if(neededPermissions.length > 0){
-		  return message.channel.send(new Discord.MessageEmbed().setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setColor("BLUE").setDescription(`You don't have a ${neededPermissions.map((p) => `\`${p}\``).join(", ")} permissions`));
+		  return message.channel.send(new Discord.MessageEmbed().setColor("#8c8c8c").setDescription(`You don't have a ${neededPermissions.map((p) => `\`${p}\``).join(", ")} permissions`));
 	 }
 	  if (!bot.cooldowns.has(command.name)) {
 		  bot.cooldowns.set(command.name, new Discord.Collection());
