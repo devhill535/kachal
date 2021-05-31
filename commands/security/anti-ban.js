@@ -22,14 +22,14 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:836711495478804520> Anti-Ban Is **Enabled**`);
+        .setDescription(`<a:true:836711495478804520> Antiban Is **Enabled**`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
        guild.ban.onoff = "off";
        guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:836711508246659109> Anti-Ban Is **Disabled**`);
+        .setDescription(`<a:false:836711508246659109> Antiban Is **Disabled**`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
@@ -44,7 +44,7 @@ module.exports = {
     guild.save();
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`Successfully changed to ${guild.ban.lmite} <:punish:836022893691011092>`);
+      .setDescription(`Successfully Antiban changed to ${guild.ban.lmite} <:punish:836022893691011092>`);
     return message.channel.send(embed3);
  } 
 };
