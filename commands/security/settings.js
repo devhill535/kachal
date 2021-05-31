@@ -19,7 +19,6 @@ run: async (bot, message, args, dev) => {
   let data = await Guild.findOne({ guildID: message.guild.id })
       let embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setThumbnail(message.guild.iconURL())
 
       let falsee = `<:disabled:837860829155295262>`;
