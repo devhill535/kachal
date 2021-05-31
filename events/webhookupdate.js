@@ -61,12 +61,12 @@ module.exports = class {
             .setColor("#fc0303")
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-            .setDescription(`${user2.username} created or deleted ${guildData.role.lmite} roles don’t worry i taked the action!`);
+            .setDescription(`${user2.username} created or deleted ${guildData.webhook.lmite} roles don’t worry i taked the action!`);
           const embed2 = new Discord.MessageEmbed()
             .setColor("#fc0303")
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-            .setDescription(`${user2.username} created or deleted ${guildData.role.lmite} roles i can't take the action!`);
+            .setDescription(`${user2.username} created or deleted ${guildData.webhook.lmite} roles i can't take the action!`);
 
 
           if (guildData.punishment === "ban") {
