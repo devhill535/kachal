@@ -23,7 +23,7 @@ module.exports = {
     if (!messagecount) args = "100";
     message.channel.bulkDelete(messagecount)
     message.channel
-      .send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`I have cleared **${args}** messages.`))
+      .send(new Discord.MessageEmbed().setColor(Color).setDescription(`I have cleared **${args}** messages.`))
       .then(messages => messages.delete({timeout : 500}));
      } 
 }
