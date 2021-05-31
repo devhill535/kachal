@@ -22,7 +22,6 @@ module.exports = {
       guild.save();
         const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setDescription(`<a:true:836711495478804520> Anti-Bot Is **Enabled**`);
      return message.channel.send(embed);
      } else if (args[1] === "off") {
@@ -30,13 +29,11 @@ module.exports = {
          guild.save();
         const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setDescription(`<a:false:836711508246659109> Anti-Bot Is **Disabled**`);
      return message.channel.send(embed1);
     }
     const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
         .setTitle("<a:false:836711508246659109> Invalid Usage")
         .setDescription(`Please Type\n \`s!antibot on\` \n \`s!antibot off\`
 `);
