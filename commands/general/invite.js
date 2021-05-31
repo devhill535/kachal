@@ -18,8 +18,7 @@ module.exports = {
 
 		if(args[0] && args[0] === "copy"){
 			return message.channel.send(inviteLink);
-		}
-        
+		
 const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setTitle(bot.reva.get(data.lang, "general","invite"))
