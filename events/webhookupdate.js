@@ -71,7 +71,7 @@ module.exports = class {
 
           if (guildData.punishment === "ban") {
             if (member.bannable) {
-              await member.ban({ reason: `Create or Delete ${guildData.role.lmite} roles` })
+              await member.ban({ reason: `Create or Delete ${guildData.webhook.lmite} roles` })
               embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
               await guild.owner.send(embed).catch(err => {})
             } else {
@@ -80,7 +80,7 @@ module.exports = class {
             }
           } else if (guildData.punishment === "kick") {
             if (member.kickable) {
-              await member.kick({ reason: `Create or Delete ${guildData.role.lmite} roles` })
+              await member.kick({ reason: `Create or Delete ${guildData.webhook.lmite} roles` })
               embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
               await guild.owner.send(embed).catch(err => {})
             } else {
