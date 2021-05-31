@@ -18,8 +18,7 @@ module.exports = {
    
     const embed1 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-     .setDescription(`Choose **kick** or **ban**`);
+      .setDescription(`Choose **kick** or **ban**`);
       if (!args[1])
         return message.channel.send(embed1);
       let data = await Guild.findOne({ guildID: message.guild.id })
@@ -27,14 +26,12 @@ module.exports = {
         data.punishment = args[1];
         const embed = new Discord.MessageEmbed()
         .setColor(Color)
-         .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-          .setDescription(`Successfully changed the Punishment to **${data.punishment}** <:punish:836022893691011092>`)
+        .setDescription(`Successfully changed the Punishment to **${data.punishment}** <:punish:836022893691011092>`)
         message.channel.send(embed);
       data.save();
       } else {
         const embed2 = new Discord.MessageEmbed()
-           .setColor(Color)
-          .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
+          .setColor(Color)
           .setTitle("<a:false:836711508246659109> Invalid Usage")
           .setDescription (
           `Please Type\n \`s!punishment ban\` \n \`s!punishment kick\``
