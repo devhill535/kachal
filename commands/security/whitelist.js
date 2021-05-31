@@ -5,7 +5,7 @@ module.exports = {
   name: "whitelist",
   aliases: ["wl"],
   description: "Security will ignore trusted users",
-  usage: ["s!trusted [add/remove] [@User]"],
+  usage: ["s!whitelist [add/remove] [@User]"],
   category: ["Security"],
   enabled: true,
   memberPermissions: [ "SEND_MESSAGES" ],			
