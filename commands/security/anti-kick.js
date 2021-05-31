@@ -45,7 +45,7 @@ module.exports = {
     guild.save()
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`Successfully changed to ${guild.kick.lmite} <:punish:836022893691011092>
+      .setDescription(`Successfully Anti-Kick changed to ${guild.kick.lmite} <:punish:836022893691011092>
 `);
     return message.channel.send(embed3);
   }
