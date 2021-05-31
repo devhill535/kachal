@@ -15,14 +15,14 @@ module.exports = {
   run: async (bot, message, args, dev) => {
 
  if (!message.member.hasPermission("BAN_MEMBERS"))
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`You don't have acces to run this command`));
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have acces to run this command`));
 
     
     
 message.guild.fetchBans().then(bans => {
       
         
-          message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Are you sure to unban **${bans.size}** banned members on this server?`))
+          message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Are you sure to unban **${bans.size}** banned members on this server?`))
         
       })
       
@@ -44,9 +44,9 @@ message.guild.fetchBans().then(bans => {
               
                                     }
                                     else
-                                            message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`The command was canceled`));
+                                            message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`The command was canceled`));
                             }).catch(() => {
-                                    message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`The command was canceled because you don't reacted`));
+                                    message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`The command was canceled because you don't reacted`));
                                  });  
    }
   }
