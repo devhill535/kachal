@@ -34,9 +34,8 @@ module.exports = {
     }
     const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setTitle("<a:false:836711508246659109> Invalid Usage")
-        .setDescription(`Please Type\n \`s!antibot on\` \n \`s!antibot off\`
-`);
+        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antibot [\`on\`,\`off\`]`
+        );
       return message.channel.send(embed2);
   }
 };
