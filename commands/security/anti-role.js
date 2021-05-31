@@ -36,8 +36,7 @@ module.exports = {
     if (isNaN(num) || parseInt(num) < 1) {
       const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setTitle("<a:false:836711508246659109> Invalid Usage")
-        .setDescription(`Please Type\n \`s!antirole on\` \n \`s!antirole off\` \n \`s!antirole\` **<number>**`
+        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antirole [\`on\`,\`off\`,\`<number>\`]`
         );
       return message.channel.send(embed2);
     }
