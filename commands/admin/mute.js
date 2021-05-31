@@ -14,7 +14,7 @@ module.exports = {
   cooldown: 6000,
 run: async (bot, message, args) => {
 
-if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`You Don't have the permission **MUTE_MEMBERS**`));
+if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You Don't have the permission **MUTE_MEMBERS**`));
 let mention = message.mentions.members.first();
 let role = message.guild.roles.cache.find(ro => ro.name == 'Muted');
 if(!role) {
@@ -26,7 +26,7 @@ if(!role) {
         }
     })
 }
-if(!mention) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Usage: s!mute [@User]`));
+if(!mention) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!mute [@User]`));
 message.guild.channels.cache.forEach(c => {
 c.updateOverwrite(role , {
 SEND_MESSAGES: false, 
@@ -34,6 +34,6 @@ ADD_REACTIONS: false
 });
 });
 mention.roles.add(role)
-message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`<:punish:836022893691011092> ${mention.user.tag} has been muted`))
+message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<:punish:836022893691011092> ${mention.user.tag} has been muted`))
     }
  }
