@@ -35,8 +35,7 @@ module.exports = {
     if (isNaN(num) || parseInt(num) < 1) {
       const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setTitle("<a:false:836711508246659109> Invalid Usage")
-        .setDescription(`error syntax <a:false:836711508246659109>\n s!antiban [\`on\`,\`off\`,\`<number>\`]`
+        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antiban [\`on\`,\`off\`,\`<number>\`]`
         );
       return message.channel.send(embed2);
     }
