@@ -80,8 +80,7 @@ module.exports = {
 		const emojis = message.guild.emojis.cache;
 
 		const embed = new MessageEmbed()
-                        .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
-			.setTitle(bot.reva.get(data.lang, "general","guild_info"))
+                       .setTitle(bot.reva.get(data.lang, "general","guild_info"))
 
 			.setColor(Color)
 
