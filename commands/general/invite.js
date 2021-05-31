@@ -14,7 +14,7 @@ module.exports = {
   ownerOnly: false,
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
-    const inviteLink =  || `https://discordapp.com/oauth2/authorize?client_id=${this.bot.user.id}&scope=bot&permissions=2146958847`;
+    const inviteLink = bot.config.inviteURL || `https://discordapp.com/oauth2/authorize?client_id=${this.bot.user.id}&scope=bot&permissions=2146958847`;
 
 		if(args[0] && args[0] === "copy"){
 			return message.channel.send(inviteLink);
