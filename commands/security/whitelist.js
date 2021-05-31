@@ -21,7 +21,7 @@ module.exports = {
           message.guild.members.cache.get(args[2]) ||
           message.mentions.members.first();
         if (!user)
-          return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(bot.reva.get(data.lang, "security","user_undefined")));
+          return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","user_undefined")));
         if(!dataa.whitelist.find((c) => c.type === user.id)){
         await Guild.findOneAndUpdate(
         {
@@ -34,16 +34,16 @@ module.exports = {
             }
          },
         })     
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-add")));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-add")));
           } else {
-          message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(bot.reva.get(data.lang, "security","whitelist-yes")));
+          message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","whitelist-yes")));
           }
       } else if (args[1] === "remove") {
         let user =
           message.guild.members.cache.get(args[2]) ||
           message.mentions.members.first();
         if (!user)
-          return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(bot.reva.get(data.lang, "security","user_undefined")));
+          return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","user_undefined")));
         if(dataa.whitelist.find((c) => c.type === user.id)){
         await Guild.findOneAndUpdate(
         {
@@ -56,12 +56,12 @@ module.exports = {
             }
          },
         })
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-remove")));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-remove")));
         } else {
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-no")));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-no")));
         };
       } else if (!args[1]) {
-        if (dataa.whitelist.length === 0) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(bot.reva.get(data.lang, "security","whitelist-zero")));
+        if (dataa.whitelist.length === 0) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","whitelist-zero")));
        let arrayOfCustomCommands = dataa.whitelist.map(w => `⇰ <@${w.type}> - ${w.type}`)
         
         let embed = new Discord.MessageEmbed()
