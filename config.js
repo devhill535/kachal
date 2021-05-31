@@ -1,1 +1,1 @@
-exports.Color = `#8c8c8c`;
+exports.Color = `#595959`;
