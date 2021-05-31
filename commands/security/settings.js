@@ -74,7 +74,19 @@ run: async (bot, message, args, dev) => {
           `${falsee} Disabled \n Warn at: **${data.channel.lmite}** ${warn} \n Punish at: **${data.channel.lmite}** ${pun}`
         );
       }
-      
+    
+      if (data.webhook.onoff === "on") {
+        embed.addField(
+          `**AntiWebhook**`,
+          `${truee} Enabled \n Warn at: **${data.webhook.lmite}** ${warn} \n Punish at: **${data.webhook.lmite}** ${pun}`
+        );
+      } else if (data.webhook.onoff === "off") {
+        embed.addField(
+          `**AntiWebhook**`,
+          `${falsee} Disabled \n Warn at: **${data.webhook.lmite}** ${warn} \n Punish at: **${data.webhook.lmite}** ${pun}`
+        );
+      }
+
       let data3 = data.bot.onoff
       if (data3 === "on") {
         embed.addField(
