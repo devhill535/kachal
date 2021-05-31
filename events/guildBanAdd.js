@@ -19,13 +19,11 @@ module.exports = class {
         let member = await guild.members.fetch(user2.id)
         const embed = new Discord.MessageEmbed()
           .setColor("#fc0303")
-          .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
           .setDescription(`${user2.username} ban 1 member don’t worry i taked the action!`);
         const embed2 = new Discord.MessageEmbed()
           .setColor("#fc0303")
-          .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
           .setDescription(`${user2.username} ban 1 member i can't take the action!`);
@@ -61,13 +59,11 @@ module.exports = class {
           let member = await guild.members.fetch(user2.id)
           const embed = new Discord.MessageEmbed()
             .setColor("#fc0303")
-            .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} ban ${guildData.ban.lmite} members don’t worry i taked the action!`);
           const embed2 = new Discord.MessageEmbed()
             .setColor("#fc0303")
-            .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} ban ${guildData.ban.lmite} members i can't take the action!`);
