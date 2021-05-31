@@ -13,13 +13,13 @@ module.exports = {
     cooldown: 6000,
     run: async (bot, message, dev) => {
    
-if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`You Don't have the permission **BAN_MEMBERS**`));
+if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You Don't have the permission **BAN_MEMBERS**`));
            let user = message.mentions.members.first();
-let args = message.content.split(' ');
-           if(!user || !args[1]) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Usage: s!ban [@User]`));
-           if(message.mentions.users.size < 1) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`Noy found this member`));
-           if(!message.guild.member(user).bannable) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`This member have role highst me can't ban`));
-           message.channel.send(new Discord.MessageEmbed().setColor(Color).setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif").setDescription(`<:punish:836022893691011092> ${user} has been banned`));
+           let args = message.content.split(' ');
+           if(!user || !args[1]) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!ban [@User]`));
+           if(message.mentions.users.size < 1) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Noy found this member`));
+           if(!message.guild.member(user).bannable) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`This member have role highst me can't ban`));
+           message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<:punish:836022893691011092> ${user} has been banned`));
            user.ban({ reason: args[1] });
        }
    }
