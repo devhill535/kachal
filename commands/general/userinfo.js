@@ -29,9 +29,8 @@ let member = await message.mentions.members.first() || message.guild.members.cac
       .addField("Username", member.user.tag, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
-      .addField("Flags", `${flags}`, true)
-      .addField("Joined At", member.joinedAt.toDateString())
-      .addField("Created At", member.user.createdAt.toDateString())
+      .addField("Join", member.joinedAt.toDateString())
+      .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('None')}>`)
    message.channel.send(embed);
  }
