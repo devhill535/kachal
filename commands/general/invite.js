@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const { Color } = require("../../config.js");
+const { Color, Footer } = require("../../config.js");
 
 module.exports = {
   name: "invite",
@@ -19,7 +19,7 @@ const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setTitle(bot.reva.get(data.lang, "general","invite"))
  .setDescription(`[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
-
+ .setFooter(Footer)
 message.channel.send(embed);
     }
 }
