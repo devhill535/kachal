@@ -75,12 +75,6 @@ run: async (bot, message, args, dev) => {
       }
     
 
-     let data6 = data.rStatus.onoff
-      if (data6 === "on") {
-        embed.addField(`anti-roleUpdate:`, `${truee} Enabled `);
-      } else if (data6 === "off") {
-        embed.addField(`anti-roleUpdate:`, `${falsee} Disabled`);
-      }
 
       let data3 = data.bot.onoff
       if (data3 === "on") {
