@@ -1,6 +1,5 @@
-
-  fs = require("fs");
- const Discord = require("discord.js");
+fs = require("fs");
+const Discord = require("discord.js");
  module.exports = {
    name: "anti-rolemention",
    aliases: ["antirolemention"],
