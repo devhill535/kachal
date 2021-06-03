@@ -16,7 +16,7 @@ bot.reva = new I18n({ defaultLocale: "en" });
 
 global.logChannel = bot.channels.cache.get("835968578699264011")
 global.mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://lord:lord1234+@cluster0.8zckc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Connected to the Mongodb database.");
 }).catch((err) => {
   console.log("Unable to connect to the Mongodb database. Error:" + err);
