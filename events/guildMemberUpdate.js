@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 	module.exports = class {
 	async run(oldMember, newMember, bot) {
 	
-	Guild.findOne({
+	AntiRole.findOne({
 	guildID: newMember.guild.id
 	}, async (err, p) => {
 	if (p) {
