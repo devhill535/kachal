@@ -18,7 +18,7 @@ schema = mongoose.Schema({
         lmite: { type: Number, default: "3"}
     },
     rStatus: { 
-        onoff: { type: String, default: "off"}
+        onoff: { type: String, default: "on"}
 	},
     spam: {
         onoff: { type: String, default: "off"}      
