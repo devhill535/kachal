@@ -21,7 +21,6 @@ const Discord = require("discord.js")
 	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : false
 	return
 	}
-	}
 	});
 	}
 	if (oldMember.roles.cache.size > newMember.roles.cache.size) {
@@ -36,7 +35,6 @@ const Discord = require("discord.js")
 	newMember.roles.add(role).catch(() => { return })
 	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : false
 	return
-	}
 	}
 	});
 	}
