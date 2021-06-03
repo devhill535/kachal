@@ -2,8 +2,8 @@ const Discord = require("discord.js")
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "vote",
-  aliases: ["v"],
+  name: "staff",
+  aliases: ["S"],
   enabled: true,            
   memberPermissions: [ "SEND_MESSAGES" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
