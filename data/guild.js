@@ -17,9 +17,6 @@ schema = mongoose.Schema({
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
-    rStatus: { 
-        onoff: { type: String, default: "on"}
-	},
     spam: {
         onoff: { type: String, default: "off"}      
     },
