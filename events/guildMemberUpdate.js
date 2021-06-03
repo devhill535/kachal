@@ -4,8 +4,8 @@ const Discord = require("discord.js")
 	
 	Guild.findOne({
 	guildID: newMember.guild.id
-	}, async (err, guildData) => {
-	if (guildData) {
+	}, async (err, p) => {
+	if (p) {
 	const entry = await oldMember.guild.fetchAuditLogs({ type: 'MEMBER_ROLE_UPDATE ' }).then(audit => audit.entries.first()) //Find audit logs pertaining to member update
 	if (entry.executor.id === bot.user.id) return;
 	if (entry.executor.id === newMember.guild.owner) return;
@@ -13,7 +13,7 @@ const Discord = require("discord.js")
 	
 	newMember.roles.cache.forEach(async role => {
 	if (!oldMember.roles.cache.has(role.id)) {
-	if (guildData.roleupdate.onoff === "off") return;
+	if (p.rStatus == "on") {
 	if (!entry) return;
 	if (entry.executor.id === newMember.guild.ownerID) return
 	let member = await newMember.guild.members.cache.get(entry.executor.id)
@@ -21,6 +21,7 @@ const Discord = require("discord.js")
 	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : false
 	return
 	}
+        }
 	});
 	}
 	if (oldMember.roles.cache.size > newMember.roles.cache.size) {
@@ -28,7 +29,7 @@ const Discord = require("discord.js")
 	
 	oldMember.roles.cache.forEach(async role => {
 	if (!newMember.roles.cache.has(role.id)) {
-	if (guildData.roleupdate.onoff === "off") return;
+	if (p.rStatus == "on") {
 	if (!entry) return;
 	if (entry.executor.id === newMember.guild.ownerID) return
 	let member = await newMember.guild.members.cache.get(entry.executor.id)
@@ -36,6 +37,7 @@ const Discord = require("discord.js")
 	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : false
 	return
 	}
+        }
 	});
 	}
 	}
