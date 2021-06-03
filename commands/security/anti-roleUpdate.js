@@ -10,7 +10,7 @@ module.exports = {
   guilOwnerOnly: true,
   cooldown: 5000,
   run: async (bot, message, args) => {
-    Antirole.findOne({
+    Guild.findOne({
       guildID: message.guild.id
     }, (err, p) => {
       if (!p) return
