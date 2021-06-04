@@ -15,5 +15,5 @@ async run(guild, bot) {
 			.setColor(Color)
 			.setDescription(text);
                         .setTimestamp();
-		bot.channels.cache.get("835968578699264011").send(logsEmbed);     
+		bot.channels.cache.get("850465538306998272").send(logsEmbed);     
 }};
