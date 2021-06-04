@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-
 module.exports = class {
 async run(guild, bot) {
 		const thanksEmbed = new Discord.MessageEmbed()			
@@ -13,5 +12,5 @@ async run(guild, bot) {
 		const logsEmbed = new Discord.MessageEmbed()
 			.setColor("#2c2f33")
 			.setDescription(text);
-		bot.channels.cache.get("850465538306998272").send(logsEmbed);     
+		bot.channels.cache.get("835968578699264011").send(logsEmbed);     
 }};
