@@ -1,4 +1,6 @@
 const Discord = require("discord.js")
+const { Color } = require("../../config.js");
+
 module.exports = class {
 async run(guild, bot) {
 		const thanksEmbed = new Discord.MessageEmbed()			
