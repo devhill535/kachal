@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
-const { MessagEmbed } = require("discord.js");
+const { Color } = require("../../config.js");
+
 module.exports = {
     name: "ban",
     aliases: ["band"],
