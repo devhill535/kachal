@@ -25,6 +25,6 @@ schema = mongoose.Schema({
     },
     punishment: { type: String, default: "ban"},
     whitelist: { type: Array, default: [] },
-    time: { type: Number, default: 1}
+    time: { type: Number, default: 30}
 });
 module.exports = mongoose.model("Guild", schema)
