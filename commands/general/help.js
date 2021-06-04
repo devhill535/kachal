@@ -15,17 +15,6 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
- let button = new disbut.MessageButton()
-  .setURL('https://npmjs.com/discord-buttons') 
-  
-  .setLabel('My First Button!')
-  
-  .setID('click_to_function')
-  
-  .setDisabled();
-
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
-
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setTitle(bot.reva.get(data.lang, "general","help_embed"))
