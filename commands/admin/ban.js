@@ -13,19 +13,38 @@ module.exports = {
     cooldown: 6000,
     run: async (client, args, message, dev) => {
    
-      const mention = message.mentions.users.first()
-    const reason = args.slice(1).join(' ')
-    if (!mention) return message.reply('Mention a user.')
-    if (!reason) return message.reply('No Reason specified.')
-    if (
-      message.member.roles.highest.position <=
-      message.guild.member(mention).roles.highest.position
-    )
-      return message.reply('You cannot ban this user.')
-    message.guild.members.ban(mention.id, {
-      days: 7,
-      reason: `Banned by: ${message.author.id} | Reason: ${reason}`,
-    })
-    message.channel.send(`<@${mention.id}> has been successfully banned.`)
+          const target = message.mentions.members.first()
+    
+    const reason = args.slice(1).join(" ")
+    
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply(`You don't have enough powers to ban someone`)
+    
+    if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply(`I don't have powers to ban someone`)
+    
+    if(!args[0]) return message.reply(`Please mention someone to ban`)
+    
+    if(!target) return message.reply(`I can't find that member`)
+    
+    if(target.roles.highest.position >= message.member.roles.highest.position || message.author.id !== message.guild.owner.id) {
+      return message.reply(`They have more power than you`)
+    }
+    
+    if(target.id === message.author.id) return message.reply(`I can't ban you as you are the Boss`)
+    
+    if(target.bannable) {
+      let embed = new discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setDescription(`Banned \`${target}\` for \`${reason || "No Reason Provided"}\``)
+      
+      message.channel.send(embed)
+      
+      target.ban()
+      
+      message.delete()
+      
+    } else {
+      return message.reply(`I can't ban them, make sure that my role is above of theirs`)
+    }
+    return undefined
   }
-}
+};
