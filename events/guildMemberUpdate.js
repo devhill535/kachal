@@ -6,7 +6,7 @@ const Discord = require("discord.js")
 	guildID: newMember.guild.id
 	}, async (err, p) => {
 	if (p) {
-	const entry = await oldMember.guild.fetchAuditLogs({ type: 'MEMBER_ROLE_UPDATE ' }).then(audit => audit.entries.first()) //Find audit logs pertaining to member update
+	const entry = await oldMember.guild.fetchAuditLogs({ type: 'MEMBER_ROLE_UPDATE' }).then(audit => audit.entries.first()) //Find audit logs pertaining to member update
 	if (entry.executor.id === bot.user.id) return;
 	if (entry.executor.id === newMember.guild.owner) return;
 	if (oldMember.roles.cache.size < newMember.roles.cache.size) {
@@ -18,14 +18,14 @@ const Discord = require("discord.js")
 	if (entry.executor.id === newMember.guild.ownerID) return
 	let member = await newMember.guild.members.cache.get(entry.executor.id)
 	newMember.roles.remove(role).catch(() => { return })
-	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : false
+	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : true
 	return
 	}
         }
 	});
 	}
 	if (oldMember.roles.cache.size > newMember.roles.cache.size) {
-	const entry = await oldMember.guild.fetchAuditLogs({ type: 'MEMBER_ROLE_UPDATE ' }).then(audit => audit.entries.first()) //Find audit logs pertaining to member update
+	const entry = await oldMember.guild.fetchAuditLogs({ type: 'MEMBER_ROLE_UPDATE' }).then(audit => audit.entries.first()) //Find audit logs pertaining to member update
 	
 	oldMember.roles.cache.forEach(async role => {
 	if (!newMember.roles.cache.has(role.id)) {
@@ -34,7 +34,7 @@ const Discord = require("discord.js")
 	if (entry.executor.id === newMember.guild.ownerID) return
 	let member = await newMember.guild.members.cache.get(entry.executor.id)
 	newMember.roles.add(role).catch(() => { return })
-	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : false
+	member ? member.roles.cache.map(r => member.roles.remove(r).catch(() => { return })) : true
 	return
 	}
         }
