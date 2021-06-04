@@ -21,7 +21,7 @@ mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.n
 }).catch((err) => {
   console.log("Unable to connect to the Mongodb database. Error:" + err);
 });
-global.AntiRole = require("./data/Antirole.js");
+global.AntiRole = require("./data/guild.js");
 global.Guild = require("./data/guild.js");
 global.User = require("./data/user.js");
 global.Lang = require("./data/lang.js");
