@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-
 module.exports = class {
 async run(guild, bot) {
 		const thanksEmbed = new Discord.MessageEmbed()			
