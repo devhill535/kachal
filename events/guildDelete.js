@@ -14,6 +14,5 @@ async run(guild, bot) {
 		const logsEmbed = new Discord.MessageEmbed()
 			.setColor(Color)
 			.setDescription(text);
-                        .setTimestamp();
 		bot.channels.cache.get("850465538306998272").send(logsEmbed);     
 }};
