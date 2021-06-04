@@ -103,13 +103,6 @@ run: async (bot, message, args, dev) => {
         embed.addField(`**Punishment**`, `<:ban:842560387366256660> Ban`);
       }
 
-      let data4 = data.rStatus.onoff
-       if (data4 === "on") {
-         embed.addField(`**anti-roleUpdate**`, `${truee} Enabled`);
-       } else if (data4 === "off") {
-         embed.addField(`**anti-roleUpdate**`, `${falsee} Disabled`);
-       }
-
       embed.setDescription(
         `This is settings security and settings your server`
       );
