@@ -10,7 +10,7 @@ async run(guild, bot) {
 		guild.owner.send(thanksEmbed).catch(() => {});
     
 	
-		const text = "❌ **__Leaving Old Guild__** \n **Guild Name**: "+guild.name+" \n **Guild Owner Name**: " + `${guild.owner.user.username}` + " \n **Guild Owner ID**: " + `${guild.owner.id}` + " \n **Guild Bots Size** ("+guild.members.cache.filter((m) => m.user.bot).size+" bots)";
+		const text = "<a:false:836711508246659109> **__Leaving Old Guild__** \n **Guild Name**: "+guild.name+" \n **Guild Owner Name**: " + `${guild.owner.user.username}` + " \n **Guild Owner ID**: " + `${guild.owner.id}` + " \n **Guild Bots Size** ("+guild.members.cache.filter((m) => m.user.bot).size+" bots)";
 		const logsEmbed = new Discord.MessageEmbed()
 			.setColor(Color)
 			.setDescription(text);
