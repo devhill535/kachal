@@ -39,13 +39,13 @@ module.exports = {
   
     const embedBan = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`<:punish:836022893691011092> ${user} has been banned`)
+      .setDescription(`<:punish:836022893691011092> **${user}** has been banned`)
 
     message.channel.send(embedBan);
 
     const embedUserBan = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`<:punish:836022893691011092> ${user} has been banned from **${message.guild.name}** server`)
+      .setDescription(`<:punish:836022893691011092> **${user}** has been banned from **${message.guild.name}** server`)
 
     user.send(embedUserBan).catch(e => message.channel.send(''))
 
