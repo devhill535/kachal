@@ -40,6 +40,6 @@ module.exports = {
       .setDescription(`<:punish:836022893691011092> **${user}** has been banned`)
 
     message.channel.send(embedBan);
-
+    user.ban({ reason: args[1] });
   }
 }
