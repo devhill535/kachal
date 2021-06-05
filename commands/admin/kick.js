@@ -44,7 +44,7 @@ module.exports = {
 
     const embedKick = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`**${user} has been banned`)
+      .setDescription(`<:punish:836022893691011092> **${user}** has been banned`)
 
     message.channel.send(embedKick);
     user.kick();
