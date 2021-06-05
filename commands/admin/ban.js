@@ -14,7 +14,7 @@ module.exports = {
     cooldown: 6000,
     run: async (client, message, args, dev) => {
   
-     let user = message.mentions.members.first()
+     let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
     let perms = message.member.hasPermission("BAN_MEMBERS");
     if (!perms) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have **BAN_MEMBERS** permission`));
