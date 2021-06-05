@@ -17,10 +17,10 @@ module.exports = {
      let user = message.mentions.members.first()
 
     let perms = message.member.hasPermission("BAN_MEMBERS");
-    if (!perms) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have `BAN_MEMBERS` permission`));
+    if (!perms) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have **BAN_MEMBERS** permission`));
 
     if (!message.guild.me.permissions.has('BAN_MEMBERS'))
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`"I need `BAN_MEMBERS` permission!`));
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`"I need **BAN_MEMBERS** permission!`));
 
     if (!user)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!ban [@User]`)).catch(console.error);
