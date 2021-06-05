@@ -12,15 +12,41 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","KICK_MEMBERS" ],		
   ownerOnly: false,			
   cooldown: 6000,
-  run: async (bot, message, dev) => {
+  run: async (client, message, args, dev) => {
 
-    if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You Don't have the permission **KICK_MEMBERS**`));
-        let user = message.mentions.members.first();
-        let args = message.content.split(' ');
-        if(!user || !args[1]) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!kick [@User]`));
-        if(message.mentions.users.size < 1) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Not found this member`));
-        if(!message.guild.member(user).bannable) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`This member have role highst me can't kick`));
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<:punish:836022893691011092> ${user} has been kicked`));
-        user.kick();
+    let user = message.mentions.members.first();
+
+    var perms = message.member.hasPermission("KICK_MEMBERS");
+
+    if (!perms) {
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have **KICK_MEMBERS** permission`));
+    }
+
+    if (!message.guild.me.permissions.has("KICK_MEMBERS"))
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I need the **KICK_MEMBERS** permission`));
+
+    if (!user)
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!kick [@User]`)).catch(console.error);
+
+    if (user.id === client.user.id) {
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`can't kick myself`));
+    }
+
+    if (user.id === message.author.id) {
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You can't kick yourself`));
+    }
+
+    if (message.mentions.users.size < 1) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Mention 1 single user`)).catch(console.error);
+
+
+    if (!message.guild.member(user).kickable) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I can't kick the mentioned user`));
+
+
+    const embedKick = new Discord.MessageEmbed()
+      .setColor(Color)
+      .setDescription(`**${user} has been banned`)
+
+    message.channel.send(embedKick);
+    user.kick();
     }
 }
