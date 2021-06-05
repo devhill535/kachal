@@ -206,4 +206,4 @@ bot.on("message", async message => {
 });
 
 //=============================== - [ token ] - ===================================//
-bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.9ZHhUD-PXBzonz106azVZ0XxqMM");
+bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.OqtL32Q-2FRkrnWxjkISqDoWeo8");
