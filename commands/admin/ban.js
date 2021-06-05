@@ -32,8 +32,6 @@ module.exports = {
     if (message.guild.ownerID !== message.author.id && user.roles.highest.comparePositionTo(message.member.roles.highest) >= 0)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Based on the role hierarchy, you cannot ban this user`));
 
-    if (razon.length > 100) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription('The reason cannot exceed 100 characters'));
-
     if (!message.guild.member(user).bannable) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I cannot ban the mentioned user`));
 
   
@@ -42,12 +40,6 @@ module.exports = {
       .setDescription(`<:punish:836022893691011092> **${user}** has been banned`)
 
     message.channel.send(embedBan);
-
-    const embedUserBan = new Discord.MessageEmbed()
-      .setColor(Color)
-      .setDescription(`<:punish:836022893691011092> **${user}** has been banned from **${message.guild.name}** server`)
-
-    user.send(embedUserBan).catch(e => message.channel.send(''))
 
   }
 }
