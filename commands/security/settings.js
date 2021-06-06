@@ -27,48 +27,48 @@ run: async (bot, message, args, dev) => {
 
       if (data.ban.onoff === "on") {
         embed.addField(
-          `**AntiBan**`,
+          `- **AntiBan**`,
           `${truee} Enabled \n Punish at: **${data.ban.lmite}** ${pun}`
         );
       } else if (data.ban.onoff === "off") {
         embed.addField(
-          `**AntiBan**`,
+          `- **AntiBan**`,
           `${falsee} Disabled \n Punish at: **${data.ban.lmite}** ${pun}`
         );
       }
 
       if (data.kick.onoff === "on") {
         embed.addField(
-          `**AntiKick**`,
+          `- **AntiKick**`,
           `${truee} Enabled \n Punish at: **${data.kick.lmite}** ${pun}`
         );
       } else if (data.kick.onoff === "off") {
         embed.addField(
-          `**AntiKick**`,
+          `- **AntiKick**`,
           `${falsee} Disabled \n Punish at: **${data.kick.lmite}** ${pun}`
         );
       }
 
       if (data.role.onoff === "on") {
         embed.addField(
-          `\n\n**AntiRole**`,
+          `- **AntiRole**`,
           `${truee} Enabled \n Punish at: **${data.role.lmite}** ${pun}`
         );
       } else if (data.role.onoff === "off") {
         embed.addField(
-          `**AntiRole**`,
+          `- **AntiRole**`,
           `${falsee} Disabled \n Punish at: **${data.role.lmite}** ${pun}`
         );
       }
 
       if (data.channel.onoff === "on") {
         embed.addField(
-          `**AntiChannel**`,
+          `- **AntiChannel**`,
           `${truee} Enabled \n Punish at: **${data.channel.lmite}** ${pun}`
         );
       } else if (data.channel.onoff === "off") {
         embed.addField(
-          `**AntiChannel**`,
+          `- **AntiChannel**`,
           `${falsee} Disabled \n Punish at: **${data.channel.lmite}** ${pun}`
         );
       }
@@ -77,29 +77,23 @@ run: async (bot, message, args, dev) => {
 
       let data3 = data.bot.onoff
       if (data3 === "on") {
-        embed.addField(
-          `**AntiBot**`,
-          `${truee} Enabled`
-        );
+        embed.addField(`- **AntiBot**`, `${truee} Enabled`);
       } else if (data3 === "off") {
-        embed.addField(
-          `**AntiBot**`,
-          `${falsee} Disabled`
-        );
+        embed.addField(`- **AntiBot**`, `${falsee} Disabled`);
       }
       
       
       let data2 = data.spam.onoff
       if (data2 === "on") {
-        embed.addField(`**AntiSpam**`, `${truee} Enabled`);
+        embed.addField(`- **AntiSpam**`, `${truee} Enabled`);
       } else if (data2 === "off") {
-        embed.addField(`**AntiSpam**`, `${falsee} Disabled`);
+        embed.addField(`- **AntiSpam**`, `${falsee} Disabled`);
       }
 
       if (data.punishment === "kick") {
-        embed.addField(`**Punishment**`, `<:kick:842560387295346688> Kick`);
+        embed.addField(`- **Punishment**`, `<:kick:842560387295346688> Kick`);
       } else if (data.punishment === "ban") {
-        embed.addField(`**Punishment**`, `<:ban:842560387366256660> Ban`);
+        embed.addField(`- **Punishment**`, `<:ban:842560387366256660> Ban`);
       }
 
       embed.setDescription(
