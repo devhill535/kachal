@@ -25,7 +25,9 @@ module.exports = {
     if (!user)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!ban [@User]`)).catch(console.error);
 
-    if (user.id === message.author.id) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You can't ban yourself`));
+    if (user.id === client.user.id) {
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You can't kick yourself`));
+    }
 
     if (user.id === client.user.id) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I can't ban myself`));
 
