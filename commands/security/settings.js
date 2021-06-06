@@ -45,7 +45,7 @@ run: async (bot, message, args, dev) => {
       } else if (data.kick.onoff === "off") {
         embed.addField(
           `**AntiKick**`,
-          `${falsee} Disabled \n Punish at: **${data.kick.lmite}** ${pun}`
+          `${falsee} Disabled \n Punish at: **${data.kick.lmite}** ${pun} \n\n`
         );
       }
 
