@@ -15,7 +15,7 @@ module.exports = {
   cooldown: 15000,
   run: async (client, message, args, dev) => {
       if (!args[1])
-        return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage : s!language [english/kurdish/arabic/turkish/persian]`));
+        return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage : s!language [english,kurdish,arabic,turkish,persian]`));
       let data = await Lang.findOne({ guildID: message.guild.id })
       if (args[1].toLowerCase() === "english" || args[1].toLowerCase() === "kurdish" || args[1].toLowerCase() === "arabic" || args[1].toLowerCase() === "turkish" || args[1].toLowerCase() === "persian") {
         data.language = args[1].toLowerCase();
