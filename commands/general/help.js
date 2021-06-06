@@ -19,7 +19,7 @@ module.exports = {
      .setColor(Color)
      .setTitle(bot.reva.get(data.lang, "general","help_embed"))
      .setDescription(`
-[ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/SCvu2jCF7v) - [ Website ](https://zalmanti25.wixsite.com/my-site)
+[ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/QaqmPG2WZX) - [ Website ](https://zalmanti25.wixsite.com/my-site)
 `)
      .addField("ℹ️ General", "`invite`, `support`, `about`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`")
      .addField("⚙️ Moderation", "`kick`, `ban`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`, `clear`, `unbanall`, `mute`, `lang`")
