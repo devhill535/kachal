@@ -25,9 +25,11 @@ module.exports = {
       } else {
         safeData.push(role.id);
       }
+      const p = "";
       pruneData.forEach(pruneD => {
-        message.channel.send(pruneD)
+        p = p + "<@&" + pruneD + ">\n";
       })
+      channel.send(p)
     })
   }
 }
