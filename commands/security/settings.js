@@ -24,53 +24,52 @@ run: async (bot, message, args, dev) => {
       let falsee = `<:disabled:837860829155295262>`;
       let truee = `<:enabled:837860829155819530>`;
       let pun = `<:punish:836022893691011092>`;
-      let warn = `<:warn:820593005983301652>`;
 
       if (data.ban.onoff === "on") {
         embed.addField(
           `**AntiBan**`,
-          `${truee} Enabled \n Warn at: **${data.ban.lmite}** ${warn} \n Punish at: **${data.ban.lmite}** ${pun}`
+          `${truee} Enabled \n Punish at: **${data.ban.lmite}** ${pun}`
         );
       } else if (data.ban.onoff === "off") {
         embed.addField(
           `**AntiBan**`,
-          `${falsee} Disabled \n Warn at: **${data.ban.lmite}** ${warn} \n Punish at: **${data.ban.lmite}** ${pun}`
+          `${falsee} Disabled \n Punish at: **${data.ban.lmite}** ${pun}`
         );
       }
 
       if (data.kick.onoff === "on") {
         embed.addField(
           `**AntiKick**`,
-          `${truee} Enabled \n Warn at: **${data.kick.lmite}** ${warn} \n Punish at: **${data.kick.lmite}** ${pun}`
+          `${truee} Enabled \n Punish at: **${data.kick.lmite}** ${pun}`
         );
       } else if (data.kick.onoff === "off") {
         embed.addField(
           `**AntiKick**`,
-          `${falsee} Disabled \n Warn at: **${data.kick.lmite}** ${warn} \n Punish at: **${data.kick.lmite}** ${pun}`
+          `${falsee} Disabled \n Punish at: **${data.kick.lmite}** ${pun}`
         );
       }
 
       if (data.role.onoff === "on") {
         embed.addField(
           `**AntiRole**`,
-          `${truee} Enabled \n Warn at: **${data.role.lmite}** ${warn} \n Punish at: **${data.role.lmite}** ${pun}`
+          `${truee} Enabled \n Punish at: **${data.role.lmite}** ${pun}`
         );
       } else if (data.role.onoff === "off") {
         embed.addField(
           `**AntiRole**`,
-          `${falsee} Disabled \n Warn at: **${data.role.lmite}** ${warn} \n Punish at: **${data.role.lmite}** ${pun}`
+          `${falsee} Disabled \n Punish at: **${data.role.lmite}** ${pun}`
         );
       }
 
       if (data.channel.onoff === "on") {
         embed.addField(
           `**AntiChannel**`,
-          `${truee} Enabled \n Warn at: **${data.channel.lmite}** ${warn} \n Punish at: **${data.channel.lmite}** ${pun}`
+          `${truee} Enabled \n Punish at: **${data.channel.lmite}** ${pun}`
         );
       } else if (data.channel.onoff === "off") {
         embed.addField(
           `**AntiChannel**`,
-          `${falsee} Disabled \n Warn at: **${data.channel.lmite}** ${warn} \n Punish at: **${data.channel.lmite}** ${pun}`
+          `${falsee} Disabled \n Punish at: **${data.channel.lmite}** ${pun}`
         );
       }
     
