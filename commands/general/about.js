@@ -49,8 +49,6 @@ module.exports = {
 
 ▪︎ Bot Prefix: [ s! ]
 
-▪︎ Total Commands: ${bot.commands.size}
-
 ▪︎ Uptime: ${duration(bot.uptime)}
 
 ▪︎ Created At: ${created}
