@@ -14,12 +14,6 @@ module.exports = {
   ownerOnly: false,            
   cooldown: 10000,
   run: async (bot, message, args, dev, data) => {
-        let prefix = new Discord.MessageEmbed()
-            .setColor(Color)
-            .setDescription('editing!')
-
-           return message.channel.send({ embed: prefix })
-            .then(msg => {
         if(!args[1]) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","prefix_type")));
         if(args[1].length > 5) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","prefix_length")));
          
@@ -28,8 +22,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setDescription(bot.reva.get(data.lang, "admin", "prefix_embed") + args[1])
-        message.edit( { embed } );
+        message.channel.send(embed)
         dataa.prefix = args[1];
         dataa.save();
-       })
     }};
