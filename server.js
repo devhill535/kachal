@@ -74,7 +74,7 @@ bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
   if (message.mentions.users.first()) {
-    message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Found!")
+    message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
             .setDescription(`**${message.author}** just pinged **${
          message.mentions.users.first().username
        }** and then someone deleted the message!`)
@@ -88,7 +88,7 @@ bot.on("messageDelete", (message) => {
 bot.on("messageUpdate", (message, newMessage) => {
   if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
-    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping!")
+    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Detected!")
             .setDescription(`Ghost Ping Found!\n${message.author} just pinged ${
          message.mentions.users.first().username
        } and then someone deleted the message!`)
