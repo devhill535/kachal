@@ -23,14 +23,14 @@ module.exports = {
       guild.save();
        const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:836711495478804520> Anti-Kick Is **Enabled**`);
+        .setDescription(`<a:true:836711495478804520> antikick status has been update to **on**`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
          guild.kick.onoff = "off";
          guild.save();
        const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:836711508246659109> Anti-Kick Is **Disabled**`);
+        .setDescription(`<a:false:836711508246659109> antikick status has been update to **off**`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1){
@@ -44,7 +44,7 @@ module.exports = {
     guild.save()
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`Successfully Anti-Kick changed to ${guild.kick.lmite} <:punish:836022893691011092>
+      .setDescription(`Successfully antikick changed to ${guild.kick.lmite} <:punish:836022893691011092>
 `);
     return message.channel.send(embed3);
   }
