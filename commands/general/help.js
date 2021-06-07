@@ -24,7 +24,7 @@ module.exports = {
      .addField("ℹ️ General", "`invite`, `support`, `about`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`")
      .addField("⚙️ Moderation", "`kick`, `ban`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`, `clear`, `unbanall`, `mute`, `lang`")
      .addField("🔨 Security", "`anti`, `settings`, `punishment`, `whitelist`")
-  message.reply(embed)
+  message.channel.send(embed)
        } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
