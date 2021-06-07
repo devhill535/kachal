@@ -29,7 +29,13 @@ module.exports = {
  
     const created = moment(bot.user.createdAt).format("YYYY-MM-DD");
 
-     
+     let about = new Discord.MessageEmbed()
+            .setColor(Color)
+            .setDescription('editing!')
+
+        return message.channel.send({ embed: about })
+            .then(msg => {
+
        let embed = new Discord.MessageEmbed()
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
@@ -44,5 +50,6 @@ module.exports = {
         .addField(`🗃Version`,`2.7.3`)
         .addField(`📂Discord.js`,`${Discord.version}`)
       return msg.edit({ embed })
+    })
     }
 }
