@@ -73,29 +73,37 @@ bot.on("ready", () => {
 bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
+  let about = new Discord.MessageEmbed()
+            .setColor(Color)
+            .setDescription('editing!')
+
   if (message.mentions.users.first()) {
-    message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
+    message.edit(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
             .setDescription(`**${message.author}** just pinged **${
          message.mentions.users.first().username
        }** and then someone deleted the message!`)
             .addField("Deleted message content", `||**${
          message.mentions.users.first().username
        }**||`));
-     
+     })
   }
 });
 
 bot.on("messageUpdate", (message, newMessage) => {
-  if (message.mentions.users.first()) {
+  let about = new Discord.MessageEmbed()
+            .setColor(Color)
+            .setDescription('editing!')
+
+ if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
-    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Detected!")
+    message.edit(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Detected!")
             .setDescription(`Ghost Ping Found!\n${message.author} just pinged ${
          message.mentions.users.first().username
        } and then someone deleted the message!`)
             .addField("Deleted message content", `||${
          message.mentions.users.first().username
        }||`));
-     
+    }) 
   }
 });
 
