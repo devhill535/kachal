@@ -43,6 +43,6 @@ module.exports = {
         .addField(`🏓Ping`,`${Math.round(bot.ws.ping)}ms`)
         .addField(`🗃Version`,`2.7.3`)
         .addField(`📂Discord.js`,`${Discord.version}`)
-      message.channel.send(embed);
+      return msg.edit({ embed })
     }
 }
