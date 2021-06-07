@@ -1,3 +1,17 @@
+const Discord = require('discord.js')
+
+module.exports = {
+  name: "role-mention",
+  aliases: ["antirolemention"],
+  description: "Locks all text channels from your server",
+  usage: ["s!lockall"],
+  category: ["Moderation"],
+  enabled: true,              
+  memberPermissions: [ "MANAGE_CHANNELS" ],            
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],        
+  ownerOnly: false,            
+  cooldown: 6000,
+  run: async (bot, msg, args, dev) => {
 if (msg.member.hasPermission("MANAGE_ROLES") || msg.member.hasPermission("ADMINISTRATOR")|| msg.author.id === bot.config.ownerID) {
         let archoid = msg.guild.me
         let thing;
