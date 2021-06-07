@@ -75,7 +75,7 @@ bot.on("message", (message) => {});
 bot.on("messageDelete", (message) => {
   if (message.mentions.users.first()) {
     message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping!")
-            .setDescription(`Ghost Ping Found!\n<@${messageDelete.author.id}> just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
+            .setDescription(`Ghost Ping Found!\n${message.author} just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
             .addField("Deleted message content", `||${messageDelete.content}||`));
      
   }
@@ -85,7 +85,7 @@ bot.on("messageUpdate", (message, newMessage) => {
   if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
     message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping!")
-            .setDescription(`Ghost Ping Found!\n<@${messageDelete.author.id}> just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
+            .setDescription(`Ghost Ping Found!\n${message.author} just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
             .addField("Deleted message content", `||${messageDelete.content}||`));
      
   }
