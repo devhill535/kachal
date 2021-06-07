@@ -73,16 +73,8 @@ bot.on("ready", () => {
 bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
-
-let about = new Discord.MessageEmbed()
-             .setColor(Color)
-             .setDescription('editing!')
-
- return message.channel.send({ embed: about })
-             .then(msg => {
-
-  if (message.mentions.users.first()) {
-    message.edit(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
+if (message.mentions.users.first()) {
+    message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
             .setDescription(`**${message.author}** just pinged **${
          message.mentions.users.first().username
        }** and then someone deleted the message!`)
@@ -91,18 +83,11 @@ let about = new Discord.MessageEmbed()
        }**||`));
    }
 });
-})
 
 bot.on("messageUpdate", (message, newMessage) => {
- let about = new Discord.MessageEmbed()
-             .setColor(Color)
-             .setDescription('editing!')
-
- return message.channel.send({ embed: about })
-             .then(msg => {
-if (message.mentions.users.first()) {
+ if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
-    message.edit(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Detected!")
+    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Detected!")
             .setDescription(`Ghost Ping Found!\n${message.author} just pinged ${
          message.mentions.users.first().username
        } and then someone deleted the message!`)
@@ -111,7 +96,6 @@ if (message.mentions.users.first()) {
        }||`));
     }
 });
-})
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
