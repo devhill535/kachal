@@ -29,5 +29,4 @@ module.exports = {
         message.edit( { embed } );
         dataa.prefix = args[1];
         dataa.save();
-     })
    }};
