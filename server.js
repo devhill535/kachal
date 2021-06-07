@@ -74,10 +74,9 @@ bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
   if (message.mentions.users.first()) {
-    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
-        message.mentions.users.first().username
-      }`
-    ));
+    message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping!")
+            .setDescription(`Ghost Ping Found!\n<@${messageDelete.author.id}> just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
+            .addField("Deleted message content", `||${messageDelete.content}||`));
      
   }
 });
@@ -85,73 +84,12 @@ bot.on("messageDelete", (message) => {
 bot.on("messageUpdate", (message, newMessage) => {
   if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
-    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping Found!").setDescription(`**User**\n ${message.author} \n**Message** \n ${
-        message.mentions.users.first().username
-      }`
-    ));
+    message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Ghost Ping!")
+            .setDescription(`Ghost Ping Found!\n<@${messageDelete.author.id}> just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
+            .addField("Deleted message content", `||${messageDelete.content}||`));
      
   }
 });
-///////
-
-bot.on('messageDelete', async (messageDelete) => {
-    if (!messageDelete.guild) return;
-    if (messageDelete.mentions.users.first() === undefined && messageDelete.mentions.roles.first() === undefined) return;
-    if (messageDelete.author.bot) return;
-    var delusermentions = messageDelete.mentions.users.array()
-    var delrolementions = messageDelete.mentions.roles.array()
-    var delmentions = [].concat(delusermentions, delrolementions)
-    if (delmentions.length === 0) return;
-    else {
-        await Discord.Util.delayFor(900);
-
-        const fetchedLogs = await messageDelete.guild.fetchAuditLogs({
-            limit: 1,
-            type: 'MESSAGE_DELETE',
-        });
-        const deletionLog = fetchedLogs.entries.first();
-        const {
-            executor,
-            target
-        } = deletionLog
-        if (!deletionLog) {
-            var delperson = '(No correct MESSAGE_DELETE audit logs were found, sorry!)'
-        } else if (deletionLog.extra.channel.id !== messageDelete.channel.id) {
-            var delperson = '(No correct MESSAGE_DELETE audit logs were found, sorry!)'
-        } else if (fetchedLogs.createdTimestamp > (Date.now() - 5000)) {
-            var delperson = '(No correct MESSAGE_DELETE audit logs were found, sorry!)'
-        } else {
-            var delperson = executor
-        }
-        const delembed = new Discord.MessageEmbed()
-            .setTitle('Ghost Ping!')
-            .setColor('RED')
-            .setDescription(`Ghost ping detected!\n<@${messageDelete.author.id}> just pinged ${delmentions.join(', ')} and then someone deleted the message!`)
-            .addField('Deleted message content', `||${messageDelete.content}||`)
-            .addField('Who deleted?', `The audit log shows that ${delperson} probably deleted this message. (Although, my system is not perfect! (tbh, it's almost always wrong, don't blame me, blame discord))`)
-        messageDelete.channel.send(delembed)
-    }
-})
-bot.on('messageUpdate', async (oldMessage, messageDelete) => {
-    if (!messageDelete.guild) return;
-    if (oldMessage.author.bot) return;
-    if (messageDelete.mentions.users.first() === undefined && messageDelete.mentions.roles.first() === undefined) return;
-    if (oldMessage.mentions.users.first() === undefined) return;
-    var delusermentions = messageDelete.mentions.users.array()
-    var delrolementions = messageDelete.mentions.roles.array()
-    var delmentions = [].concat(delusermentions, delrolementions)
-    if (delmentions.length === 0) return;
-    else {
-        const editembed = new Discord.MessageEmbed()
-            .setTitle('Ghost Ping!')
-            .setColor('RED')
-            .setDescription(`Ghost ping detected!\n<@${messageDelete.author.id}> just pinged ${delmentions.join(', ')} and then someone edited the message!`)
-            .addField('Message content', `New Content: ||${messageDelete.content}||, Old Content: ||${oldMessage.content}||`)
-        messageDelete.channel.send(editembed)
-    }
-})
-
-           
 
 //=============================== - [ Info ] - ===================================//
 
