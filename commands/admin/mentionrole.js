@@ -36,3 +36,4 @@ if (msg.member.hasPermission("MANAGE_ROLES") || msg.member.hasPermission("ADMINI
         return msg.channel.send(":warning: You do not have the ``MANAGE_ROLES`` permission!");
     }
 }
+}
