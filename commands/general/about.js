@@ -47,8 +47,8 @@ module.exports = {
         .addField(`Created At`,`${created}`)
         .addField(`Guilds`,`${bot.guilds.cache.size}`)
         .addField(`Ping`,`${Math.round(bot.ws.ping)}ms`)
-
-        .addField(`📂Discord.js`,`${Discord.version}`)
+        .addField(`Version`,`2.7.5`)
+        .addField(`Discord.js`,`${Discord.version}`)
       return msg.edit({ embed })
     })
     }
