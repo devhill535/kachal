@@ -23,14 +23,14 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:836711495478804520> Anti-Spam Is **Enabled**`);
+        .setDescription(`<a:true:836711495478804520> antispam status has been update to **on**`);
      return message.channel.send(embed);
      } else if (args[1] === "off") {
         guild.spam.onoff = "off";
         guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:836711508246659109> Anti-Spam Is **Disabled**`);
+        .setDescription(`<a:false:836711508246659109> antispam status has been update to **off**`);
      return message.channel.send(embed1);
     }
     const embed2 = new Discord.MessageEmbed()
