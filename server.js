@@ -89,6 +89,7 @@ bot.on("messageDelete", (message) => {
      })
    }
 });
+})
 
 bot.on("messageUpdate", (message, newMessage) => {
   let about = new Discord.MessageEmbed()
@@ -111,7 +112,7 @@ return message.channel.send({ embed: about })
     }
 });
 })
-})
+
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
