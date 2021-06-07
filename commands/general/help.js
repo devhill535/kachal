@@ -24,7 +24,8 @@ module.exports = {
      .addField("General Commands [8]", "`invite`, `support`, `about`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`")
      .addField("Moderation Commands [11]", "`kick`, `ban`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`, `clear`, `unbanall`, `mute`, `lang`")
      .addField("Security Commmands [4]", "`anti`, `settings`, `punishment`, `whitelist`")
-  message.channel.send(embed)
+     .setFooter(`by : ${message.author.tag}`)
+   message.channel.send(embed)
        } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
