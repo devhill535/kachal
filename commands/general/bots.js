@@ -29,6 +29,7 @@ module.exports = {
       .setTitle(bot.reva.get(data.lang, "general","botlist"))
       .setDescription(`${botssize.join("\n")}`)
       .setColor(Color)
-    message.channel.send(embed);
+    return msg.edit({ embed })
+    })
       } 
 }
