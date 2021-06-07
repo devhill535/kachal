@@ -16,6 +16,12 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
   
     let i = 1;
+     let about = new Discord.MessageEmbed()
+            .setColor(Color)
+            .setDescription('editing!')
+
+        return message.channel.send({ embed: about })
+            .then(msg => {
    const botssize = message.guild.members.cache
       .filter(m => m.user.bot)
       .map(m => `${i++} - <@${m.id}>`);
