@@ -110,7 +110,8 @@ return message.channel.send({ embed: about })
       })
     }
 });
-
+})
+})
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
@@ -133,7 +134,7 @@ bot.on('message', message=>{
       message.member.roles.add(roled)
     }
     if(message.deletable){
-      message.channel.send('').then(m => m.delete({timeout:5000}))
+      message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("AntiMention").setDescription(`Please Don‘t send \`@here\` & \`@everyone\``)).then(m => m.delete({timeout:5000}))
       message.delete()
     }
   }
