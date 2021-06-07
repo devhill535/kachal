@@ -49,6 +49,8 @@ module.exports = {
 
 ▪︎ Bot Prefix: [ s! ]
 
+▪︎ Total Commands: 23
+
 ▪︎ Uptime: ${duration(bot.uptime)}
 
 ▪︎ Created At: ${created}
@@ -61,6 +63,9 @@ module.exports = {
 
 ▪︎ Discord.js: ${Discord.version}
 `)
+
+.setFooter(`by : ${message.author.tag}`)
+
       return msg.edit({ embed })
     })
     }
