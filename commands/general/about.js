@@ -61,7 +61,7 @@ module.exports = {
 
 ▪︎ Version: 2.7.5
 
-▪︎ Discord.js`,`${Discord.version}
+▪︎ Discord.js: ${Discord.version}
 
 ▪︎ Ram: ${ramUsage}mb`)
       return msg.edit({ embed })
