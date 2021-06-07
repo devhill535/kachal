@@ -76,7 +76,8 @@ bot.on("messageDelete", (message) => {
   let about = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('editing!')
-
+      return message.channel.send({ embed: about })
+            .then(msg => {
   if (message.mentions.users.first()) {
     message.edit(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
             .setDescription(`**${message.author}** just pinged **${
@@ -85,13 +86,17 @@ bot.on("messageDelete", (message) => {
             .addField("Deleted message content", `||**${
          message.mentions.users.first().username
        }**||`));
-  }
+     })
+   }
 });
 
 bot.on("messageUpdate", (message, newMessage) => {
   let about = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('editing!')
+
+return message.channel.send({ embed: about })
+            .then(msg => {
 
  if (message.mentions.users.first()) {
     if (newMessage.mentions.users.first()) return;
@@ -102,7 +107,8 @@ bot.on("messageUpdate", (message, newMessage) => {
             .addField("Deleted message content", `||${
          message.mentions.users.first().username
        }||`));
-  }
+      })
+    }
 });
 
 //=============================== - [ Info ] - ===================================//
