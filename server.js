@@ -81,9 +81,9 @@ bot.on("messageDelete", (message) => {
             .addField("Deleted message content", `||**${
          message.mentions.users.first().username
        }**||`));
-     })
    }
 });
+})
 
 bot.on("messageUpdate", (message, newMessage) => {
  if (message.mentions.users.first()) {
@@ -95,10 +95,9 @@ bot.on("messageUpdate", (message, newMessage) => {
             .addField("Deleted message content", `||${
          message.mentions.users.first().username
        }||`));
-      })
     }
 });
-
+})
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
