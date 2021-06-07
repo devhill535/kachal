@@ -18,6 +18,8 @@ module.exports = {
             .setColor(Color)
             .setDescription('editing!')
 
+           return message.channel.send({ embed: about })
+            .then(msg => {
         if(!args[1]) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","prefix_type")));
         if(args[1].length > 5) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","prefix_length")));
          
@@ -29,4 +31,5 @@ module.exports = {
         message.edit( { embed } );
         dataa.prefix = args[1];
         dataa.save();
-   }};
+       })
+    }};
