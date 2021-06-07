@@ -39,16 +39,31 @@ module.exports = {
        let embed = new Discord.MessageEmbed()
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
-       .setThumbnail(bot.user.displayAvatarURL())
-        .addField(`Bot Tag`,`${bot.user.tag}`)
-        .addField(`Bot ID`,`${bot.user.id}`)
-        .addField(`Bot Prefix`,`[ s! ]`)
-        .addField(`Uptime`,`${duration(bot.uptime)}`)
-        .addField(`Created At`,`${created}`)
-        .addField(`Guilds`,`${bot.guilds.cache.size}`)
-        .addField(`Ping`,`${Math.round(bot.ws.ping)}ms`)
-        .addField(`Version`,`2.7.5`)
-        .addField(`Discord.js`,`${Discord.version}`)
+        .setThumbnail(bot.user.displayAvatarURL())
+        .setDescription(`
+▪︎ Bot Tag: ${bot.user.tag}
+
+▪︎ Bot ID: ${bot.user.id}
+
+▪︎ Bot Owner: Robot.Ｓａｋｒａｎᵇʰ#3799
+
+▪︎ Bot Prefix: [ s! ]
+
+▪︎ Total Commands: ${bot.commands.size}
+
+▪︎ Uptime: ${duration(bot.uptime)}
+
+▪︎ Created At: ${created}
+
+▪︎ Guilds: ${bot.guilds.cache.size}
+
+▪︎ Ping: ${Math.round(bot.ws.ping)}ms
+
+▪︎ Version: 2.7.5
+
+▪︎ Discord.js`,`${Discord.version}
+
+▪︎ Ram: ${ramUsage}mb`)
       return msg.edit({ embed })
     })
     }
