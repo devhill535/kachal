@@ -22,9 +22,8 @@ module.exports = {
     if (!message.channel.guild) return;
     message.channel
     message.guild.fetchBans()
-      .then(bans => message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","bans") + bans.size)))
+      .then(bans => msg.edit(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","bans") + bans.size)))
       .catch(console.error)
-   return msg.edit({ embed })
     })
    } 
 }
