@@ -125,16 +125,16 @@ bot.on("message", async message => {
 //=============================== - [ antimention ] - ===================================//
 
 
-bot.on('message', message=>{
+bot.on('message', message => {
   let non = ['@here','@everyone']
-  if(non.some(w => message.content.includes(w))){
+  if(non.some(w => message.content.includes(w))) {
     if(message.member.hasPermission("MENTION_EVERYONE")) return;
         var roled = message.guild.roles.cache.filter(r => r.name.toLowerCase() === 'muted').first();
         if(roled){
       message.member.roles.add(roled)
     }
     if(message.deletable){
-      message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("AntiMention").setDescription(`Please Don‘t send \`@here\` & \`@everyone\``)).then(m => m.delete({timeout:5000}))
+      message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Anti Mention").setDescription(`<a:false:836711508246659109> Please Don‘t send \`@here\` & \`@everyone\``)).then(m => m.delete({timeout:5000}))
       message.delete()
     }
   }
