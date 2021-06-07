@@ -85,7 +85,6 @@ bot.on("messageDelete", (message) => {
             .addField("Deleted message content", `||**${
          message.mentions.users.first().username
        }**||`));
-     })
   }
 });
 
@@ -103,7 +102,6 @@ bot.on("messageUpdate", (message, newMessage) => {
             .addField("Deleted message content", `||${
          message.mentions.users.first().username
        }||`));
-    }) 
   }
 });
 
