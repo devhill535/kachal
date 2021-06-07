@@ -61,7 +61,7 @@ bot.on("ready", () => {
 
 bot.on("ready", () => {
     function randomStatus() {
-        let status = [`s!help on ${bot.guilds.cache.size} Servers | v2.7.3`, `s!help | v2.7.3`]
+        let status = [`s!help on ${bot.guilds.cache.size} Servers | v2.7.5`, `s!help | v2.7.5`]
         let rstatus = Math.floor(Math.random() * status.length);
         bot.user.setActivity(status[rstatus], {type: "PLAYING"});    
     }; setInterval(randomStatus, 3000)
