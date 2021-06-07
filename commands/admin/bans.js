@@ -13,7 +13,12 @@ module.exports = {
   ownerOnly: false,            
   cooldown: 6000,
   run: async (bot, message, args, dev, data) => {
+     let about = new Discord.MessageEmbed()
+            .setColor(Color)
+            .setDescription('editing!')
 
+        return message.channel.send({ embed: about })
+            .then(msg => {
     if (!message.channel.guild) return;
     message.channel
     message.guild.fetchBans()
