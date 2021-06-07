@@ -34,7 +34,7 @@ module.exports = {
     }
     const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antibot [\`on\`,\`off\`]`
+        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antibot [on,off]`
         );
       return message.channel.send(embed2);
   }
