@@ -69,7 +69,7 @@ bot.on("ready", () => {
 
 //=============================== - [ ghostping ] - ===================================//
 
-
+/*
 bot.on("message", (message) => {});
 
 bot.on("messageDelete", (message) => {
@@ -95,7 +95,7 @@ bot.on("messageUpdate", (message, newMessage) => {
          message.mentions.users.first().username
        }||`));
     }
-});
+});*/
 //=============================== - [ Info ] - ===================================//
 
 bot.on("message", async message => {
