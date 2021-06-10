@@ -109,7 +109,7 @@ bot.on("message", async message => {
 //=============================== - [ antimention ] - ===================================//
 
 
-bot.on('message', message => {
+/*bot.on('message', message => {
   let non = ['@here','@everyone']
   if(non.some(w => message.content.includes(w))) {
     if(message.member.hasPermission("MENTION_EVERYONE")) return;
@@ -122,7 +122,7 @@ bot.on('message', message => {
       message.delete()
     }
   }
-})
+})*/
 //=============================== - [ antispam ] - ===================================//
 
 const usersMap = new Map();
