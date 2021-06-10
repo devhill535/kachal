@@ -28,7 +28,7 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
  
     const created = moment(bot.user.createdAt).format("YYYY-MM-DD");
-
+     let ramUsage = (process.memoryUsage().rss / 1048576).toFixed();
      let about = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('editing!')
@@ -40,30 +40,8 @@ module.exports = {
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .setDescription(`
-▪︎ Bot Tag: ${bot.user.tag}
-
-▪︎ Bot ID: ${bot.user.id}
-
-▪︎ Bot Developer:\nRobot.𝖲 𝖺 𝗄 𝗋 𝖺 𝗇#3799\nRobot.ProBot#1641
-
-▪︎ Bot Prefix: [ s! ]
-
-▪︎ Total Commands: 23
-
-▪︎ Uptime: ${duration(bot.uptime)}
-
-▪︎ Created At: ${created}
-
-▪︎ Guilds: ${bot.guilds.cache.size}
-
-▪︎ Ping: ${Math.round(bot.ws.ping)}ms
-
-▪︎ Version: 2.7.5
-
-▪︎ Discord.js: ${Discord.version}
+        .setDescription(`▪︎ Bot Tag: ${bot.user.tag}\n▪︎ Bot ID: ${bot.user.id}\n▪︎ Bot Developer:\nRobot.𝖲 𝖺 𝗄 𝗋 𝖺 𝗇#3799\nRobot.ProBot#1641\n▪︎ Bot Prefix: [ s! ]\n▪︎ Total Commands: 23\n▪︎ Uptime: ${duration(bot.uptime)}\n▪︎ Created At: ${created}\n▪︎ Guilds: ${bot.guilds.cache.size}\n▪︎ Ping: ${Math.round(bot.ws.ping)}ms\n▪︎ Version: 2.7.5\n▪︎ Discord.Js: ${Discord.version}\n▪︎ Arch: ${process.arch}\n▪︎ Platform: ${process.platform}\n▪︎ UseHeap: ${Math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100} MB\n▪︎ Heap: ${Math.round((process.memoryUsage().heapTotal / 1024 / 1024) * 100) / 100} MB\n▪︎ Ram: ${ramUsage} MB\n▪︎ Rss: ${Math.round((process.memoryUsage().rss / 1024 / 1024) * 100) / 100} MB
 `)
-
 .setFooter(`by : ${message.author.tag}`)
 
       return msg.edit({ embed })
