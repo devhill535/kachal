@@ -7,7 +7,7 @@ const request = require("request");
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
 const { inspect } = require("util");
-let dev = ["738478465870987425","768944616724103170"];
+let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
@@ -100,15 +100,6 @@ bot.on("message", async message => {
     message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
   }
 });
-////////////
-
-bot.on("guildCreate", guild => {
-const thanksEmbed = new Discord.MessageEmbed()			
-                        .setAuthor("Thank you for adding me to your guild !")
-			.setDescription("To configure me,\n type **s!help** and look at the **Security** commands!.")
-			.setColor(Color)
-                        .setTimestamp();
-		guild.owner.send(thanksEmbed);
 
 //=============================== - [ antimention ] - ===================================//
 
