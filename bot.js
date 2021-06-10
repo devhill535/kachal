@@ -1,13 +1,11 @@
 //=============================== - [ Consts ] - ===================================//
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-
 const { Color } = require("./config.js");
 const fs = require("fs");
 const request = require("request");
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
- 
 const { inspect } = require("util");
 let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
