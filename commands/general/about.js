@@ -47,6 +47,8 @@ module.exports = {
 
 ▪︎ Bot Owner: Robot.Ｓａｋｒａｎᵇʰ#3799
 
+▪ Bᴏᴛ Cᴏ-ᴏᴡɴᴇʀ: @Robot.ProBot#1641 
+
 ▪︎ Bot Prefix: [ s! ]
 
 ▪︎ Total Commands: 23
