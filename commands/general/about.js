@@ -45,9 +45,7 @@ module.exports = {
 
 ▪︎ Bot ID: ${bot.user.id}
 
-▪︎ Bot Owner: Robot.Ｓａｋｒａｎᵇʰ#3799
-
-▪ Bᴏᴛ Cᴏ-ᴏᴡɴᴇʀ: @Robot.ProBot#1641 
+▪︎ Bot Developer:\nRobot.𝖲 𝖺 𝗄 𝗋 𝖺 𝗇#3799\nRobot.ProBot#1641
 
 ▪︎ Bot Prefix: [ s! ]
 
