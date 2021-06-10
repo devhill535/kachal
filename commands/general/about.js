@@ -15,10 +15,10 @@ const moment = require("moment-timezone");
   }
 
 module.exports = {
-  name: "about",
+  name: "stats",
   aliases: ["botinfo"],
   description: "Get more information about the bot",
-  usage: ["s!bout"],
+  usage: ["s!stats"],
   category: ["General"],
   enabled: true,            
   memberPermissions: [ "SEND_MESSAGES" ],            
