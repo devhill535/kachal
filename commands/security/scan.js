@@ -1,4 +1,4 @@
-const fs = require("fs");
+/*const fs = require("fs");
 const Discord = require("discord.js");
 module.exports = {
   name: "scan",
@@ -32,4 +32,4 @@ module.exports = {
       await channel.send(x)
     })
   }
-}
+}*/
