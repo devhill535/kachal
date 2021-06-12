@@ -25,11 +25,11 @@ module.exports = {
       } else {
         safeData.push(role.id);
       }
-      const p = "";
+      const x = "";
       pruneData.forEach(pruneD => {
-        p += p + "<@&" + pruneD + ">\n";
+        x += x + "<@&" + pruneD + ">\n";
       })
-      channel.send(p)
+      channel.send(x)
     })
   }
 }
