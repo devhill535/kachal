@@ -16,11 +16,11 @@ module.exports = {
       pruneData = [],
       safeData = [];
     guild.roles.cache.forEach(role => {
-      if (role.hasPermission("KICK_MEMBERS") && role.hasPermission("BAN_MEMBERS")) {
+      if (role.permissions.has("KICK_MEMBERS") && role.permissions.has("BAN_MEMBERS")) {
         pruneData.push(role.id);
-      } else if (role.hasPermission("KICK_MEMBERS")) {
+      } else if (role.permissions.has("KICK_MEMBERS")) {
         kickData.push(role.id);
-      } else if (role.hasPermission()) {
+      } else if (role.permissions.has()) {
         pruneData.push(role.id);
       } else {
         safeData.push(role.id);
