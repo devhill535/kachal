@@ -16,18 +16,18 @@ module.exports = {
       pruneData = [],
       safeData = [];
     guild.roles.cache.forEach(role => {
-      if (channel.permissionsFor(role).has("KICK_MEMBERS") && channel.permissionsFor(role).has("BAN_MEMBERS")) {
+      if (role.hasPermission("KICK_MEMBERS") && role.hasPermission("BAN_MEMBERS")) {
         pruneData.push(role.id);
-      } else if (channel.permissionsFor(role).has("KICK_MEMBERS")) {
+      } else if (role.hasPermission("KICK_MEMBERS")) {
         kickData.push(role.id);
-      } else if (channel.permissionsFor(role).has()) {
+      } else if (role.hasPermission()) {
         pruneData.push(role.id);
       } else {
         safeData.push(role.id);
       }
       const p = "";
       pruneData.forEach(pruneD => {
-        p = p + "<@&" + pruneD + ">\n";
+        p += p + "<@&" + pruneD + ">\n";
       })
       channel.send(p)
     })
