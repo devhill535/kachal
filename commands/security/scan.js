@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "scan",
   aliases: [],
-  enabled: false,
+  enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
