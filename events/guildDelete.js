@@ -13,5 +13,5 @@ const Discord = require("discord.js")
  		const logsEmbed = new Discord.MessageEmbed()
  			.setColor("BLACK")
  			.setDescription(text);
- 		bot.channels.cache.get("835968578699264011").send(logsEmbed);     
+ 		bot.channels.cache.get("853773470102061087").send(logsEmbed);     
  }};
