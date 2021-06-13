@@ -13,5 +13,5 @@ module.exports = class {
  		const logsEmbed = new Discord.MessageEmbed()
  			.setColor("BLACK")
  			.setDescription(text);
- 		bot.channels.cache.get("835968578699264011").send(logsEmbed);     
+ 		bot.channels.cache.get("850465538306998272").send(logsEmbed);     
  }};
