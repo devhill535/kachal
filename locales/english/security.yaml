@@ -1,6 +1,4 @@
-test: "You have **enabled**"
-disable: "You have **disable** "
-change: ":lock: | changed to ⇏ %{num}"
+
 whitelist-remove: " Removed in whitelist"
 whitelist-add: " Added to whitelist"
 whitelist-zero: " No one whitelisted!"
