@@ -1,4 +1,4 @@
-/*const fs = require("fs");
+const fs = require("fs");
 const Discord = require("discord.js");
 module.exports = {
   name: "scan",
@@ -29,7 +29,7 @@ module.exports = {
       pruneData.forEach(pruneD => {
         x += x + "<@&" + pruneD + ">\n";
       })
-      await channel.send(x)
+      await message.channel.send(x)
     })
   }
-}*/
+}
