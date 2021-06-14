@@ -23,7 +23,7 @@ module.exports = {
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`"I need **BAN_MEMBERS** permission!`));
 
     if (!user)
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!ban [@User]`)).catch(console.error);
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Based on the role hierarchy, you cannot ban this user`)).catch(console.error);
 
     if (user.id === client.user.id) {
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You can't kick yourself`));
@@ -32,7 +32,7 @@ module.exports = {
     if (user.id === client.user.id) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I can't ban myself`));
 
     if (message.guild.ownerID !== message.author.id && user.roles.highest.comparePositionTo(message.member.roles.highest) >= 0)
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Based on the role hierarchy, you cannot ban this user`));
+      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!ban [@User]`));
 
     if (!message.guild.member(user).bannable) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I cannot ban the mentioned user`));
 
