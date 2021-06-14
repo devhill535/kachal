@@ -11,7 +11,7 @@ let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
-
+bot.login(Token)
 global.logChannel = bot.channels.cache.get("835968578699264011")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
@@ -201,5 +201,4 @@ bot.on("message", async message => {
   }
 });
 
-//=============================== - [ token ] - ===================================//
-bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.xSGyRpsuS3lH1sd4PCobud6pYdI");
+//==================================================================//
