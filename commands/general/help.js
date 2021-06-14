@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const { Color } = require("../../config.js");
+const { Color, Image, Footer, Author } = require("../../config.js");
 module.exports = {
   name: "help",
   aliases: ["commands"],
@@ -17,6 +17,8 @@ module.exports = {
     if (!args[1]) {
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
+     .setAuthor(Author)
+     .setImage(Image)
      .setTitle(bot.reva.get(data.lang, "general","help_embed"))
      .setDescription(`
 [ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/QaqmPG2WZX) - [ Website ](https://zalmanti25.wixsite.com/my-site)
@@ -24,7 +26,7 @@ module.exports = {
      .addField("General - (8)", "`invite`, `support`, `stats`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`")
      .addField("Moderation - (11)", "`kick`, `ban`, `lock`, `unlock`, `lockall`, `unlockall`, `setprefix`, `clear`, `unbanall`, `mute`, `setlang`")
      .addField("Security - (4)", "`anti`, `settings`, `punishment`, `whitelist`")
-     .setFooter(`by : ${message.author.tag}`)
+     .setFooter(Footer)
    message.channel.send(embed)
        } else {
       let  command = args[1]
