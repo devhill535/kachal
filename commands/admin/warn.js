@@ -1,3 +1,19 @@
+const Discord = require('discord.js')
+const { Color } = require("../../config.js");
+
+module.exports = {
+    name: "warn",
+    aliases: ["warning"],
+    description: "To warn a user",
+    usage: ["s!warn [@User]"],
+    category: ["Moderation"],
+    enabled: true,
+    memberPermissions: ["ADMINISTRATOR"],
+    botPermissions: ["SEND_MESSAGES", "EMBED_LINKS", "ADMINISTRATOR"],
+    ownerOnly: false,
+    cooldown: 6000,
+    run: async (client, message, args, dev) => {
+
 if (!message.member.hasPermission("MANAGE_MESSAGES")) {
             return message.reply('Hey you cannot use this command.')
         }
