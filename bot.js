@@ -1,7 +1,7 @@
 //=============================== - [ Consts ] - ===================================//
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const { Color } = require("./config.js");
+const { Color, Image, Footer, Author } = require("./config.js");
 const fs = require("fs");
 const request = require("request");
 const prefix = "s!";
