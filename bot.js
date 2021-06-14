@@ -202,4 +202,4 @@ bot.on("message", async message => {
 });
 
 //=============================== - [ token ] - ===================================//
-bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.ZdwgDe-Czh9FpHvdbLVOf5XjOe0");
+bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.xSGyRpsuS3lH1sd4PCobud6pYdI");
