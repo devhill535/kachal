@@ -23,7 +23,7 @@ module.exports = {
 `)
      .addField("General - (8)", "`invite`, `support`, `stats`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`")
      .addField("Moderation - (11)", "`kick`, `ban`, `lock`, `unlock`, `lockall`, `unlockall`, `setprefix`, `clear`, `unbanall`, `mute`, `setlang`")
-     .addField("Security -(4)", "`anti`, `settings`, `punishment`, `whitelist`")
+     .addField("Security - (4)", "`anti`, `settings`, `punishment`, `whitelist`")
      .setFooter(`by : ${message.author.tag}`)
    message.channel.send(embed)
        } else {
