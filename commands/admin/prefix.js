@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "prefix",
-  aliases: ["setprefix"],
+  name: "setprefix",
+  aliases: ["prefix"],
   description: "Change the prefix of the bot",
   usage: ["s!prefix [Prefix]"],
   category: ["Moderation"],
