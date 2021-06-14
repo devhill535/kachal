@@ -1,4 +1,4 @@
-help_embed: "Yazarak daha fazla yardım alabilirsiniz:\n **s!help <command>**"
+help_embed: "● Belirli bir komut türü hakkında yardım almak için **s!help <command>**!"
 anti_embed: "tüm komutların listesi güvenliği"
 invite: "Sunucunuzu korumak istiyorsanız beni davet edin"
 guild_info: "Lonca bilgileri"
