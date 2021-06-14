@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "lang",
-  aliases: ["language"], 
+  name: "setlang",
+  aliases: ["lang"], 
   description: "To change language", 
   usage: ["s!lang <language>"],
   category: ["Moderation"],
@@ -27,7 +27,7 @@ module.exports = {
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Language list is :\n **english** ,**kurdish** ,**arabic** ,**turkish** ,**persian**`));
       } else {
         message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`
-          Please Type\n \`s!lang english\` \n \`s!lang kurdish\` \n \`s!lang arabic\` \n \`s!lang turkish\` \n \`s!lang persian\``
+          Please Type\n \`s!setlang english\` \n \`s!setlang kurdish\` \n \`s!setlang arabic\` \n \`s!setlang turkish\` \n \`s!setlang persian\``
         ));
      }
   }
