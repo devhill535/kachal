@@ -18,7 +18,13 @@ module.exports = {
 let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 
    
-  
+  let badges = await user.user.flags
+    badges = await badges ? badges.toArray() : ["None"]
+
+    let newbadges = [];
+    badges.forEach(m => {
+      newbadges.push(m.replace("_", " "))
+    })
    
     let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 
@@ -29,6 +35,7 @@ let member = await message.mentions.members.first() || message.guild.members.cac
       .addField("Username", member.user.tag, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
+      .addField("Badges", newbadges.join(", ").toLowerCase() || "None")
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('> <@&')}>`)
