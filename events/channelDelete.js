@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 module.exports = class {
-  async run(channel) {
-    const { guild } = channel
+  async run(channelDelete) {
+    const { guild } = channelDelete
     try {
       const entry1 = await guild.fetchAuditLogs({ type: "CHANNEL_DELETE" })
         .then(audit => audit.entries.first());
