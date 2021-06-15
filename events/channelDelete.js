@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 module.exports = class {
-  async run(channelDelete) {
-    const { guild } = channelDelete
+  async run(channel) {
+    const { guild } = channel
     try {
       const entry1 = await guild.fetchAuditLogs({ type: "CHANNEL_DELETE" })
         .then(audit => audit.entries.first());
@@ -10,12 +10,12 @@ module.exports = class {
       if (!guildData) { Guild.create({ guildID: guild.id }); }
       const memberData = await User.findOne({ guildID: guild.id, userID: user2.id });
       if (!memberData) { User.create({ guildID: guild.id, userID: user2.id }); }
-      if (guildData.channelDelete.onoff === "off") return;
+      if (guildData.channel.onoff === "off") return;
       if (user2.id === guild.ownerID) return;
       if (guildData.whitelist.find((c) => c.type === user2.id)) return;
       let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
       if (Ww.worldWhitelist.find((c) => c.type === user2.id)) return;
-      if (guildData.channelDelete.lmite === 1) {
+      if (guildData.channel.lmite === 1) {
         let member = await guild.members.fetch(user2.id)
         const embed = new Discord.MessageEmbed()
           .setColor("#fc0303")
