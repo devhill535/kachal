@@ -9,7 +9,11 @@ schema = mongoose.Schema({
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
-    channel: {
+    channelCreate: {
+        onoff: { type: String, default: "on"},
+        lmite: { type: Number, default: "3"}
+    },
+    channelDelete: {
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
