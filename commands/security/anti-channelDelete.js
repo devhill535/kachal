@@ -4,7 +4,7 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "antichannelDelete",
-  aliases: ["anti-channel"],
+  aliases: ["anti-channelD"],
   description: "Prevent others from crating or deleting channels",
   usage: ["s!antichannel [number/on/off]"],
   category: ["Security"],
