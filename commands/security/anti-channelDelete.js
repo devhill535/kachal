@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "antichannelDelete",
-  aliases: ["anti-channelD"],
+  name: "antichannel",
+  aliases: ["anti-channel"],
   description: "Prevent others from crating or deleting channels",
   usage: ["s!antichannel [number/on/off]"],
   category: ["Security"],
