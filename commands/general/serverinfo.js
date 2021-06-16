@@ -88,21 +88,21 @@ module.exports = {
 
 			.addField('**General**', [
 
-				`▪︎ Name\n${message.guild.name}`,
+				`Name\n${message.guild.name}`,
 
-				`▪︎ ID\n${message.guild.id}`,
+				`ID\n${message.guild.id}`,
 
-				`▪︎ Owner\n${message.guild.owner.user.tag} (${message.guild.ownerID})`,
+				`Owner\n${message.guild.owner.user.tag} (${message.guild.ownerID})`,
 
-				`▪︎ Region\n${regions[message.guild.region]}`,
+				`Region\n${regions[message.guild.region]}`,
 
-				`▪︎ Boost Tier\n${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
+				`Boost Tier\n${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
 
-				`▪︎ Explicit Filter\n${filterLevels[message.guild.explicitContentFilter]}`,
+				`Explicit Filter\n${filterLevels[message.guild.explicitContentFilter]}`,
 
-				`▪︎ Verification Level\n${verificationLevels[message.guild.verificationLevel]}`,
+				`Verification Level\n${verificationLevels[message.guild.verificationLevel]}`,
 
-				`▪︎ Time Created\n${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
+				`Time Created\n${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
 
 				'\u200b'
 
@@ -110,25 +110,25 @@ module.exports = {
 
 			.addField('**Statistics**', [
 
-				`▪︎ Role Count\n${roles.length}`,
+				`Role Count\n${roles.length}`,
 
-				`▪︎ Emoji Count\n${emojis.size}`,
+				`Emoji Count\n${emojis.size}`,
 
-				`▪︎ Regular Emoji Count\n${emojis.filter(emoji => !emoji.animated).size}`,
+				`Regular Emoji Count\n${emojis.filter(emoji => !emoji.animated).size}`,
 
-				`▪︎ Animated Emoji Count\n${emojis.filter(emoji => emoji.animated).size}`,
+				`Animated Emoji Count\n${emojis.filter(emoji => emoji.animated).size}`,
 
-				`▪︎ Member Count\n${message.guild.memberCount}`,
+				`Member Count\n${message.guild.memberCount}`,
 
-				`▪︎ Humans\n${members.filter(member => !member.user.bot).size}`,
+				`Humans\n${members.filter(member => !member.user.bot).size}`,
 
-				`▪︎ Bots\n${members.filter(member => member.user.bot).size}`,
+				`Bots\n${members.filter(member => member.user.bot).size}`,
 
-				`▪︎ Text Channels\n${channels.filter(channel => channel.type === 'text').size}`,
+				`Text Channels\n${channels.filter(channel => channel.type === 'text').size}`,
 
-				`▪︎ Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
+				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
 
-				`▪︎ Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
+				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
                              ''
 			])
 
