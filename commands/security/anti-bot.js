@@ -22,19 +22,19 @@ module.exports = {
       guild.save();
         const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:836711495478804520> antibot status has been update to **on**`);
+        .setDescription(`<a:true:854842599444709386> You have **Enable** antibot`);
      return message.channel.send(embed);
      } else if (args[1] === "off") {
          guild.bot.onoff = "off";
          guild.save();
         const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:836711508246659109> antibotstatus has been update to **off**`);
+        .setDescription(`<a:false:854842600351334440> You have **Disable** antibot`);
      return message.channel.send(embed1);
     }
     const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antibot [on,off]`
+        .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}antibot [on,off]`
         );
       return message.channel.send(embed2);
   }
