@@ -23,7 +23,7 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:836711495478804520> antirole status has been update to **on**`);
+        .setDescription(`<a:true:854842599444709386> You have **Enable** antirole`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
          guild.role.onoff = "off";
