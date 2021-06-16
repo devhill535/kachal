@@ -22,14 +22,14 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<:succes:849374511233368106> | You have **Enable** antiban`);
+        .setDescription(`-:<a:true:854842599444709386> You have **Enable** antiban`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
        guild.ban.onoff = "off";
        guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`-:<:error:849374468118806540> | You have **Disable** antiban`);
+        .setDescription(`<a:false:854842600351334440> You have **Disable** antiban`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
