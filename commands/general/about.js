@@ -57,8 +57,6 @@ module.exports = {
         .addField("**__Owner__**", `Sakran{}#6064`)
         .addField("**__Admin__**", `Lord#1641`)
 
-    .setFooter(`by : ${message.author.tag}`)
-
       return msg.edit({ embed })
     })
     }
