@@ -32,7 +32,7 @@ module.exports = {
       } else {
         const embed2 = new Discord.MessageEmbed()
           .setColor(Color)
-          .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}punishment [\`kick\`,\`ban\`]`
+          .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}punishment [\`kick\`,\`ban\`]`
         );
       return message.channel.send(embed2);
        }
