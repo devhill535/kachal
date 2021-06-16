@@ -30,12 +30,12 @@ module.exports = {
         guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:836711508246659109> antispam status has been update to **off**`);
+        .setDescription(`<a:false:854842600351334440> You have **Disable** antispam`);
      return message.channel.send(embed1);
     }
     const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antispam [on,off] `
+        .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}antispam [on,off] `
         );
       return message.channel.send(embed2);
   }
