@@ -54,8 +54,8 @@ module.exports = {
         .addField("__Heap__", `${Math.round((process.memoryUsage().heapTotal / 1024 / 1024) * 100) / 100} MB`)
         .addField("__Ram__", `${ramUsage}MB`)
         .addField("__Rss__", `${Math.round((process.memoryUsage().rss / 1024 / 1024) * 100) / 100} MB`)
-        .addField("__Owner__", `Sakran{}#6064`)
-        .addField("__Admin__", `Lord#1641`)
+        .addField("**__Owner__**", `Sakran{}#6064`)
+        .addField("**__Admin__**", `Lord#1641`)
 
     .setFooter(`by : ${message.author.tag}`)
 
