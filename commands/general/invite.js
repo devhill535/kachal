@@ -19,7 +19,7 @@ const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setTitle(bot.reva.get(data.lang, "general","invite"))
  .setDescription(`[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
- .setFooter(`by : ${message.author.tag}`)
+
 message.channel.send(embed);
     }
 }
