@@ -47,7 +47,7 @@ module.exports = {
         .addField("__Uptime__", `${duration(bot.uptime)}`)
         .addField("__Created At__",  `${created}`)
         .addField("__Guilds__", `${bot.guilds.cache.size}`)
-        .addField("__Ping__", `${Math.round(bot.ws.ping)}ms
+        .addField("__Ping__", `${Math.round(bot.ws.ping)}ms`)
         .addField("__Version__", `2.7.5`)
         .addField("__Discord.Js__", `${Discord.version}`)
         .addField("__UseHeap__", `${Math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100} MB`)
