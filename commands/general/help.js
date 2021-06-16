@@ -25,7 +25,7 @@ module.exports = {
 `)
      .addField("General - (8)", "`invite`, `support`, `stats`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`")
      .addField("Moderation - (11)", "`kick`, `ban`, `clear`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`, `setlang`, `setprefix`")
-     .addField("Security - (4)", "`anti`, `settings`, `punishment`, `whitelist`")
+     .addField("Security - (4)", "`settings`, `punishment`, `whitelist`, `anti`")
      .setFooter(Footer)
    message.channel.send(embed)
        } else {
