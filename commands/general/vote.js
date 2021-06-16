@@ -16,7 +16,7 @@ module.exports = {
  .setThumbnail(`https://cdn.discordapp.com/attachments/818177981884923964/843887454348247100/image0.png`)
  .setTitle(bot.reva.get(data.lang, "general","vote"))
  .setDescription("[ Top.gg ](https://top.gg/bot/711328570374619207) \n - \n [ Discord.ly ](https://discord.ly/anti-vandalism)")
- .setFooter(`by : ${message.author.tag}`)
+ 
 message.channel.send(embed);
   }
 }
