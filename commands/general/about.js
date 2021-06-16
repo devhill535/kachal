@@ -40,9 +40,24 @@ module.exports = {
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .setDescription(`▪︎ Bot Tag: ${bot.user.tag}\n▪︎ Bot ID: ${bot.user.id}\n▪︎ Bot Developer:\nRobot.𝖲 𝖺 𝗄 𝗋 𝖺 𝗇#3799\nRobot.ProBot#1641\n▪︎ Bot Prefix: [ s! ]\n▪︎ Total Commands: 23\n▪︎ Uptime: ${duration(bot.uptime)}\n▪︎ Created At: ${created}\n▪︎ Guilds: ${bot.guilds.cache.size}\n▪︎ Ping: ${Math.round(bot.ws.ping)}ms\n▪︎ Version: 2.7.5\n▪︎ Discord.Js: ${Discord.version}\n▪︎ Arch: ${process.arch}\n▪︎ Platform: ${process.platform}\n▪︎ UseHeap: ${Math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100} MB\n▪︎ Heap: ${Math.round((process.memoryUsage().heapTotal / 1024 / 1024) * 100) / 100} MB\n▪︎ Ram: ${ramUsage} MB\n▪︎ Rss: ${Math.round((process.memoryUsage().rss / 1024 / 1024) * 100) / 100} MB
-`)
-.setFooter(`by : ${message.author.tag}`)
+        .addField("__Bot Tag__", `${bot.user.tag}`)
+        .addField("__Bot ID__", `${bot.user.id}`)
+        .addField("__Bot Prefix__", `[ s! ]`)
+        .addField("__Total Commands__", `23`)
+        .addField("__Uptime__", `${duration(bot.uptime)}`)
+        .addField("__Created At__",  `${created}`)
+        .addField("__Guilds__", `${bot.guilds.cache.size}`)
+        .addField("__Ping__", `${Math.round(bot.ws.ping)}ms
+        .addField("__Version__", `2.7.5`)
+        .addField("__Discord.Js__", `${Discord.version}`)
+        .addField("__UseHeap__", `${Math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100} MB`)
+        .addField("__Heap__", `${Math.round((process.memoryUsage().heapTotal / 1024 / 1024) * 100) / 100} MB`)
+        .addField("__Ram__", `${ramUsage}MB`)
+        .addField("__Rss__", `${Math.round((process.memoryUsage().rss / 1024 / 1024) * 100) / 100} MB`)
+        .addField("__Owner__", `Sakran{}#6064`)
+        .addField("__Admin__", `Lord#1641`)
+
+    .setFooter(`by : ${message.author.tag}`)
 
       return msg.edit({ embed })
     })
