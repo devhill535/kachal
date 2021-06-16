@@ -22,20 +22,20 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:836711495478804520> antiban status has been update to **on**`);
+        .setDescription(`<a:true:854842599444709386> | You have **Enable** antiban`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
        guild.ban.onoff = "off";
        guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:836711508246659109> antiban status has been update to **off**`);
+        .setDescription(`<a:false:854842600351334440> | You have **Disable** antiban`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
       const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`error syntax <a:false:836711508246659109>\n ${guild.prefix}antiban [on,off,<number>]`
+        .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}antiban [on,off,<number>]`
         );
       return message.channel.send(embed2);
     }
