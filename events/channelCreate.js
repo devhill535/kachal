@@ -94,6 +94,12 @@ module.exports = class {
             }
          }
         }
+        } else if (guildData.punishment === "removerole") {
+        role.guild.members.cache.get(user.id).roles.cache.forEach(r => {
+          if (r.name !== "@everyone") {
+            role.guild.members.cache.get(user.id).roles.remove(r.id)
+          }
+        });
      }
         memberData.save();
       }
