@@ -44,7 +44,7 @@ module.exports = {
     guild.save();
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`Successfully antirole changed to  ${guild.role.lmite} <:punish:836022893691011092>
+      .setDescription(`Successfully antirole changed to **${guild.role.lmite}** <:punish:836022893691011092>
 `);
     return message.channel.send(embed3);
   }
