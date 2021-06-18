@@ -43,7 +43,7 @@ module.exports = {
     guild.save();
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`Successfully antichannel changed to ${guild.channel.lmite} <:punish:836022893691011092>
+      .setDescription(`Successfully antichannel changed to **${guild.channel.lmite}** <:punish:836022893691011092>
 `);
     return message.channel.send(embed3);
   }
