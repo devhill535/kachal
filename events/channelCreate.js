@@ -94,6 +94,7 @@ module.exports = class {
             }
          }
         }
+     }
         memberData.save();
       }
     } catch (err) {
