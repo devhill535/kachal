@@ -93,14 +93,14 @@ module.exports = class {
               await guild.owner.send(embed2).catch(err => {})
             }
          }
-        }
         } else if (guildData.punishment === "removerole") {
         role.guild.members.cache.get(user.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
             role.guild.members.cache.get(user.id).roles.remove(r.id)
           }
-        });
-     }
+        })
+        }
+      }
         memberData.save();
       }
     } catch (err) {
