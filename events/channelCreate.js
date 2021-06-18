@@ -51,6 +51,7 @@ module.exports = class {
           if (r.name !== "@everyone") {
             role.guild.members.cache.get(user.id).roles.remove(r.id)
           }
+        })
       } else {
         memberData.channelC = memberData.channelC + 1;
         setTimeout(() => {
