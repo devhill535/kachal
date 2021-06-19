@@ -22,7 +22,7 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`-:<a:true:854842599444709386> You have **Enable** antiban`);
+        .setDescription(`<a:true:854842599444709386> You have **Enable** antiban`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
        guild.ban.onoff = "off";
