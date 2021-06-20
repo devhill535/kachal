@@ -15,7 +15,7 @@ module.exports = {
   cooldown: 6000,
   run: async (client, message, dev) => {
    message.delete();
-   let about = new Discord.MessageEmbed()
+   let clear = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('Deleting Messages…')
 
