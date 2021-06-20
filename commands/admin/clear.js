@@ -30,6 +30,6 @@ let args = message.content.split(" ").slice(1);
     message.channel.bulkDelete(messagecount)
     msg.edit(new Discord.MessageEmbed().setColor(Color).setDescription(`I have cleared **${args}** messages.`))
       .then(messages => messages.delete({timeout : 500}));
-     } 
+     })
 }
 }
