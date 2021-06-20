@@ -18,7 +18,7 @@ module.exports = {
    let clear = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('Deleting Messages…')
-
+             .then(messages => messages.delete({timeout : 1000}));
         return message.channel.send({ embed: clear })
             .then(msg => {
 let args = message.content.split(" ").slice(1);
@@ -29,7 +29,7 @@ let args = message.content.split(" ").slice(1);
     if (!messagecount) args = "100";
     message.channel.bulkDelete(messagecount)
     msg.edit(new Discord.MessageEmbed().setColor(Color).setDescription(`I have cleared **${args}** messages.`))
-      .then(messages => messages.delete({timeout : 500}));
+      .then(messages => messages.delete({timeout : 1000}));
      })
 }
 }
