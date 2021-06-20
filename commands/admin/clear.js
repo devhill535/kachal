@@ -15,7 +15,13 @@ module.exports = {
   cooldown: 6000,
   run: async (client, message, dev) => {
    message.delete();
-   let args = message.content.split(" ").slice(1);
+   let about = new Discord.MessageEmbed()
+            .setColor(Color)
+            .setDescription('Deleting Messages…')
+
+        return message.channel.send({ embed: clear })
+            .then(msg => {
+let args = message.content.split(" ").slice(1);
     let messagecount = parseInt(args);
     if (args > 100) {
       args=100
