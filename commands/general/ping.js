@@ -6,7 +6,7 @@ module.exports = {
   name: "ping",
   aliases: ['pong'],
   description: "To show MS",
-  usage: ["s!pong"],
+  usage: ["s!ping"],
   category: ["General"],
   enabled: true,			
   memberPermissions: [ "SEND_MESSAGES" ],			
