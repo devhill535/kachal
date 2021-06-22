@@ -4,8 +4,8 @@ const { Color } = require("../../config.js");
 module.exports = {
   name: "whitelist",
   aliases: ["wl"],
-  description: "Security will ignore trusted users",
-  usage: ["s!whitelist [add/remove] [@User]"],
+  description: "Security will ignore whitelist users",
+  usage: ["s!whitelist","s!whitelist [add/remove] [@User]"],
   category: ["Security"],
   enabled: true,
   memberPermissions: [ "SEND_MESSAGES" ],			
