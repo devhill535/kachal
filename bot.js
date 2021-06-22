@@ -31,10 +31,6 @@ bot.catagories = fs.readdirSync("./commands/");
   require(`./handler/${handler}`)(bot);
 });
 /**/
-
-let guild = await Guild.findOne({ guildID: message.guild.id });
-
-/**/
 let util = require("util"),
   readdir = util.promisify(fs.readdir);
 
@@ -100,7 +96,7 @@ bot.on("messageUpdate", (message, newMessage) => {
 bot.on("message", async message => {
   if (message.content.startsWith(`<@${bot.user.id}>`)) {
      
-    message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${guild.prefix}\` Use \`${guild.prefix}help\` to get the list of the commands!`);
+    message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
   }
 });
 
