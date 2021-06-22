@@ -25,10 +25,7 @@ async run(message,bot) {
   if (cmd.length === 0) return;
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
-   if (message.content.startsWith(`<@${bot.user.id}>`)) {
-     
-    message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${guild.prefix}\` Use \`${guild.prefix}help\` to get the list of the commands!`);
-  }
+  
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
   if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`This command is **Disable** for now`));
   let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
