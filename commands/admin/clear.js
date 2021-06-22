@@ -18,7 +18,6 @@ module.exports = {
    let clear = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('Deleting Messages…')
-             .then(messages => messages.delete({timeout : 1000}));
         return message.channel.send({ embed: clear })
             .then(msg => {
 let args = message.content.split(" ").slice(1);
