@@ -11,6 +11,21 @@ let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
+/////
+
+const DBL = require('dblapi.js');
+const dbl = new DBL("IEsQhQF4NRiT31viCXrLEVCs5dBHTATbhOTMhtk86RMpUS", { webhookPort: 5000, webhookAuth: 'Ajeu2hdudh3h1184hs71h' });
+dbl.webhook.on('ready', hook => {
+  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
+});
+dbl.webhook.on('vote', vote => {
+  let channel = client.channels.cache.get("815188607114412052");
+  channel.send(`<@${vote.user}> thank you for voite ${bot.user.username}`)
+  console.log(`User with ID ${vote.user} just voted!`);
+});
+
+
+////
 bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.xSGyRpsuS3lH1sd4PCobud6pYdI")
 global.logChannel = bot.channels.cache.get("835968578699264011")
 global.mongoose = require('mongoose')
