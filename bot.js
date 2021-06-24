@@ -116,7 +116,7 @@ bot.on("message", async message => {
     message.member = await message.guild.fetchMember(message);
 
   if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
-    return message.channel.send(`Bot Prefix \`${prefix}\``);
+    return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
   }
 });
 
