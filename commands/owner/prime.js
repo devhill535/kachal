@@ -11,6 +11,13 @@ module.exports = {
   cooldown: 1000,
   prime: false,
   run: async (bot, message, args, dev) => {
+  if(command.prime) {
+let data = await Prime.findOne({Guild: message.guild.id})
+if(!data) return message.channel.send(`This server don't have prime bot`)
+if(!data.Permanent && Date.now > data.time){ 
+data.delete
+return message.channel.send(` prime bot on This server ended`)
+}}
     ///if (!args[1]) return message.reply(`Please specify a guild id`);
     ////if(!bot.guilds.cache.has(args[1]))
      // return message.reply(`Its an invalid guild's id`)
