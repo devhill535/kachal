@@ -6,7 +6,6 @@ async run(message,bot) {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
   let guild = await Guild.findOne({ guildID: message.guild.id });
-  if(message.guild.members.cache.has("711328570374619207")) return
   if(!guild) { Guild.create({ guildID: message.guild.id }); }
   data.guild = guild;
   let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
