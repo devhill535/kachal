@@ -12,7 +12,6 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS", "BAN_MEMBERS" ],        
   ownerOnly: false,            
   cooldown: 6000,
-  prime: true,
   run: async (bot, message, args, dev) => {
 
  if (!message.member.hasPermission("BAN_MEMBERS"))
