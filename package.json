@@ -25,13 +25,11 @@
     "great": "^0.0.4",
     "snekfetch": "^4.0.4",
     "node-cmd": "^4.0.0",
-    "dblapi.js": "^2.3.0",
     "util": "^0.12.4",
     "common-tags": "^1.8.0",
     "locale-parser": "^1.1.1",
     "mongoose": "^5.12.14",
-    "node-fetch": "^2.6.1",
-    "dayjs": "^1.10.5"
+    "node-fetch": "^2.6.1"
   },
   "engines": {
     "node": "14.x"
