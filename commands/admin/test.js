@@ -17,7 +17,7 @@ module.exports = {
    
       const embed = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`${message.channels.cache.filter(r => r.id !== message.guild.id).map(channels => `\`${channels.name}\``).length}`);
+      .addField("unlockall", `${message.channels.cache.filter(r => r.id !== message.guild.id).map(channels => `\`${channels.name}\``).length}`);
       message.channel.send(embed);
 
     message.guild.channels.cache.filter(c => c.name).forEach(async channel => {
