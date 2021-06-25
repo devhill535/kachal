@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "scan",
   aliases: [],
-  enabled: false,
+  enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
@@ -31,7 +31,7 @@ module.exports = {
       })
       channel.send(x).then(message => {
       let k = "Kick",
-      kickData..forEach(kickD => {
+      kickData.forEach(kickD => {
         k += k + "<@" + kickD + ">\n";
        })
     })
