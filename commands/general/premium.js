@@ -4,9 +4,6 @@ const { Color } = require("../../config.js");
 module.exports = {
   name: "premium",
   aliases: [""],
-  description: "",
-  usage: ["s!premium"],
-  category: ["General"],
   enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
