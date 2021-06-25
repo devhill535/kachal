@@ -25,12 +25,12 @@ module.exports = {
       } else {
         safeData.push(role.id);
       }
-      let x = "";
+      let x = "Prune ";
       pruneData.forEach(pruneD => {
         x += x + "<@&" + pruneD + ">\n";
       })
       channel.send(x).then(message => {
-      let k = "",
+      let k = "Kick",
       kickData..forEach(kickD => {
         k += k + "<@" + kickD + ">\n";
        })
