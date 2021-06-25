@@ -125,7 +125,7 @@ bot.on("message", async message => {
       message.member.roles.add(roled)
     }
     if(message.deletable){
-      message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("Anti Mention").setDescription(`<a:false:836711508246659109> Please Don‘t send \`@here\` & \`@everyone\``)).then(m => m.delete({timeout:5000}))
+      message.channel.send('').then(m => m.delete({timeout:5000}))
       message.delete()
     }
   }
