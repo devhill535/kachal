@@ -29,7 +29,12 @@ module.exports = {
       pruneData.forEach(pruneD => {
         x += x + "<@&" + pruneD + ">\n";
       })
-      channel.send(x)
+      channel.send(x).then(message => {
+      let k = "",
+      kickData..forEach(kickD => {
+        k += k + "<@" + kickD + ">\n";
+       })
     })
   }
+}
 }
