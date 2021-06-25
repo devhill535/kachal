@@ -13,7 +13,6 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
   ownerOnly: false,
   cooldown: 15000,
-  prime: true,
   run: async (client, message, args, dev) => {
       if (!args[1])
         return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage : s!language [english,kurdish,arabic,turkish,persian]`));
