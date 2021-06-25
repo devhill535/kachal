@@ -18,7 +18,7 @@ module.exports = {
 const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setTitle(bot.reva.get(data.lang, "general","invite"))
- .setDescription(`[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
+ .setDescription(`[Anti Vandalism Premium](https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot)`)
 
 message.channel.send(embed);
     }
