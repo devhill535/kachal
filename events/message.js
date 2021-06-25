@@ -8,6 +8,7 @@ async run(message,bot) {
   let guild = await Guild.findOne({ guildID: message.guild.id });
   if(!guild) { Guild.create({ guildID: message.guild.id }); }
   data.guild = guild;
+  if(message.guild.members.cache.has("711328570374619207")) return;
   let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
   if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id });} 
   data.user = user;
