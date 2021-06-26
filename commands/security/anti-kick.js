@@ -4,7 +4,7 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "anti",
-  aliases: ["anti-kick"],
+  aliases: ["antikick"],
   description: "Prevent others from mass kicking your members",
   usage: ["s!anti kick [number/on/off]"],
   category: ["Security"],
