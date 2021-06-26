@@ -12,7 +12,7 @@ const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
 
-bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.MH2r-Dma8ozLRV53P-GPgdpLZjk")
+bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.Rw_sk6VHFrSLHUxC51qZa3sHLoo")
 global.logChannel = bot.channels.cache.get("835968578699264011")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
