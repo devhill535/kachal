@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "antispam",
+  name: "anti",
   aliases: ["antispam"],
   description: "With our new spam detect system, prevent anyone from trying to raid your server",
   usage: ["s!anti spam [on/off]"],
