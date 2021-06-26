@@ -3,10 +3,10 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "anti",
-  aliases: ["antispam"],
+  name: "antispam",
+  aliases: ["anti-spam"],
   description: "With our new spam detect system, prevent anyone from trying to raid your server",
-  usage: ["s!anti spam [on/off]"],
+  usage: ["s!antispam [on/off]"],
   category: ["Security"],
   enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
@@ -16,7 +16,7 @@ module.exports = {
   cooldown: 3000,
   prime: true,
   run: async (bot, message, args) => {
-   if (args[1] === "spam") {
+  
    let guild = await Guild.findOne({ guildID: message.guild.id });
      let num = args[2];
     if (args[2] === "on") {
@@ -40,5 +40,4 @@ module.exports = {
         );
       return message.channel.send(embed2);
   }
-}
-}
+};
