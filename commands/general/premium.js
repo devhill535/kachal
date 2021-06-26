@@ -15,7 +15,8 @@ module.exports = {
 const embed = new Discord.MessageEmbed()
  .setColor(Color)
  .setTitle("Premium Info")
- .setDescription(`[Anti Vandalism Premium](https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot)`)
+ .setDescription(`
+security has a premium version which gives you more powerful features, you can get premium for only **$2.00**, click here: [Server](https://discord.gg/UUbBQubh7V) , here is what you get from premium`)
 
 message.channel.send(embed);
     }
