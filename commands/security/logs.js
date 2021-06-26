@@ -5,10 +5,11 @@ module.exports = {
   name: "show",
   aliases: [""],
   enabled: true,			  
-  memberPermissions: [ "MANAGE_CHANNELS" ],			
-  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],		
+  memberPermissions: [ "SEND_MESSAGES" ],			
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","ADMINISTRATOR" ],		
   ownerOnly: false,			
   cooldown: 6000,
+  guilOwneronly: true,
   prime: false,
   run: async (bot, message, args, dev, data) => {
   
