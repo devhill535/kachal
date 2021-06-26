@@ -15,17 +15,17 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
- 
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
      .setImage(Image)
      .setTitle(bot.reva.get(data.lang, "general","help_embed"))
      .setDescription(`
-[ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/QaqmPG2WZX) - [ Website ](https://zalmanti25.wixsite.com/my-site)\n
-**${bot.reva.get(data.lang, "general","generalcmd")}**\n\`invite\`, \`support\`, \`stats\`, \`userinfo\`, \`ping\`, \`serverinfo\`, \`bots\`, \`vote\`, \`premium\`\n**${bot.reva.get(data.lang, "general","moderationcmd")}**\n\`kick\`, \`ban\`, \`clear\`, \`unbanall\`, \`mute\`, \`lock\`, \`unlock\`, \`lockall\`, \`unlockall\`, \`setlang\`, \`setprefix\`\n**${bot.reva.get(data.lang, "general","securitycmd")}**\n\`anti\`, \`settings\`, \`punishment\`, \`whitelist\`, \`show logs\`\n\n**Security is too slow?**\nGet real time protection for only **$2.00/month**, use **s!premium** to get more info.
+[ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/QaqmPG2WZX) - [ Website ](https://zalmanti25.wixsite.com/my-site)
 `)
-    
+     .addField("General - (9)", "`invite`, `support`, `stats`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`, `premium`")
+     .addField("Moderation - (11)", "`kick`, `ban`, `clear`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`, `setlang`, `setprefix`")
+     .addField("Security - (5)", "`settings`, `punishment`, `whitelist`, `anti`, `show logs`")
      .setFooter(Footer)
    message.channel.send(embed)
        } else {
