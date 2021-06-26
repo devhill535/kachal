@@ -27,7 +27,7 @@ module.exports = {
      .addField("Moderation - (11)", "`kick`, `ban`, `clear`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`, `setlang`, `setprefix`")
      .addField("Security - (4)", "`settings`, `punishment`, `whitelist`, `anti`")
      .setFooter(Footer)
-   message.reply(embed)
+   message.channel.send(embed)
        } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
