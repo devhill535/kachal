@@ -43,7 +43,7 @@ module.exports = {
     guild.save();
     const embed3 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(bot.reva.get(data.lang, "security","antiban", {num : guild.ban.lmite}));
+      .setDescription(`Successfully antiban changed to **${data.ban.limite}** <:punish:836022893691011092>`);
     return message.channel.send(embed3);
  } 
 };
