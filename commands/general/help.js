@@ -23,7 +23,7 @@ module.exports = {
   .setURL('https://example.com')
   
 
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
+message.channel.send(button);
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
