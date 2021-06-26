@@ -49,4 +49,5 @@ module.exports = {
       .setDescription(`Successfully antiban changed to **${guild.ban.lmite}** <:punish:836022893691011092>`);
     return message.channel.send(embed3);
  } 
+}
 };
