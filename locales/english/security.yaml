@@ -1,3 +1,4 @@
+antiban: "Successfully antiban changed to **%{num}** <:punish:836022893691011092>"
 user_undefined: " Please mention someone to add in whitelist"
 whitelist-remove: " Removed in whitelist"
 whitelist-add: " Added to whitelist"
