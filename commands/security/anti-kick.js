@@ -17,7 +17,7 @@ module.exports = {
   run: async (bot, message, args) => {
      if (args[1]  === "kick") {
     let guild = await Guild.findOne({ guildID: message.guild.id });
-     let num = args[1];
+     let num = args[2];
     if (args[2] === "on") {
       guild.kick.onoff = "on";
       guild.kick.user = message.author.id
