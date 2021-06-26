@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "antikick",
+  name: "anti",
   aliases: ["anti-kick"],
   description: "Prevent others from mass kicking your members",
   usage: ["s!antikick [number/on/off]"],
@@ -15,10 +15,10 @@ module.exports = {
   guilOwnerOnly: true,
   cooldown: 3000,
   run: async (bot, message, args) => {
-  
+     if (args[1]  === "kick") {
     let guild = await Guild.findOne({ guildID: message.guild.id });
      let num = args[1];
-    if (args[1] === "on") {
+    if (args[2] === "on") {
       guild.kick.onoff = "on";
       guild.kick.user = message.author.id
       guild.save();
@@ -26,7 +26,7 @@ module.exports = {
         .setColor(Color)
         .setDescription(`<a:true:854842599444709386> You have **Enable** antikick`);
       return message.channel.send(embed);
-     } else if (args[1] === "off") {
+     } else if (args[2] === "off") {
          guild.kick.onoff = "off";
          guild.save();
        const embed1 = new Discord.MessageEmbed()
@@ -50,4 +50,5 @@ module.exports = {
 `);
     return message.channel.send(embed3);
   }
+}
 };
