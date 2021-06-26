@@ -12,30 +12,26 @@ module.exports = {
   prime: false,
   run: async (bot, message, args, dev, data) => {
   
-    if (args[1]  === "logs"){
+   
    let data = await Guild.findOne({guildID: message.guild.id})
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
-      if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`
-      + ${data.ban.user} UserID
-      - AntiBan 
-      - Punish: **${data.ban.lmite}**\n\n
+      if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("**Logs**").setDescription(`
++ \`${data.ban.user} UserID\`
+- \`AntiBan\`
+- \`Punish\`: **${data.ban.lmite}**\n
       
-      
-      + ${data.kick.user} UserID
-      - Antikick
-      - Punish: **${data.kick.lmite}**\n\n
++ \`${data.kick.user} UserID\`
+- \`Antikick\`
+- \`Punish\`: **${data.kick.lmite}**\n
 
-
-      + ${data.channel.user} UserID
-      - AntiChannel
-      - Punish: **${data.channel.lmite}**\n\n
++ \`${data.channel.user} UserID\`
+- \`AntiChannel\`
+- \`Punish\`: **${data.channel.lmite}**\n
  
-
-      + ${data.role.user} UserID
-      - AntiChannel
-      - Punish: **${data.role.lmite}**\n\n
++ \`${data.role.user} UserID\`
+- \`AntiChannel\`
+- \`Punish\`: **${data.role.lmite}**
 `))
       
       }
    }
-}
