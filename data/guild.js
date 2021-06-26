@@ -2,10 +2,12 @@ schema = mongoose.Schema({
     guildID: String,
     prefix: { type: String, default: "s!"},
     ban: {
+        user: { type: String, default: ""},
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
    },
     kick: {
+        user: { type: String, default: ""}, 
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
