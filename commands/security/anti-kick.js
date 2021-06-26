@@ -6,7 +6,7 @@ module.exports = {
   name: "anti",
   aliases: ["anti-kick"],
   description: "Prevent others from mass kicking your members",
-  usage: ["s!antikick [number/on/off]"],
+  usage: ["s!anti kick [number/on/off]"],
   category: ["Security"],
   enabled: true,			
   memberPermissions: [ "SEND_MESSAGES" ],			
