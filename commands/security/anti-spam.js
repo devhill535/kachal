@@ -4,9 +4,9 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "antispam",
-  aliases: ["anti-spam"],
+  aliases: ["antispam"],
   description: "With our new spam detect system, prevent anyone from trying to raid your server",
-  usage: ["s!antispam [on/off]"],
+  usage: ["s!anti spam [on/off]"],
   category: ["Security"],
   enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
@@ -16,17 +16,17 @@ module.exports = {
   cooldown: 3000,
   prime: true,
   run: async (bot, message, args) => {
-
+   if (args[1] === "spam") {
    let guild = await Guild.findOne({ guildID: message.guild.id });
-     let num = args[1];
-    if (args[1] === "on") {
+     let num = args[2];
+    if (args[2] === "on") {
       guild.spam.onoff = "on";
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setDescription(`<a:true:854842599444709386> You have **Enable** antispam`);
      return message.channel.send(embed);
-     } else if (args[1] === "off") {
+     } else if (args[2] === "off") {
         guild.spam.onoff = "off";
         guild.save();
       const embed1 = new Discord.MessageEmbed()
@@ -40,4 +40,5 @@ module.exports = {
         );
       return message.channel.send(embed2);
   }
-};
+}
+}
