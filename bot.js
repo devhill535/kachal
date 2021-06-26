@@ -4,6 +4,7 @@ const bot = new Discord.Client();
 const { Color, Image, Footer, Author } = require("./config.js");
 const fs = require("fs");
 const request = require("request");
+const { MessageButton } = require("discord-buttons):
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
 const { inspect } = require("util");
