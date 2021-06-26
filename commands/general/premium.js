@@ -20,6 +20,3 @@ Security has a premium version which gives you more powerful features, you can g
 message.channel.send(embed);
     }
 }
-              
-		
-		
