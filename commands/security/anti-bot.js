@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "antibot",
+  name: "anti",
   aliases: ["antibot"],
   description: "Prevent others from adding bots to your server",
   usage: ["s!anti bot [on/off]"],
