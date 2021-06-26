@@ -13,7 +13,7 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
   
    
-   let data = await Guild.findOne({guildID: message.guild.id})
+   let data = await Guild.findOne({ guildID: message.guild.id });
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
       if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle("**Logs**").setDescription(`
 + \`${data.ban.user} UserID\`
