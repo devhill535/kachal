@@ -24,7 +24,7 @@ module.exports = {
 **\`- AntiBan\`**
 **\`- Punish\`**: **${data.ban.lmite}**\n
 
-2.      
+2.
 **\`+ ${data.kick.user} UserID\`**
 **\`- Antikick\`**
 **\`- Punish\`**: **${data.kick.lmite}**\n
