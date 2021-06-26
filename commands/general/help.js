@@ -27,6 +27,7 @@ module.exports = {
      .addField("General - (9)", "`invite`, `support`, `stats`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`, `premium`")
      .addField("Moderation - (11)", "`kick`, `ban`, `clear`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`, `setlang`, `setprefix`")
      .addField("Security - (5)", "`settings`, `punishment`, `whitelist`, `anti`, `show logs`")
+     .addField("Security is too slow?", "Get real time protection for only **$3.49**/month, use **s!premium** to get more info.")
      .setFooter(Footer)
    message.channel.send(embed)
        } else {
