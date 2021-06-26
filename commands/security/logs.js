@@ -15,8 +15,12 @@ module.exports = {
        if (args[1]  === "logs"){
    let data = await Guild.findOne({ guildID: message.guild.id })
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
-      if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setTitle(`**Logs in server ${message.guild.name}**`).setDescription(`
-\n+ \`${data.ban.user} UserID\`
+      if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`
+
+**Logs in server:** (${message.guild.name})\n\n
+
+
+**\`+ ${data.ban.user} UserID\`**
 - \`AntiBan\`
 - \`Punish\`: **${data.ban.lmite}**\n
       
