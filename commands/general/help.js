@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
+const { MessageButton } = require("discord-buttons):
 const { Color, Image, Footer, Author } = require("../../config.js");
 module.exports = {
   name: "help",
@@ -15,6 +16,14 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
+   let button = new MessageButton()
+  .setURL('https://npmjs.com/discord-buttons')
+  .setLabel('My First Button!') 
+  .setID('click_to_function') 
+  .setURL('https://example.com')
+  
+
+message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
