@@ -3,10 +3,10 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "anti",
-  aliases: ["antibot"],
+  name: "antibot",
+  aliases: ["anti-bot"],
   description: "Prevent others from adding bots to your server",
-  usage: ["s!anti bot [on/off]"],
+  usage: ["s!antibot [on/off]"],
   category: ["Security"],
   enabled: true,			
   memberPermissions: [ "SEND_MESSAGES" ],			
@@ -15,17 +15,17 @@ module.exports = {
   guilOwnerOnly: true,
   cooldown: 3000,
   run: async (bot, message, args) => {
-   if (args[1] === "bot") {
+  
    let guild = await Guild.findOne({ guildID: message.guild.id });
-     let num = args[2];
-    if (args[2] === "on") {
+     let num = args[1];
+    if (args[1] === "on") {
       guild.bot.onoff = "on";
       guild.save();
         const embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setDescription(`<a:true:854842599444709386> You have **Enable** antibot`);
      return message.channel.send(embed);
-     } else if (args[2] === "off") {
+     } else if (args[1] === "off") {
          guild.bot.onoff = "off";
          guild.save();
         const embed1 = new Discord.MessageEmbed()
@@ -39,5 +39,4 @@ module.exports = {
         );
       return message.channel.send(embed2);
   }
-}
-}
+};
