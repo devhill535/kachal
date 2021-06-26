@@ -17,24 +17,27 @@ module.exports = {
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
       if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`
 
-**Logs in server:** (${message.guild.name})\n\n
+**Logs**\n\n
 
-
+1.
 **\`+ ${data.ban.user} UserID\`**
-- \`AntiBan\`
-- \`Punish\`: **${data.ban.lmite}**\n
-      
-+ \`${data.kick.user} UserID\`
-- \`Antikick\`
-- \`Punish\`: **${data.kick.lmite}**\n
+**\`- AntiBan\`**
+**\`- Punish\`**: **${data.ban.lmite}**\n
 
-+ \`${data.channel.user} UserID\`
-- \`AntiChannel\`
-- \`Punish\`: **${data.channel.lmite}**\n
- 
-+ \`${data.role.user} UserID\`
-- \`AntiChannel\`
-- \`Punish\`: **${data.role.lmite}**
+2.      
+**\`+ ${data.kick.user} UserID\`**
+**\`- Antikick\`**
+**\`- Punish\`**: **${data.kick.lmite}**\n
+
+3.
+**\`+ ${data.channel.user} UserID\`**
+**\`- AntiChannel\`**
+**\`- Punish\`**: **${data.channel.lmite}**\n
+
+4.
+**\`+ ${data.role.user} UserID\`**
+**\`- AntiChannel\`**
+**\`- Punish\`**: **${data.role.lmite}**
 `))
       
       }
