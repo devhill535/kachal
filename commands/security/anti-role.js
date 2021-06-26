@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "antirole",
+  name: "anti",
   aliases: ["antirole"],
   description: "Prevent others from crating or deleting roles",
   usage: ["s!anti role [number/on/off]"],
