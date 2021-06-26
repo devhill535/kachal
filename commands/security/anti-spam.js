@@ -18,15 +18,15 @@ module.exports = {
   run: async (bot, message, args) => {
   
    let guild = await Guild.findOne({ guildID: message.guild.id });
-     let num = args[2];
-    if (args[2] === "on") {
+     let num = args[1];
+    if (args[1] === "on") {
       guild.spam.onoff = "on";
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setDescription(`<a:true:854842599444709386> You have **Enable** antispam`);
      return message.channel.send(embed);
-     } else if (args[2] === "off") {
+     } else if (args[1] === "off") {
         guild.spam.onoff = "off";
         guild.save();
       const embed1 = new Discord.MessageEmbed()
