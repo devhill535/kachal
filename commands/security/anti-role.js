@@ -20,6 +20,7 @@ module.exports = {
      let num = args[1];
     if (args[1] === "on") {
       guild.role.onoff = "on";
+      guild.role.user = message.author.id
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
@@ -40,6 +41,7 @@ module.exports = {
         );
       return message.channel.send(embed2);
     }
+    guild.role.user = message.author.id
     guild.role.lmite = num;
     guild.save();
     const embed3 = new Discord.MessageEmbed()
