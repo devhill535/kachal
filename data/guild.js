@@ -12,10 +12,12 @@ schema = mongoose.Schema({
         lmite: { type: Number, default: "3"}
     },
     channel: {
+        user: { type: String, default: ""}, 
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
     role: {
+        user: { type: String, default: ""}, 
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
