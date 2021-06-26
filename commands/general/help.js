@@ -16,14 +16,7 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
-   let button = new MessageButton()
-  .setURL('https://npmjs.com/discord-buttons')
-  .setLabel('My First Button!') 
-  .setID('click_to_function') 
-  .setURL('https://example.com')
-  
-
-message.channel.send(button);
+ 
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
