@@ -4,9 +4,9 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "anti",
-  aliases: ["anti-ban"],
+  aliases: ["antiban"],
   description: "Prevent others from mass banning your members",
-  usage: ["s!antiban [number/on/off]"],
+  usage: ["s!anti ban [number/on/off]"],
   category: ["Security"],
   enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
