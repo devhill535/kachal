@@ -1,6 +1,5 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const { MessageButton } = require("discord-buttons")
 const { Color, Image, Footer, Author } = require("../../config.js");
 module.exports = {
   name: "help",
