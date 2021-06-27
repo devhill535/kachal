@@ -22,7 +22,7 @@ module.exports = {
       if (!args[1])
         return message.channel.send(embed1);
       let data = await Guild.findOne({ guildID: message.guild.id })
-      if (args[1] === "kick" || args[1] === "ban" || args[1] === "removerole") {
+      if (args[1] === "kick" || args[1] === "ban" || args[1] == "removerole") {
         data.punishment = args[1];
         const embed = new Discord.MessageEmbed()
         .setColor(Color)
