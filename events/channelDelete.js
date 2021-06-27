@@ -73,8 +73,7 @@ module.exports = class {
           .addField("User", user2.tag)
         guild.owner.send(embed3)
 } else
-
-        } else if (guildData.punishment === "kick") {
+  if (guildData.punishment === "kick") {
           if (member.kickable) {
             await member.kick({ reason: `Create or Delete 1 channel` })
             embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\ID: ${user2.id}`)
