@@ -1,6 +1,17 @@
-const owner = "839133910079635489";
+const fs = require("fs");
+const { Color } = require("../../config.js");
+const Discord = require("discord.js");
+const ownerid = "738478465870987425";
 
-if (!owner.includes(message.author.id)) return;
+module.exports = {
+  name: "left",
+  enabled: true,
+  memberPermissions: [ "SEND_MESSAGES" ],
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
+  ownerOnly: true,
+  cooldown: 6000,
+  run: async (bot, message, args) => {
+    if (message.author.id == ownerid) {
 let args = message.content.split(" ")[1];
 if (!args) message.channel.send(new Discord.MessageEmbed()
 .setColor(Color)
