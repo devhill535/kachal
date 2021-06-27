@@ -23,6 +23,7 @@ mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.n
 global.Guild = require("./data/guild.js");
 global.User = require("./data/user.js");
 global.Lang = require("./data/lang.js");
+global.Prime = require("./data/prime.js")
 global.Owner = require("./data/owner.js");
 bot.commands = new Collection();
 bot.aliases = new Collection();
