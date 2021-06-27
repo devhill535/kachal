@@ -23,8 +23,7 @@ if (!Guild) return message.channel.send(new Discord.MessageEmbed()
 Guild.leave();
 message.channel.send(new Discord.MessageEmbed()
 .setColor(Color)
-.setDescription(`Done Leave **${Guild.name}**`)
-.setFooter(bot.user.username)
+.setDescription(`Done Leave **${Guild.name}**`))
 
   }
 };
