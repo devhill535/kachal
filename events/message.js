@@ -16,6 +16,9 @@ async run(message,bot) {
   let lang = await Lang.findOne({ guildID: message.guild.id });
   if(!lang) { Lang.create({ guildID: message.guild.id });} 
   data.lang = lang.language
+	let prime = await Prime.findOne({ guildID: message.guild.id });
+ if (prime && prime.log === "enable") return message.channel.send(`you don't have Premium version`);
+
   if (guild) {
   if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) return;
   let args = message.content.split(" ");
@@ -27,7 +30,16 @@ async run(message,bot) {
   if (cmd.length === 0) return;
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
+  if(command.prime){
+      let data = await Prime.findOne({Guild: message.guild.id})
+     
+      if(!data) return message.channel.send(`this server not haven't on data base`)
+    
+      if(!data.Permanent && Date.now() > data.time){
+        data.delete();
   
+        return message.channel.send(`prime bot on your server ended for buy mor join support server `) 
+      } }
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
   if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`This command is **Disable** for now`));
   let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
