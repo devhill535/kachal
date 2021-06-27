@@ -27,3 +27,4 @@ message.channel.send(new Discord.MessageEmbed()
 
   }
 }
+}
