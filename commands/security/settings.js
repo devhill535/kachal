@@ -94,7 +94,7 @@ run: async (bot, message, args, dev) => {
         embed.addField(`- **Punishment**`, `<:kick:842560387295346688> Kick`);
       } else if (data.punishment === "ban") {
         embed.addField(`- **Punishment**`, `<:ban:842560387366256660> Ban`);
-      } else if (data.punishment === "ban") {
+      } else if (data.punishment === "removerole") {
         embed.addField(`- **Punishment**`, `RemoveRole`);
       }
 
