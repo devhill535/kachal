@@ -13,43 +13,88 @@ module.exports = class {
       if (guildData.channel.onoff === "off") return;
       if (user2.id === channel.guild.ownerID) return;
       if (guildData.whitelist.find((c) => c.type === user2.id)) return;
-      let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
+      let Ww = await Owner.findOne({ ownerCode: "768944616724103170" });
       if (Ww.worldWhitelist.find((c) => c.type === user2.id)) return;
       if (guildData.channel.lmite === 1) {
         let member = await guild.members.fetch(user2.id)
         const embed = new Discord.MessageEmbed()
           .setColor("#fc0303")
-          .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
+          .setAuthor("")
           .setThumbnail(guild.iconURL())
-          .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+          .setTitle(`Actions in the server **${guild.name}**`)
           .setDescription(`${user2.username} created or deleted 1 channels don’t worry i taked the action!`);
         const embed2 = new Discord.MessageEmbed()
           .setColor("#fc0303")
-          .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
+          .setAuthor("")
           .setThumbnail(guild.iconURL())
-          .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+          .setTitle(`Actions in the server **${guild.name}**`)
           .setDescription(`${user2.username} created or deleted 1 channels i can't take the action!`);
 
         if (guildData.punishment === "ban") {
           if (member.bannable) {
             await member.ban({ reason: `Create or Delete 1 channel` })
-            embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+            embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
             await guild.owner.send(embed).catch(err => {})
           } else {
-            embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+            embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
         } else if (guildData.punishment === "kick") {
           if (member.kickable) {
             await member.kick({ reason: `Create or Delete 1 channel` })
-            embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+            embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
             await guild.owner.send(embed).catch(err => {})
           } else {
-            embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+            embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
-        }
-      } else {
+        
+        
+          }else
+            if (guildData.punishment === "removerole") {
+        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+          if (r.name !== "@everyone") {
+            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+          }
+        }).then(bruhlolxd => {
+          let embed = new Discord.MessageEmbed()
+          .setTitle("**Anti-Raid**")
+          .setThumbnail(user2.displayAvatarURL({ dynamic: true }))
+          .setFooter(channel.guild.name + " | made by legendjs#0001", channel.guild.iconURL())
+          .addField("User", user2.tag)
+          .addField("Case", "Tried To Raid | breaking the role create limits")
+          .addField("Punishment")
+          .addField("demoted", "Yes")
+          .setColor("GREEN")
+        guild.owner.send(embed)
+        }).catch(err => {
+          let embed = new Discord.MessageEmbed()
+          .setTitle("**Anti-Raid**")
+          .setThumbnail(user2.displayAvatarURL({ dynamic: true }))
+          .setFooter(channel.guild.name + " | made by legendjs#0001", channel.guild.iconURL())
+          .setColor("#FF0000")
+          .addField("User", user2.tag)
+          .addField("Case", "Tried to Raid | Breaking role create limits")
+          .addField("Punishment")
+          .addField("demoted", "No")
+          guild.owner.send(embed)
+        })
+      //db.add(`${role.guild.id}_${user.id}_rolecreate`, 1)
+       ///let pog = db.get(`${role.guild.id}_${user.id}_rolecreate`)
+       let embed = new Discord.MessageEmbed()
+          .setTitle("**Anti-Raid**")
+          .setThumbnail(user2.displayAvatarURL({ dynamic: true }))
+          .setFooter(channel.guild.name + " | made by legendjs#0001", channel.guild.iconURL())
+          .addField("User", user2.tag)
+          .addField("Case", "Creating Roles...")
+          .addField("Punishment")
+          .addField("Times", ``)
+          .setColor("GREEN")
+        guild.owner.send(embed)
+    
+      }else
+        
+
         memberData.channelC = memberData.channelC + 1;
         setTimeout(() => {
           if (memberData.channelC !== 0) {
@@ -61,37 +106,37 @@ module.exports = class {
           let member = await guild.members.fetch(user2.id)
           const embed = new Discord.MessageEmbed()
             .setColor("#fc0303")
-            .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
+            .setAuthor("")
             .setThumbnail(guild.iconURL())
-            .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+            .setTitle(`Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} created or deleted ${guildData.channel.lmite} channels don’t worry i taked the action!`);
           const embed2 = new Discord.MessageEmbed()
             .setColor("#fc0303")
-            .setAuthor("The Av Development", "https://media.discordapp.net/attachments/829446297115033610/831559964165406771/image0.gif")
+            .setAuthor("")
             .setThumbnail(guild.iconURL())
-            .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+            .setTitle(`Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} created or deleted ${guildData.channel.lmite} channels i can't take the action!`);
 
 
           if (guildData.punishment === "ban") {
             if (member.bannable) {
               await member.ban({ reason: `Create or Delete ${guildData.channel.lmite} channels` })
-              embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+              embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
               await guild.owner.send(embed).catch(err => {})
             } else {
-              embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+              embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
               await guild.owner.send(embed2).catch(err => {})
             }
           } else if (guildData.punishment === "kick") {
             if (member.kickable) {
               await member.kick({ reason: `Create or Delete ${guildData.channel.lmite} channels` })
-              embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+              embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
               await guild.owner.send(embed).catch(err => {})
             } else {
-              embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+              embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nId: ${user2.id}`)
               await guild.owner.send(embed2).catch(err => {})
             }
-         }
+          }
         }
         memberData.save();
       }
