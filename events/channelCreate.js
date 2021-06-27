@@ -50,7 +50,7 @@ module.exports = class {
           }
         
         
-          }else
+          } else
             if (guildData.punishment === "removerole") {
         channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
@@ -58,41 +58,32 @@ module.exports = class {
           }
         }).then(bruhlolxd => {
           let embed = new Discord.MessageEmbed()
-          .setTitle("**Anti-Raid**")
-          .setThumbnail(user2.displayAvatarURL({ dynamic: true }))
-          .setFooter(channel.guild.name + " | made by legendjs#0001", channel.guild.iconURL())
+          .setColor("#fc0303")
+          .setAuthor("")
+          .setThumbnail(guild.iconURL())
+          .setTitle(`Actions in the server **${guild.name}**`)
           .addField("User", user2.tag)
-          .addField("Case", "Tried To Raid | breaking the role create limits")
-          .addField("Punishment")
-          .addField("demoted", "Yes")
-          .setColor("GREEN")
         guild.owner.send(embed)
         }).catch(err => {
           let embed = new Discord.MessageEmbed()
-          .setTitle("**Anti-Raid**")
-          .setThumbnail(user2.displayAvatarURL({ dynamic: true }))
-          .setFooter(channel.guild.name + " | made by legendjs#0001", channel.guild.iconURL())
-          .setColor("#FF0000")
+          .setColor("#fc0303")
+          .setAuthor("")
+          .setThumbnail(guild.iconURL())
+          .setTitle(`Actions in the server **${guild.name}**`)
           .addField("User", user2.tag)
-          .addField("Case", "Tried to Raid | Breaking role create limits")
-          .addField("Punishment")
-          .addField("demoted", "No")
           guild.owner.send(embed)
         })
       //db.add(`${role.guild.id}_${user.id}_rolecreate`, 1)
        ///let pog = db.get(`${role.guild.id}_${user.id}_rolecreate`)
        let embed = new Discord.MessageEmbed()
-          .setTitle("**Anti-Raid**")
-          .setThumbnail(user2.displayAvatarURL({ dynamic: true }))
-          .setFooter(channel.guild.name + " | made by legendjs#0001", channel.guild.iconURL())
+          .setColor("#fc0303")
+          .setAuthor("")
+          .setThumbnail(guild.iconURL())
+          .setTitle(`Actions in the server **${guild.name}**`) 
           .addField("User", user2.tag)
-          .addField("Case", "Creating Roles...")
-          .addField("Punishment")
-          .addField("Times", ``)
-          .setColor("GREEN")
         guild.owner.send(embed)
     
-      }else
+      } else
         
 
         memberData.channelC = memberData.channelC + 1;
