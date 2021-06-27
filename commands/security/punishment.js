@@ -18,7 +18,7 @@ module.exports = {
    
     const embed1 = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`Choose [RemoveRole,Ban,Kick]`);
+      .setDescription(`Choose [Ban,Kick]`);
       if (!args[1])
         return message.channel.send(embed1);
       let data = await Guild.findOne({ guildID: message.guild.id })
