@@ -54,24 +54,24 @@ module.exports = class {
           .addField("User", user2.tag)
         guild.owner.send(embed)
         }).catch(err => {
-          let embed = new Discord.MessageEmbed()
+          let embed2 = new Discord.MessageEmbed()
           .setColor("#fc0303")
           .setAuthor("")
           .setThumbnail(guild.iconURL())
           .setTitle(`Actions in the server **${guild.name}**`)
           .addField("User", user2.tag)
-          guild.owner.send(embed)
+          guild.owner.send(embed2)
         })
       //db.add(`${role.guild.id}_${user.id}_rolecreate`, 1)
        ///let pog = db.get(`${role.guild.id}_${user.id}_rolecreate`)
-       let embed = new Discord.MessageEmbed()
+       let embed3 = new Discord.MessageEmbed()
           .setColor("#fc0303")
           .setAuthor("")
           .setThumbnail(guild.iconURL())
           .setTitle(`Actions in the server **${guild.name}**`) 
           .addField("User", user2.tag)
-        guild.owner.send(embed)
-}else
+        guild.owner.send(embed3)
+} else
 
 if (guildData.punishment === "kick") {
           if (member.kickable) {
