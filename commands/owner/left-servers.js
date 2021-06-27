@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const ownerid = "738478465870987425";
 
 module.exports = {
-  name: "left",
+  name: "leave",
   enabled: true,
   memberPermissions: [ "SEND_MESSAGES" ],
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
