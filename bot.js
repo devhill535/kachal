@@ -258,7 +258,7 @@ bot.on("message", async message => {
               .kick()
               .then(k => {
                 guild.owner.send(new Discord.MessageEmbed().setColor(Color).setDescription(
-                  `is kicked because spaming in channel\nTag: ${message.author.tag}\nID: ${message.author.id}`
+                  `This user is kicked because spaming in channel\nTag: ${message.author.tag}\nID: ${message.author.id}`
                 ));
               });
             message.channel.bulkDelete(msgCount, true);
