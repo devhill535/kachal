@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "show",
+  name: "logs",
   aliases: [""],
   enabled: true,			  
   memberPermissions: [ "SEND_MESSAGES" ],			
@@ -13,7 +13,6 @@ module.exports = {
   prime: false,
   run: async (bot, message, args, dev) => {
   
-      
    let data = await Guild.findOne({ guildID: message.guild.id })
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
       if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`
