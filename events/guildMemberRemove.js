@@ -47,9 +47,9 @@ module.exports = class {
               }
 } else 
  if (guildData.punishment === "removerole") {
-        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+        member.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
-            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+            member.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
           let embed = new Discord.MessageEmbed()
