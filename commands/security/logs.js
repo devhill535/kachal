@@ -11,9 +11,9 @@ module.exports = {
   cooldown: 6000,
   guilOwnerOnly: true,
   prime: false,
-  run: async (bot, message, args, dev, data) => {
+  run: async (bot, message, args, dev) => {
   
-       if (args[1]  === "logs"){
+      
    let data = await Guild.findOne({ guildID: message.guild.id })
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
       if(data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`
@@ -43,4 +43,3 @@ module.exports = {
       
       }
    }
-}
