@@ -43,7 +43,7 @@ const init = async () => {
     const eventName = file.split(".")[0];
     console.log(`Loading Event: ${eventName}`);
     const event = new(require(`./events/${file}`))(bot);
-    bot.on(eventName, (...args) => event.run(...args, bot, data));
+    bot.on(eventName, (...args) => event.run(...args, bot));
     delete require.cache[require.resolve(`./events/${file}`)];
   });
 };
@@ -102,7 +102,7 @@ bot.on("message", async message => {
     message.member = await message.guild.fetchMember(message);
 
   if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
-    return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${data.prefix}\` Use \`${data.prefix}help\` to get the list of the commands!`);
+    return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
   }
 });
 
