@@ -102,7 +102,7 @@ run: async (bot, message, args, dev) => {
       }
 
       embed.setDescription(
-        `This is settings security and settings your server\n\n- **Prefix in server**\n${guild.prefix}`
+        `This is settings security and settings your server`
       );
 
       message.channel.send(embed)
