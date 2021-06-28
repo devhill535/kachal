@@ -26,7 +26,7 @@ run: async (bot, message, args, dev) => {
       let pun = `<:punish:836022893691011092>`;
        
 
-      embed.addField(`- **Prefix In Server**`,`${guild.prefix}`);
+     
      
       if (data.ban.onoff === "on") {
         embed.addField(
@@ -102,7 +102,7 @@ run: async (bot, message, args, dev) => {
       }
 
       embed.setDescription(
-        `This is settings security and settings your server`
+        `This is settings security and settings your server\n\n- **Prefix in server**\n${guild.prefix}`
       );
 
       message.channel.send(embed)
