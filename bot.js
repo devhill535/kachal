@@ -13,7 +13,6 @@ const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
 
 bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.Rw_sk6VHFrSLHUxC51qZa3sHLoo")
-global.logChannel = bot.channels.cache.get("835968578699264011")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Connected to the Mongodb database.");
@@ -168,19 +167,18 @@ bot.on("message", async message => {
         ++msgCount;
         if (parseInt(msgCount) >= LIMIT) {
           if (pun === "ban") {
-            if (!message.member.bannable) return console.log(message.member.username + " I can't ban this man");
+            if (!message.member.bannable) return console.log(`${message.member.username} I can't ban this man`$;
             message.channel.guild.members.cache
               .get(message.author.id)
               .ban()
             message.channel.bulkDelete(msgCount, true);
           } else if (pun === "kick") {
-            if (!message.member.kickable) return console.log(message.member.username + " I can't kick this man");
+            if (!message.member.kickable) return console.log(`${message.member.username} I can't kick this man`);
             message.channel.guild.members.cache
               .get(message.author.id)
               .kick()
               .then(k => {
-                logChannel.send(`**⇏${message.author.tag} is kicked because spaming in <#${message.channel.id}>**`)
-                message.guild.owner.send(
+               guild.owner.send(
                   `**⇏<@${message.author.id}> is kicked because spaming in channel**`
                 );
               });
@@ -190,7 +188,7 @@ bot.on("message", async message => {
               .get(message.author.id)
               .kick()
               .then(k => {
-                message.guild.owner.send(
+               guild.owner.send(
                   `**⇏<@${message.author.id}> is kicked because spaming in channel**`
                 );
               });
