@@ -24,7 +24,10 @@ run: async (bot, message, args, dev) => {
       let falsee = `<:disabled:837860829155295262>`;
       let truee = `<:enabled:837860829155819530>`;
       let pun = `<:punish:836022893691011092>`;
+       
 
+      embed.addField(`- **Prefix In Server**`,`${guild.prefix}`);
+     
       if (data.ban.onoff === "on") {
         embed.addField(
           `- **AntiBan**`,
