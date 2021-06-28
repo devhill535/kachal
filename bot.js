@@ -43,7 +43,7 @@ const init = async () => {
     const eventName = file.split(".")[0];
     console.log(`Loading Event: ${eventName}`);
     const event = new(require(`./events/${file}`))(bot);
-    bot.on(eventName, (...args) => event.run(...args, bot));
+    bot.on(eventName, (...args) => event.run(...args, bot, data));
     delete require.cache[require.resolve(`./events/${file}`)];
   });
 };
