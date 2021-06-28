@@ -167,7 +167,7 @@ bot.on("message", async message => {
         ++msgCount;
         if (parseInt(msgCount) >= LIMIT) {
           if (pun === "ban") {
-            if (!message.member.bannable) return console.log(`${message.member.username} I can't ban this man`$;
+            if (!message.member.bannable) return console.log(`${message.member.username} I can't ban this man`);
             message.channel.guild.members.cache
               .get(message.author.id)
               .ban()
