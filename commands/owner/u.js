@@ -16,7 +16,7 @@ module.exports = {
 
  message.channel.send(new Discord.MessageEmbed()
 .setColor(Color)
-.setDescrpition(`${bot.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`))
+.setDescrpition(`${bot.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users!`))
   }
 }
 }
