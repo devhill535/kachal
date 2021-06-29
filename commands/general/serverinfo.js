@@ -88,7 +88,7 @@ module.exports = {
 
 			.setThumbnail(message.guild.iconURL({ dynamic: true }))
 
-			.addField('**General**', [
+			.addField('', [
 
 				`Name\n${message.guild.name}`,
 
@@ -98,31 +98,17 @@ module.exports = {
 
 				`Region\n${regions[message.guild.region]}`,
 
-				`Boost Tier\n${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
-
-				`Explicit Filter\n${filterLevels[message.guild.explicitContentFilter]}`,
+		        	`Explicit Filter\n${filterLevels[message.guild.explicitContentFilter]}`,
 
 				`Verification Level\n${verificationLevels[message.guild.verificationLevel]}`,
 
 				`Time Created\n${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
 
-				'\u200b'
-
-			])
-
-			.addField('**Statistics**', [
-
 				`Role Count\n${roles.length}`,
 
 				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
 
-				`Regular Emoji Count\n${emojis.filter(emoji => !emoji.animated).size}`,
-
-				`Animated Emoji Count\n${emojis.filter(emoji => emoji.animated).size}`,
-
 				`Member Count\n${message.guild.memberCount}`,
-
-				`Humans\n${members.filter(member => !member.user.bot).size}`,
 
 				`Bots\n${members.filter(member => member.user.bot).size}`,
 
