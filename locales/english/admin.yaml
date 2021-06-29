@@ -1,7 +1,7 @@
 lock_message: "🔒 %{channel} has been locked"
 unlock_message: "🔓 %{channel} has been unlocked"
 lockall_message: "🔒 %{channels} Channels has been locked"
-unlockall_message: "🔒 Unlocked all channels"
+unlockall_message: "🔓 %{channels} Channels has been unlocked"
 bans: "Server ban list ⇏ "
 prefix_type: "Type something!"
 prefix_length: " You need set prefix lower 5 length"
