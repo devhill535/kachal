@@ -75,7 +75,9 @@ module.exports = {
 
 		const members = message.guild.members.cache;
 
-		const channels = message.guild.channels.cache;
+	        const List = message.guild.emojis.cache.map(e => e.toString()).join(" ");
+		
+	        const channels = message.guild.channels.cache;
 
 		const emojis = message.guild.emojis.cache;
 
@@ -112,7 +114,7 @@ module.exports = {
 
 				`Role Count\n${roles.length}`,
 
-				`Emoji Count\n${emojis.size}`,
+				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
 
 				`Regular Emoji Count\n${emojis.filter(emoji => !emoji.animated).size}`,
 
@@ -128,8 +130,11 @@ module.exports = {
 
 				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
 
-				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
-                             ''
+                                `Emoji Count\n${emojis.size}`,
+                              
+                                `Emoji List\n ${List}`,
+				
+				''
 			])
 
 
