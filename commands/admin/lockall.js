@@ -17,7 +17,7 @@ module.exports = {
    
       const embed = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(bot.reva.get(data.lang, "admin","lockall_message"));
+      .setDescription(`${message.channels.guild.cache.size} lock all channels`);
       message.channel.send(embed);
 
     message.guild.channels.cache.filter(c => c.name).forEach(async channel => {
