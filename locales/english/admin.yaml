@@ -1,6 +1,6 @@
 lock_message: "🔒 %{channel} has been locked"
 unlock_message: "🔓 %{channel} has been unlocked"
-lockall_message: "🔒 Locked all channels"
+lockall_message: "🔒 %{channels} Channels has been locked"
 unlockall_message: "🔒 Unlocked all channels"
 bans: "Server ban list ⇏ "
 prefix_type: "Type something!"
