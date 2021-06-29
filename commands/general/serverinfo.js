@@ -88,7 +88,7 @@ module.exports = {
 
 			.setThumbnail(message.guild.iconURL({ dynamic: true }))
 
-			.addField('', [
+			.addField('**General**', [
 
 				`Name\n${message.guild.name}`,
 
