@@ -117,8 +117,6 @@ module.exports = {
 				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
 
                                 `Emoji Count\n${emojis.size}`,
-                              
-                                `Emoji List\n ${List}`,
 				
 				''
 			])
