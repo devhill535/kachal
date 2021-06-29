@@ -1,6 +1,5 @@
 const { Color } = require("../../config.js");
 const Discord = require("discord.js");
-const ownerid = "738478465870987425";
 
 module.exports = {
   name: "users",
@@ -10,13 +9,12 @@ module.exports = {
   ownerOnly: true,
   cooldown: 6000,
   run: async (bot, message, args) => {
-    if (message.author.id == ownerid) {
+   
 
  let embed = new Discord.MessageEmbed()
 .setColor(Color)
 .setDescrpition(`${bot.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users!`)
 message.channel.send(embed);
  
- }
 }
 }
