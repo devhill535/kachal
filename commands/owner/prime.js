@@ -37,9 +37,9 @@ module.exports = {
     } else
       
       if (args[1] === "add") {
-     if (!args[2]) return message.reply(new Discord.MessageEmbed().setColor(Color)
+     if (!args[2]) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
       .setDescription(`Please specify guild id`))
-       if(!bot.guilds.cache.has(args[2])) return message.reply(new Discord.MessageEmbed().setColor(Color)
+       if(!bot.guilds.cache.has(args[2])) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
       .setDescription(`Your guild id is invalid`))
     
       
@@ -62,7 +62,7 @@ module.exports = {
       .setDescription(`Prime bot in this server ${time0}`))
       
       } else if (args[1] === "remove") {
-      if (!args[2]) return message.reply(new Discord.MessageEmbed().setColor(Color)
+      if (!args[2]) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
       .setDescription(`Pleade give me a guild id`))
         
         let data = await Prime.findOne({ Guild: args[2]})
