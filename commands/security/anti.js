@@ -9,7 +9,7 @@ module.exports = {
   usage: ["s!anti"],
   category: ["Security"],
   enabled: true,            
-  memberPermissions: [ "ADMINISTRATOR" ],            
+  memberPermissions: [ "SEND_MESSAGES" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
   ownerOnly: false,
   guildOwnerOnly: true,          
