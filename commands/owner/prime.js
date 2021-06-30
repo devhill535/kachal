@@ -33,7 +33,7 @@ module.exports = {
       
       if (args[1] === "add") {
      if (!args[2]) return message.channel.send(`Please specify guild id`)
-       if(!bot.guilds.cache.has(args[2])) return message.channel.send(Your guild id is invalid`)
+       if(!bot.guilds.cache.has(args[2])) return message.channel.send(`Your guild id is invalid`)
     
       
     let time = day(args[3]).valueOf();;
