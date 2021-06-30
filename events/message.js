@@ -74,7 +74,7 @@ async run(message,bot) {
 	  if (!bot.cooldowns.has(command.name)) {
 		  bot.cooldowns.set(command.name, new Discord.Collection());
 	  }
-	 if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
+	 if (message.content.match(new RegExp(`<@813131436265046068>`))) {
          return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${guild.prefix}\` Use \`${guild.prefix}help\` to get the list of the commands!`);
          }
           const now = Date.now();
