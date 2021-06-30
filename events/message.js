@@ -17,7 +17,8 @@ async run(message,bot) {
   if(!lang) { Lang.create({ guildID: message.guild.id });} 
   data.lang = lang.language
 	let prime = await Prime.findOne({ guildID: message.guild.id });
- if (prime && prime.log === "enable") return message.channel.send(`You don't have Premium version`);
+ if (prime && prime.log === "enable") return message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33")
+      .setDescription(`You don't have Premium version`));
 
   if (guild) {
   if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) return;
@@ -33,12 +34,16 @@ async run(message,bot) {
   if(command.prime){
       let data = await Prime.findOne({Guild: message.guild.id})
      
-      if(!data) return message.channel.send(`This server not haven't on data base`)
+      if(!data) return message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33")
+      .setTitle("Premium Only")
+      .setDescription(`This is a premium only command, type s!premium for more info`))
     
       if(!data.Permanent && Date.now() > data.time){
         data.delete();
   
-        return message.channel.send(`Prime bot on your server ended for buy mor join support server `) 
+        return message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33")
+      .setTitle("Premium Only")
+      .setDescription(`Prime bot on your server ended for buy mor join support server`))
       } }
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
   if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`This command is **Disable** for now`));
