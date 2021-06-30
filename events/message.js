@@ -75,7 +75,7 @@ async run(message,bot) {
 		  bot.cooldowns.set(command.name, new Discord.Collection());
 	  }
 	 if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
-         return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${data.prefix}\` Use \`${data.prefix}help\` to get the list of the commands!`);
+         return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${guild.prefix}\` Use \`${guild.prefix}help\` to get the list of the commands!`);
          }
           const now = Date.now();
 	  const timestamps = bot.cooldowns.get(command.name);
