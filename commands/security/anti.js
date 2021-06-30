@@ -9,13 +9,11 @@ module.exports = {
   usage: ["s!anti"],
   category: ["Security"],
   enabled: true,            
-  memberPermissions: [ "SEND_MESSAGES" ],            
+  memberPermissions: [ "ADMINISTRATOR" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
   ownerOnly: false,
-  guildOwnerOnly: true,          
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
-  let guild = await Guild.findOne({ guildID: message.guild.id });
   const embed = new Discord.MessageEmbed()
       .setColor(Color)
       .setTitle(bot.reva.get(data.lang, "general","anti_embed"))
