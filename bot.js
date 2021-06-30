@@ -94,7 +94,7 @@ bot.on("messageUpdate", (message, newMessage) => {
 });*/
 //=============================== - [ Info ] - ===================================//
 
-bot.on("message", async message => {
+/*bot.on("message", async message => {
   if (message.channel.type === "dm") return;
   if (message.author.bot) return;
   if (!message.guild) return;
@@ -104,7 +104,7 @@ bot.on("message", async message => {
   if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
     return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
   }
-});
+});*/
 
 /*bot.on("message", async message => {
   if (message.content.startsWith(`<@${bot.user.id}>`)) {
