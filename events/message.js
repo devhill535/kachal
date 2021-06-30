@@ -9,7 +9,7 @@ async run(message,bot) {
   if(!guild) { Guild.create({ guildID: message.guild.id }); }
   data.guild = guild;
   // let prime = await Prime.findOne({ guildID: message.guild.id });
-     // if (prime && prime.log === "enable") return message.channel.send(`you don't have Premium version`);
+     // if (prime && prime.log === "enable") return message.channel.send(`You don't have Premium version`);
   let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
   if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id });} 
   data.user = user;
@@ -17,7 +17,7 @@ async run(message,bot) {
   if(!lang) { Lang.create({ guildID: message.guild.id });} 
   data.lang = lang.language
 	let prime = await Prime.findOne({ guildID: message.guild.id });
- if (prime && prime.log === "enable") return message.channel.send(`you don't have Premium version`);
+ if (prime && prime.log === "enable") return message.channel.send(`You don't have Premium version`);
 
   if (guild) {
   if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) return;
@@ -33,12 +33,12 @@ async run(message,bot) {
   if(command.prime){
       let data = await Prime.findOne({Guild: message.guild.id})
      
-      if(!data) return message.channel.send(`this server not haven't on data base`)
+      if(!data) return message.channel.send(`This server not haven't on data base`)
     
       if(!data.Permanent && Date.now() > data.time){
         data.delete();
   
-        return message.channel.send(`prime bot on your server ended for buy mor join support server `) 
+        return message.channel.send(`Prime bot on your server ended for buy mor join support server `) 
       } }
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
   if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`This command is **Disable** for now`));
@@ -74,7 +74,10 @@ async run(message,bot) {
 	  if (!bot.cooldowns.has(command.name)) {
 		  bot.cooldowns.set(command.name, new Discord.Collection());
 	  }
-	  const now = Date.now();
+	 if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
+         return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${data.prefix}\` Use \`${data.prefix}help\` to get the list of the commands!`);
+         }
+          const now = Date.now();
 	  const timestamps = bot.cooldowns.get(command.name);
 	  const cooldownAmount = (/*command.cooldown ||*/ 7000); 
 	  if (timestamps.has(message.author.id)) {
