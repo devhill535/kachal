@@ -1,4 +1,3 @@
-const { Color } = require("../../config.js");
 const moment = require("moment-timezone");
 const parseInt = require("ms")
 const day = require("dayjs")
@@ -18,29 +17,23 @@ module.exports = {
       if (data) {
         if (data.log === "enable") {
         let time = day(data.time);
-       if(!data.time) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Your srrver don't have prime bot`))
+       if(!data.time) return message.channel.send(`Your srrver don't have prime bot`)
 
         
-      message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Prime bot in this server end in ${time}`))
+      message.channel.send(`Prime bot in this server end in ${time}`)
     
           } else {
-            message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`This server don't have a prime bot`)) 
+            message.channel.send(`This server don't have a prime bot`)
           }
         }
       if (!data) {
-          message.channel.send(new Discord.MessageEmbed().setColor(Color)
-     .setDescription(`This server don't have a prime bot`))
+          message.channel.send(`This server don't have a prime bot`)
         }
     } else
       
       if (args[1] === "add") {
-     if (!args[2]) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Please specify guild id`))
-       if(!bot.guilds.cache.has(args[2])) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Your guild id is invalid`))
+     if (!args[2]) return message.channel.send(`Please specify guild id`)
+       if(!bot.guilds.cache.has(args[2])) return message.channel.send(Your guild id is invalid`)
     
       
     let time = day(args[3]).valueOf();;
@@ -58,12 +51,10 @@ module.exports = {
       }); } 
         let time0 = day(time)
 
-      message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Prime bot in this server ${time0}`))
+      message.channel.send(`Prime bot in this server ${time0}`)
       
       } else if (args[1] === "remove") {
-      if (!args[2]) return message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Pleade give me a guild id`))
+      if (!args[2]) return message.channel.send(`Pleade give me a guild id`)
         
         let data = await Prime.findOne({ Guild: args[2]})
       
@@ -72,8 +63,7 @@ module.exports = {
           data.log = "enable";
           data.delete()
         }
-  message.channel.send(new Discord.MessageEmbed().setColor(Color)
-      .setDescription(`Prime bot on server removed`))
+  message.channel.send(`Prime bot on server removed`)
       }
   
   }
