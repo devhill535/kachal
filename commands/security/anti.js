@@ -14,8 +14,8 @@ module.exports = {
   ownerOnly: false,            
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
-  
-  let embed = new Discord.MessageEmbed()
+  let guild = await Guild.findOne({ guildID: message.guild.id });
+  const embed = new Discord.MessageEmbed()
       .setColor(Color)
       .setTitle(bot.reva.get(data.lang, "general","anti_embed"))
       .setDescription(`Type: [on,off,<number>]\n\nGuardian: **antichannel, antirole, antiban, antikick, antispam, antibot**`)
