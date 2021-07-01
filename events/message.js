@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = class {
 async run(message,bot) {
   const data = {};
+  const argsr = {};
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
   let guild = await Guild.findOne({ guildID: message.guild.id });
