@@ -37,7 +37,7 @@ async run(message,bot) {
   argsr.prefix = argsrM;
   };
   const cmd = await argsr.prefix.shift().toLowerCase();
-  if (cmd.length === 0) return message.reply(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`my prefix is \`${guild.prefix.toLowerCase()}\``));
+  if (cmd.length === 0) return message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`my prefix is \`${guild.prefix.toLowerCase()}\``));
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
   if(command.prime){
@@ -102,7 +102,7 @@ async run(message,bot) {
 	  let prefix = guild.prefix;
 	  command.run(bot, message, args, prefix, data, cmd);
              } else {
-		message.reply(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`my prefix is \`${guild.prefix.toLowerCase()}\``))
+		message.channel.send(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`my prefix is \`${guild.prefix.toLowerCase()}\``))
 		  }
 	  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
