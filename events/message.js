@@ -21,14 +21,23 @@ async run(message,bot) {
       .setDescription(`You don't have Premium version`));
 
   if (guild) {
-  if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) return;
+   if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase()) && !message.content.toLowerCase().startsWith("<@813131436265046068>")) return;
   let args = message.content.split(" ");
-  const argsr = message.content
+  if (message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) {
+  const argsrP = await message.content
     .slice(guild.prefix.length)
     .trim()
     .split(/ +/g);
-  const cmd = argsr.shift().toLowerCase();
-  if (cmd.length === 0) return;
+  argsr.prefix = argsrP;
+  } else if (message.content.toLowerCase().startsWith("<@813131436265046068>")) {
+  const argsrM = await message.content
+    .slice("<@813131436265046068>".length)
+    .trim()
+    .split(/ +/g);
+  argsr.prefix = argsrM;
+  };
+  const cmd = await argsr.prefix.shift().toLowerCase();
+  if (cmd.length === 0) return message.reply(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`my prefix is \`${guild.prefix.toLowerCase()}\``));
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
   if(command.prime){
@@ -91,9 +100,11 @@ async run(message,bot) {
 	  }
 	  timestamps.set(message.author.id, now);
 	  let prefix = guild.prefix;
-	  if (command) command.run(bot, message, args, prefix, data, cmd);
+	  command.run(bot, message, args, prefix, data, cmd);
+             } else {
+		message.reply(new Discord.MessageEmbed().setColor("#2c2f33").setDescription(`my prefix is \`${guild.prefix.toLowerCase()}\``))
+		  }
 	  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   }
   }
-}
