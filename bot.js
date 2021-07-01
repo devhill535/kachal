@@ -93,26 +93,6 @@ bot.on("messageUpdate", (message, newMessage) => {
        }||`));
     }
 });*/
-//=============================== - [ Info ] - ===================================//
-
-bot.on("message", async message => {
-  if (message.channel.type === "dm") return;
-  if (message.author.bot) return;
-  if (!message.guild) return;
-  if (!message.member)
-    message.member = await message.guild.fetchMember(message);
-
-  if (message.content.match(new RegExp(`^<@!?${bot.user.id}>`))) {
-    return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
-  }
-});
-
-/*bot.on("message", async message => {
-  if (message.content.startsWith(`<@${bot.user.id}>`)) {
-     
-    message.channel.send(`Hello: **${message.author.tag}**, my prefix on this server is \`${prefix}\` Use \`${prefix}help\` to get the list of the commands!`);
-  }
-});*/
 
 //=============================== - [ antimention ] - ===================================//
 
