@@ -69,8 +69,7 @@ bot.on("ready", () => {
 
 
 bot.on("ready", () => {
-  bot.user.setStatus("idle");
-  bot.user.setActivity("s!help | ︻デ═一 100% Safe", { type: "" });
+  bot.user.setActivity(`${prefix}help | Safet Your Server`, { type: "COMPETING" });
 });
 
 //=============================== - [ ghostping ] - ===================================//
