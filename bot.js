@@ -69,7 +69,7 @@ bot.on("ready", () => {
 
 
 bot.on("ready", () => {
-  bot.user.setActivity(`${prefix}help | Safet Your Server`, { type: "COMPETING" });
+  bot.user.setActivity(`${prefix}help Safet your server`, { type: "COMPETING" });
 });
 
 //=============================== - [ ghostping ] - ===================================//
