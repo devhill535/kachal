@@ -58,19 +58,14 @@ bot.on("ready", () => {
   console.log(`[!]-------------------------------------[!]`);
 });
 
-/*bot.on("ready", () => {
+bot.on("ready", () => {
     function randomStatus() {
-        let status = [`s!help on ${bot.guilds.cache.size} Servers`, `s!help`]
+        let status = [`s!help`]
         let rstatus = Math.floor(Math.random() * status.length);
         bot.user.setStatus("idle");
         bot.user.setActivity(status[rstatus], {type: "COMPETING"});    
     }; setInterval(randomStatus, 3000)
-})*/
-
-
-bot.on("ready", () => {
-  bot.user.setActivity(`${prefix}help Safet your server`, { type: "COMPETING" });
-});
+})
 
 //=============================== - [ ghostping ] - ===================================//
 
