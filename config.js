@@ -1,4 +1,4 @@
-exports.Color = `#2c2f33`;
+exports.Color = `#2f3136`;
 exports.Image = ``;
 exports.Footer = ``;
 exports.Author = ``;
