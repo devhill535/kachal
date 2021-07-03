@@ -42,7 +42,7 @@ module.exports = {
         .setThumbnail(bot.user.displayAvatarURL())
         .addField("Name", `${bot.user.tag}`)
         .addField("ID", `${bot.user.id}`)
-        .addField("Total Commands", `23`)
+        .addField("Total Commands", `${bot.commands.size}`)
         .addField("Created At",  `${created}`)
         .addField("Guilds", `${bot.guilds.cache.size} Guilds`)
         .addField("Ping", `${Math.round(bot.ws.ping)}ms`)
