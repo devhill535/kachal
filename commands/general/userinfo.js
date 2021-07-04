@@ -20,8 +20,6 @@ let member = await message.mentions.members.first() || message.guild.members.cac
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
 
-let flags = member.flags.toArray();
-    if(member.flags.toArray() < 1) flags = "None";
     
 
       const embed = new MessageEmbed()
@@ -30,7 +28,6 @@ let flags = member.flags.toArray();
       .addField("Username", member.user.tag, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
-      .addField("Flags", `${flags}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('> <@&')}>`)
