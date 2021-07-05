@@ -1,3 +1,6 @@
+const Discord = require("discord.js");
+const { Color } = require("../../config.js");
+const { MessageEmbed } = require('discord.js');
 
     // Get mod role
     const modRoleId = message.client.db.settings.selectModRoleId.pluck().get(message.guild.id);
@@ -35,7 +38,7 @@
       .addField(`Mods [${modList.length}]`, mods, true)
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
-      .setColor("");
+      .setColor(Color);
     message.channel.send(embed);
   }
 };
