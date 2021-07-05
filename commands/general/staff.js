@@ -15,16 +15,7 @@ module.exports = {
   cooldown: 2000,
   run: async (client, message, args, dev) => {
 
-    // Get mod role
-    const modRoleId = message.client.db.settings.selectModRoleId.pluck().get(message.guild.id);
-    let modRole, mods;
-    if (modRoleId) modRole = message.guild.roles.cache.get(modRoleId);
     
-    // Get admin role
-    const adminRoleId = message.client.db.settings.selectAdminRoleId.pluck().get(message.guild.id);
-    let adminRole, admins;
-    if (adminRoleId) adminRole = message.guild.roles.cache.get(adminRoleId);
-  
     let modList = [], adminList = [];
 
     // Get mod list
@@ -49,8 +40,7 @@ module.exports = {
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
       .addField(`Admins [${adminList.length}]`, admins, true)
       .addField(`Mods [${modList.length}]`, mods, true)
-      .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
-      .setTimestamp()
+   
       .setColor(Color);
     message.channel.send(embed);
   }
