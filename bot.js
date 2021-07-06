@@ -112,6 +112,44 @@ bot.on("messageUpdate", (message, newMessage) => {
     }
   }
 })*/
+
+//////
+
+bot.on('message', async message => {
+   
+    if (message.content.startsWith(`${prefix}info`)) {
+      
+       
+        const statembed = new Discord.MessageEmbed()
+            
+            .setTimestamp()
+            .setThumbnail(bot.user.displayAvatarURL())
+            .setColor(Color).setDescription(`**❯ Total Guilds : **${
+                bot.guilds.cache.size
+            } Guilds
+    **❯ Total Users : **${bot.guilds.cache.reduce(
+        (a, b) => a + b.memberCount,
+        0,
+    )} Users
+    **❯ Total Channels: **${bot.channels.cache.size} Channels
+    **❯ Uptime: **${ms(bot.uptime, { long: true })}
+    **❯ Discord.js version: **v${Discord.version}
+    **❯ Arch: **${os.arch()}
+    **❯ Platform: **${os.platform()}
+    **❯ CPU: **${os.cpus().map((i) => `${i.model}`)[0]}
+    **❯ Memory Usage: **${(
+        process.memoryUsage().heapUsed /
+            1024 /
+            1024
+    ).toFixed(2)} MB/${(os.totalmem() / 1024 / 1024 / 1024).toFixed(2)} GB
+    **❯ Last Updated at: **<t:${Math.floor(Date.now() / 1000)}>`)
+message.channel.send(statembed);
+       
+    }
+});
+ 
+
+/////
 //=============================== - [ antispam ] - ===================================//
 
 /*const usersMap = new Map();
