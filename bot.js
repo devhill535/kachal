@@ -144,7 +144,7 @@ bot.on('message', async message => {
             1024 /
             1024
     ).toFixed(2)} MB/${(os.totalmem() / 1024 / 1024 / 1024).toFixed(2)} GB
-    **❯ Last Updated at: **<t:${Math.floor(Date.now() / 1000)}>`)
+    **❯ Last Updated at:** ${Math.floor(Date.now() / 1000)}`)
 message.channel.send(statembed);
        
     }
