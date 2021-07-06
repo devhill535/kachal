@@ -34,6 +34,6 @@ ADD_REACTIONS: false
 });
 });
 mention.roles.add(role)
-message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<:punish:836022893691011092> ${mention.user.tag} has been muted`))
+message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<:punish:836022893691011092> <@${mention.user.id}> has been muted`))
     }
  }
