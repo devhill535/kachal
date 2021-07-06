@@ -1,6 +1,8 @@
 //=============================== - [ Consts ] - ===================================//
 const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
+const os = require('os');
+const ms = require('ms');
 const bot = new Discord.Client();
 const { Color, Image, Footer, Author } = require("./config.js");
 const fs = require("fs");
