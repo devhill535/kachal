@@ -19,6 +19,7 @@ let member = await message.mentions.members.first() || message.guild.members.cac
 ///
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
+const bot = member.user.bot ? "Yes" : "No";
 
     
 
