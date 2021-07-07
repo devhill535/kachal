@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const ms = require('ms');
 const bot = new Discord.Client();
 const { Color, Image, Footer, Author } = require("./config.js");
-const fs = require("fs"); hgc
+const fs = require("fs"); 
 const request = require("request");
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
@@ -13,7 +13,7 @@ let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
-
+Condur
 bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.Rw_sk6VHFrSLHUxC51qZa3sHLoo")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
