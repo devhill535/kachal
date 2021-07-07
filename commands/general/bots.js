@@ -5,7 +5,7 @@ const { Color } = require("../../config.js");
 module.exports = {
   name: "bots",
   aliases: ["allbots"],
-  description: "Get list of the bots on your server,no hidden bots anymore",
+  description: "Get list of thebots on your server,no hidden bots anymore",
   usage: ["s!bots"],
   category: ["General"],
   enabled: true,			    
