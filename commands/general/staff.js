@@ -23,8 +23,8 @@ const guild = await message.guild.fetch();
 		.setDescription(``)
 		
 		
-					.addField("administators",  `${administrators} 🟢 | ${a.user.tag}`)
-			 .addField("moderators", `${moderators} 🟠 | ${m.user.tag}`)
+					.addField("administators",  `${administrators} 🟢`)
+			 .addField("moderators", `${moderators} 🟠`)
 			 
 message.channel.send(embed);
 	}
