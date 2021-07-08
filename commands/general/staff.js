@@ -21,10 +21,8 @@ const guild = await message.guild.fetch();
 		const moderators = guild.members.cache.filter((m) => !administrators.has(m.id) && m.hasPermission("MANAGE_MESSAGES") && !m.user.bot);
 		const embed = new Discord.MessageEmbed()
 		.setDescription(``)
-		
-		
-					.addField("administators",  `${administrators} 🟢`)
-			 .addField("moderators", `${moderators} 🟠`)
+		.addField("administators",  `🟢 ${a.user.tag}`)
+	        .addField("moderators", `🟠 ${a.user.tag}`)
 			 
 message.channel.send(embed);
 	}
