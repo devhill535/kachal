@@ -2,9 +2,7 @@ const Discord = require("discord.js")
 module.exports = class {
   async run(member) {
     try {
-      if (member.guild) {
-        const { guild } = member,
-            const entry1 = await guild.fetchAuditLogs({ type: "MEMBER_KICK" })
+        const entry1 = await guild.fetchAuditLogs({ type: "MEMBER_KICK" })
         .then(audit => audit.entries.first());
          const user2 = entry1.executor;
           //Fix some err 
@@ -132,4 +130,4 @@ module.exports = class {
       return;
     }
   }
-}
+
