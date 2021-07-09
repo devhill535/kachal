@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = class {
-  async run(member) {
+  async run(members) {
     try {
       if (member.guild) {
         const { guild } = member,
