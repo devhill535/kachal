@@ -16,19 +16,15 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
 
-        
-     message.buttons('Invite me', {
-            buttons: [
-                {
-                    style: 'green',
-                    label: 'Click to function!',
-                    id: 'click_to_function'
-                },
-                {
-                    style: 'url',
-                    label: 'Vote for me!',
-                    url:'https://dsc.gg/automodbot'
+
+    message.buttons('Invite me', {
+      buttons: [
+        {
+          style: 'green',
+          label: 'Click to function!',
+          id: 'click_to_function'
                 }
-            ]
-        })
-  }}
+                ]
+    })
+  }
+  }
