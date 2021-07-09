@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = class {
-  async run(memberk) {
+  async run(member) {
     try {
       if (member.guild) {
         const { guild } = member,
@@ -45,11 +45,11 @@ module.exports = class {
                 embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
                 await guild.owner.send(embed2).catch(err => {})
               }
-} else 
- if (guildData.punishment === "removerole") {
-        memberk.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
-          if (r.name !== "@everyone") {
-            memberk.guild.members.cache.get(user2.id).roles.remove(r.id)
+             } else 
+             if (guildData.punishment === "removerole") {
+            member.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+             if (r.name !== "@everyone") {
+            member.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
           let embed = new Discord.MessageEmbed()
