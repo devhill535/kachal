@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 module.exports = class {
-  async run(members) {
+  async run(memberk) {
     try {
       if (member.guild) {
         const { guild } = member,
@@ -47,9 +47,9 @@ module.exports = class {
               }
 } else 
  if (guildData.punishment === "removerole") {
-        member.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+        memberk.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
-            member.guild.members.cache.get(user2.id).roles.remove(r.id)
+            memberk.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
           let embed = new Discord.MessageEmbed()
