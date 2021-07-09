@@ -4,15 +4,9 @@ module.exports = class {
     try {
       if (member.guild) {
         const { guild } = member,
-        user = member;
-        const entry1 = await member.guild
-          .fetchAuditLogs()
-          .then(audit => audit.entries.first());
-        if (entry1.action === "MEMBER_KICK") {
-          const entry2 = await member.guild
-            .fetchAuditLogs({ type: "MEMBER_KICK" })
-            .then(audit => audit.entries.first());
-          const user2 = entry1.executor;
+            const entry1 = await guild.fetchAuditLogs({ type: "MEMBER_KICK" })
+        .then(audit => audit.entries.first());
+         const user2 = entry1.executor;
           //Fix some err 
           const guildData = await Guild.findOne({ guildID: guild.id });
           if (!guildData) { Guild.create({ guildID: guild.id }); }
