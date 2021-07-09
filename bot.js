@@ -60,14 +60,17 @@ bot.on("ready", () => {
   console.log(`[!]-------------------------------------[!]`);
 });
 
-bot.on("ready", () => {
-    function randomStatus() {
-        let status = [`s!help`]
-        let rstatus = Math.floor(Math.random() * status.length);
-        bot.user.setStatus("idle");
-        bot.user.setActivity(status[rstatus], {type: "COMPETING"});    
-    }; setInterval(randomStatus, 3000)
-})
+bot.on("ready", async () => {
+  console.log(`ready!`);
+  bot.user.setStatus ("idle");
+  bot.user
+    .setActivity(
+       `${prefix}help`,
+
+       { type: "COMPETING" }
+     )
+     .catch(error => console.log(error));
+ });
 
 //=============================== - [ ghostping ] - ===================================//
 
