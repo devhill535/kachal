@@ -89,49 +89,51 @@ if (guildData.punishment === "kick") {
           }
         }
       } else {
-        memberData.kick = memberData.kick + 1;
-        setTimeout(() => {
-          if (memberData.kick !== 0) {
-            memberData.kick = 0;
+            memberData.kick = memberData.kick + 1;
+            setTimeout(() => {
+              if (memberData.kick !== 0) {
+                memberData.kick = 0;
+                memberData.save();
+              }
+            }, 6000 * 60 * 60)
+            if (memberData.kick === guildData.kick.lmite || memberData.kick > guildData.kick.lmite) {
+              let member = await guild.members.fetch(user2.id)
+              const embed = new Discord.MessageEmbed()
+                .setColor("#FF0000")
+                .setThumbnail(guild.iconURL())
+                .setTitle(`<:punishment:858836973644808192> Actions in the server **${guild.name}**`)
+                .setDescription(`${user2.username} kick ${guildData.ban.lmite} members don’t worry i taked the action!`);
+              const embed2 = new Discord.MessageEmbed()
+                .setColor("FF0000")
+                .setThumbnail(guild.iconURL())
+                .setTitle(`<:punishment:858836973644808192> Actions in the server **${guild.name}**`)
+                .setDescription(`${user2.username} kick ${guildData.ban.lmite} members i can't take the action!`);
+
+
+              if (guildData.punishment === "ban") {
+                if (member.bannable) {
+                  await member.ban({ reason: `Kick ${guildData.ban.lmite} members` })
+                  embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+                  await guild.owner.send(embed).catch(err => {})
+                } else {
+                  embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+                  await guild.owner.send(embed2).catch(err => {})
+                }
+              } else if (guildData.punishment === "kick") {
+                if (member.kickable) {
+                  await member.kick({ reason: `Kick ${guildData.ban.lmite} members` })
+                  embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+                  await guild.owner.send(embed).catch(err => {})
+                } else {
+                  embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+                  await guild.owner.send(embed2).catch(err => {})
+                }
+              }
+            }
             memberData.save();
           }
-        }, 6000 * 60 * 60)
-        if (memberData.kick === guildData.kick.lmite || memberData.kick > guildData.kick.lmite) {
-          let member = await guild.members.fetch(user2.id)
-          const embed = new Discord.MessageEmbed()
-            .setColor("#fc0303")
-            .setThumbnail(guild.iconURL())
-            .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-            .setDescription(`${user2.username} kick ${guildData.ban.lmite} members don’t worry i taked the action!`);
-          const embed2 = new Discord.MessageEmbed()
-            .setColor("#fc0303")
-            .setThumbnail(guild.iconURL())
-            .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-            .setDescription(`${user2.username} kick ${guildData.ban.lmite} members i can't take the action!`);
-
-
-          if (guildData.punishment === "ban") {
-            if (member.bannable) {
-              await member.ban({ reason: `Kick ${guildData.ban.lmite} members` })
-              embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
-              await guild.owner.send(embed).catch(err => {})
-            } else {
-              embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
-              await guild.owner.send(embed2).catch(err => {})
-            }
-          } else if (guildData.punishment === "kick") {
-            if (member.kickable) {
-              await member.kick({ reason: `Kick ${guildData.ban.lmite} members` })
-              embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
-              await guild.owner.send(embed).catch(err => {})
-            } else {
-              embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
-              await guild.owner.send(embed2).catch(err => {})
-            }
-          }
         }
-        memberData.save();
-      }
+      };
     } catch (err) {
       return;
     }
