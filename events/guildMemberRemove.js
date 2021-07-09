@@ -124,10 +124,8 @@ module.exports = class {
             }
             memberData.save();
           }
-        }
-      };
-    } catch (err) {
+        } catch (err) {
       return;
     }
   }
-
+}
