@@ -1,8 +1,7 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const { Color } = require("../../config.js");
-const bot = new Discord.Client(); //Creating discord.js client (constructor)
-require('discord-buttons')(client);
+const bot = new Discord.Client();
+require('discord-buttons')(bot);
 
 module.exports = {
   name: "invite",
