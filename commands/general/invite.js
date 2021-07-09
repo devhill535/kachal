@@ -1,7 +1,5 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const bot = new Discord.Client();
-require('discord-buttons')(bot);
 
 module.exports = {
   name: "invite",
@@ -17,14 +15,11 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
 
 
-    message.buttons('Invite me', {
-      buttons: [
-        {
-          style: 'green',
-          label: 'Click to function!',
-          id: 'click_to_function'
-                }
-                ]
-    })
-  }
-  }
+   const embed = new Discord.MessageEmbed()
+  .setColor(Color)
+  .setTitle(bot.reva.get(data.lang, "general","invite"))
+  .setDescription(`[Anti Vandalism Premium](https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot)\n[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
+
+ message.channel.send(embed);
+     }
+ }
