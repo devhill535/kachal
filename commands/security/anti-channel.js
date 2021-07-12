@@ -24,14 +24,14 @@ module.exports = {
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:854842599444709386> You have **Enable** antichannel`);
+        .setDescription(`<a:true:854842599444709386> The **AntiChannel** system is enabled correctly!`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
          guild.channel.onoff = "off";
          guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:854842600351334440> You have **Disable** antichannel`);
+        .setDescription(`<a:false:854842600351334440> The **AntiChannel** system is disabled correctly!`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1) {
