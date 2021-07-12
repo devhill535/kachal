@@ -42,40 +42,20 @@ module.exports = class {
             embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
-} else 
- if (guildData.punishment === "removerole") {
-        role.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+
+        } else 
+      if (guildData.punishment === "removerole") {
+        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
-            role.guild.members.cache.get(user2.id).roles.remove(r.id)
+            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
-          let embed = new Discord.MessageEmbed()
-          .setColor("#fc0303")
-          .setAuthor("")
-          .setThumbnail(guild.iconURL())
-          .setTitle(`Actions in the server **${guild.name}**`)
-          .addField("User", user2.tag)
-        guild.owner.send(embed)
-        }).catch(err => {
-          let embed2 = new Discord.MessageEmbed()
-          .setColor("#fc0303")
-          .setAuthor("")
-          .setThumbnail(guild.iconURL())
-          .setTitle(`Actions in the server **${guild.name}**`)
-          .addField("User", user2.tag)
-          guild.owner.send(embed2)
-        })
-      //db.add(`${role.guild.id}_${user.id}_rolecreate`, 1)
-       ///let pog = db.get(`${role.guild.id}_${user.id}_rolecreate`)
-       let embed3 = new Discord.MessageEmbed()
-          .setColor("#fc0303")
-          .setAuthor("")
-          .setThumbnail(guild.iconURL())
-          .setTitle(`Actions in the server **${guild.name}**`) 
-          .addField("User", user2.tag)
+       embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
         guild.owner.send(embed3)
-} else
- if (guildData.punishment === "kick") {
+        }).catch(err => {
+     })
+    } else
+    if (guildData.punishment === "kick") {
           if (member.kickable) {
             await member.kick({ reason: `Create or Delete 1 role` })
             embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
@@ -120,6 +100,18 @@ module.exports = class {
               embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
               await guild.owner.send(embed2).catch(err => {})
             }
+
+        } else 
+      if (guildData.punishment === "removerole") {
+        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+          if (r.name !== "@everyone") {
+            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+          }
+        }).then(bruhlolxd => {
+       embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+        guild.owner.send(embed3)
+        }).catch(err => {
+     })
           } else if (guildData.punishment === "kick") {
             if (member.kickable) {
               await member.kick({ reason: `Create or Delete ${guildData.role.lmite} roles` })
