@@ -31,7 +31,7 @@ module.exports = class {
           .setColor("#fc0303")
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-          .setDescription(`${user2.username} created or deleted 1 channels i can't take the action!`);
+          .setDescription(`${user2.username} created or deleted 1 roles i can't take the action!`);
 
         if (guildData.punishment === "ban") {
           if (member.bannable) {
@@ -44,9 +44,9 @@ module.exports = class {
           }
     } else 
       if (guildData.punishment === "removerole") {
-        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+        role.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
-            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+            role.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
@@ -88,7 +88,7 @@ module.exports = class {
             .setColor("#fc0303")
              .setThumbnail(guild.iconURL())
              .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-             .setDescription(`${user2.username} created or deleted 1 channels i can't take the action!`);
+             .setDescription(`${user2.username} created or deleted 1 roles i can't take the action!`);
 
    
 
@@ -103,9 +103,9 @@ module.exports = class {
             }
        } else 
       if (guildData.punishment === "removerole") {
-        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+        role.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
-            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+            role.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
