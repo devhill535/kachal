@@ -15,7 +15,6 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
   
 
-let channel = await message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.guild.channels.cache.find(r => r.channel.name.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.channels.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.channel;
 
   message.channel
       .updateOverwrite(message.guild.id, {
