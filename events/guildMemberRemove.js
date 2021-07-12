@@ -35,6 +35,11 @@ module.exports = class {
                .setThumbnail(guild.iconURL())
                .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
                .setDescription(`${user2.username} kick 1 member i can't take the action!`);
+             const embed3 = new Discord.MessageEmbed()
+                .setColor("FF0000")
+                .setThumbnail(guild.iconURL())
+                .setTitle(`<:punishment:858836973644808192> Actions in the server **${guild.name}**`)
+                .setDescription(`${user2.username} kick ${guildData.ban.lmite} members i can't take the action!`);
 
         if (guildData.punishment === "ban") {
           if (member.bannable) {
@@ -45,40 +50,17 @@ module.exports = class {
             embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
-} else 
- if (guildData.punishment === "removerole") {
+        } else if (guildData.punishment === "removerole") {
         member.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
             member.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
-          let embed = new Discord.MessageEmbed()
-          .setColor("#fc0303")
-          .setAuthor("")
-          .setThumbnail(guild.iconURL())
-          .setTitle(`Actions in the server **${guild.name}**`)
-          .addField("User", user2.tag)
-        guild.owner.send(embed)
-        }).catch(err => {
-          let embed2 = new Discord.MessageEmbed()
-          .setColor("#fc0303")
-          .setAuthor("")
-          .setThumbnail(guild.iconURL())
-          .setTitle(`Actions in the server **${guild.name}**`)
-          .addField("User", user2.tag)
-          guild.owner.send(embed2)
-        })
-      //db.add(`${role.guild.id}_${user.id}_rolecreate`, 1)
-       ///let pog = db.get(`${role.guild.id}_${user.id}_rolecreate`)
-       let embed3 = new Discord.MessageEmbed()
-          .setColor("#fc0303")
-          .setAuthor("")
-          .setThumbnail(guild.iconURL())
-          .setTitle(`Actions in the server **${guild.name}**`) 
-          .addField("User", user2.tag)
+       embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
         guild.owner.send(embed3)
-} else
-if (guildData.punishment === "kick") {
+        }).catch(err => {
+     })
+       } else if (guildData.punishment === "kick") {
           if (member.kickable) {
             await member.kick({ reason: `Kick 1 member` })
             embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
@@ -108,7 +90,11 @@ if (guildData.punishment === "kick") {
                 .setThumbnail(guild.iconURL())
                 .setTitle(`<:punishment:858836973644808192> Actions in the server **${guild.name}**`)
                 .setDescription(`${user2.username} kick ${guildData.ban.lmite} members i can't take the action!`);
-
+              const embed3 = new Discord.MessageEmbed()
+                .setColor("FF0000")
+                .setThumbnail(guild.iconURL())
+                .setTitle(`<:punishment:858836973644808192> Actions in the server **${guild.name}**`)
+                .setDescription(`${user2.username} kick ${guildData.ban.lmite} members i can't take the action!`);
 
               if (guildData.punishment === "ban") {
                 if (member.bannable) {
@@ -119,6 +105,16 @@ if (guildData.punishment === "kick") {
                   embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
                   await guild.owner.send(embed2).catch(err => {})
                 }
+              } else if (guildData.punishment === "removerole") {
+        member.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+          if (r.name !== "@everyone") {
+            member.guild.members.cache.get(user2.id).roles.remove(r.id)
+          }
+        }).then(bruhlolxd => {
+       embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+        guild.owner.send(embed3)
+           }).catch(err => {
+           })
               } else if (guildData.punishment === "kick") {
                 if (member.kickable) {
                   await member.kick({ reason: `Kick ${guildData.ban.lmite} members` })
