@@ -26,6 +26,11 @@ module.exports = class {
           .setColor("#fc0303")
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+          .setDescription(`${user2.username} ban 1 member i can't take the action!`)
+        const embed3 = new Discord.MessageEmbed()
+          .setColor("#fc0303")
+          .setThumbnail(guild.iconURL())
+          .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
           .setDescription(`${user2.username} ban 1 member i can't take the action!`);
 
         if (guildData.punishment === "ban") {
@@ -100,6 +105,11 @@ if (guildData.punishment === "kick") {
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} ban ${guildData.ban.lmite} members i can't take the action!`);
+          const embed3 = new Discord.MessageEmbed()
+            .setColor("#fc0303")
+            .setThumbnail(guild.iconURL())
+            .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+            .setDescription(`${user2.username} ban 1 member i can't take the action!`);
 
 
           if (guildData.punishment === "ban") {
