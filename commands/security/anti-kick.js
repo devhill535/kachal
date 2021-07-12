@@ -24,14 +24,14 @@ module.exports = {
       guild.save();
        const embed = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:true:854842599444709386> You have **Enable** antikick`);
+        .setDescription(`<a:true:854842599444709386> The **AntiKick** system is enabled correctly!`);
       return message.channel.send(embed);
      } else if (args[1] === "off") {
          guild.kick.onoff = "off";
          guild.save();
        const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`<a:false:854842600351334440> You have **Disable** antikick`);
+        .setDescription(`<a:false:854842600351334440> The **AntiKick** system is disabled correctly!`);
       return message.channel.send(embed1);
     }
     if (isNaN(num) || parseInt(num) < 1){
