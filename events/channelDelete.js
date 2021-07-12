@@ -45,7 +45,6 @@ module.exports = class {
             embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
-
         } else 
       if (guildData.punishment === "removerole") {
         channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
@@ -57,7 +56,7 @@ module.exports = class {
         guild.owner.send(embed3)
         }).catch(err => {
      })
-
+ }  else
   if (guildData.punishment === "kick") {
           if (member.kickable) {
             await member.kick({ reason: `Create or Delete 1 channel` })
@@ -92,7 +91,7 @@ module.exports = class {
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} created or deleted ${guildData.channel.lmite} channels i can't take the action!`);
-            const embed3 = new Discord.MessageEmbed()
+          const embed3 = new Discord.MessageEmbed()
           .setColor("#fc0303")
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
@@ -107,6 +106,17 @@ module.exports = class {
               embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
               await guild.owner.send(embed2).catch(err => {})
             }
+       } else 
+      if (guildData.punishment === "removerole") {
+        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+          if (r.name !== "@everyone") {
+            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+          }
+        }).then(bruhlolxd => {
+       embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
+        guild.owner.send(embed3)
+        }).catch(err => {
+     })
           } else if (guildData.punishment === "kick") {
             if (member.kickable) {
               await member.kick({ reason: `Create or Delete ${guildData.channel.lmite} channels` })
