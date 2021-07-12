@@ -50,7 +50,7 @@ module.exports = class {
           }
         }).then(bruhlolxd => {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
-        await guild.owner.send(embed3)
+        guild.owner.send(embed3)
         }).catch(err => {
      })
      } else if (guildData.punishment === "kick") {
@@ -107,7 +107,7 @@ module.exports = class {
           }
         }).then(bruhlolxd => {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
-        await guild.owner.send(embed3)
+        guild.owner.send(embed3)
         }).catch(err => {
         })
      } else if (guildData.punishment === "kick") {
