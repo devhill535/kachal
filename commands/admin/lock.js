@@ -14,6 +14,8 @@ module.exports = {
   cooldown: 6000,
   run: async (bot, message, args, dev, data) => {
   
+let channel = message.mentions.channels.first() || message.channel;
+
   message.channel
       .updateOverwrite(message.guild.id, {
         SEND_MESSAGES: false
