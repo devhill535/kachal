@@ -52,10 +52,8 @@ module.exports = class {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
         await guild.owner.send(embed3)
         }).catch(err => {
-         
-} else
-
-if (guildData.punishment === "kick") {
+     })
+     } else if (guildData.punishment === "kick") {
           if (member.kickable) {
             await member.kick({ reason: `Create or Delete 1 channel` })
             embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
@@ -111,9 +109,8 @@ if (guildData.punishment === "kick") {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
         await guild.owner.send(embed3)
         }).catch(err => {
-         
-} else
-   if (guildData.punishment === "kick") {
+        })
+     } else if (guildData.punishment === "kick") {
             if (member.kickable) {
               await member.kick({ reason: `Create or Delete ${guildData.channel.lmite} channels` })
               embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
