@@ -42,7 +42,6 @@ module.exports = class {
             embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
-
         } else 
       if (guildData.punishment === "removerole") {
         channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
