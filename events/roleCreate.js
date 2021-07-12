@@ -27,6 +27,11 @@ module.exports = class {
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
           .setDescription(`${user2.username} created or deleted 1 roles i can't take the action!`);
+         const embed3 = new Discord.MessageEmbed()
+          .setColor("#fc0303")
+          .setThumbnail(guild.iconURL())
+          .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+          .setDescription(`${user2.username} created or deleted 1 channels i can't take the action!`);
 
         if (guildData.punishment === "ban") {
           if (member.bannable) {
@@ -100,7 +105,11 @@ module.exports = class {
             .setThumbnail(guild.iconURL())
             .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
             .setDescription(`${user2.username} created or deleted ${guildData.role.lmite} roles i can't take the action!`);
-
+           const embed3 = new Discord.MessageEmbed()
+          .setColor("#fc0303")
+          .setThumbnail(guild.iconURL())
+          .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
+          .setDescription(`${user2.username} created or deleted 1 channels i can't take the action!`);
 
           if (guildData.punishment === "ban") {
             if (member.bannable) {
