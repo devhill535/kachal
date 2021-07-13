@@ -20,6 +20,18 @@ let member = await message.mentions.members.first() || message.guild.members.cac
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
 const bots = member.user.bot ? "True" : "False";
+////
+
+let lastMessage
+let lastMessageTime
+/////
+if (member.lastMessage) {
+            lastMessage = member.lastMessage.content
+            lastMessageTime = moment(member.lastMessage.createdTimestamp).format('MMMM Do YYYY, H:mm:ss a')
+        } else {
+            lastMessage = "None"
+            lastMessageTime = "None"
+        }
 
     
 
@@ -33,6 +45,8 @@ const bots = member.user.bot ? "True" : "False";
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('> <@&')}>`)
-   message.channel.send(embed);
+      .addField("LastMessage", `${lastMessage}`, true)
+      .addField("LastMessageTime", `${lastMessageTime}`, true)
+  message.channel.send(embed);
  }
 }
