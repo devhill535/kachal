@@ -100,11 +100,9 @@ async run(message,bot) {
 	  }
 	  timestamps.set(message.author.id, now);
 	  let prefix = guild.prefix;
-	  command.run(bot, message, args, prefix, data, cmd);
-             } else {
-		message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${guild.prefix.toLowerCase()}\` Use \`${guild.prefix.toLowerCase()}help\` to get the list of the commands!`)
-		  }
+	  if (command) command.run(bot, message, args, prefix, data, cmd);
 	  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   }
   }
+}
