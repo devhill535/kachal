@@ -21,7 +21,7 @@ let nickname = member.nickname !== undefined && member.nickname !== null ? membe
 ///
 const bots = member.user.bot ? "True" : "False";
 ////
- lastMessage = member.lastMessage.content
+ lastMessage = member.lastMessage.content ? "None";
  lastMessageTime = moment(member.lastMessage.createdTimestamp).format('MMMM Do YYYY, H:mm:ss a')
 
 
