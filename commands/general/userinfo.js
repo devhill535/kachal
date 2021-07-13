@@ -21,17 +21,9 @@ let nickname = member.nickname !== undefined && member.nickname !== null ? membe
 ///
 const bots = member.user.bot ? "True" : "False";
 ////
+ lastMessage = member.lastMessage.content
+ lastMessageTime = moment(member.lastMessage.createdTimestamp).format('MMMM Do YYYY, H:mm:ss a')
 
-let lastMessage
-let lastMessageTime
-/////
-if (member.lastMessage) {
-            lastMessage = member.lastMessage.content
-            lastMessageTime = moment(member.lastMessage.createdTimestamp).format('MMMM Do YYYY, H:mm:ss a')
-        } else {
-            lastMessage = "None"
-            lastMessageTime = "None"
-        }
 
     
 
