@@ -15,7 +15,7 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args) => {
 
-let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.user.id.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
+let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || bot.users.cache.find(r => r.id == args[0]) || message.member;
 ///
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
@@ -35,8 +35,7 @@ const bots = member.user.bot ? "True" : "False";
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `Role ${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length}: <@&${member._roles.join('> <@&')}>`)
-      .addField("LastMessage", `${lastMessage}`, true)
-      .addField("LastMessageTime", `${lastMessageTime}`, true)
+
   message.channel.send(embed);
  }
 }
