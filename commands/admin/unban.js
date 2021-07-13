@@ -11,7 +11,7 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","BAN_MEMBERS" ],		
   ownerOnly: false,			
   cooldown: 6000,
-  run: async (client, message, args, dev) => {
+  run: async (client, message, dev) => {
 
 const userId = args[0];
 
