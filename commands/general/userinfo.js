@@ -15,7 +15,9 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args) => {
 
-let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.id.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
+const member = bot.users.cache.find(e => e.id == args[0]) || message.mentions.users.first();
+
+//let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.id.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
 ///
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
