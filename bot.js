@@ -79,9 +79,7 @@ if (!message.channel.guild) return;
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
     if (guild.ghostping.onoff === "off") return;
-   let Ww = Owner.findOne({ ownerCode: "738478465870987425" });
-    if (Ww.worldWhitelist.find((c) => c.type === message.author.id)) return;
-  if (message.author.id === message.guild.ownerID) return console.log("owner");
+     if (message.author.id === message.guild.ownerID) return console.log("owner");
     if (guild.whitelist.find((c) => c.type === message.author.id))
       return console.log("whitelist");
     if (message.author.bot) return;
