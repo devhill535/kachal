@@ -1,7 +1,7 @@
 const Schema = require('../../models/ghostping')
 
 module.exports = {
-  name: 'ghostping-off',
+  name: "ghostping-off",
   description: "Disable Anti Ghost Ping Module",
   enabled: true,
   run: async(client, message, args) => {
