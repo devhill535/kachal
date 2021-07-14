@@ -73,7 +73,7 @@ bot.on("ready", async () => {
 
 //=============================== - [ ghostping ] - ===================================//
 
-bot.on("messageDelete", (message) => {
+/*bot.on("messageDelete", (message) => {
 if (!message.channel.guild) return;
   let guild = Guild.findOne({ guildID: message.guild.id });
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
@@ -93,7 +93,7 @@ if (message.mentions.users.first()) {
        }**||`));
    }
   }
-});
+});*/
 
 //=============================== - [ antimention ] - ===================================//
 
