@@ -75,7 +75,7 @@ bot.on("ready", async () => {
 
 bot.on("messageDelete", (message) => {
 if (!message.channel.guild) return;
-  let guild = await Guild.findOne({ guildID: message.guild.id });
+  let guild = Guild.findOne({ guildID: message.guild.id });
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
     if (guild.ghostping.onoff === "off") return;
