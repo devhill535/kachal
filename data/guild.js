@@ -27,6 +27,9 @@ schema = mongoose.Schema({
     bot: {
         onoff: { type: String, default: "on"}
     },
+    ghostping: {
+        onoff: { type: String, default: "on"}
+    },
     punishment: { type: String, default: "ban"},
     whitelist: { type: Array, default: [] },
     time: { type: Number, default: 30}
