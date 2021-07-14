@@ -3,7 +3,7 @@ const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
 const ms = require('ms');
 const bot = new Discord.Client();
-require('discord-buttons')(bot);
+const pingSchema = require('./models/ghostping');
 const { Color, Image, Footer, Author } = require("./config.js");
 const fs = require("fs"); 
 const request = require("request");
@@ -74,6 +74,22 @@ bot.on("ready", async () => {
 
 //=============================== - [ ghostping ] - ===================================//
 
+bot.on('messageDelete', async message => {
+  pingSchema.findOne({ Guild: message.guild.id }, async(err, data) => {
+    if(!data) return;
+    if(message.mentions.members.first()) {
+      message.channel.send(new MessageEmbed()
+        .setTitle(`Ghost Ping Detected`)
+        .addField(`Author`, message.author.tag, true)
+        .addField(`Content`, message.content, true)
+        .setColor("RANDOM")
+        .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
+      )
+    }
+  })
+});
+
+////////
 /*
 bot.on("message", (message) => {});
 bot.on("messageDelete", (message) => {
