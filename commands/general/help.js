@@ -24,7 +24,7 @@ module.exports = {
 [ Top.gg ](https://top.gg/bot/711328570374619207) - [ Invite ](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot) - [ Support ](https://discord.gg/QaqmPG2WZX) - [ Website ](https://zalmanti25.wixsite.com/my-site)
 `)
      .addField("General", "`invite`, `support`, `stats`, `userinfo`, `ping`, `serverinfo`, `bots`, `vote`, `premium`")
-     .addField("Moderation", "`kick`, `ban`, `clear`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`")
+     .addField("Moderation", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`")
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
