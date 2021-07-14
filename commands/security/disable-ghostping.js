@@ -1,11 +1,9 @@
 const Schema = require('../../models/ghostping')
 
 module.exports = {
-  name: 'disable-ghostping',
+  name: 'ghostping-off',
   description: "Disable Anti Ghost Ping Module",
-  aliases: ['dgp'],
-  timeout: '10000',
-  requirePermission: "Manage Server",
+  enabled: true,
   run: async(client, message, args) => {
     if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`You don't have permission to use this command`)
     if(!message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES"])) return message.member.send(`:x: Cancelled the command. Reason: Require \`Send Messages\` permission !`)
