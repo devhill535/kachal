@@ -9,8 +9,8 @@ module.exports = class {
  		guild.owner.send(thanksEmbed).catch(() => {});
 
 
- 		const text = "✅ **__Joined New Guild__** \n **Guild Name** = "+guild.name+" \n **Guild Owner Name** = " + `${guild.owner.user.username}` + " \n **Guild Owner ID** = " + `${guild.owner.id}` + "\n **Guild Member Size** = "+guild.memberCount+" \n **Guild Bots Size** ("+guild.members.cache.filter((m) => m.user.bot).size+" bots)";
- 		const logsEmbed = new Discord.MessageEmbed()
+ 		const text = "joined new guild **"+guild.name+"**, guild member size **"+guild.members.cache.filter((m) => !m.user.bot).size+"** membres, guild bot size( "+guild.members.cache.filter((m) => m.user.bot).size+" bots)";
+                const logsEmbed = new Discord.MessageEmbed()
  			.setColor("#2c2f33")
  			.setDescription(text);
  		bot.channels.cache.get("850465538306998272").send(logsEmbed);     
