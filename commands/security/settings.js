@@ -14,7 +14,7 @@ module.exports = {
     ownerOnly: false,			
     guilOwnerOnly: true,
     cooldown: 4000,
-run: async (bot, message, args, dev, data) => {
+run: async (bot, message, args, dev) => {
    
   let data = await Guild.findOne({ guildID: message.guild.id })
       let embed = new Discord.MessageEmbed()
@@ -101,7 +101,7 @@ run: async (bot, message, args, dev, data) => {
         embed.addField(`- **Punishment**`, `<:removerole:858830377467772988> RemoveRole`);
       }
 
-      embed.setDescription(`This is settings security and settings your server `);
+      embed.setDescription(`This is settings security and settings your server`);
 
       message.channel.send(embed)
      }}
