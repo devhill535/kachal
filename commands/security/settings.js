@@ -101,7 +101,7 @@ run: async (bot, message, args, dev, data) => {
         embed.addField(`- **Punishment**`, `<:removerole:858830377467772988> RemoveRole`);
       }
 
-      embed.setDescription(bot.reva.get(data.lang, "security","settings"));
+      embed.setDescription(`This is settings security and settings your server `);
 
       message.channel.send(embed)
      }}
