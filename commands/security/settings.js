@@ -14,7 +14,7 @@ module.exports = {
     ownerOnly: false,			
     guilOwnerOnly: true,
     cooldown: 4000,
-run: async (bot, message, args, dev) => {
+run: async (bot, message, args, dev, data) => {
    
   let data = await Guild.findOne({ guildID: message.guild.id })
       let embed = new Discord.MessageEmbed()
