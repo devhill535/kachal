@@ -1,0 +1,7 @@
+user_undefined: " Veuillez mentionner quelqu’un à ajouter dans la liste blanche"
+whitelist-remove: "Supprimé dans la liste d’autorisation"
+whitelist-add: " Ajouté à la liste d’autorisation"
+whitelist-zero: "Personne n’a été mis sur liste blanche"
+whitelist-no: "Pas dans la liste blanche"
+whitelist-yes: " This man is whitelisted"
+whitelist-user: "Whitelisted User"
