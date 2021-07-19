@@ -30,7 +30,7 @@ schema = mongoose.Schema({
     ghostping: {
         onoff: { type: String, default: "on"}
     },
-    punishment: { type: String, default: "ban"},
+    punishment: { type: String, default: "removerole"},
     whitelist: { type: Array, default: [] },
     time: { type: Number, default: 30}
 });
