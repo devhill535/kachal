@@ -1,6 +1,6 @@
 schema = mongoose.Schema({
   guildID: String,
-  pRoles: { type: Array, default: [] },
+  aRoles: { type: Array, default: [] },
   
   pStatus: { onoff : { type: String, default:  "off" }
   },
