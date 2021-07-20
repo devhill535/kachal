@@ -25,7 +25,6 @@ global.Guild = require("./data/guild.js");
 global.User = require("./data/user.js");
 global.Lang = require("./data/lang.js");
 global.Prime = require("./data/prime.js");
-global.PublicRole = require("./data/publicrole.js");
 global.Owner = require("./data/owner.js");
 bot.commands = new Collection();
 bot.aliases = new Collection();
