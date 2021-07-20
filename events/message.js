@@ -95,7 +95,7 @@ async run(message,bot) {
 	const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 	if (now < expirationTime) {
 		const timeLeft = (expirationTime - now)/ 1000;
-		return message.channel.send(`Please wait ${timeLeft.toFixed(0)} second`).then(msg=> msg.delete({ timeout:timeLeft.toFixed(1)*1000 }));
+		return message.channel.send(`Please wait **${timeLeft.toFixed(0)}** second`).then(msg=> msg.delete({ timeout:timeLeft.toFixed(1)*1000 }));
 	}
 	  }
 	  timestamps.set(message.author.id, now);
