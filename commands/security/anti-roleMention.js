@@ -20,14 +20,14 @@ module.exports = {
         if (!role) return message.channel.send(new Discord.MessageEmbed()
           .setDescription("Role not found")
           .setColor("BLACK"))
-        if (p.pRoles.includes(role.id)) {
-          p.pRoles = p.pRoles.filter(r => r != role.id)
+        if (p.aRoles.includes(role.id)) {
+          p.aRoles = p.aRoles.filter(r => r != role.id)
           p.save()
           message.channel.send(new Discord.MessageEmbed()
             .setDescription(`${role} has been removed from public roles!`)
             .setColor("BLACK"))
-        } else if (!p.pRoles.includes(role.id)) {
-          p.pRoles.push(role.id)
+        } else if (!p.aRoles.includes(role.id)) {
+          p.aRoles.push(role.id)
           p.save()
           message.channel.send(new Discord.MessageEmbed()
             .setDescription(`${role} has been added tp public roles!`)
@@ -46,7 +46,7 @@ module.exports = {
         if (p.pStatus == "off") return message.channel.send(new Discord.MessageEmbed()
           .setDescription(`Status already is off`)
           .setColor("BLACK"))
-        p.pStatus = "off"
+        p.aRoles = "off"
         p.save()
         message.channel.send(new Discord.MessageEmbed()
           .setDescription(`Status has been updated to off!`)
@@ -54,7 +54,7 @@ module.exports = {
       } else if (!role && args[1] !== "on" && args[1] !== "off") {
         message.channel.send(new Discord.MessageEmbed()
           .setTitle("anti-roleMention")
-          .setDescription(`${p.pRoles.length > 0 ? p.pRoles.map(c => `${message.guild.roles.cache.get(c)} - ${message.guild.roles.cache.get(c).name}` || "No roleMentions added yet!") : "No roleMention added yet!"}`)
+          .setDescription(`${p.aRoles.length > 0 ? p.aRoles.map(c => `${message.guild.roles.cache.get(c)} - ${message.guild.roles.cache.get(c).name}` || "No roleMentions added yet!") : "No roleMention added yet!"}`)
           .setColor("BLACK"))
       }
     })
