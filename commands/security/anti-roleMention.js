@@ -2,12 +2,11 @@ const fs = require("fs");
 const Discord = require("discord.js");
 module.exports = {
   name: "anti-rolemention",
-  aliases: ["antirolemention"],
+  aliases: ["ar"],
   enabled: true,
-  memberPermissions:{} ["SEND_MESSAGES"],
+  memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
-  ownerOnly: false,
-  guilOwnerOnly: true,
+  ownerOnly: true,
   cooldown: 5000,
   run: async (bot, message, args) => {
     PublicRole.findOne({
