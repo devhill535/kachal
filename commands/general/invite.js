@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const { MessageButton } = require("discord-buttons");
+const disbut = require("discord-buttons");
 const { Color } = require("../../config.js");
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
   run: async (bot, message, args, dev) => {
 
 
-  message.buttons(new MessageButton()
+  message.channel.send(new disbut.MessageButton()
   .setStyle('url')
   .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!'));
