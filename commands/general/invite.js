@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const disbut = require("discord-buttons");
+const { MessageButton } = require("discord-buttons");
 const { Color } = require("../../config.js");
 
 module.exports = {
@@ -14,19 +14,19 @@ module.exports = {
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
   cooldown: 2000,
-  run: async (bot, message, args, dev) => {
+  run: async (bot, message, args, dev, data) => {
 
 
-  message.channel.send(new disbut.MessageButton()
+  let butn = new MessageButton()
   .setStyle('url')
   .setURL('https://i8.ae/53lTv') 
-  .setLabel('Invite Link!'));
+  .setLabel('Invite Link!')
+ 
+ 
 
-  /*const embed = new Discord.MessageEmbed()
+  const embed = new Discord.MessageEmbed()
   .setColor(Color)
   .setTitle(bot.reva.get(data.lang, "general","invite"))
-  .setDescription(`[Anti Vandalism Premium]()\n[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
-
- message.channel.send(embed);*/
+ message.channel.send(butn, embed);
      }
  }
