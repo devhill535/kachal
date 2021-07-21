@@ -22,10 +22,6 @@ module.exports = {
   .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!')
  
- 
-  let embed = new Discord.MessageEmbed()
-  .setColor(Color)
-  .setTitle(bot.reva.get(data.lang, "general","invite"))
- message.channel.send(butn, embed);
+ message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`, embed);
      }
  }
