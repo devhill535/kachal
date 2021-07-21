@@ -11,15 +11,12 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
    
- const embed = new Discord.MessageEmbed()
+ let butn = new MessageButton()
+  .setStyle('url')
+  .setURL('https://top.gg/bot/711328570374619207') 
+  .setLabel('Vote Top.gg!')
 
-.setColor(Color)
- .setThumbnail(`https://cdn.discordapp.com/attachments/818177981884923964/843887454348247100/image0.png`)
- .setTitle(bot.reva.get(data.lang, "general","vote"))
- .setDescription("[ Top.gg ](https://top.gg/bot/711328570374619207) \n - \n [ Discord.ly ](https://discord.ly/anti-vandalism)")
- 
-
-return message.lineReplyNoMention(embed);
+return message.lineReplyNoMention(`${bot.reva.get(data.lang, "general","vote")}`, butn);
 
   }
 }
