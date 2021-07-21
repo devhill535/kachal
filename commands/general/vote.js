@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const { Color } = require("../../config.js");
+const { MessageButton } = require("discord-buttons");
 
 module.exports = {
   name: "vote",
