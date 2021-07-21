@@ -17,12 +17,10 @@ module.exports = {
   run: async (bot, message, args, dev) => {
 
 
-let button = new MessageButton()
+message.channel.send(new MessageButton()
   .setStyle('url')
   .setURL('https://i8.ae/53lTv') 
-  .setLabel('Invite Link!'); 
-
-message.channel.send('anti vandalism link', button);
+  .setLabel('Invite Link!'));
 
 
   /*const embed = new Discord.MessageEmbed()
