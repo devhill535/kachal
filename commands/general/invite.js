@@ -21,7 +21,7 @@ let btn = new MessageButton()
   .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!')
 
-  message.channel.send(btn);
+  message.channel.send(``,btn);
 
   /*const embed = new Discord.MessageEmbed()
   .setColor(Color)
