@@ -14,22 +14,22 @@ module.exports = {
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
   cooldown: 2000,
-  run: async (bot, message, args, dev) => {
+  run: async (bot, message, args, dev, data) => {
 
 
-let button = new disbut.MessageButton()
+/*let button = new disbut.MessageButton()
   .setLabel('invite me!')
   .setID('click_to_function')
   .setURL('https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot')
   .setStyle('url');
 
-message.channel.send(button);
+message.channel.send(button);*/
 
-  /*const embed = new Discord.MessageEmbed()
+  const embed = new Discord.MessageEmbed()
   .setColor(Color)
   .setTitle(bot.reva.get(data.lang, "general","invite"))
   .setDescription(`[Anti Vandalism Premium](https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot)\n[Anti Vandalism](https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot)`)
 
- message.channel.send(embed);*/
+ message.channel.send(embed);
      }
  }
