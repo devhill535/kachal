@@ -90,7 +90,7 @@ async run(message,bot) {
 	  }
           const now = Date.now();
 	  const timestamps = bot.cooldowns.get(command.name);
-	  const cooldownAmount = (/*command.cooldown ||*/ 7000); 
+	  const cooldownAmount = (command.cooldown || 7000); 
 	  if (timestamps.has(message.author.id)) {
 	const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 	if (now < expirationTime) {
