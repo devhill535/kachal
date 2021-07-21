@@ -17,6 +17,8 @@ module.exports = {
  .setTitle(bot.reva.get(data.lang, "general","vote"))
  .setDescription("[ Top.gg ](https://top.gg/bot/711328570374619207) \n - \n [ Discord.ly ](https://discord.ly/anti-vandalism)")
  
-message.channel.send(embed);
+
+return message.lineReplyNoMention(embed);
+
   }
 }
