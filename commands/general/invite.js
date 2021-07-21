@@ -19,10 +19,10 @@ module.exports = {
 
 let button = new MessageButton()
   .setStyle('url')
-  .setURL('https://npmjs.com/discord-buttons') 
-  .setLabel('My First URL Button!'); 
+  .setURL('https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot') 
+  .setLabel('Invite Link!'); 
 
-message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
+message.channel.send('', button);
 
 
   /*const embed = new Discord.MessageEmbed()
