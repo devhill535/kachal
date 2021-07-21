@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const disbut = require("discord-buttons");
+const { MessageButton } = require("discord-buttons");
 const { Color } = require("../../config.js");
 
 module.exports = {
@@ -17,12 +17,13 @@ module.exports = {
   run: async (bot, message, args, dev) => {
 
 
-let button = new disbut.MessageButton()
-  .setLabel('invite me!')
-  .setID('button1')
-  .setURL('https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot')
-  .setStyle('url');
-message.channel.send(button);
+let button = new MessageButton()
+  .setStyle('url')
+  .setURL('https://npmjs.com/discord-buttons') 
+  .setLabel('My First URL Button!'); 
+
+message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
+
 
   /*const embed = new Discord.MessageEmbed()
   .setColor(Color)
