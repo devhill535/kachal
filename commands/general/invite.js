@@ -22,7 +22,7 @@ let button = new disbut.MessageButton()
   .setID("button1")
   .setStyle("blurple");
 
-message.channel.send("Message with a button!", button);
+message.channel.send(button);
 
   /*const embed = new Discord.MessageEmbed()
   .setColor(Color)
