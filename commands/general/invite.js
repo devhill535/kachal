@@ -21,7 +21,7 @@ module.exports = {
 
 let button = new disbut.MessageButton()
   .setLabel("This is a button!")
-  .setID("myid")
+  .setID("button1")
   .setStyle("blurple");
 
 message.channel.send("Message with a button!", button);
