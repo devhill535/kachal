@@ -1,8 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
 const disbut = require("discord-buttons");
-const bot = new Discord.Client(); //Creating discord.js client (constructor)
-require('discord-buttons')(bot);
 const { Color } = require("../../config.js");
 
 module.exports = {
