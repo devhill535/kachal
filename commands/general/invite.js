@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
+const disbut = require("discord-buttons");
 const bot = new Discord.Client(); //Creating discord.js client (constructor)
 require('discord-buttons')(bot);
 const { Color } = require("../../config.js");
@@ -17,21 +18,14 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev) => {
 
-        
-     message.buttons('Invite me', {
-            buttons: [
-                {
-                    style: 'green',
-                    label: 'Click to function!',
-                    id: 'click_to_function'
-                },
-                {
-                    style: 'url',
-                    label: 'Invite me!',
-                    url: 'https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot'
-                }
-            ]
-        })
+
+let button = new disbut.MessageButton()
+  .setLabel("This is a button!")
+  .setID("myid")
+  .setStyle("blurple");
+
+message.channel.send("Message with a button!", button);
+
   /*const embed = new Discord.MessageEmbed()
   .setColor(Color)
   .setTitle(bot.reva.get(data.lang, "general","invite"))
