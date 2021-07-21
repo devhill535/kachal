@@ -2,13 +2,18 @@ const Discord = module.require("discord.js");
 const ms = require("ms"); //Make sure to install ms package
 
 module.exports = {
-  config: {
- name: "lockdown",
- category: "moderation",
- aliases: ["close", "lock"],
- description: "Start a timed lockdown in a channel",
-  },
- run: async(client, message, args) => {
+  name: "lockdown",
+  aliases: [""],
+  description: "Locks all text channels from your server",
+  usage: ["s!lockall"],
+  category: ["Moderation"],
+  enabled: true,              
+  memberPermissions: [ "MANAGE_CHANNELS" ],            
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],        
+  ownerOnly: false,            
+  cooldown: 6000,
+  run: async (bot, message, args, dev) => {
+
  const time = args.join(" ");
  if (!time) {
  return message.channel.send("Error:x: Enter a valid time period in `Seconds`, `Minutes` or `Hours` ")
