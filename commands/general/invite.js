@@ -19,7 +19,7 @@ module.exports = {
 
 let button = new MessageButton()
   .setStyle('url')
-  .setURL('https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot') 
+  .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!'); 
 
 message.channel.send('', button);
