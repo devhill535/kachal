@@ -16,19 +16,20 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
 
-   let kod1 = bot.makeid(6);
-
-   let sorgu = new MessageButton()
-    .setLabel(kod1)
-    .setStyle("blurple")
-    .setID(kod1)
-
-const correctButton = new Discord.MessageEmbed()
-	.setTitle("The correct button has been selected.").setColor("GREEN")
-	.setAuthor(message.author.username, message.author.avatarURL({ dynamic: true }))
-	.setDescription(`You have successfully bumped for server **${message.guild.name}**.`)
-mesaage.channel.send(correctButton);
-
+   message.buttons('Invite me', {
+            buttons: [
+                {
+                    style: 'green',
+                    label: 'Click to function!',
+                    id: 'click_to_function'
+                },
+                {
+                    style: 'url',
+                    label: 'Vote for me!',
+                    url:'https://dsc.gg/automodbot'
+                }
+            ]
+        })
   /* const embed = new Discord.MessageEmbed()
   .setColor(Color)
   .setTitle(bot.reva.get(data.lang, "general","invite"))
