@@ -28,7 +28,7 @@ module.exports = {
                 {
                     style: 'url',
                     label: 'Invite me!',
-                    url:' '
+                    url: 'https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot'
                 }
             ]
         })
