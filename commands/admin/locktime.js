@@ -2,12 +2,12 @@ const Discord = module.require("discord.js");
 const ms = require("ms"); //Make sure to install ms package
 
 module.exports = {
-  name: "lockdown",
+  name: "locktime",
   aliases: [""],
   description: "Locks all text channels from your server",
   usage: ["s!lockall"],
   category: ["Moderation"],
-  enabled: true,              
+  enabled: false,              
   memberPermissions: [ "MANAGE_CHANNELS" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],        
   ownerOnly: false,            
@@ -30,7 +30,7 @@ module.exports = {
  ],);
  const embed = new Discord.MessageEmbed()
  .setTitle("Channel Updates")
- .setDescription(`${message.channel} has been placed under lockdown for ${time} `)
+ .setDescription(`${message.channel} has been placed under lockdown for **${time}** `)
  .setColor(Color);
  message.channel.send(embed)
 
