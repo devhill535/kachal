@@ -12,6 +12,11 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev) => {
 
-message.channel.send(`This is a server support **Anti Vandalism** if you need help, enter the server - \n https://discord.gg/QaqmPG2WZX`);
+let butn = new MessageButton()
+  .setStyle('url')
+  .setURL('https://discord.gg/QaqmPG2WZX') 
+  .setLabel('Support Server!')
+
+message.channel.send('This is a server support **Anti Vandalism** if you need help, enter the server', butn);
     } 
 }
