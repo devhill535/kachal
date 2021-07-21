@@ -16,11 +16,10 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev) => {
 
-let code1 = bot.makeid(6);
 
 let button = new disbut.MessageButton()
   .setLabel('invite me!')
-  .setID('code1')
+  .setID('button1')
   .setURL('https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot')
   .setStyle('url');
 message.channel.send(button);
