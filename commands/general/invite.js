@@ -16,12 +16,11 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev) => {
 
-let btn = new MessageButton()
+
+  message.buttons(new MessageButton()
   .setStyle('url')
   .setURL('https://i8.ae/53lTv') 
-  .setLabel('Invite Link!')
-
-  message.channel.send(``,btn);
+  .setLabel('Invite Link!'));
 
   /*const embed = new Discord.MessageEmbed()
   .setColor(Color)
