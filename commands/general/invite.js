@@ -18,8 +18,8 @@ module.exports = {
 
 
 let button = new disbut.MessageButton()
-  .setLabel('This is a button!')
-  .setID('button1')
+  .setLabel('invite me!')
+  .setID('click_to_function')
   .setURL('https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot')
   .setStyle('url');
 
