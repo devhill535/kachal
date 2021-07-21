@@ -22,6 +22,6 @@ module.exports = {
   .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!')
  
- message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`, embed);
+ message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`, butn);
      }
  }
