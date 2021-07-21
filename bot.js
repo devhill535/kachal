@@ -73,6 +73,10 @@ bot.on("ready", async () => {
      .catch(error => console.log(error));
  });
 
+////
+bot.on("clickButton", async (button) => {
+ console.log(button.id);
+});
 //=============================== - [ ghostping ] - ===================================//
 
 /*bot.on("messageDelete", (message) => {
