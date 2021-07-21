@@ -20,7 +20,7 @@ module.exports = {
 let button = new disbut.MessageButton()
   .setLabel("This is a button!")
   .setID("button1")
-  .setUrl("https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot")
+  .setURL("https://discord.com/api/oauth2/authorize?client_id=813131436265046068&permissions=8&scope=bot")
   .setStyle("blurple");
 
 message.channel.send(button);
