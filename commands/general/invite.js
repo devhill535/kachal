@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const bot = new discord.Client(); //Creating discord.js client (constructor)
+const bot = new Discord.Client(); //Creating discord.js client (constructor)
 require('discord-buttons')(bot);
 const { Color } = require("../../config.js");
 
