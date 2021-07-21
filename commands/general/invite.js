@@ -22,7 +22,7 @@ let button = new MessageButton()
   .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!'); 
 
-message.channel.send('', button);
+message.channel.send('anti vandalism link', button);
 
 
   /*const embed = new Discord.MessageEmbed()
