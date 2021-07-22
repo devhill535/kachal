@@ -15,7 +15,7 @@ module.exports = {
   cooldown: 1000,
   run: async (bot, message, args, dev, data) => {
    
-    if (!args[1]) {
+    //if (!args[1]) {
 
   let cmduser = message.author;
   let menuoptions = [ 
@@ -86,7 +86,7 @@ module.exports = {
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
- return message.channel.send(embed);*/
+ return message.channel.send(embed);
  } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
@@ -107,5 +107,5 @@ module.exports = {
       .addField("**Command is**", ccmd);
       message.channel.send(embed)
         }
-    }
+    }*/
   }};
