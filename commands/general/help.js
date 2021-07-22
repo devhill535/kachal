@@ -28,7 +28,8 @@ module.exports = {
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
-   return message.lineReplyNoMention(embed);
+ message.lineReplyNoMention({buttons: [button1, button2], embed: embed})
+ /// return message.lineReplyNoMention(embed);
        } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
