@@ -45,7 +45,7 @@ module.exports = {
   //define the embed
   let MenuEmbed = new Discord.MessageEmbed()
     .setColor("BLUE")
-    .setAuthor("Bot Help", client.user.displayAvatarURL())
+    .setAuthor("Bot Help", bot.user.displayAvatarURL())
     .setDescription("***Select what you need in the `Selection` down Below!***")
   //send the menu msg
   let menumsg = await message.channel.send(MenuEmbed, Selection)
