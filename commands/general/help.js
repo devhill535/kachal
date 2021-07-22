@@ -40,7 +40,7 @@ module.exports = {
       .setDescription(option.description) 
       .setDefault() 
     if(option.emoji) row.setEmoji(option.emoji) 
-    Selection.addOption(row)
+    selection.addOption(row)
   })
   //define the embed
   let menuembed = new Discord.MessageEmbed()
