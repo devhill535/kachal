@@ -15,65 +15,8 @@ module.exports = {
   cooldown: 1000,
   run: async (bot, message, args, dev, data) => {
    
-    //if (!args[1]) {
-
-  let cmduser = message.author;
-  let menuoptions = [ 
-    {
-      value: "role1", description: "Get Role 1",
-      replymsg: "This is the message for Role 1", emoji: "❌" //optional
-    }, {
-      value: "role2",  description: "Get Role 2",
-      replymsg: "This is the message for Role 2", emoji: "✅" //optional
-    } 
-  ]
-  //define the selection
-  let selection = new MessageMenu()
-    .setID('MenuSelection') 
-    .setMaxValues(1) //OPTIONAL, this is how many values you can have at each selection
-    .setMinValues(1) //OPTIONAL , this is how many values you need to have at each selection
-    .setPlaceholder('Click me to make a Selection!');  //message in the content placeholder
-  menuoptions.forEach(option => {
-    let row = new MessageMenuOption()
-      .setLabel(option.label ? option.label : option.value)
-      .setValue(option.value) 
-      .setDescription(option.description) 
-      .setDefault() 
-    if(option.emoji) row.setEmoji(option.emoji) 
-    selection.addOption(row)
-  })
-  //define the embed
-  let menuembed = new Discord.MessageEmbed()
-    .setColor("BLUE")
-    .setDescription("***Select what you need in the `Selection` down Below!***")
-  //send the menu msg
-  let menumsg = await message.channel.send(menuembed, selection)
-  //function to handle the menuselection
-  function menuselection(menu) {
-    let menuoptiondata = menuoptions.find(v=>v.value == menu.values[0])
-    menu.reply.send(menuoptiondata.replymsg, true);
-  }
-  //Event
-  bot.on('clickMenu', (menu) => {
-    if (menu.message.id === menumsg.id) {
-      if (menu.clicker.user.id === cmduser.id) menuselection(menu);
-      else menu.reply.send(`:x: You are not allowed to do that! Only: <@${cmduser.id}>`, true);
-    }
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
- /* let embed = new Discord.MessageEmbed()
+    if (!args[1]) {
+  let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
      .setImage(Image)
@@ -107,5 +50,5 @@ module.exports = {
       .addField("**Command is**", ccmd);
       message.channel.send(embed)
         }
-    }*/
+    }
   }};
