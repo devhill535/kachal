@@ -28,7 +28,7 @@ module.exports = {
     } 
   ]
   //define the selection
-  let Selection = new MessageMenu()
+  let selection = new MessageMenu()
     .setID('MenuSelection') 
     .setMaxValues(1) //OPTIONAL, this is how many values you can have at each selection
     .setMinValues(1) //OPTIONAL , this is how many values you need to have at each selection
@@ -43,11 +43,11 @@ module.exports = {
     Selection.addOption(row)
   })
   //define the embed
-  let MenuEmbed = new Discord.MessageEmbed()
+  let menuembed = new Discord.MessageEmbed()
     .setColor("BLUE")
     .setDescription("***Select what you need in the `Selection` down Below!***")
   //send the menu msg
-  let menumsg = await message.channel.send(MenuEmbed, Selection)
+  let menumsg = await message.channel.send(menuembed, selection)
   //function to handle the menuselection
   function menuselection(menu) {
     let menuoptiondata = menuoptions.find(v=>v.value == menu.values[0])
