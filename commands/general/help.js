@@ -15,6 +15,17 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
+
+let button1 = new MessageButton()
+  .setStyle('url')
+  .setURL('https://i8.ae/53lTv') 
+  .setLabel('Invite!')
+
+let button2 = new MessageButton()
+  .setStyle('url')
+  .setURL('https://i8.ae/53lTv') 
+  .setLabel('Support!')
+
   let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
