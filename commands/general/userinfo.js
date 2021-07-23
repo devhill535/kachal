@@ -32,7 +32,7 @@ const bots = member.user.bot ? "True" : "False";
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
       .addField("Is Bot", `${bots}`, true)
-      .addField("Bio", `${message.author.bio}`, true)
+      .addField("Bio", `${member.user.bio}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
