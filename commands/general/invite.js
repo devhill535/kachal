@@ -21,12 +21,7 @@ module.exports = {
   .setStyle('url')
   .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link!')
- 
-let butn1 = new MessageButton()
-  .setStyle('url')
-  .setURL('https://i8.ae/53lTv') 
-  .setLabel('Invite Link!')
 
- return message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`, butn,butn1);
+ return message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`,butn);
      }
  }
