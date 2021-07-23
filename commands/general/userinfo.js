@@ -22,6 +22,23 @@ let nickname = member.nickname !== undefined && member.nickname !== null ? membe
 const bots = member.user.bot ? "True" : "False";
 ////
 
+        let stat = member.presence.activities[0]
+        let custom
+
+        if (member.presence.activities.some(r => r.name === "Spotify")) {
+            custom = "Listening to Spotify"
+        } else if (stat && stat.name !== "Custom Status") {
+            custom = stat.name
+        } else {
+            custom = "Nothing"
+        }
+
+        if (member.presence.activities.some(r => r.name !== "Spotify") && stat && stat.state !== null) {
+            stat = stat.state
+        } else {
+            stat = "Nothing"
+        }
+        
 
     
 
@@ -32,7 +49,7 @@ const bots = member.user.bot ? "True" : "False";
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
       .addField("Is Bot", `${bots}`, true)
-      .addField("Bio", `${member.user.bio}`, true)
+      .addField("Activity", `${custom}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
