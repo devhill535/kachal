@@ -21,7 +21,7 @@ module.exports = {
       let i1 = 10;
       let page = 1;
 
-      let description =        bot.guilds.cache
+      let description = bot.guilds.cache
           .sort((a, b) => b.memberCount - a.memberCount)
           .map(r => r)
           .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}\nServer Owner - ${r.owner}`)
