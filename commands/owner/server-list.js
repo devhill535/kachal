@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const ownerid = "738478465870987425";
 
 module.exports = {
-  name: "server-list",
+  name: "slt",
   enabled: true,
   memberPermissions: [ "SEND_MESSAGES" ],
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
@@ -24,7 +24,7 @@ module.exports = {
       let description =        bot.guilds.cache
           .sort((a, b) => b.memberCount - a.memberCount)
           .map(r => r)
-          .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
+          .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}\nServer Owner - ${r.owner}`)
           .slice(0, 10)
           .join("\n");
 
