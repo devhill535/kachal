@@ -25,12 +25,6 @@ module.exports = {
     if (args[0] === message.author.id)
       return message.channel.send(`You are already unban`);
 
-    if (args[0] === message.guild.owner.user.id)
-      return message.channel.send(`Server owner is already unban`);
-
-    if (args[0] === client.user.id)
-      return message.channel.send(`I am already unban`);
-
     let FetchBan = await message.guild.fetchBans();
 
     let Member;
@@ -48,14 +42,6 @@ module.exports = {
         "Please give valid member id or member is not banned!"
       );
 
-    
-    try {
-      message.guild.members.unban(Member.user.id);
-    } catch (error) {
-      return message.channel.send(
-        `I Can't unban that member maybe member is not banned or some error!`
-      );
-    }
 
     let embed = new MessageEmbed()
       .setColor(Color)
