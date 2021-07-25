@@ -7,7 +7,7 @@ module.exports = {
   description: "Locks all text channels from your server",
   usage: ["s!lockall"],
   category: ["Moderation"],
-  enabled: false,              
+  enabled: true,              
   memberPermissions: [ "MANAGE_CHANNELS" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],        
   ownerOnly: false,            
