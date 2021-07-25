@@ -50,7 +50,7 @@ module.exports = {
 
     
     try {
-      message.guild.members.unban(Member.user.id, Reason);
+      message.guild.members.unban(Member.user.id);
     } catch (error) {
       return message.channel.send(
         `I Can't unban that member maybe member is not banned or some error!`
