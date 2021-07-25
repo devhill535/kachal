@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const ms = require("ms"); //Make sure to install ms package
+const { Color } = require("../../config.js");
 
 module.exports = {
   name: "locktime",
