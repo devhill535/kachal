@@ -17,11 +17,13 @@ module.exports = {
           .send("I Dont Have Permissions")
           .then(msg => msg.delete({ timeout: 5000 }));
 
-      let i0 = 0;
+           let i0 = 0;
       let i1 = 10;
       let page = 1;
 
-      let description = bot.guilds.cache
+      let description =
+        `Total Servers - ${bot.guilds.cache.size}\n\n` +
+        bot.guilds.cache
           .sort((a, b) => b.memberCount - a.memberCount)
           .map(r => r)
           .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
@@ -29,13 +31,18 @@ module.exports = {
           .join("\n");
 
       let embed = new Discord.MessageEmbed()
+        .setAuthor(
+          message.author.tag,
+          message.author.displayAvatarURL({ dynamic: true })
+        )
         .setColor(Color)
+        .setFooter(bot.user.username)
         .setTitle(`Page - ${page}/${Math.ceil(bot.guilds.cache.size / 10)}`)
         .setDescription(description);
 
       let msg = await message.channel.send(embed);
 
-      await msg.react("⬅️");
+      await msg.react("⬅");
       await msg.react("➡️");
       await msg.react("🚫");
 
@@ -44,7 +51,7 @@ module.exports = {
       );
 
       collector.on("collect", async (reaction, user) => {
-        if (reaction._emoji.name === "⬅️") {
+        if (reaction._emoji.name === "⬅") {
           // Updates variables
           i0 = i0 - 10;
           i1 = i1 - 10;
@@ -65,7 +72,7 @@ module.exports = {
               .sort((a, b) => b.memberCount - a.memberCount)
               .map(r => r)
               .map(
-                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`
+                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members`
               )
               .slice(i0, i1)
               .join("\n");
@@ -101,7 +108,7 @@ module.exports = {
               .sort((a, b) => b.memberCount - a.memberCount)
               .map(r => r)
               .map(
-                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`
+                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members`
               )
               .slice(i0, i1)
               .join("\n");
