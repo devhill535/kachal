@@ -21,3 +21,8 @@ if (member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS'])) return message.channe
  
  
 if (!member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS'])) return message.channel.send(`This member can‘t kick and ban`)
+ 
+
+
+  }
+}
