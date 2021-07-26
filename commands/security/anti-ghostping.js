@@ -8,7 +8,7 @@ module.exports = {
   description: "With our new spam detect system, prevent anyone from trying to raid your server",
   usage: ["s!antispam [on/off]"],
   category: ["Security"],
-  enabled: false,
+  enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
