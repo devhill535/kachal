@@ -9,7 +9,7 @@ module.exports = {
   memberPermissions: [ "SEND_MESSAGES" ],
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
   ownerOnly: true,
-  cooldown: 6000,
+  cooldown: 0,
   run: async (bot, message, args) => {
     if (message.author.id == ownerid) {
       if (!message.guild.me.hasPermission("SEND_MESSAGES"))
@@ -17,29 +17,25 @@ module.exports = {
           .send("I Dont Have Permissions")
           .then(msg => msg.delete({ timeout: 5000 }));
 
-           let i0 = 0;
+      let i0 = 0;
       let i1 = 10;
       let page = 1;
 
-      let description =
-        `Total Servers - ${bot.guilds.cache.size}\n\n` +
-        bot.guilds.cache
+      let description = bot.guilds.cache
           .sort((a, b) => b.memberCount - a.memberCount)
           .map(r => r)
-          .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}`)
+          .map((r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id} - server owner ${r.owner}`)
           .slice(0, 10)
           .join("\n");
 
       let embed = new Discord.MessageEmbed()
-        
         .setColor(Color)
-        .setFooter(bot.user.username)
         .setTitle(`Page - ${page}/${Math.ceil(bot.guilds.cache.size / 10)}`)
         .setDescription(description);
 
       let msg = await message.channel.send(embed);
 
-      await msg.react("⬅");
+      await msg.react("⬅️");
       await msg.react("➡️");
       await msg.react("🚫");
 
@@ -48,7 +44,7 @@ module.exports = {
       );
 
       collector.on("collect", async (reaction, user) => {
-        if (reaction._emoji.name === "⬅") {
+        if (reaction._emoji.name === "⬅️") {
           // Updates variables
           i0 = i0 - 10;
           i1 = i1 - 10;
@@ -69,7 +65,7 @@ module.exports = {
               .sort((a, b) => b.memberCount - a.memberCount)
               .map(r => r)
               .map(
-                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members`
+                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}\nServer Owner - ${r.owner}`
               )
               .slice(i0, i1)
               .join("\n");
@@ -105,7 +101,7 @@ module.exports = {
               .sort((a, b) => b.memberCount - a.memberCount)
               .map(r => r)
               .map(
-                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members`
+                (r, i) => `**${i + 1}** - ${r.name} | ${r.memberCount} Members\nID - ${r.id}\n Server Owner - ${r.owner}`
               )
               .slice(i0, i1)
               .join("\n");
