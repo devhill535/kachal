@@ -31,10 +31,7 @@ module.exports = {
           .join("\n");
 
       let embed = new Discord.MessageEmbed()
-        .setAuthor(
-          message.author.tag,
-          message.author.displayAvatarURL({ dynamic: true })
-        )
+        
         .setColor(Color)
         .setFooter(bot.user.username)
         .setTitle(`Page - ${page}/${Math.ceil(bot.guilds.cache.size / 10)}`)
