@@ -16,7 +16,7 @@ const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
 
-bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.Rw_sk6VHFrSLHUxC51qZa3sHLoo")
+bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.3ldwSbBGa9A9W8K9jWoME5hZOYw")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Connected to the Mongodb database.");
