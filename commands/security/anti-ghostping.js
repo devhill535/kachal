@@ -14,7 +14,7 @@ module.exports = {
   cooldown: 3000,
   run: async (bot, message, args) => {
  
-if (member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS'])) return message.channel.send(`This member can kick and ban`)
+if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS'])) return message.channel.send(`This member can kick and ban`)
 
 
   }
