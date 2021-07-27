@@ -1,10 +1,10 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const Schema = require('../../models/ghostping')
+const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "scan",
-  aliases: ["sc"],
+  name: "antighotping",
+  aliases: ["anti-ghostping"],
   description: "With our new spam detect system, prevent anyone from trying to raid your server",
   usage: ["s!antispam [on/off]"],
   category: ["Security"],
@@ -12,42 +12,32 @@ module.exports = {
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
+  guilOwnerOnly: true,
   cooldown: 3000,
+  prime: true,
   run: async (bot, message, args) => {
- 
-
-    if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`You do not have the permission \`MANAGE_SERVER\``)
-    if(!message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES"])) return message.member.send(`I do not have the permission \`MANAGE_SERVER\``)
-      
-    options = [
-      'enable',
-      'disable'
-    ]
-
-    if (!args.length) return message.channel.send("Please enter either **enable** or **disable**")
-    const opt = args[0].toLowerCase();
-    if (!opt) return message.channel.send('Please enter either **enable** or **disable**')
-
-
-    if (!options.includes(opt)) return message.channel.send('Please enter either **enable** or **disable**')
-
-   if(opt == 'enable') {
-    Schema.findOne({ Guild: message.guild.id }, async(err, data) => {
-      if(data) return message.channel.send(`${client.emotes.error} **Anti Ghost Ping** Module is enabled already`)
-      new Schema({
-        Guild: message.guild.id
-      }).save()
-      message.channel.send(`${client.emotes.success} **Anti Ghost Ping** has been enabled.`)
-    })
-   }
-
-   if(opt == 'disable'){
-    Schema.findOne({ Guild: message.guild.id }, async(err, data) => {
-      if(!data) return message.channel.send(`${client.emotes.error} **Anti Ghost Ping** is disabled already`)
-      data.delete()
-      message.channel.send(`${client.emotes.success}  **Anti Ghost Ping** has been disabled.`)
-    })
-   }
-
+  
+   let guild = await Guild.findOne({ guildID: message.guild.id });
+     let num = args[1];
+    if (args[1] === "on") {
+      guild.ghostping.onoff = "on";
+      guild.save();
+      const embed = new Discord.MessageEmbed()
+        .setColor(Color)
+        .setDescription(`<a:true:854842599444709386> The **AntiGhostping** system is enabled correctly!`);
+     return message.channel.send(embed);
+     } else if (args[1] === "off") {
+        guild.ghostping.onoff = "off";
+        guild.save();
+      const embed1 = new Discord.MessageEmbed()
+        .setColor(Color)
+        .setDescription(`<a:false:854842600351334440> The **AntiGhostping** system is disabled correctly!`);
+     return message.channel.send(embed1);
+    }
+    const embed2 = new Discord.MessageEmbed()
+        .setColor(Color)
+        .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}antighostping [on,off] `
+        );
+      return message.channel.send(embed2);
   }
-}
+};
