@@ -1,4 +1,4 @@
-const bot = require('../bot.js')
+const bot = new Discord.Client();
 const { MessageEmbed } = require('discord.js')
 const schema = require('../models/ghostping')
 
