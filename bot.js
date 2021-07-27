@@ -80,11 +80,17 @@ bot.on("clickButton", async (button) => {
 //=============================== - [ ghostping ] - ===================================//
 
 bot.on("messageDelete", (message) => {
+
 if (!message.channel.guild) return;
-  let guild = Guild.findOne({ guildID: message.guild.id });
+  let guild = await Guild.findOne({ guildID: message.guild.id });
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
     if (guild.ghostping.onoff === "off") return;
+    let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
+    if (Ww.worldWhitelist.find((c) => c.type === message.author.id)) return;
+    if (message.author.id === message.guild.ownerID) return console.log("owner");
+    if (guild.whitelist.find((c) => c.type === message.author.id))
+      return console.log("whitelist");
     if (message.author.bot) return;
 if (message.mentions.users.first()) {
     message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
