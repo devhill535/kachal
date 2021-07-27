@@ -2,7 +2,7 @@ const bot = require('../bot.js')
 const { MessageEmbed } = require('discord.js')
 const schema = require('../models/ghostping')
 
-bot.on('messageDelete', async(message) => {
+bot.on('messageDelete', (message) => {
 schema.findOne({ Guild: message.guild.id }, async(err, data) => {
         if(!data) return;
         const member = message.mentions.members.first()
