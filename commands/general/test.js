@@ -21,13 +21,13 @@ let ruolo1 = new MessageMenuOption()
 .setLabel("Ruolo1")
 .setValue("ruoloUNO") //id dell'opzione se sceglie questo verrà eseguita l'opzione data (se creato un event)
 .setDescription("Ottieni il ruolo numero 1") //Facoltativo
-.setEmoji("859087046201835540") //inseriamo l'emoji dell'opzione (O predefinita o personalizzata la seconda si mette solo id)
+.setEmoji("💋") //inseriamo l'emoji dell'opzione (O predefinita o personalizzata la seconda si mette solo id)
 
 let ruolo2 = new MessageMenuOption()
 .setLabel("Ruolo2")
 .setValue("ruoloDUE")
 .setDescription("Ottieni il ruolo numero 2")
-.setEmoji("859909386025697331")
+.setEmoji("💋")
 
 let alldropdown = new MessageMenu()
 .setID("alldropdown")
