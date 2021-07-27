@@ -2,6 +2,7 @@
 const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
 const ms = require('ms');
+const ghostping = require('./models/ghostping');
 const { MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
 require('discord-buttons')(bot);
