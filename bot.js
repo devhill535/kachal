@@ -85,7 +85,6 @@ if (!message.channel.guild) return;
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
     if (guild.ghostping.onoff === "off") return;
-     if (message.author.id === message.guild.ownerID) return console.log("owner");
     if (message.author.bot) return;
 if (message.mentions.users.first()) {
     message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
