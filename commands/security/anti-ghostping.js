@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
+const Schema = require('../../models/ghostping')
 
 module.exports = {
   name: "scan",
@@ -14,8 +15,39 @@ module.exports = {
   cooldown: 3000,
   run: async (bot, message, args) => {
  
-if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS'])) return message.channel.send(`This member can kick and ban`)
 
+    if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`You do not have the permission \`MANAGE_SERVER\``)
+    if(!message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES"])) return message.member.send(`I do not have the permission \`MANAGE_SERVER\``)
+      
+    options = [
+      'enable',
+      'disable'
+    ]
+
+    if (!args.length) return message.channel.send("Please enter either **enable** or **disable**")
+    const opt = args[0].toLowerCase();
+    if (!opt) return message.channel.send('Please enter either **enable** or **disable**')
+
+
+    if (!options.includes(opt)) return message.channel.send('Please enter either **enable** or **disable**')
+
+   if(opt == 'enable') {
+    Schema.findOne({ Guild: message.guild.id }, async(err, data) => {
+      if(data) return message.channel.send(`${client.emotes.error} **Anti Ghost Ping** Module is enabled already`)
+      new Schema({
+        Guild: message.guild.id
+      }).save()
+      message.channel.send(`${client.emotes.success} **Anti Ghost Ping** has been enabled.`)
+    })
+   }
+
+   if(opt == 'disable'){
+    Schema.findOne({ Guild: message.guild.id }, async(err, data) => {
+      if(!data) return message.channel.send(`${client.emotes.error} **Anti Ghost Ping** is disabled already`)
+      data.delete()
+      message.channel.send(`${client.emotes.success}  **Anti Ghost Ping** has been disabled.`)
+    })
+   }
 
   }
 }
