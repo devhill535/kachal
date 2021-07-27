@@ -79,7 +79,7 @@ bot.on("clickButton", async (button) => {
 });
 //=============================== - [ ghostping ] - ===================================//
 
-bot.on("messageDelete", (message) => {
+/*bot.on("messageDelete", (message) => {
 
 if (!message.channel.guild) return;
   let guild = await Guild.findOne({ guildID: message.guild.id });
@@ -99,7 +99,7 @@ if (message.mentions.users.first()) {
        }**||`));
    }
   }
-});
+});*/
 
 //=============================== - [ antimention ] - ===================================//
 
