@@ -1,10 +1,21 @@
 const { MessageMenuOption, MessageMenu } = require("discord-buttons")
 
-module.exports = {
-	name: "dropdown", 
-	run: async (client, message, args) => {
+const fs = require("fs");
+const Discord = require("discord.js");
+const { Color } = require("../../config.js");
 
-//MessageMenuOption lo usiamo per le varie opzioni e MessageMenu per raggruppare tutte le opzioni
+module.exports = {
+  name: "test",
+  aliases: ['pong'],
+  description: "To show MS",
+  usage: ["s!ping"],
+  category: ["General"],
+  enabled: true,			
+  memberPermissions: [ "SEND_MESSAGES" ],			
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],		
+  ownerOnly: false,			
+  cooldown: 2000,
+  run: async (client, message, args, dev) => {
 
 let ruolo1 = new MessageMenuOption()
 .setLabel("Ruolo1")
