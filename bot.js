@@ -2,7 +2,6 @@
 const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
 const ms = require('ms');
-const ghostping = require('./models/ghostping');
 const { MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
 require('discord-buttons')(bot);
@@ -80,15 +79,13 @@ bot.on("clickButton", async (button) => {
 });
 //=============================== - [ ghostping ] - ===================================//
 
-/*bot.on("messageDelete", (message) => {
+bot.on("messageDelete", (message) => {
 if (!message.channel.guild) return;
   let guild = Guild.findOne({ guildID: message.guild.id });
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
     if (guild.ghostping.onoff === "off") return;
      if (message.author.id === message.guild.ownerID) return console.log("owner");
-    if (guild.whitelist.find((c) => c.type === message.author.id))
-      return console.log("whitelist");
     if (message.author.bot) return;
 if (message.mentions.users.first()) {
     message.channel.send(new Discord.MessageEmbed().setColor(Color) .setTitle("Ghost Ping Detected!")
@@ -100,10 +97,9 @@ if (message.mentions.users.first()) {
        }**||`));
    }
   }
-});*/
+});
 
 //=============================== - [ antimention ] - ===================================//
-
 
 /*bot.on('message', message => {
   let non = ['@here','@everyone']
