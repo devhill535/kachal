@@ -2,6 +2,21 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const { Color } = require("../../config.js");
 
+const flags = {
+	DISCORD_EMPLOYEE: 'Discord Employee',
+	DISCORD_PARTNER: 'Discord Partner',
+	BUGHUNTER_LEVEL_1: 'Bug Hunter (Level 1)',
+	BUGHUNTER_LEVEL_2: 'Bug Hunter (Level 2)',
+	HYPESQUAD_EVENTS: 'HypeSquad Events',
+	HOUSE_BRAVERY: 'House of Bravery',
+	HOUSE_BRILLIANCE: 'House of Brilliance',
+	HOUSE_BALANCE: 'House of Balance',
+	EARLY_SUPPORTER: 'Early Supporter',
+	TEAM_USER: 'Team User',
+	SYSTEM: 'System',
+	VERIFIED_BOT: 'Verified Bot',
+	VERIFIED_DEVELOPER: 'Verified Bot Developer'
+};
 module.exports = {
   name: "userinfo",
   aliases: ["user"],
@@ -21,8 +36,7 @@ let nickname = member.nickname !== undefined && member.nickname !== null ? membe
 ///
 const bots = member.user.bot ? "True" : "False";
 ////
-
-        let stat = member.presence.activities[0]
+ let stat = member.presence.activities[0]
         let custom
 
         if (member.presence.activities.some(r => r.name === "Spotify")) {
@@ -41,7 +55,7 @@ const bots = member.user.bot ? "True" : "False";
         
 
     
-
+      const userFlags = member.user.flags.toArray();
       const embed = new MessageEmbed()
       .setColor(Color)
       .setThumbnail(member.user.displayAvatarURL())
@@ -50,6 +64,7 @@ const bots = member.user.bot ? "True" : "False";
       .addField("User Id", `${member.id}`, true)
       .addField("Is Bot", `${bots}`, true)
       .addField("Activity", `${custom}`, true)
+      .addField("Flags", `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
