@@ -24,7 +24,7 @@ module.exports = {
             .then(msg => {
    const botssize = message.guild.members.cache
       .filter(m => m.user.bot)
-      .map(m => `${i++} - <@${m.id}>`);
+      .map(m => `${i++} - ${m.user.username}`);
     const embed = new Discord.MessageEmbed()
       .setTitle(bot.reva.get(data.lang, "general","botlist"))
       .setDescription(`${botssize.join("\n")}`)
