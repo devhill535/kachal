@@ -16,7 +16,7 @@ module.exports = {
 message.channel.send(new Discord.MessageEmbed()
 .setColor(Color)
 .setTitle(`**Servers List**`)
-.setDescription(client.guilds.cache.map(c => `**- ${c.name} | ${c.memberCount} Members
+.setDescription(bot.guilds.cache.map(c => `**- ${c.name} | ${c.memberCount} Members
   ID - ${c.id}
   **`))
     }
