@@ -23,8 +23,8 @@ module.exports = {
 
 let button = new MessageButton()
   .setStyle('url')
-  .setURL('https://i8.ae/53lTv') 
-  .setLabel('Support Link!')
+  .setURL('https://i8.ae/VC8iz') 
+  .setLabel('Invite Link Premium!')
 
 let row = new MessageActionRow()
   .addComponents(button1, button)
