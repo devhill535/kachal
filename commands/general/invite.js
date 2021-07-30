@@ -18,12 +18,12 @@ module.exports = {
 
   let button1 = new MessageButton()
   .setStyle('url')
-  .setURL('https://i8.ae/53lTv') 
+  .setURL('https://i8.ae/VC8iz') 
   .setLabel('Invite Link!')
 
 let button = new MessageButton()
   .setStyle('url')
-  .setURL('https://i8.ae/VC8iz') 
+  .setURL('https://i8.ae/53lTv') 
   .setLabel('Invite Link Premium!')
 
 let row = new MessageActionRow()
