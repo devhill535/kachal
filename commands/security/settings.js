@@ -25,7 +25,7 @@ run: async (bot, message, args, dev) => {
       let truee = `<:enabled:837860829155819530>`;
       let pun = `<:punish:836022893691011092>`;
        
-
+      embed.addField(`Prefix in the server`, `${data.prefix}`)
      
      
       if (data.ban.onoff === "on") {
