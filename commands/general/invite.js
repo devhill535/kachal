@@ -28,6 +28,6 @@ let button = new MessageButton()
 
 let row = new MessageActionRow()
   .addComponents(button1, button)
- ///return message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`,row);
+ return message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`,row);
      }
  }
