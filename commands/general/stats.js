@@ -46,7 +46,6 @@ module.exports = {
         .addField(`Bot Created At: ${created}`, `Ping: ${Math.round(bot.ws.ping)}ms`)
         .addField(`Uptime: ${ms(bot.uptime, { long: true })}`, `Servers Count: ${bot.guilds.cache.size}`)
         .addField(`[Invite Link](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)`, `[Support Server](https://discord.gg/QaqmPG2WZX)`)
-        .addField(`[Top.gg](https://top.gg/bot/711328570374619207)`, ``)
     return msg.edit({ embed })
     })
     }
