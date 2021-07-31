@@ -45,8 +45,9 @@ module.exports = {
         .addField(`Bot Id: ${bot.user.id}`, `Commands Count: 25`)
         .addField(`Bot Created At: ${created}`, `Ping: ${Math.round(bot.ws.ping)}ms`)
         .addField(`Uptime: ${ms(bot.uptime, { long: true })}`, `Servers Count: ${bot.guilds.cache.size}`)
-        .addField(`[Invite Link](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)`, `[Support Server](https://discord.gg/QaqmPG2WZX)`)
-    return msg.edit({ embed })
+        .addField(`Invite Link`, `[Click here](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)`)
+        .addField(`Server Support`, `[Click here](https://discord.gg/QaqmPG2WZX)`)
+  return msg.edit({ embed })
     })
     }
 }
