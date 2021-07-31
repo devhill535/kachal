@@ -1,6 +1,5 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const { ShardingManager } = require('discord.js');
 const { Color } = require("../../config.js");
 const ms = require('ms');
 const { stripIndents } = require("common-tags");
