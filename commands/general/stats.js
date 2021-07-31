@@ -42,7 +42,7 @@ module.exports = {
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
         .setDescription(`General\nBot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}\n[Invite Link](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)\n[Support Server](https://discord.gg/QaqmPG2WZX)\n[Top.gg](https://top.gg/bot/711328570374619207)`)
-
+        .addField(`Bot Id: ${bot.user.id}`, `Commands Count: 25`)
       return msg.edit({ embed })
     })
     }
