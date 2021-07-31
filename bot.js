@@ -62,15 +62,10 @@ bot.on("ready", () => {
 });
 
 bot.on("ready", async () => {
-  console.log(`ready!`);
+  console.log(`bot now is ready!`);
+  bot.user.setActivity(`${prefix}help`,{ type: "COMPETING" })
   bot.user.setStatus ("idle");
-  bot.user
-    .setActivity(
-       `${prefix}help ${bot.shard.count} `,
-
-       { type: "COMPETING" }
-     )
-     .catch(error => console.log(error));
+ 
  });
 
 ////
