@@ -41,7 +41,7 @@ module.exports = {
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .setDescription(`**❯ Bot Name:** ${bot.user.username}\n**❯ Bot Id:** ${bot.user.id}\n**❯ Total Commands:** 25\n**❯ Bot Created At:** ${created}\n**❯ Bot Ping:** ${Math.round(bot.ws.ping)}ms\n**❯ Uptime:** ${ms(bot.uptime, { long: true })}\n**❯ Total Guilds:** ${bot.guilds.cache.size} Guilds\n**❯ Version:** 2.7.5\n**❯ Shard:** ${(bot.shard.id+1)}/${bot.shard.count}`)
+        .setDescription(`**❯ Bot Name:** ${bot.user.username}\n**❯ Bot Id:** ${bot.user.id}\n**❯ Total Commands:** 25\n**❯ Bot Created At:** ${created}\n**❯ Bot Ping:** ${Math.round(bot.ws.ping)}ms\n**❯ Uptime:** ${ms(bot.uptime, { long: true })}\n**❯ Total Guilds:** ${bot.guilds.cache.size} Guilds\n**❯ Version:** 2.7.5\n**❯ Shard:** ${bot.shard.count}`)
 
       return msg.edit({ embed })
     })
