@@ -66,7 +66,7 @@ bot.on("ready", async () => {
   bot.user.setStatus ("idle");
   bot.user
     .setActivity(
-       `${prefix}help`,
+       `${prefix}help ${bot.shard.count} `,
 
        { type: "COMPETING" }
      )
