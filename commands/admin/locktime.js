@@ -9,8 +9,8 @@ module.exports = {
   usage: ["s!lockall"],
   category: ["Moderation"],
   enabled: true,              
-  memberPermissions: [ "MANAGE_CHANNELS" ],            
-  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","MANAGE_CHANNELS" ],        
+  memberPermissions: [ "MANAGE_CHANNELS", "MANAGE_SERVER" ],            
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS", "MANAGE_CHANNELS",  "MANAGE_SERVER" ],        
   ownerOnly: false,            
   cooldown: 6000,
   run: async (bot, message, args, dev) => {
@@ -19,10 +19,7 @@ module.exports = {
  if (!time) {
  return message.channel.send("Error:x: Enter a valid time period in `Seconds`, `Minutes` or `Hours` ")
  }
- if (!message.member.hasPermission("MANAGE_SERVER", "MANAGE_CHANNELS")) {
- return message.channel.send(`You don't have enough Permisions `)
 
- }
  message.channel.overwritePermissions([
  {
  id: message.guild.id,
@@ -32,7 +29,7 @@ module.exports = {
  const embed = new Discord.MessageEmbed()
  .setTitle("Channel Updates")
  .setDescription(`${message.channel} has been placed under lockdown for **${time}** `)
- .setColor(Color);
+ .setColor(Color)
  message.channel.send(embed)
 
  let time1 = (`${time}`)
@@ -44,11 +41,11 @@ module.exports = {
  },
  ],);
  const embed2 = new Discord.MessageEmbed()
- .setTitle("")
- .setDescription(``)
- .setColor("");
- message.channel.send(embed2);
- }, ms(time1));
-
+  .setTitle("Channel Updates")
+  .setDescription(`Locked has been lifted in ${message.channel}`)
+  .setColor(Color)
+  message.channel.send(embed2);
+  }, ms(time1));
+  message.delete();
  }
 }
