@@ -41,7 +41,7 @@ module.exports = {
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .setDescription(`General\nBot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}\n[Invite Link!]()\n[Support Server]()\n[Top.gg]()`)
+        .setDescription(`General\nBot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}\n[Invite Link!]()\n[Support Server]()\n[Top.gg](https://top.gg/bot/711328570374619207)`)
 
       return msg.edit({ embed })
     })
