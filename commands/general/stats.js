@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
+const { ShardingManager } = require('discord.js');
 const { Color } = require("../../config.js");
 const ms = require('ms');
 const { stripIndents } = require("common-tags");
@@ -41,7 +42,7 @@ module.exports = {
         .setTitle(bot.reva.get(data.lang, "general","about"))
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .setDescription(`**❯ Bot Name:** ${bot.user.username}\n**❯ Bot Id:** ${bot.user.id}\n**❯ Total Commands:** 25\n**❯ Bot Created At:** ${created}\n**❯ Bot Ping:** ${Math.round(bot.ws.ping)}ms\n**❯ Uptime:** ${ms(bot.uptime, { long: true })}\n**❯ Total Guilds:** ${bot.guilds.cache.size} Guilds\n**❯ Version:** 2.7.5`)
+        .setDescription(`**❯ Bot Name:** ${bot.user.username}\n**❯ Bot Id:** ${bot.user.id}\n**❯ Total Commands:** 25\n**❯ Bot Created At:** ${created}\n**❯ Bot Ping:** ${Math.round(bot.ws.ping)}ms\n**❯ Uptime:** ${ms(bot.uptime, { long: true })}\n**❯ Total Guilds:** ${bot.guilds.cache.size} Guilds\n**❯ Version:** 2.7.5\nshard: ${shard.id}`)
 
       return msg.edit({ embed })
     })
