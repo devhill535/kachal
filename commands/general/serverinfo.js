@@ -73,13 +73,10 @@ module.exports = {
 
 		const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 
-	        const rolesxd = message.guild.roles.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
-                
-                const listaRoles = rolesxd.length > 12 ? `${rolesxd.slice(0, 12).join(' | ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(' | ');
-
-                const emojisxd = message.guild.emojis.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
-    
-                const listaEmojis = emojisxd.length > 12 ? `${emojisxd.slice(0, 12).join(' | ')} and **${emojisxd.length - 10}** more emojis` : emojisxd.join(' | ');
+	        let channels = message.guild.channels;
+                let text = channels.cache.filter(r => r.type === "text").size
+                let vc = channels.cache.filter(r => r.type === "voice").size
+                let category = channels.cache.filter(r => r.type === "category").size;
 
 		const embed = new MessageEmbed()
                        .setTitle(bot.reva.get(data.lang, "general","guild_info"))
@@ -106,7 +103,7 @@ module.exports = {
 
 				`Role Count\n${roles.length}`,
 
-                                `Role List\n${listaRoles}`,
+                                `Channels\n ${message.guild.channels.cache.size} Total | ${text} Text | ${vc} Voice | ${category} Category`,
 
 				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
 
@@ -114,13 +111,8 @@ module.exports = {
 
 				`Bots\n${members.filter(member => member.user.bot).size}`,
 
-				`Text Channels\n${channels.filter(channel => channel.type === 'text').size}`,
-
-				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
-
                                 `Emoji Count\n${message.guild.emojis.cache.size}`,
 
-				`Emoji List\n${listaEmojis}`,
 				''
 			])
 
