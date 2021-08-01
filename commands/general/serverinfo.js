@@ -75,8 +75,12 @@ module.exports = {
 
 		const members = message.guild.members.cache;
 
-	        const listaRoles = rolesxd.length > 12 ? `${rolesxd.slice(0, 12).join(' | ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(' | ');
+	        const rolesxd = message.guild.roles.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
+                
+                const listaRoles = rolesxd.length > 12 ? `${rolesxd.slice(0, 12).join(' | ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(' | ');
 
+                const emojisxd = message.guild.emojis.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
+    
                 const listaEmojis = emojisxd.length > 12 ? `${emojisxd.slice(0, 12).join(' | ')} and **${emojisxd.length - 10}** more emojis` : emojisxd.join(' | ');
 
 	        const channels = message.guild.channels.cache;
