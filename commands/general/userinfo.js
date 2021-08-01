@@ -52,7 +52,13 @@ const bots = member.user.bot ? "True" : "False";
         } else {
             stat = "Nothing"
         }
-        
+/////
+
+if (member.premiumSince) {
+    boost = "Yes"
+  } else {
+    boost = "No"
+  }
 
     
       const userFlags = member.user.flags.toArray();
@@ -64,6 +70,7 @@ const bots = member.user.bot ? "True" : "False";
       .addField("User Id", `${member.id}`, true)
       .addField("Is Bot", `${bots}`, true)
       .addField("Activity", `${custom}`, true)
+      .addField("Booster", `${boost}`, true)
       .addField("Flags", `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
