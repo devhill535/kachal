@@ -73,8 +73,6 @@ module.exports = {
 
 		const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 
-		const members = message.guild.members.cache;
-
 	        const rolesxd = message.guild.roles.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
                 
                 const listaRoles = rolesxd.length > 12 ? `${rolesxd.slice(0, 12).join(' | ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(' | ');
@@ -82,10 +80,6 @@ module.exports = {
                 const emojisxd = message.guild.emojis.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
     
                 const listaEmojis = emojisxd.length > 12 ? `${emojisxd.slice(0, 12).join(' | ')} and **${emojisxd.length - 10}** more emojis` : emojisxd.join(' | ');
-
-	        const channels = message.guild.channels.cache;
-
-		const emojis = message.guild.emojis.cache;
 
 		const embed = new MessageEmbed()
                        .setTitle(bot.reva.get(data.lang, "general","guild_info"))
@@ -124,7 +118,7 @@ module.exports = {
 
 				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
 
-                                `Emoji Count\n${emojis.size}`,
+                                `Emoji Count\n${message.guild.emojis.cache.size}`,
 
 				`Emoji List\n${listaEmojis}`,
 				''
