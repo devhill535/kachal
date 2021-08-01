@@ -75,8 +75,10 @@ module.exports = {
 
 		const members = message.guild.members.cache;
 
-	        const List = message.guild.emojis.cache.map(e => e.toString()).join(" ");
-		
+	        const listaRoles = rolesxd.length > 12 ? `${rolesxd.slice(0, 12).join(' | ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(' | ');
+
+                const listaEmojis = emojisxd.length > 12 ? `${emojisxd.slice(0, 12).join(' | ')} and **${emojisxd.length - 10}** more emojis` : emojisxd.join(' | ');
+
 	        const channels = message.guild.channels.cache;
 
 		const emojis = message.guild.emojis.cache;
@@ -106,6 +108,8 @@ module.exports = {
 
 				`Role Count\n${roles.length}`,
 
+                                `Role List\n${listaRoles}`,
+
 				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
 
 				`Member Count\n${message.guild.memberCount}`,
@@ -117,7 +121,8 @@ module.exports = {
 				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
 
                                 `Emoji Count\n${emojis.size}`,
-				
+
+				`Emoji List\n${listaEmojis}`,
 				''
 			])
 
