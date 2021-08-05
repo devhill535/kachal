@@ -66,7 +66,7 @@ if (member.premiumSince) {
       .setColor(Color)
       .setThumbnail(member.user.displayAvatarURL())
       .addField("Username", `&{member.user.username}`, true)
-      .addField("Discriminator ${member.user.discriminator}", `${member.user.discriminator}`, true)
+      .addField("Discriminator", `${member.user.discriminator}`, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
       .addField("Is Bot", `${bots}`, true)
