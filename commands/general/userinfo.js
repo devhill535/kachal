@@ -65,7 +65,7 @@ if (member.premiumSince) {
       const embed = new MessageEmbed()
       .setColor(Color)
       .setThumbnail(member.user.displayAvatarURL())
-      .addField("Username", `&{member.user.username}`, true)
+      .addField("Username", `${member.user.username}`, true)
       .addField("Discriminator", `${member.user.discriminator}`, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
