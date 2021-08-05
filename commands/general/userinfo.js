@@ -70,6 +70,7 @@ if (member.premiumSince) {
       .addField("Discriminator", `${member.user.discriminator}`, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
+      .addField("Avatar Link", `[png](${member.user.displayAvatarURL({format: "png",dynamic: true})}) | [jpg](${member.user.displayAvatarURL({format: "jpg", dynamic: true})}) | [webp](${member.user.displayAvatarURL({format: "webp", dynamic: true})})`)
       .addField("Is Bot", `${bots}`, true)
       .addField("Activity", `${custom}`, true)
       .addField("Booster", `${boost}`, true)
