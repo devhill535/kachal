@@ -35,6 +35,8 @@ let member = await message.mentions.members.first() || message.guild.members.cac
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
 const bots = member.user.bot ? "True" : "False";
+///
+const deleted = member.deleted ? "True" : "False";
 ////
  let stat = member.presence.activities[0]
         let custom
@@ -53,14 +55,13 @@ const bots = member.user.bot ? "True" : "False";
             stat = "Nothing"
         }
 /////
-
 if (member.premiumSince) {
     boost = "Yes"
   } else {
     boost = "No"
   }
+///
 
-    
       const userFlags = member.user.flags.toArray();
       const embed = new MessageEmbed()
       .setColor(Color)
@@ -73,7 +74,7 @@ if (member.premiumSince) {
       .addField("Activity", `${custom}`, true)
       .addField("Booster", `${boost}`, true)
       .addField("Flags", `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`, true)
-      .addField("Deleted User" ,`${member.deleted}`, true)
+      .addField("Deleted User" ,`${deleted}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
