@@ -9,9 +9,9 @@ module.exports = {
   usage: ["s!anti"],
   category: ["Security"],
   enabled: true,            
-  memberPermissions: [ "ADMINISTRATOR" ],            
+  memberPermissions: [ "SEND_MESSAGES" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
-  ownerOnly: false,
+  ownerOnly: true,
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
   const embed = new Discord.MessageEmbed()
