@@ -15,7 +15,7 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
-  let embed = new Discord.MessageEmbed()
+  const embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
      .setImage(Image)
@@ -39,7 +39,7 @@ module.exports = {
         if ( command.enabled ) {
         ccmd = "<:enable:840230134899671060> Enabled"
         }
-      let embed = new Discord.MessageEmbed()
+      const embed2 = new Discord.MessageEmbed()
       .setColor(Color) 
       .setThumbnail(message.author.avatarURL())
       .setTitle("**Help**")
@@ -47,7 +47,7 @@ module.exports = {
       .addField("**Usage**", "" + command.usage.join(", ") + "" )
       .addField("**Category**", "" + command.category.join(", ") + "" )
       .addField("**Command is**", ccmd);
-      message.channel.send(embed)
+      message.channel.send({ embeds: [embed2] });
         }
     }
   }};
