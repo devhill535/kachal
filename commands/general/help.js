@@ -28,7 +28,7 @@ module.exports = {
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
-   interaction.reply({ content: 'Hello!', ephemeral: true });
+   channel.send({ embeds: [embed] });
  } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
@@ -47,7 +47,7 @@ module.exports = {
       .addField("**Usage**", "" + command.usage.join(", ") + "" )
       .addField("**Category**", "" + command.category.join(", ") + "" )
       .addField("**Command is**", ccmd);
-      message.channel.send(embed2);
+      channel.send({ embeds: [embed2] });
         }
     }
   }};
