@@ -28,7 +28,7 @@ module.exports = {
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
- return message.lineReplyNoMention(embed);
+   interaction.reply({ content: 'Hello!', ephemeral: true });
  } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
