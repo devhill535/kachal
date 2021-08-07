@@ -20,7 +20,7 @@ module.exports = {
             .setColor(Color)
             .setDescription('editing!')
 
-        return message.channel.send({ embed: about })
+        return message.channel.send({ embeds: [about] });
             .then(msg => {
    const botssize = message.guild.members.cache
       .filter(m => m.user.bot)
@@ -29,7 +29,7 @@ module.exports = {
       .setTitle(bot.reva.get(data.lang, "general","botlist"))
       .setDescription(`${botssize.join("\n")}`)
       .setColor(Color)
-    return msg.edit({ embed })
+    return msg.edit({ embeds: [embed] });
     })
       } 
 }
