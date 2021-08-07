@@ -34,7 +34,7 @@ module.exports = {
             .setColor(Color)
             .setDescription('editing!')
 
-        return message.channel.send({ embed: about })
+        return message.channel.send({ embeds: [about] });
             .then(msg => {
 
        let embed = new Discord.MessageEmbed()
@@ -49,7 +49,7 @@ module.exports = {
 			])
 
       
-  return msg.edit({ embed })
+  return msg.edit({ embeds: [embed] });
     })
     }
 }
