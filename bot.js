@@ -5,8 +5,8 @@ const ms = require('ms');
 const { MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
 require('discord-buttons')(bot);
-const { Color, Image, Footer, Author } = require("./config.js");
-const fs = require("fs"); 
+const { Token, Color, Image, Footer, Author } = require("./config.js");
+const fs = require("fs");
 const request = require("request");
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
@@ -16,7 +16,7 @@ const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
 
-bot.login("ODEzMTMxNDM2MjY1MDQ2MDY4.YDK1qQ.Yj-mAudgLO0c04ita59t1LeHMxY")
+bot.login(Token)
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Connected to the Mongodb database.");
