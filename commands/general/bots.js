@@ -20,7 +20,7 @@ module.exports = {
             .setColor(Color)
             .setDescription('editing!')
 
-        return message.channel.send({ embeds: about });
+        return message.channel.send({ embeds: about })
             .then(msg => {
    const botssize = message.guild.members.cache
       .filter(m => m.user.bot)
