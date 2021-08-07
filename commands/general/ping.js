@@ -27,7 +27,7 @@ module.exports = {
             .setColor(Color)
             .setDescription('Pong?')
 
-        return message.channel.send({ embeds: pong });
+        return message.channel.send({ embeds: pong })
             .then(msg => {
 
                 let embed = new Discord.MessageEmbed()
