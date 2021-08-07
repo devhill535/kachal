@@ -1,7 +1,7 @@
 //=============================== - [ Consts ] - ===================================//
 const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
-const token = this.bot.token ? this.bot.accessToken;
+const token = this.bot.token ? this.bot.accessToken
 const ms = require('ms');
 const { MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
