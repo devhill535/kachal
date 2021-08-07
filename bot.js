@@ -10,7 +10,6 @@ const request = require("request");
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
 const { inspect } = require("util");
-const token = this.bot.token ? this.bot.accessToken
 let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
