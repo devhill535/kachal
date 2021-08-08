@@ -58,7 +58,7 @@ async run(message,bot) {
   if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#2f3136").setDescription(`This command is **Disable** for now`));
   let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
   data.ww = Ww;
-  if (command.ownerOnly && !Ww.worldWhitelist.find((c) => c.type === message.author.id)) return await message.channel.send(new Discord.MessageEmbed().setColor("#2f3136").setDescription(`This command is only for owner the bot`));
+    if (command.ownerOnly && !Ww.worldWhitelist.find((c) => c.type === message.author.id)) return await message.channel.send(new Discord.MessageEmbed().setColor("#2f3136").setDescription(`This command is only for owner the bot`));
   if (command.guilOwnerOnly) {
       if (message.author.id !== message.guild.ownerID &&
        !Ww.worldWhitelist.find((c) => c.type === message.author.id)
@@ -88,6 +88,7 @@ async run(message,bot) {
 	  if (!bot.cooldowns.has(command.name)) {
 		  bot.cooldowns.set(command.name, new Discord.Collection());
 	  }
+       
           const now = Date.now();
 	  const timestamps = bot.cooldowns.get(command.name);
 	  const cooldownAmount = (command.cooldown || 7000); 
@@ -101,7 +102,7 @@ async run(message,bot) {
 	  timestamps.set(message.author.id, now);
 	  let prefix = guild.prefix;
 	  if (command) command.run(bot, message, args, prefix, data, cmd);
-	  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+          setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   }
   }
