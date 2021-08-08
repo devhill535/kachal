@@ -1,3 +1,4 @@
+
 const fs = require("fs");
 const Discord = require("discord.js");
 const { Color, Image, Footer, Author } = require("../../config.js");
@@ -15,7 +16,7 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
-  const embed = new Discord.MessageEmbed()
+  let embed = new Discord.MessageEmbed()
      .setColor(Color)
      .setAuthor(Author)
      .setImage(Image)
@@ -28,8 +29,8 @@ module.exports = {
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
-   return message.lineReplyNoMention(embed)
- } else {
+   return message.lineReplyNoMention(embed);
+       } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
       bot.aliases.has(command)) {  
@@ -39,7 +40,7 @@ module.exports = {
         if ( command.enabled ) {
         ccmd = "<:enable:840230134899671060> Enabled"
         }
-      const embed2 = new Discord.MessageEmbed()
+      let embed = new Discord.MessageEmbed()
       .setColor(Color) 
       .setThumbnail(message.author.avatarURL())
       .setTitle("**Help**")
@@ -47,7 +48,7 @@ module.exports = {
       .addField("**Usage**", "" + command.usage.join(", ") + "" )
       .addField("**Category**", "" + command.category.join(", ") + "" )
       .addField("**Command is**", ccmd);
-      message.channel.send(embed2);
+      message.channel.send(embed)
         }
     }
   }};
