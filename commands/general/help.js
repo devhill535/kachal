@@ -1,4 +1,3 @@
-
 const fs = require("fs");
 const Discord = require("discord.js");
 const { Color, Image, Footer, Author } = require("../../config.js");
@@ -29,7 +28,7 @@ module.exports = {
      .addField("Config", "`setprefix`, `setlang`")
      .addField("Security", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
      .setFooter(Footer)
-   return message.channel.send(embed);
+   return message.lineReplyNoMention(embed);
        } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
