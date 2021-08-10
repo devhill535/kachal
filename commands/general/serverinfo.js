@@ -122,7 +122,7 @@ module.exports = {
 			])
 
 
-		return message.lineReplyNoMention(embed);
+		return message.channel.send(embed);
 
 	}
 
