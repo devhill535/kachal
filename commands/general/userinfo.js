@@ -80,6 +80,6 @@ if (member.premiumSince) {
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
 
-  return message.lineReplyNoMention(embed);
+  return message.channel.send(embed);
  }
 }
