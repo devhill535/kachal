@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
-const { Color, Image, Footer, Author } = require("../../config.js");
+const { Image, Footer, Author } = require("../../config.js");
 module.exports = {
   name: "help",
   aliases: ["commands"],
@@ -16,7 +16,7 @@ module.exports = {
    
     if (!args[1]) {
   let embed = new Discord.MessageEmbed()
-     .setColor(Color)
+     .setColor(roleColor)
      .setAuthor(Author)
      .setImage(Image)
      .setTitle(bot.reva.get(data.lang, "general","help_embed"))
