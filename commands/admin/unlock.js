@@ -18,7 +18,7 @@ module.exports = {
         SEND_MESSAGES: true
       })
       .then(() => {
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","unlock_message", { 
+        message.lineReplyNoMention(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","unlock_message", { 
           channel: `<#${message.channel.id}>`
      })));
      });
