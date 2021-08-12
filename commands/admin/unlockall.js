@@ -19,7 +19,7 @@ module.exports = {
       .setColor(Color)
       .setDescription(bot.reva.get(data.lang, "admin","unlockall_message", { 
           channels: `${message.guild.channels.cache.size}`}));
-      message.channel.send(embed);
+      message.lineReplyNoMention(embed);
 
     message.guild.channels.cache.filter(c => c.name).forEach(async channel => {
     channel
