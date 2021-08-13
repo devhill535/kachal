@@ -23,19 +23,20 @@ module.exports = {
 
         date = Date.now();
 
-        let pong = new Discord.MessageEmbed()
-            .setColor(Color)
-            .setDescription('Pong?')
-
-        return message.channel.send({ embeds: pong })
-            .then(msg => {
-
-                let embed = new Discord.MessageEmbed()
+        message.channel.send("Loading.").then(msg =>{
+setTimeout(function(){
+msg.edit("Loading..")
+},1000)
+setTimeout(function(){
+msg.edit("Loading...")
+},2000)
+setTimeout(function(){
+msg.edit(new Discord.MessageEmbed()
                    .setDescription(`<:ping:828370866537758790> Bot: ${bot.ws.ping}ms \n<:api:836017379330228234> Discord API: ${Date.now() - date}ms \n<:file:836016653908705312> DB: ${ping_db}ms`)
-                   .setColor(Color)
+                   .setColor(Color))
+},6000)
 
-                return msg.edit(embed);
-
+               
             })
     }
 }
