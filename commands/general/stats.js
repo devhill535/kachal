@@ -43,7 +43,7 @@ module.exports = {
         .setThumbnail(bot.user.displayAvatarURL())
         .addField('General', [
 
-				`Bot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}\nShards: ${bot.shard ? `${bot.shard.count}` : 'None'}\nInvite Link\n[Click here](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)\nServer Support\n[Click here](https://discord.gg/QaqmPG2WZX)\nTop.gg\n[Click here](https://top.gg/bot/711328570374619207)`,
+				`Bot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}\nShards: ${bot.shard.count}\nInvite Link\n[Click here](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)\nServer Support\n[Click here](https://discord.gg/QaqmPG2WZX)\nTop.gg\n[Click here](https://top.gg/bot/711328570374619207)`,
 				
 				''
 			])
