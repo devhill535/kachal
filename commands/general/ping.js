@@ -23,7 +23,7 @@ module.exports = {
 
         date = Date.now();
 
-        message.channel.send("").then(msg =>{
+        message.channel.send("Time has run out!").then(msg =>{
 setTimeout(function(){
 msg.edit("Loading.")
 },700)
