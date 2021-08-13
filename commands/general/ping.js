@@ -23,13 +23,16 @@ module.exports = {
 
         date = Date.now();
 
-        message.channel.send("Loading.").then(msg =>{
+        message.channel.send("").then(msg =>{
+setTimeout(function(){
+msg.edit("Loading.")
+},700)
 setTimeout(function(){
 msg.edit("Loading..")
 },1000)
 setTimeout(function(){
-msg.edit("Loading...")
-},2000)
+msg.edit("Loading..")
+},1300)
 setTimeout(function(){
 msg.edit(new Discord.MessageEmbed()
                    .setDescription(`<:ping:828370866537758790> Bot: ${bot.ws.ping}ms \n<:api:836017379330228234> Discord API: ${Date.now() - date}ms \n<:file:836016653908705312> DB: ${ping_db}ms`)
