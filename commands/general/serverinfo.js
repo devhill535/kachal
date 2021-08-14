@@ -78,7 +78,7 @@ module.exports = {
        
 		const members = message.guild.members.cache;
 
-	        const List = message.guild.emojis.cache.map(e => e.toString()).join(" ");
+	        let guild = await Guild.findOne({ guildID: message.guild.id });
 		
 	        const channels = message.guild.channels.cache;
 
