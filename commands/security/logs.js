@@ -36,7 +36,7 @@ module.exports = {
 
 4.
 **\`+ ${data.role.user} UserID\`**
-**\`- AntiChannel\`**
+**\`- AntiRole\`**
 **\`- Punish\`**: **${data.role.lmite}**
 `))
       
