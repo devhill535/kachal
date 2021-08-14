@@ -1,3 +1,4 @@
+
 const fs = require("fs");
 const Discord = require("discord.js");
 const { Color } = require("../../config.js");
@@ -34,7 +35,7 @@ module.exports = {
             .setColor(Color)
             .setDescription('editing!')
 
-        return message.channel.send({ embeds: about })
+        return message.channel.send({ embed: about })
             .then(msg => {
 
        let embed = new Discord.MessageEmbed()
@@ -49,7 +50,7 @@ module.exports = {
 			])
 
       
-  return msg.edit(embed);
+  return msg.edit({ embed })
     })
     }
 }
