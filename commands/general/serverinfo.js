@@ -102,7 +102,7 @@ module.exports = {
 
 				`Verification Level\n${verificationLevels[message.guild.verificationLevel]}`,
 
-				`Time Created\n${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()} (**${checkDays(message.guild.createdAt)}**)`,
+				`Time Created\n${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
 
 				`Role Count\n${roles.length}`,
 
