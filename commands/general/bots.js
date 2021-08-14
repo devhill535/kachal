@@ -1,3 +1,4 @@
+
 const fs = require("fs");
 const Discord = require("discord.js")
 const { Color } = require("../../config.js");
@@ -16,11 +17,11 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
   
     let i = 1;
-     let about = new Discord.MessageEmbed()
+     let bots = new Discord.MessageEmbed()
             .setColor(Color)
             .setDescription('editing!')
 
-        return message.channel.send({ embeds: about })
+        return message.channel.send({ embed: bots })
             .then(msg => {
    const botssize = message.guild.members.cache
       .filter(m => m.user.bot)
@@ -29,7 +30,7 @@ module.exports = {
       .setTitle(bot.reva.get(data.lang, "general","botlist"))
       .setDescription(`${botssize.join("\n")}`)
       .setColor(Color)
-    return msg.edit(embed);
+    return msg.edit({ embed })
     })
       } 
 }
