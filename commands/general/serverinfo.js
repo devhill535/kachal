@@ -73,6 +73,9 @@ module.exports = {
 
 		const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 
+                const prime = await Prime.findOne({Guild: message.guild.id})
+                const premium = prime.prime
+       
 		const members = message.guild.members.cache;
 
 	        const List = message.guild.emojis.cache.map(e => e.toString()).join(" ");
