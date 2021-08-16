@@ -20,19 +20,19 @@ module.exports = {
 **Logs**\n\n
 
 1.
-**\`+ ${data.ban.user} UserTag\`**
+**\`+ ${data.ban.user}\`**
 **\`- AntiBan\`**
 **\`- Punish\`**: **${data.ban.lmite}**\n
 2.
-**\`+ ${data.kick.user} UserTag\`**
+**\`+ ${data.kick.user}\`**
 **\`- Antikick\`**
 **\`- Punish\`**: **${data.kick.lmite}**\n
 3.
-**\`+ ${data.channel.user} UserTag\`**
+**\`+ ${data.channel.user}\`**
 **\`- AntiChannel\`**
 **\`- Punish\`**: **${data.channel.lmite}**\n
 4.
-**\`+ ${data.role.user} UserTag\`**
+**\`+ ${data.role.user}\`**
 **\`- AntiRole\`**
 **\`- Punish\`**: **${data.role.lmite}**
 `))
