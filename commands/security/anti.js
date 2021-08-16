@@ -11,7 +11,8 @@ module.exports = {
   enabled: true,            
   memberPermissions: [ "SEND_MESSAGES" ],            
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
-  ownerOnly: true,
+  ownerOnly: false,
+  guildOwnerOnly: true,
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
   const embed = new Discord.MessageEmbed()
