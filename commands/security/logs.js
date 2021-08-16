@@ -6,7 +6,7 @@ module.exports = {
   aliases: [""],
   enabled: true,			  
   memberPermissions: [ "SEND_MESSAGES" ],			
-  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS","ADMINISTRATOR" ],		
+  botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],		
   ownerOnly: false,			
   cooldown: 6000,
   guilOwnerOnly: true,
