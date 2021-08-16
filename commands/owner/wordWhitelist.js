@@ -10,7 +10,7 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],
   cooldown: 10000,
   run: async (bot, message, args, dev) => {
-    if (message.author.id === "738478465870987425") {
+    if (message.author.id === "852975136219070464") {
       let data = await Owner.findOne({ ownerCode: "738478465870987425" });
       if(!data) { Owner.create({ ownerCode: "738478465870987425" });} 
       /*
