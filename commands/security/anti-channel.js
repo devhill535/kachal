@@ -20,7 +20,7 @@ module.exports = {
      let num = args[1];
     if (args[1] === "on") {
       guild.channel.onoff = "on";
-      guild.channel.user = message.author.id
+      guild.channel.user = message.author.tag
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
@@ -41,7 +41,7 @@ module.exports = {
         );
       return message.channel.send(embed2);
     }
-    guild.channel.user = message.author.id
+    guild.channel.user = message.author.tag
     guild.channel.lmite = num;
     guild.save();
     const embed3 = new Discord.MessageEmbed()
