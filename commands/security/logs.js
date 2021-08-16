@@ -23,17 +23,14 @@ module.exports = {
 **\`+ ${data.ban.user} UserTag\`**
 **\`- AntiBan\`**
 **\`- Punish\`**: **${data.ban.lmite}**\n
-
 2.
 **\`+ ${data.kick.user} UserTag\`**
 **\`- Antikick\`**
 **\`- Punish\`**: **${data.kick.lmite}**\n
-
 3.
 **\`+ ${data.channel.user} UserTag\`**
 **\`- AntiChannel\`**
 **\`- Punish\`**: **${data.channel.lmite}**\n
-
 4.
 **\`+ ${data.role.user} UserTag\`**
 **\`- AntiRole\`**
