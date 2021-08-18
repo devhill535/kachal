@@ -112,15 +112,6 @@ if (message.mentions.users.first()) {
   }
 })*/
 
-bot.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
-
-	if (interaction.commandName === 'ping') {
-		await interaction.reply({ content: 'Pong!', ephemeral: true });
-	}
-});
-
-////
 //=============================== - [ antispam ] - ===================================//
 
 /*const usersMap = new Map();
