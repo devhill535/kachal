@@ -62,7 +62,7 @@ bot.on("ready", () => {
 
 bot.on("ready", async () => {
   console.log(`bot now is ready!`);
-  await bot.user.setStatus("idle");
+  await bot.user.setStatus("online");
   await bot.user.setActivity(`${prefix}help`, { type: "COMPETING" });
  
  });
@@ -112,6 +112,15 @@ if (message.mentions.users.first()) {
   }
 })*/
 
+bot.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	if (interaction.commandName === 'ping') {
+		await interaction.reply({ content: 'Pong!', ephemeral: true });
+	}
+});
+
+////
 //=============================== - [ antispam ] - ===================================//
 
 /*const usersMap = new Map();
