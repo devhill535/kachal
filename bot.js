@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const { MessageMenuOption, MessageMenu, MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
 require('discord-buttons')(bot);
-const { Color, Image, Footer, Author, Emotes } = require("./config.js");
+const { Color, Image, Footer, Author } = require("./config.js");
 const fs = require("fs"); 
 const request = require("request");
 const prefix = "s!";
@@ -102,7 +102,7 @@ if (message.content.startsWith(prefix + "menu")) {
             .addOption(option3)
             .addOption(option4)
         let embed = new Discord.MessageEmbed()
-        .setColor(Color).setTitle(`${Emotes} | ${bot.reva.get(data.lang, "general","help_embed")}`)
+        .setColor(Color).setTitle(`<:AntiVandalism:879031706080911430> ${bot.reva.get(data.lang, "general","help_embed")}`)
         let menumsg = await message.channel.send(embed, selection)
         function menuselection(menu) {
             switch(menu.values[0]) {
