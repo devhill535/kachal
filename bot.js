@@ -103,7 +103,7 @@ if (message.content.startsWith(prefix + "menu")) {
             .addOption(option4)
         let embed = new Discord.MessageEmbed()
         .setColor(Color).setTitle("Help Menu")
-        let menumsg = await message.reply(embed, selection)
+        let menumsg = await message.channel.send(embed, selection)
         function menuselection(menu) {
             switch(menu.values[0]) {
                 case "Option 1": 
