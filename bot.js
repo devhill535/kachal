@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const { MessageMenuOption, MessageMenu, MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
 require('discord-buttons')(bot);
-const { Color, Image, Footer, Author } = require("./config.js");
+const { Color, Image, Footer, Author, Emotes } = require("./config.js");
 const fs = require("fs"); 
 const request = require("request");
 const prefix = "s!";
