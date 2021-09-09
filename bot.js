@@ -1,7 +1,7 @@
 //=============================== - [ Consts ] - ===================================//
 const inlinereply = require('discord-reply');
 const Discord = require("discord.js");
-const { MessageButton } = require("discord-buttons");
+const { MessageMenuOption, MessageMenu, MessageButton } = require("discord-buttons");
 const bot = new Discord.Client(); 
 require('discord-buttons')(bot);
 const { Color, Image, Footer, Author } = require("./config.js");
