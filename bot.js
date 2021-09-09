@@ -75,48 +75,48 @@ if (message.content.startsWith(prefix + "menu")) {
         let option1 = new MessageMenuOption()
             .setLabel("General")        
             .setValue("Option 1")
-            .setDescription("This will give u the option 1")
+            .setDescription("To show general commands!")
             .setDefault()
         let option2 = new MessageMenuOption()
             .setLabel("Moderation")
             .setValue("Option 2")
-            .setDescription("This will give u the option 2")
+            .setDescription("To show moderation commands!")
             .setDefault()
         let option3 = new MessageMenuOption()
             .setLabel("Config")
             .setValue("Option 3")
-            .setDescription("This will give u the option 3")
+            .setDescription("To show config commands!")
             .setDefault()
         let option4 = new MessageMenuOption()
             .setLabel("Security")
             .setValue("Option 4")
-            .setDescription("This will give u the option 4")
+            .setDescription("To show security commands!")
             .setDefault()
         let selection = new MessageMenu()
             .setID("Selection")
             .setMaxValues(1)
             .setMinValues(1)
-            .setPlaceholder("Click me to make a Selection!")
+            .setPlaceholder("Click me to show help menu!")
             .addOption(option1)
             .addOption(option2)
             .addOption(option3)
             .addOption(option4)
         let embed = new Discord.MessageEmbed()
         .setColor(Color).setTitle("Help Menu")
-        let menumsg = await message.channel.send(embed, selection)
+        let menumsg = await message.reply(embed, selection)
         function menuselection(menu) {
             switch(menu.values[0]) {
                 case "Option 1": 
-                    menu.reply.send(new Discord.MessageEmbed().addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`, `vote`, `premium`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("General Section").addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`, `vote`, `premium`"))
                 break;
                 case "Option 2": 
-                    menu.reply.send(new Discord.MessageEmbed().addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Moderation Section").addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`"))
                 break;
                 case "Option 3": 
-                    menu.reply.send(new Discord.MessageEmbed().addField("Config Section", "`setprefix`, `setlang`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Config Section").addField("Config Section", "`setprefix`, `setlang`"))
                 break;
                 case "Option 4": 
-                    menu.reply.send(new Discord.MessageEmbed().addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Security Section").addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`"))
                 break;
             }
         }
