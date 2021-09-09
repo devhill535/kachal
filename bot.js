@@ -110,13 +110,13 @@ if (message.content.startsWith(prefix + "menu")) {
                     menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("General Section").setDescription(`**invite**: Use this command to get the invite link\n\n**support**: Use this command to get the server support link\n\n**stats**: Get more information about the bot\n\n**serverinfo**: Get more information about your server\n\n**ping**: To show ping bot\n\n**userinfo**: Get more information about yourself\n\n**bots**: Get list of the bots on your server,no hidden bots anymor\n\n**vote**: Use this command to get the vote link\n\n**premium**: Get more information premium commands`))
                 break;
                 case "Option 2": 
-                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Moderation Section").addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Moderation Section").setDescription(`**ban**: You can ban a member, or multiple members using this command\n\n**kick**: You can kick a member, or multiple members using this command\n\n**bans**: Get list of the bans on your server\n\n**mute**: Mute mentioned member\n\n**purge**: To clear the text channel\n\n**lock**: Locks the current or selected text channels\n\n**unlock**: Unlocks the current or selected text channels\n\n**lockall**: Locks all text channels from your server\n\n**unlockall**: Unlocks all text channels from your server, not recommended\n\n**unbanall**: You can unban all the banned users`))
                 break;
                 case "Option 3": 
-                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Config Section").addField("Config Section", "`setprefix`, `setlang`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Config Section").setDescription(`**setlang**: To change language\n\n**setprefix**: Change the prefix of the bot`))
                 break;
                 case "Option 4": 
-                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Security Section").addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`"))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Security Section").setDescription(`**anti**: To show command limits the bot\n\n**settings**: Check your server settings\n\n**punishment**: Change the punishment type of the server\n\n**whitelist**: Security will ignore whitelist users\n\n**logs**: To show log server`))
                 break;
             }
         }
