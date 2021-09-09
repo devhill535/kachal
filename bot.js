@@ -102,7 +102,7 @@ if (message.content.startsWith(prefix + "menu")) {
             .addOption(option3)
             .addOption(option4)
         let embed = new Discord.MessageEmbed()
-        .setColor(Color).setTitle("Help Menu")
+        .setColor(Color).setTitle(`${Emotis} {bot.reva.get(data.lang, "general","help_embed")}`)
         let menumsg = await message.channel.send(embed, selection)
         function menuselection(menu) {
             switch(menu.values[0]) {
