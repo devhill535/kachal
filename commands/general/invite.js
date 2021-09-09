@@ -1,7 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const { MessageButton, MessageActionRow } = require("discord-buttons");
-const { Color } = require("../../config.js");
+const { MessageButton } = require("discord-buttons");
 
 module.exports = {
   name: "invite",
@@ -16,18 +15,12 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
 
-  let button1 = new MessageButton()
+
+  let butn = new MessageButton()
   .setStyle('url')
-  .setURL('https://i8.ae/VC8iz') 
+  .setURL('https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot') 
   .setLabel('Invite Link!')
-
-let button = new MessageButton()
-  .setStyle('url')
-  .setURL('https://i8.ae/53lTv') 
-  .setLabel('Invite Link Premium!')
-
-let row = new MessageActionRow()
-  .addComponents(button1, button)
- return message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`,row);
+ 
+ message.channel.send({ content: bot.reva.get(data.lang, "general","invite")`, button: butn });
      }
  }
