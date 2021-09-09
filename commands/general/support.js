@@ -19,6 +19,6 @@ let butn = new MessageButton()
   .setURL('https://discord.gg/xZ3Sssr8qN') 
   .setLabel('Support Server!')
 
-message.channel.send({ content: `This is a server support **Anti Vandalism** if you need help, enter the server`, button: butn });
+message.channel.send(`This is a server support **Anti Vandalism** if you need help, enter the server`, butn);
     } 
 }
