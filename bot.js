@@ -69,26 +69,26 @@ bot.on("ready", async () => {
  });
 /////
 
-/*bot.on("message", async message => {
+bot.on("message", async message => {
 if (message.content.startsWith(prefix + "menu")) {
    
         let option1 = new MessageMenuOption()
-            .setLabel("Option 1")        
+            .setLabel("General")        
             .setValue("Option 1")
             .setDescription("This will give u the option 1")
             .setDefault()
         let option2 = new MessageMenuOption()
-            .setLabel("Option 2")
+            .setLabel("Moderation")
             .setValue("Option 2")
             .setDescription("This will give u the option 2")
             .setDefault()
         let option3 = new MessageMenuOption()
-            .setLabel("Option 3")
+            .setLabel("Config")
             .setValue("Option 3")
             .setDescription("This will give u the option 3")
             .setDefault()
         let option4 = new MessageMenuOption()
-            .setLabel("Option 4")
+            .setLabel("Security")
             .setValue("Option 4")
             .setDescription("This will give u the option 4")
             .setDefault()
@@ -107,16 +107,16 @@ if (message.content.startsWith(prefix + "menu")) {
         function menuselection(menu) {
             switch(menu.values[0]) {
                 case "Option 1": 
-                    menu.reply.send(new Discord.MessageEmbed().addField("teztysh", `test`))
+                    menu.reply.send(new Discord.MessageEmbed().addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`, `vote`, `premium`"))
                 break;
                 case "Option 2": 
-                    menu.reply.send("the reply for option 2", true)
+                    menu.reply.send(new Discord.MessageEmbed().addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`"))
                 break;
                 case "Option 3": 
-                    menu.reply.send("the reply for option 3", true)
+                    menu.reply.send(new Discord.MessageEmbed().addField("Config Section", "`setprefix`, `setlang`"))
                 break;
                 case "Option 4": 
-                    menu.reply.send("the reply for option 4", true)
+                    menu.reply.send(new Discord.MessageEmbed().addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`"))
                 break;
             }
         }
@@ -127,7 +127,7 @@ if (message.content.startsWith(prefix + "menu")) {
             }
         })
    }
-})*/
+})
 ////
 
 bot.on('ready', () => {
