@@ -16,16 +16,16 @@ module.exports = {
   run: async (bot, message, args, dev, data) => {
    
     if (!args[1]) {
-  let helpEmbed = new Discord.MessageEmbed()
-     helpEmbed.setColor(Color)
-     helpEmbed.setAuthor(Author)
-     helpEmbed.setImage(Image)
-     helpEmbed.setTitle(bot.reva.get(data.lang, "general","help_embed"))
-     helpEmbed.addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`, `vote`, `premium`")
-     helpEmbed.addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`")
-     helpEmbed.addField("Config Section", "`setprefix`, `setlang`")
-     helpEmbed.addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
-     helpEmbed.setFooter(Footer)
+  let help = new Discord.MessageEmbed()
+    .setColor(Color)
+    .setAuthor(Author)
+    .setImage(Image)
+    .setTitle(bot.reva.get(data.lang, "general","help_embed"))
+    .addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`, `vote`, `premium`")
+    .addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`")
+    .addField("Config Section", "`setprefix`, `setlang`")
+    .addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
+    .setFooter(Footer)
 
       let button1 = new MessageButton()
        .setStyle('url')
@@ -50,7 +50,7 @@ module.exports = {
       let row1 = new MessageActionRow()
       .addComponents(button1, button2, button3, button4)
 
-   return message.channel.send({ embeds: [helpEmbed] ,row: [row1] });
+   return message.channel.send(help,row1);
        } else {
       let  command = args[1]
       if (bot.commands.has(command) || 
@@ -62,14 +62,14 @@ module.exports = {
         ccmd = "<:enable:840230134899671060> Enabled"
         }
       let help1 = new Discord.MessageEmbed()
-      help1.setColor(Color) 
-      help1.setThumbnail(message.author.avatarURL())
-      help1.setTitle("**Help**")
-      help1.setDescription(command.description || command.name + " this command don't have a description")
-      help1.addField("**Usage**", "" + command.usage.join(", ") + "" )
-      help1.addField("**Category**", "" + command.category.join(", ") + "" )
-      help1.addField("**Command is**", ccmd);
-      message.channel.send({ embeds: [help1] })
+     .setColor(Color) 
+     .setThumbnail(message.author.avatarURL())
+     .setTitle("**Help**")
+     .setDescription(command.description || command.name + " this command don't have a description")
+     .addField("**Usage**", "" + command.usage.join(", ") + "" )
+     .addField("**Category**", "" + command.category.join(", ") + "" )
+     .addField("**Command is**", ccmd);
+      message.channel.send(help1)
         }
     }
   }};
