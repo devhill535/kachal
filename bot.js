@@ -102,7 +102,7 @@ if (message.content.startsWith(prefix + "menu")) {
             .addOption(option3)
             .addOption(option4)
         let embed = new Discord.MessageEmbed()
-        .setColor(Color).setTitle(`<:AntiVandalism:879031706080911430> ${bot.reva.get(data.lang, "general","help_embed")}`)
+        .setColor(Color).setTitle(`<:AntiVandalism:879031706080911430> This is list for all commands`)
         let menumsg = await message.channel.send(embed, selection)
         function menuselection(menu) {
             switch(menu.values[0]) {
