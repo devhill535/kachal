@@ -15,7 +15,7 @@ const cmd = require("node-cmd");
 const { I18n } = require("locale-parser");
 bot.reva = new I18n({ defaultLocale: "en" });
 
-bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.xSGyRpsuS3lH1sd4PCobud6pYdI")
+bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.ie8oVJprWh8m1o-q7zIdSxCn9iM")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Connected to the Mongodb database.");
@@ -61,8 +61,8 @@ bot.on("ready", () => {
 });
 
 bot.on("ready", async () => {
-  //let channel = bot.channels.cache.get("880441113574539365");
-  //channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Anti Vandalism Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
+ let channel = bot.channels.cache.get("880441113574539365");
+  channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Anti Vandalism Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
   await bot.user.setStatus("online");
   await bot.user.setActivity(`${prefix}help - www.antivandalism.ga`, { type: "PLAYING" });
  
@@ -130,16 +130,16 @@ if (message.content.startsWith(prefix + "menu")) {
 })*/
 ////
 
-/*bot.on('ready', () => {
+bot.on('ready', () => {
 let channel = bot.channels.cache.get("880491394068803604");
     if (channel) channel.join();
-});*/
+});
 
 ////
 
-/*bot.on("clickButton", async (button) => {
+bot.on("clickButton", async (button) => {
  console.log(button.id);
-});*/
+});
 
 //=============================== - [ ghostping ] - ===================================//
 
