@@ -107,7 +107,7 @@ if (message.content.startsWith(prefix + "menu")) {
         function menuselection(menu) {
             switch(menu.values[0]) {
                 case "Option 1": 
-                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("General Section").setDescription(`\`invite: support: stats: Get more information about the bot\n\nserverinfo: Get more information about your server\n\nping: To show ping bot\n\nuserinfo: Get more information about yourself\n\nbots: Get list of the bots on your server,no hidden bots anymor\n\nvote: premium:\``))
+                    menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("General Section").setDescription(`\`invite: Use this command to get the invite link\n\nsupport: stats: Get more information about the bot\n\nserverinfo: Get more information about your server\n\nping: To show ping bot\n\nuserinfo: Get more information about yourself\n\nbots: Get list of the bots on your server,no hidden bots anymor\n\nvote: premium:\``))
                 break;
                 case "Option 2": 
                     menu.reply.send(new Discord.MessageEmbed().setColor(Color).setTitle("Moderation Section").addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`"))
