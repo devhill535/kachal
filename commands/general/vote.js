@@ -17,7 +17,7 @@ module.exports = {
   .setURL('https://top.gg/bot/711328570374619207') 
   .setLabel('Vote Top.gg!')
 
-return message.channel.send(`${bot.reva.get(data.lang, "general","vote")}`, butn);
+return message.channel.send(`bot.reva.get(data.lang, "general","vote")`, butn);
 
   }
 }
