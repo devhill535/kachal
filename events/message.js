@@ -9,20 +9,17 @@ async run(message,bot) {
   let guild = await Guild.findOne({ guildID: message.guild.id });
   if(!guild) { Guild.create({ guildID: message.guild.id }); }
   data.guild = guild;
-  // let prime = await Prime.findOne({ guildID: message.guild.id });
-     // if (prime && prime.log === "enable") return message.channel.send(`You don't have Premium version`);
   let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
   if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id });} 
   data.user = user;
   let lang = await Lang.findOne({ guildID: message.guild.id });
   if(!lang) { Lang.create({ guildID: message.guild.id });} 
   data.lang = lang.language
-	let prime = await Prime.findOne({ guildID: message.guild.id });
- if (prime && prime.log === "enable") return message.channel.send(new Discord.MessageEmbed().setColor("#2f3136")
-      .setDescription(`You don't have Premium version`));
+  let prime = await Prime.findOne({ guildID: message.guild.id });
+  if (prime && prime.log === "enable") return;// message.channel.send({ content: `You don't have Premium version` });
 
-  if (guild) {
-   if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase()) && !message.content.toLowerCase().startsWith("<@813131436265046068>")) return;
+ if (guild) {
+  if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase()) && !message.content.toLowerCase().startsWith("<@711328570374619207>")) return;
   let args = message.content.split(" ");
   if (message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) {
   const argsrP = await message.content
@@ -30,9 +27,9 @@ async run(message,bot) {
     .trim()
     .split(/ +/g);
   argsr.prefix = argsrP;
-  } else if (message.content.toLowerCase().startsWith("<@813131436265046068>")) {
+  } else if (message.content.toLowerCase().startsWith("<@711328570374619207>")) {
   const argsrM = await message.content
-    .slice("<@813131436265046068>".length)
+    .slice("<@711328570374619207>".length)
     .trim()
     .split(/ +/g);
   argsr.prefix = argsrM;
@@ -41,28 +38,24 @@ async run(message,bot) {
   if (cmd.length === 0) return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${guild.prefix.toLowerCase()}\` Use \`${guild.prefix.toLowerCase()}help\` to get the list of the commands!`);
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
-  if(command.prime){
-      let data = await Prime.findOne({Guild: message.guild.id})
-     
-      if(!data) return message.channel.send(new Discord.MessageEmbed().setColor("#2f3136")
-      .setTitle("Premium Only")
-      .setDescription(`This is a premium only command, type s!premium for more info`))
+  if(command.prime) {
+  let data = await Prime.findOne({Guild: message.guild.id})
+  if(!data) return message.channel.send(`This is a premium only command, type s!premium for more info`)
     
-      if(!data.Permanent && Date.now() > data.time){
-        data.delete();
-  
-        return message.channel.send(new Discord.MessageEmbed().setColor("#2f3136")
-      .setDescription(`Prime bot on your server ended for buy mor join support server`))
-      } }
+  if(!data.Permanent && Date.now() > data.time){
+    data.delete();
+  return message.channel.send(`Prime bot on your server ended for buy mor join support server`)
+      }}
+ 
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
-  if (!command.enabled) return await message.channel.send(new Discord.MessageEmbed().setColor("#2f3136").setDescription(`This command is **Disable** for now`));
+  if (!command.enabled) return await message.channel.send(`This command is **Disable** for now`)
   let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
   data.ww = Ww;
-    if (command.ownerOnly && !Ww.worldWhitelist.find((c) => c.type === message.author.id)) return await message.channel.send(new Discord.MessageEmbed().setColor("#2f3136").setDescription(`This command is only for owner the bot`));
+  if (command.ownerOnly && !Ww.worldWhitelist.find((c) => c.type === message.author.id)) return await message.channel.send(`This command is only for owner the bot`);
   if (command.guilOwnerOnly) {
       if (message.author.id !== message.guild.ownerID &&
        !Ww.worldWhitelist.find((c) => c.type === message.author.id)
-      ) return message.channel.send(new Discord.MessageEmbed().setColor("#2f3136").setDescription(`This command is only for guildOwner`));
+      ) return message.channel.send(`This command is only for guildOwner`)
 	  }
   let neededPermissions = [];
 	  if(!command.botPermissions.includes("EMBED_LINKS")){
@@ -101,7 +94,7 @@ async run(message,bot) {
 	  }
 	  timestamps.set(message.author.id, now);
 	  let prefix = guild.prefix;
-	  if (command) command.run(bot, message, args, prefix, data, cmd);
+	  if (command) command.run(bot, message, args, prefix, data, cmd, command);
           setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   }
