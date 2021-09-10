@@ -97,7 +97,7 @@ module.exports = {
 
 				`ID\n${message.guild.id}`,
 
-				`Owner\n${message.guild.owner.user.tag} (${message.guild.ownerID})`,
+				`Owner\n<@${message.guild.ownerID}>`,
 
 				`Region\n${regions[message.guild.region]}`,
 
