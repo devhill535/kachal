@@ -69,7 +69,7 @@ bot.on("ready", async () => {
  });
 /////
 
-bot.on("message", async message => {
+/*bot.on("message", async message => {
 if (message.content.startsWith(prefix + "menu")) {
    
         let option1 = new MessageMenuOption()
@@ -127,7 +127,7 @@ if (message.content.startsWith(prefix + "menu")) {
             }
         })
    }
-})
+})*/
 ////
 
 bot.on('ready', () => {
