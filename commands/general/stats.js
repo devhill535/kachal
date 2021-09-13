@@ -32,7 +32,7 @@ module.exports = {
     const created = moment(bot.user.createdAt).format("YYYY-MM-DD");
     
      
-       let embed = new Discord.MessageEmbed()
+       let stats = new Discord.MessageEmbed()
         .setTitle("Security information")
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
@@ -50,7 +50,7 @@ module.exports = {
   .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
   .setLabel('Invite Link!')
  
-let row3 = new MessageActionRow()
+let row2 = new MessageActionRow()
       .addComponents(butn1)
 
    return message.channel.send(stats,row2);
