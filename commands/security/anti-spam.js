@@ -14,7 +14,7 @@ module.exports = {
   ownerOnly: false,
   guilOwnerOnly: true,
   cooldown: 3000,
-  prime: true,
+  prime: false,
   run: async (bot, message, args) => {
   
    let guild = await Guild.findOne({ guildID: message.guild.id });
