@@ -21,15 +21,14 @@ module.exports = {
     .setAuthor(Author)
     .setImage(Image)
     .setTitle("● To get help on a specific command type **s!help <command>**!")
-    .addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`, `vote`, `premium`")
-    .addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `mute`, `lock`, `unlock`, `lockall`, `unlockall`")
-    .addField("Config Section", "`setprefix`, `setlang`")
+    .addField("General Section", "`invite`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`")
+    .addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`")
     .addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
     .setFooter(Footer)
 
       let button1 = new MessageButton()
        .setStyle('url')
-       .setURL('https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot') 
+       .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
        .setLabel('Invite Link')
 
       
