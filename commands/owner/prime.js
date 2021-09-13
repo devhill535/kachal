@@ -4,7 +4,7 @@ const day = require("dayjs")
 module.exports = {
   name: "prime",
   aliases: ["p","prime"],
-  enabled: true,			
+  enabled: false,			
   memberPermissions: [ "SEND_MESSAGES" ],			
   botPermissions: [ "SEND_MESSAGES" ],		
   ownerOnly: true,			
