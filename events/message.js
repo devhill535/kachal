@@ -36,13 +36,13 @@ async run(message,bot) {
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
   if(command.prime) {
-  let data = await Prime.findOne({Guild: message.guild.id})
+ /* let data = await Prime.findOne({Guild: message.guild.id})
   if(!data) return message.channel.send(`This is a premium only command, type s!premium for more info`)
     
   if(!data.Permanent && Date.now() > data.time){
     data.delete();
   return message.channel.send(`Prime bot on your server ended for buy mor join support server`)
-      }}
+      }}*/
  
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
   if (!command.enabled) return await message.channel.send(`This command is **Disable** for now`)
