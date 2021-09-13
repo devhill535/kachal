@@ -12,14 +12,11 @@ async run(message,bot) {
   let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
   if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id });} 
   data.user = user;
-  let lang = await Lang.findOne({ guildID: message.guild.id });
-  if(!lang) { Lang.create({ guildID: message.guild.id });} 
-  data.lang = lang.language
-  let prime = await Prime.findOne({ guildID: message.guild.id });
-  if (prime && prime.log === "enable") return;// message.channel.send({ content: `You don't have Premium version` });
+  //let prime = await Prime.findOne({ guildID: message.guild.id });
+ // if (prime && prime.log === "enable") return;// message.channel.send({ content: `You don't have Premium version` });
 
  if (guild) {
-  if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase()) && !message.content.toLowerCase().startsWith("<@711328570374619207>")) return;
+  if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase()) && !message.content.toLowerCase().startsWith("<@828270556758540348>")) return;
   let args = message.content.split(" ");
   if (message.content.toLowerCase().startsWith(guild.prefix.toLowerCase())) {
   const argsrP = await message.content
@@ -27,9 +24,9 @@ async run(message,bot) {
     .trim()
     .split(/ +/g);
   argsr.prefix = argsrP;
-  } else if (message.content.toLowerCase().startsWith("<@711328570374619207>")) {
+  } else if (message.content.toLowerCase().startsWith("<@828270556758540348>")) {
   const argsrM = await message.content
-    .slice("<@711328570374619207>".length)
+    .slice("<@828270556758540348>".length)
     .trim()
     .split(/ +/g);
   argsr.prefix = argsrM;
