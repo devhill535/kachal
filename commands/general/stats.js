@@ -31,26 +31,28 @@ module.exports = {
  
     const created = moment(bot.user.createdAt).format("YYYY-MM-DD");
     
-     let about = new Discord.MessageEmbed()
-            .setColor(Color)
-            .setDescription('editing!')
-
-        return message.channel.send({ embed: about })
-            .then(msg => {
-
+     
        let embed = new Discord.MessageEmbed()
         .setTitle("Security information")
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .addField('General', [
+        .addField('', [
 
-				`Bot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}\nInvite Link\n[Click here](https://discord.com/api/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)\nServer Support\n[Click here](https://discord.gg/QaqmPG2WZX)\nTop.gg\n[Click here](https://top.gg/bot/711328570374619207)`,
+				`Bot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}`,
 				
 				''
 			])
 
       
-  return msg.edit({ embed })
-    })
+  
+  let butn1 = new MessageButton()
+  .setStyle('url')
+  .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
+  .setLabel('Invite Link!')
+ 
+let row3 = new MessageActionRow()
+      .addComponents(butn1)
+
+   return message.channel.send(stats,row2);
     }
 }
