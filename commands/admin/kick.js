@@ -16,15 +16,6 @@ module.exports = {
 
     let user = message.mentions.members.first();
 
-    var perms = message.member.hasPermission("KICK_MEMBERS");
-
-    if (!perms) {
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have **KICK_MEMBERS** permission`));
-    }
-
-    if (!message.guild.me.permissions.has("KICK_MEMBERS"))
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I need the **KICK_MEMBERS** permission`));
-
     if (!user)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!kick [@User]`)).catch(console.error);
 
