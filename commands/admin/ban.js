@@ -16,13 +16,7 @@ module.exports = {
   
     let user = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
     
-
-    let perms = message.member.hasPermission("BAN_MEMBERS");
-    if (!perms) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have **BAN_MEMBERS** permission`));
-
-    if (!message.guild.me.permissions.has('BAN_MEMBERS'))
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`"I need **BAN_MEMBERS** permission!`));
-
+    
     if (!user)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Based on the role hierarchy, you cannot ban this user`)).catch(console.error);
 
