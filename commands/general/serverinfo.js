@@ -85,7 +85,7 @@ module.exports = {
 		const emojis = message.guild.emojis.cache;
 
 		const embed = new MessageEmbed()
-                       .setTitle(bot.reva.get(data.lang, "general","guild_info"))
+                       .setTitle("Guild information")
 
 			.setColor(Color)
 
