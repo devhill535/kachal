@@ -1,6 +1,5 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-
 const { MessageButton, MessageActionRow } = require("discord-buttons");
 
 module.exports = {
@@ -15,13 +14,20 @@ module.exports = {
   ownerOnly: false,
   cooldown: 2000,
   run: async (bot, message, args, dev, data) => {
+ 
 
+   let invite = new Discord.MessageEmbed()
+   .setColor(Color)
+   .setDescription(`If you want protect your server invite me`)
 
   let butn = new MessageButton()
   .setStyle('url')
   .setURL('https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot') 
   .setLabel('Invite Link!')
  
- message.channel.send(`If you want protect your server invite me `, butn);
+let row = new MessageActionRow()
+      .addComponents(butn)
+
+   return message.channel.send(invite,row);
      }
  }
