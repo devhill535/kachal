@@ -32,23 +32,9 @@ module.exports = {
        .setURL('https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot') 
        .setLabel('Invite Link')
 
-      let button2 = new MessageButton()
-       .setStyle('url')
-       .setURL('https://discord.gg/xZ3Sssr8qN') 
-       .setLabel('Server Support')
-
-      let button3 = new MessageButton()
-       .setStyle('url')
-       .setURL('https://top.gg/bot/711328570374619207') 
-       .setLabel('Top.gg')
-
-      let button4 = new MessageButton()
-       .setStyle('url')
-       .setURL('https://www.antivandalism.ga/') 
-       .setLabel('Website')
-
+      
       let row1 = new MessageActionRow()
-      .addComponents(button1, button2, button3, button4)
+      .addComponents(button1)
 
    return message.channel.send(help,row1);
        } else {
