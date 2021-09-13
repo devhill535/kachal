@@ -12,8 +12,6 @@ const { Collection, MessageEmbed } = require("discord.js");
 const { inspect } = require("util");
 let dev = ["738478465870987425","386188491953799178"];
 const cmd = require("node-cmd");
-const { I18n } = require("locale-parser");
-bot.reva = new I18n({ defaultLocale: "en" });
 
 bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.ie8oVJprWh8m1o-q7zIdSxCn9iM")
 global.mongoose = require('mongoose')
@@ -24,8 +22,7 @@ mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.n
 });
 global.Guild = require("./data/guild.js");
 global.User = require("./data/user.js");
-global.Lang = require("./data/lang.js");
-global.Prime = require("./data/prime.js");
+//global.Prime = require("./data/prime.js");
 global.Owner = require("./data/owner.js");
 bot.commands = new Collection();
 bot.aliases = new Collection();
@@ -64,7 +61,7 @@ bot.on("ready", async () => {
  let channel = bot.channels.cache.get("880441113574539365");
   channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Anti Vandalism Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
   await bot.user.setStatus("online");
-  await bot.user.setActivity(`${prefix}help - www.antivandalism.ga`, { type: "PLAYING" });
+  await bot.user.setActivity(`${prefix}help`, { type: "PLAYING" });
  
  });
 /////
@@ -130,10 +127,10 @@ if (message.content.startsWith(prefix + "menu")) {
 })*/
 ////
 
-bot.on('ready', () => {
+/*bot.on('ready', () => {
 let channel = bot.channels.cache.get("880491394068803604");
     if (channel) channel.join();
-});
+});*/
 
 ////
 
