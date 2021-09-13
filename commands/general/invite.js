@@ -1,6 +1,7 @@
 const fs = require("fs");
 const Discord = require("discord.js")
-const { MessageButton } = require("discord-buttons");
+
+const { MessageButton, MessageActionRow } = require("discord-buttons");
 
 module.exports = {
   name: "invite",
