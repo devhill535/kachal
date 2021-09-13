@@ -5,7 +5,7 @@ const { Color } = require("../../config.js");
 module.exports = {
   name: "premium",
   aliases: [""],
-  enabled: true,
+  enabled: false,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
