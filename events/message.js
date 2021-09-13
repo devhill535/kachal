@@ -35,7 +35,8 @@ async run(message,bot) {
   if (cmd.length === 0) return message.channel.send(`Hello **${message.author.username}**, my prefix on this server is \`${guild.prefix.toLowerCase()}\` Use \`${guild.prefix.toLowerCase()}help\` to get the list of the commands!`);
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
-  if(command.prime) {
+  if(command) {
+//if(command.prime) {
  /* let data = await Prime.findOne({Guild: message.guild.id})
   if(!data) return message.channel.send(`This is a premium only command, type s!premium for more info`)
     
