@@ -39,7 +39,7 @@ module.exports = {
             .then(msg => {
 
        let embed = new Discord.MessageEmbed()
-        .setTitle(bot.reva.get(data.lang, "general","about"))
+        .setTitle("Security information")
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
         .addField('General', [
