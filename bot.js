@@ -10,15 +10,15 @@ const request = require("request");
 const prefix = "s!";
 const { Collection, MessageEmbed } = require("discord.js");
 const { inspect } = require("util");
-let dev = ["738478465870987425","386188491953799178"];
+let dev = ["738478465870987425"];
 const cmd = require("node-cmd");
 
 bot.login("NzExMzI4NTcwMzc0NjE5MjA3.XsBaWw.ie8oVJprWh8m1o-q7zIdSxCn9iM")
 global.mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://antivandalism:reman1234@cluster0.prbzz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-  console.log("Connected to the Mongodb database.");
+  console.log("✅ Connected to the database.");
 }).catch((err) => {
-  console.log("Unable to connect to the Mongodb database. Error:" + err);
+  console.log("❎ Unable to connect to the Mongodb database. Error:" + err);
 });
 global.Guild = require("./data/guild.js");
 global.User = require("./data/user.js");
@@ -53,13 +53,13 @@ bot.on("ready", () => {
   console.log(`[!]-------------------------------------[!]`);
   console.log(`Display Name : ${bot.user.username}`);
   console.log(`Public Prefix : ${prefix}`);
-  console.log(`Version : 4.0.0`);
+  console.log(`Version : v2`);
   console.log(`[!]-------------------------------------[!]`);
 });
 
 bot.on("ready", async () => {
- let channel = bot.channels.cache.get("880441113574539365");
-  channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Anti Vandalism Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
+ //let channel = bot.channels.cache.get("880441113574539365");
+  //channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Anti Vandalism Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
   await bot.user.setStatus("online");
   await bot.user.setActivity(`${prefix}help`, { type: "PLAYING" });
  
