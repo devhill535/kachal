@@ -21,6 +21,6 @@ module.exports = {
   .setURL('https://discord.com/api/oauth2/authorize?client_id=711328570374619207&permissions=8&scope=bot') 
   .setLabel('Invite Link!')
  
- message.channel.send(`${bot.reva.get(data.lang, "general","invite")}`, butn);
+ message.channel.send(`If you want protect your server invite me `, butn);
      }
  }
