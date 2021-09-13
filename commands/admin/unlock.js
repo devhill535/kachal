@@ -18,9 +18,8 @@ module.exports = {
         SEND_MESSAGES: true
       })
       .then(() => {
-        message.lineReplyNoMention(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "admin","unlock_message", { 
-          channel: `<#${message.channel.id}>`
-     })));
+        message.lineReplyNoMention(new Discord.MessageEmbed().setColor(Color).setDescription(`<#${message.channel.id}> Has been locked`
+     ));
      });
    }
 }
