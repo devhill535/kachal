@@ -27,7 +27,7 @@ module.exports = {
       .filter(m => m.user.bot)
       .map(m => `**${i++}** - ${m.user.username}`);
     const embed = new Discord.MessageEmbed()
-      .setTitle(bot.reva.get(data.lang, "general","botlist"))
+      .setTitle("Bot List")
       .setDescription(`${botssize.join("\n")}`)
       .setColor(Color)
     return msg.edit({ embed })
