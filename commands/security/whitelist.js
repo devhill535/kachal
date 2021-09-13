@@ -21,7 +21,7 @@ module.exports = {
           message.guild.members.cache.get(args[2]) ||
           message.mentions.members.first();
         if (!user)
-          return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","user_undefined")));
+          return message.reply(new Discord.MessageEmbed().setColor(Color).setDescription(`Mention someone`));
         if(!dataa.whitelist.find((c) => c.type === user.id)){
         await Guild.findOneAndUpdate(
         {
@@ -34,16 +34,16 @@ module.exports = {
             }
          },
         })     
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-add")));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + "Added to whitelist"));
           } else {
-          message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","whitelist-yes")));
+          message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`This man is whitelisted`));
           }
       } else if (args[1] === "remove") {
         let user =
           message.guild.members.cache.get(args[2]) ||
           message.mentions.members.first();
         if (!user)
-          return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","user_undefined")));
+          return message.reply(new Discord.MessageEmbed().setColor(Color).setDescription(`Mention someone`));
         if(dataa.whitelist.find((c) => c.type === user.id)){
         await Guild.findOneAndUpdate(
         {
@@ -56,16 +56,16 @@ module.exports = {
             }
          },
         })
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-remove")));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + "Removed in whitelist"));
         } else {
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + bot.reva.get(data.lang, "security","whitelist-no")));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + "Not in whitelist"));
         };
       } else if (!args[1]) {
-        if (dataa.whitelist.length === 0) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(bot.reva.get(data.lang, "security","whitelist-zero")));
+        if (dataa.whitelist.length === 0) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`This man is whitelisted`));
        let arrayOfCustomCommands = dataa.whitelist.map(w => `⇰ <@${w.type}> - ${w.type}`)
         
         let embed = new Discord.MessageEmbed()
-      .setTitle(bot.reva.get(data.lang, "security","whitelist-user"))
+      .setTitle("Whitelist Users")
       .setColor(Color)
       .setDescription(arrayOfCustomCommands.slice(0, 15).join('\n'));
       message.channel.send(embed);
