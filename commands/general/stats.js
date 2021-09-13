@@ -1,4 +1,4 @@
-
+const { MessageButton, MessageActionRow } = require("discord-buttons");
 const fs = require("fs");
 const Discord = require("discord.js");
 const { Color } = require("../../config.js");
@@ -38,7 +38,7 @@ module.exports = {
         .setThumbnail(bot.user.displayAvatarURL())
         .addField('', [
 
-				`Bot Id: ${bot.user.id}\nCommands Count: 25\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}`,
+				`Bot Id: ${bot.user.id}\nCommands Count: 20\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}`,
 				
 				''
 			])
