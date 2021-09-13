@@ -1,8 +1,0 @@
-lock_message: "🔒 %{channel} kilitlendi"
-unlock_message: "🔓 %{channel} kilidi açıldı"
-lockall_message: "🔒 %{channels} Kanallar kilitlendi"
-unlockall_message: "🔓 %{channels} Kanalların kilidi açıldı"
-bans: "Sunucu yasaklama listesi ⇏ "
-prefix_type: "Bir şey yazın!"
-prefix_length: " Daha düşük 5 uzunlukta ayarlanan önek gerekir"
-prefix_embed: "Bu loncada yeni önek ⇏ "
