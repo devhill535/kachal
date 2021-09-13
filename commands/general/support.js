@@ -7,7 +7,7 @@ module.exports = {
   description: "To show server support",
   usage: ["s!support"],
   category: ["General"],
-  enabled: true,
+  enabled: false,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
