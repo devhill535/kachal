@@ -17,8 +17,7 @@ module.exports = {
    
       const embed = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(bot.reva.get(data.lang, "admin","lockall_message", { 
-          channels: `${message.guild.channels.cache.size}`}));
+      .setDescription(`${message.guild.channels.cache.size} Has been locked`));
       message.lineReplyNoMention(embed);
 
     message.guild.channels.cache.filter(c => c.name).forEach(async channel => {
