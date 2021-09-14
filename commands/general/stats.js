@@ -27,7 +27,7 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
   ownerOnly: false,            
   cooldown: 2000,
-  run: async (bot, message, args, dev, data) => {
+  run: async (bot, message, args, dev) => {
  
     const created = moment(bot.user.createdAt).format("YYYY-MM-DD");
     
@@ -50,9 +50,9 @@ module.exports = {
   .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
   .setLabel('Invite Link!')
  
-let row2 = new MessageActionRow()
+let row3 = new MessageActionRow()
       .addComponents(butn1)
 
-   return message.channel.send(stats,row2);
+   message.channel.send(stats,row3);
     }
 }
