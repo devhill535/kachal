@@ -36,12 +36,12 @@ module.exports = {
         .setTitle("Security information")
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .addField('', [
-
-				`Bot Id: ${bot.user.id}\nCommands Count: 20\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${ms(bot.uptime, { long: true })}\nServers Count: ${bot.guilds.cache.size}`,
-				
-				''
-			])
+        .addField("Bot Id:",  `${bot.user.id}`)
+        .addField("Commands Count:" `20`)
+        .addField("Bot Created At:", `${created}`)
+        .addField("Ping:", `${Math.round(bot.ws.ping)}ms`)
+        .addField("Uptime:", `${ms(bot.uptime, { long: true })}`)
+        .addField("Servers Count:", `${bot.guilds.cache.size}`)
 
       
   
