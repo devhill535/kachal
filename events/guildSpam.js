@@ -66,3 +66,4 @@ let guild = await Guild.findOne({ guildID: message.guild.id });
     }
 }
 }
+}
