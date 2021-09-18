@@ -227,7 +227,7 @@ const usersMap = new Map();
           .setColor(Color)
           .setThumbnail(guild.iconURL())
           .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-          .setDescription(`${user.username} kicked because spaming in channel!`));
+          .setDescription(`${message.author.username} kicked because spaming in channel!`));
                });
              message.channel.bulkDelete(msgCount, true);
            }
