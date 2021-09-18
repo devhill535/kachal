@@ -20,7 +20,6 @@ module.exports = {
      let num = args[1];
     if (args[1] === "on") {
       guild.ban.onoff = "on";
-      guild.ban.user = message.author.tag
       guild.save();
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
@@ -41,7 +40,6 @@ module.exports = {
         );
       return message.channel.send(embed2);
     }
-    guild.ban.user = message.author.tag
     guild.ban.lmite = num;
     guild.save();
     const embed3 = new Discord.MessageEmbed()
