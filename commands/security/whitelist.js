@@ -56,9 +56,9 @@ module.exports = {
             }
          },
         })
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + "Removed in whitelist"));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<a:false:854842600351334440> ${user.user.username} Removed in whitelist`));
         } else {
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(user.user.username + "Not in whitelist"));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<a:false:854842600351334440> ${user.user.username} Not in whitelist`));
         };
       } else if (!args[1]) {
         if (dataa.whitelist.length === 0) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`This man is whitelisted`));
