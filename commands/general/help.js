@@ -23,7 +23,7 @@ module.exports = {
     .setTitle("● To get help on a specific command type **s!help <command>**!")
     .addField("General Section", "`invite`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`")
     .addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`")
-    .addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`, `logs`")
+    .addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`")
     .setFooter(Footer)
 
       let button1 = new MessageButton()
