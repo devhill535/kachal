@@ -223,7 +223,7 @@ const usersMap = new Map();
                .get(message.author.id)
                .kick()
                .then(k => {
-                 guild.owner.send(`This user is kicked because spaming in channel`);
+                 k.guild.owner.send(`This user is kicked because spaming in channel`);
                });
              message.channel.bulkDelete(msgCount, true);
            }
