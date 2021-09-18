@@ -15,7 +15,8 @@ module.exports = {
   
    let data = await Guild.findOne({ guildID: message.guild.id })
    if(!data) return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Empty!`))
-      if(!data.ban.user) return message.channel.send(`None one`)
+      
+
  if(data) return message.lineReplyNoMention(new Discord.MessageEmbed().setThumbnail(message.guild.iconURL()).setColor(Color).setDescription(`
     
 **Logs**\n\n
