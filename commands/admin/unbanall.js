@@ -18,11 +18,11 @@ module.exports = {
  
  if (message.member.hasPermission("ADMINISTRATOR")) {
                     message.guild.fetchBans().then(bans => {
-                        if (bans.size == 0) { message.lineReplyNoMention("There are no banned users"); throw "No members to unban"};
+                        if (bans.size == 0) { message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`There are no banned users`)); throw "No members to unban"};
                         bans.forEach(ban => {
                             message.guild.members.unban(ban.user.id);
                         });
-                    }).then(() => message.lineReplyNoMention("Unbanned all users")).catch(e => console.log(e))
+                    }).then(() => message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Unbanned all users`))).catch(e => console.log(e))
                 } 
         }
       }
