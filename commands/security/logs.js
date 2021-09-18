@@ -20,9 +20,8 @@ module.exports = {
 **Logs**\n\n
 
 1.
-**\`+ ${data.ban.user}\`**
-**\`- AntiBan\`**
-**\`- Punish\`**: **${data.ban.lmite}**\n
+**\`> ${data.ban.user}\`**
+**__Changed__** [**AntiBan**] **__to__**: **${data.ban.lmite}**\n
 2.
 **\`+ ${data.kick.user}\`**
 **\`- Antikick\`**
