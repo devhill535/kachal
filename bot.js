@@ -175,6 +175,7 @@ bot.on('message', message => {
     if(message.deletable) {
       message.delete()
     }
+}
 })
 //=============================== - [ antispam ] - ===================================//
 const usersMap = new Map();
