@@ -6,7 +6,8 @@ const TIME = 6000;
 const DIFF = 7000;
 /////
 module.exports = class {
-  async run(bot,message) {  
+  async run(message) {  
+ try {
 let guild = await Guild.findOne({ guildID: message.guild.id });
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
@@ -66,4 +67,4 @@ let guild = await Guild.findOne({ guildID: message.guild.id });
     }
 }
 }
-}
+}}
