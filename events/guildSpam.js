@@ -45,7 +45,7 @@ let guild = await Guild.findOne({ guildID: message.guild.id });
               .get(message.author.id)
               .kick()
               .then(k => {
-                guild.owner.send(`This user is kicked because spaming in channel);
+                guild.owner.send(`This user is kicked because spaming in channel`);
               });
             message.channel.bulkDelete(msgCount, true);
           }
@@ -64,7 +64,6 @@ let guild = await Guild.findOne({ guildID: message.guild.id });
         timer: fn
       });
     }
-}
 }
 }
 }
