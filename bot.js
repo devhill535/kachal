@@ -230,7 +230,7 @@ bot.on("message", async message => {
               .get(message.author.id)
               .kick()
               .then(k => {
-                guild.owner.send({ content: `This user is kicked because spaming in channel` });
+                guild.owner.send(`This user is kicked because spaming in channel);
               });
             message.channel.bulkDelete(msgCount, true);
           }
