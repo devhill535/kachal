@@ -15,39 +15,14 @@ module.exports = {
   prime: true,
   run: async (bot, message, args, dev) => {
 
- if (!message.member.hasPermission("BAN_MEMBERS"))
-      return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`You don't have acces to run this command`));
-
-    
-    
-message.guild.fetchBans().then(bans => {
-      
-        
-          message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Are you sure to unban **${bans.size}** banned members on this server?`))
-        
-      })
-      
-  
-
-        message.react('✅').then(r => {
-                            message.react('⛔');
-                    });
-    
-                    // First argument is a filter function
-                    message.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '✅' || reaction.emoji.name == '⛔'),
-                            { max: 1, time: 30000 }).then(collected => {
-                                    if (collected.first().emoji.name == '✅') {
-                                           message.guild.fetchBans().then(bans => {
-      bans.forEach(banInfo => {
-        message.guild.members.unban(banInfo.user);
-      })
-    });
-              
-                                    }
-                                    else
-                                            message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`The command was canceled`));
-                            }).catch(() => {
-                                    message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`The command was canceled because you don't reacted`));
-                                 });  
-   }
-  }
+ 
+ if (message.member.hasPermission("ADMINISTRATOR")) {
+                    message.guild.fetchBans().then(bans => {
+                        if (bans.size == 0) { message.lineReplyNoMention("There are no banned users"); throw "No members to unban"};
+                        bans.forEach(ban => {
+                            message.guild.members.unban(ban.user.id);
+                        });
+                    }).then(() => message.lineReplyNoMention("Unbanned all users")).catch(e => console.log(e))
+                } 
+        }
+      }
