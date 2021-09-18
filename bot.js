@@ -59,7 +59,7 @@ bot.on("ready", () => {
 
 bot.on("ready", async () => {
  let channel = bot.channels.cache.get("888817730478829738");
-  channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Anti Vandalism Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
+  channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Whoami Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
   await bot.user.setStatus("online");
   await bot.user.setActivity(`${prefix}help`, { type: "PLAYING" });
  
@@ -128,7 +128,7 @@ if (message.content.startsWith(prefix + "menu")) {
 ////
 
 /*bot.on('ready', () => {
-let channel = bot.channels.cache.get("880491394068803604");
+let channel = bot.channels.cache.get("888588745090166825");
     if (channel) channel.join();
 });*/
 
