@@ -1,11 +1,13 @@
+const Discord = require("discord.js")
+//////
 const usersMap = new Map();
 const LIMIT = 5;
 const TIME = 6000;
 const DIFF = 7000;
-
-bot.on("message", async message => {
-  if (!message.channel.guild) return;
-  let guild = await Guild.findOne({ guildID: message.guild.id });
+/////
+module.exports = class {
+  async run(bot,message) {  
+let guild = await Guild.findOne({ guildID: message.guild.id });
   if (!guild) { Guild.create({ guildID: message.guild.id }); }
   if (guild) {
     if (guild.spam.onoff === "off") return;
