@@ -225,9 +225,7 @@ const usersMap = new Map();
                .then(k => {
                  k.guild.owner.send(new Discord.MessageEmbed()
           .setColor(Color)
-          .setThumbnail(guild.iconURL())
-          .setTitle(`<:punishment:837867514947174431> Actions in the server **${guild.name}**`)
-          .setDescription(`kicked because spaming in channel!`));
+         .setDescription(`${message.author.username} kicked because spaming in channel!`));
                });
              message.channel.bulkDelete(msgCount, true);
            }
