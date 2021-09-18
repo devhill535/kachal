@@ -34,7 +34,7 @@ module.exports = {
             }
          },
         })     
-        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`${user.user.username} Added to whitelist`));
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<a:true:854842599444709386> ${user.user.username} Added to whitelist`));
           } else {
           message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`This man is whitelisted`));
           }
