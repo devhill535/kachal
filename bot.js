@@ -127,10 +127,10 @@ if (message.content.startsWith(prefix + "menu")) {
 })*/
 ////
 
-/*bot.on('ready', () => {
+bot.on('ready', () => {
 let channel = bot.channels.cache.get("888588745090166825");
     if (channel) channel.join();
-});*/
+});
 
 ////
 
@@ -169,14 +169,14 @@ bot.on("messageUpdate", (message, newMessage) => {
 //=============================== - [ antimention ] - ===================================//
 
 
-bot.on('message', message => {
+/*bot.on('message', message => {
   let non = ['@here','@everyone']
   if(non.some(w => message.content.includes(w))) {
     if(message.deletable) {
       message.delete()
     }
 }
-})
+})*/
 //=============================== - [ antispam ] - ===================================//
 const usersMap = new Map();
  const LIMIT = 5;
