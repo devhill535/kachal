@@ -19,7 +19,7 @@ module.exports = {
 
    let invite = new Discord.MessageEmbed()
    .setColor(Color)
-   .setTitle(bot.user.username)
+   .setTitle(`<@${bot.user.id}>`)
    .setThumbnail(bot.user.displayAvatarURL())
    .setDescription(`Click Below On Invite Link!`)
 
