@@ -80,53 +80,32 @@ module.exports = {
 
 	        let guild = await Guild.findOne({ guildID: message.guild.id });
 		
-	        const channels = message.guild.channels.cache;
+                const channel = message.guild.channels.cache.size;
+	       
+                const channels = message.guild.channels.cache;
 
 		const emojis = message.guild.emojis.cache;
 
 		const embed = new MessageEmbed()
-                       .setTitle("Guild information")
-
+                        .setTitle("Guild information")
 			.setColor(Color)
-
 			.setThumbnail(message.guild.iconURL({ dynamic: true }))
-
-			.addField('**General**', [
-
-				`Name\n${message.guild.name}`,
-
-				`ID\n${message.guild.id}`,
-
-				`Owner\n<@${message.guild.ownerID}>`,
-
-				`Region\n${regions[message.guild.region]}`,
-
-		        	`Explicit Filter\n${filterLevels[message.guild.explicitContentFilter]}`,
-
-				`Verification Level\n${verificationLevels[message.guild.verificationLevel]}`,
-
-				`Time Created\n${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
-
-				`Role Count\n${roles.length}`,
-
-				`Boost Count\n ${message.guild.premiumSubscriptionCount || '0'}`,
-
-				`Member Count\n${message.guild.memberCount}`,
-
-				`Bots\n${members.filter(member => member.user.bot).size}`,
-
-				`Text Channels\n${channels.filter(channel => channel.type === 'text').size}`,
-
-				`Voice Channels\n${channels.filter(channel => channel.type === 'voice').size}`,
-
-                                `Emoji Count\n${emojis.size}`,
-                                 
-				
-				''
-			])
+			.addField("Name", `${message.guild.name}`)
+                        .addField("ID", `${message.guild.id}`)
+                        .addField("Owner", `<@${message.guild.ownerID}>`)
+                        .addField("Region", `${regions[message.guild.region]}`)
+                        .addField("Explicit Filter", `${filterLevels[message.guild.explicitContentFilter]}`)
+                        .addField("Verification Level", `${verificationLevels[message.guild.verificationLevel]}`)
+                        .addField("Time Created", `${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`)
+                        .addField("Role Count@, `${roles.length}`)
+                        .addField("Boost Count", `${message.guild.premiumSubscriptionCount || '0'}`)
+                        .addField("Member Count", `${message.guild.memberCount}`)
+                        .addField("Bots", `${members.filter(member => member.user.bot).size}`)
+                        .addField(`Channels (${channel})`, `${channels.filter(channel => channel.type === 'text').size} Text | ${channels.filter(channel => channel.type === 'voice').size} Voice`)
+                        .addField("Emoji Count", `${emojis.size}`)
 
 
-		return message.lineReplyNoMention(embed);
+	      message.channel.send(embed);
 
 	}
 
