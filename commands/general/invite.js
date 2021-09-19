@@ -19,7 +19,9 @@ module.exports = {
 
    let invite = new Discord.MessageEmbed()
    .setColor(Color)
-   .setDescription(`If you want protect your server invite me`)
+   .setTitle(bot.user.username)
+   .setThumbnail(bot.user.displayAvatarURL())
+   .setDescription(`Click Below On Invite Link!`)
 
   let butn = new MessageButton()
   .setStyle('url')
