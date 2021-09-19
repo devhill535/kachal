@@ -97,7 +97,7 @@ module.exports = {
                         .addField("Explicit Filter", `${filterLevels[message.guild.explicitContentFilter]}`)
                         .addField("Verification Level", `${verificationLevels[message.guild.verificationLevel]}`)
                         .addField("Time Created", `${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`)
-                        .addField("Role Count@, `${roles.length}`)
+                        .addField("Role Count", `${roles.length}`)
                         .addField("Boost Count", `${message.guild.premiumSubscriptionCount || '0'}`)
                         .addField("Member Count", `${message.guild.memberCount}`)
                         .addField("Bots", `${members.filter(member => member.user.bot).size}`)
