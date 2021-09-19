@@ -31,30 +31,13 @@ module.exports = {
   run: async (bot, message, args) => {
 
 let member = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username == args[0]) || message.guild.members.cache.find(r => r.displayName == args[0]) || message.guild.members.cache.find(r => r.id == args[0]) || message.member;
-////
+///
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
 ///
 const bots = member.user.bot ? "True" : "False";
 ///
 const deleted = member.deleted ? "True" : "False";
-////
- let stat = member.presence.activities[0]
-        let custom
-
-        if (member.presence.activities.some(r => r.name === "Spotify")) {
-            custom = "Listening to Spotify"
-        } else if (stat && stat.name !== "Custom Status") {
-            custom = stat.name
-        } else {
-            custom = "Nothing"
-        }
-
-        if (member.presence.activities.some(r => r.name !== "Spotify") && stat && stat.state !== null) {
-            stat = stat.state
-        } else {
-            stat = "Nothing"
-        }
-/////
+///
 if (member.premiumSince) {
     boost = "Yes"
   } else {
@@ -70,16 +53,14 @@ if (member.premiumSince) {
       .addField("Discriminator", `${member.user.discriminator}`, true)
       .addField("Nickname", `${nickname}`, true)
       .addField("User Id", `${member.id}`, true)
-      .addField("Avatar Link", `[png](${member.user.displayAvatarURL({format: "png",dynamic: true})}) | [jpg](${member.user.displayAvatarURL({format: "jpg", dynamic: true})}) | [webp](${member.user.displayAvatarURL({format: "webp", dynamic: true})})`)
       .addField("Is Bot", `${bots}`, true)
-      .addField("Activity", `${custom}`, true)
       .addField("Booster", `${boost}`, true)
       .addField("Flags", `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`, true)
       .addField("Deleted User" ,`${deleted}`, true)
-      .addField("Join", member.joinedAt.toDateString())
+      .addField("Join", <${member.joinedAt.toDateString())}>
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
 
-  return message.lineReplyNoMention(embed);
+  message.channel.send(embed);
  }
 }
