@@ -11,7 +11,7 @@ module.exports = class {
       const memberData = await User.findOne({ guildID: guild.id, userID: user2.id });
       if (!memberData) { User.create({ guildID: guild.id, userID: user2.id }); }
       if (guildData.webhook.onoff === "off") return;
-      if (user2.id === webhook.guild.ownerID) return;
+      if (user2.id === guild.ownerID) return;
       if (guildData.whitelist.find((c) => c.type === user2.id)) return;
       let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
       if (Ww.worldWhitelist.find((c) => c.type === user2.id)) return;
