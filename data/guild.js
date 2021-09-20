@@ -17,6 +17,10 @@ schema = mongoose.Schema({
         onoff: { type: String, default: "on"},
         lmite: { type: Number, default: "3"}
     },
+    webhook: {
+        onoff: { type: String, default: "on"},
+        lmite: { type: Number, default: "3"}
+    },
     spam: {
         onoff: { type: String, default: "off"}      
     },
