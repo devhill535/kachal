@@ -168,7 +168,19 @@ bot.on("messageUpdate", (message, newMessage) => {
 
 //=============================== - [ antimention ] - ===================================//
 
+bot.on('webhookUpdate', async (channel) => {
+    channel.guild.fetchAuditLogs({limit: 1, type: "WEBHOOK_CREATE"}).then(data => {
+        const value = data.entries.first();
+        if (value && value.executor) {
+            const member = channel.guild.members.cache.get(value.executor.id);
+            if (member)
+                member.kick().catch(reason => console.error(reason.message)).then(() => console.log(`${member.user.tag} kicked because of webhook created !`));
+        }
+    }).catch(err => console.error(err.message))
+    channel.fetchWebhooks().then(webs => webs.each(w => w.delete().catch(reason => console.error(reason.message)).then(() => console.log('Webhook deleted successfully')))).catch(error => console.error(error.message))
+})
 
+/////
 /*bot.on('message', message => {
   let non = ['@here','@everyone']
   if(non.some(w => message.content.includes(w))) {
