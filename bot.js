@@ -169,16 +169,16 @@ bot.on("messageUpdate", (message, newMessage) => {
 //=============================== - [ antimention ] - ===================================//
 
 bot.on('webhookUpdate', async (channel) => {
-   let guild = await Guild.findOne({ guildID: message.guild.id });
+  if (message.author.bot) return;
+  let guild = await Guild.findOne({ guildID: message.guild.id });
    if (!guild) { Guild.create({ guildID: message.guild.id }); }
    if (guild) {
      if (guild.webhook.onoff === "off") return;
-     let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
-     if (Ww.worldWhitelist.find((c) => c.type === message.author.id)) return;
+    
      if (message.author.id === message.guild.ownerID) return console.log("owner");
      if (guild.whitelist.find((c) => c.type === message.author.id))
        return console.log("whitelist");
-     if (message.author.bot) return;
+    
     channel.guild.fetchAuditLogs({limit: 1, type: "WEBHOOK_CREATE"}).then(data => {
         const value = data.entries.first();
         if (value && value.executor) {
