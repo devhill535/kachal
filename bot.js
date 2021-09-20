@@ -169,7 +169,6 @@ bot.on("messageUpdate", (message, newMessage) => {
 //=============================== - [ antimention ] - ===================================//
 
 bot.on('webhookUpdate', async (channel) => {
-if (!message.channel.guild) return;
    let guild = await Guild.findOne({ guildID: message.guild.id });
    if (!guild) { Guild.create({ guildID: message.guild.id }); }
    if (guild) {
