@@ -35,32 +35,8 @@ const stats = new Discord.MessageEmbed()
 .setColor(Color) 
 .setThumbnail(message.client.user.displayAvatarURL()) 
 .setTitle("Whoami Stats")
-.setDescription(`**= Statistics =**\n\n**• Servers** : ${bot.guilds.cache.size}\n**Bot** :${bot.user.id}\n**Commands Count** : 19\n**Bot Created At** : ${created}\n**Ping** : ${Math.round(bot.ws.ping)}ms
-        
-**= SYSTEM =** 
-
-**• Platfrom** : ${os.type} 
-
-**• Uptime** : ${duration1} 
-
-**• CPU** : 
-
-> **• Cores** : ${cpu.cores} 
-
-> **• Model** : ${os.cpus()[0].model} 
-
-> **• Speed** : ${os.cpus()[0].speed} MHz 
-
-**• MEMORY** : 
-
-> **• Total Memory** : ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps 
-
-> **• Free Memory** : ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps 
-
-> **• Heap Total** : ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps 
-
-> **• Heap Usage** : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps 
-
+.setDescription(`**= Statistics =**\n\n**Servers** : ${bot.guilds.cache.size}\n**Bot** :${bot.user.id}\n**Commands Count** : 19\n**Bot Created At** : ${created}\n**Ping** : ${Math.round(bot.ws.ping)}ms
+\n\n**= System =**\n\n**Uptime** : ${duration1}\n**CPU** : \n> **Cores** : ${cpu.cores}\n> **Model** : ${os.cpus()[0].model}\n> **Speed** : ${os.cpus()[0].speed} MHz\n**MEMORY** : \n> **Total Memory** : ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps\n> **Free Memory** : ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps\n> **Heap Total** : ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps\n> **Heap Usage** : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps 
 `)
 
    message.channel.send(stats);
