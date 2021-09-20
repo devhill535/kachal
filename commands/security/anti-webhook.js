@@ -1,5 +1,4 @@
-
- const fs = require("fs");
+const fs = require("fs");
 const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 
@@ -25,28 +24,19 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setDescription(`<a:true:854842599444709386> The **AntiWebhook** system is enabled correctly!`);
-      return message.channel.send(embed);
+     return message.channel.send(embed);
      } else if (args[1] === "off") {
-         guild.webhook.onoff = "off";
-         guild.save();
+        guild.webhook.onoff = "off";
+        guild.save();
       const embed1 = new Discord.MessageEmbed()
         .setColor(Color)
         .setDescription(`<a:false:854842600351334440> The **AntiWebhook** system is disabled correctly!`);
-      return message.channel.send(embed1);
+     return message.channel.send(embed1);
     }
-    if (isNaN(num) || parseInt(num) < 1) {
-      const embed2 = new Discord.MessageEmbed()
+    const embed2 = new Discord.MessageEmbed()
         .setColor(Color)
-        .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}antiwebhook [on,off,<number>]`
+        .setDescription(`error syntax <a:false:854842600351334440>\n ${guild.prefix}antiwebhook [on,off] `
         );
       return message.channel.send(embed2);
-    }
-    guild.webhook.lmite = num;
-    guild.save();
-    const embed3 = new Discord.MessageEmbed()
-      .setColor(Color)
-      .setDescription(`Successfully antiwebhook changed to **${guild.webhook.lmite}** <:punish:836022893691011092>
-`);
-    return message.channel.send(embed3);
   }
 };
