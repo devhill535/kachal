@@ -2,7 +2,7 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const { Color } = require("../../config.js");
 const ms = require('ms');
-const { MessageButton, MessageActionRow } = require("discord-buttons");
+///const { MessageButton, MessageActionRow } = require("discord-buttons");
 const { stripIndents } = require("common-tags");
 const moment = require("moment-timezone");
  function duration(ms) {
@@ -45,15 +45,15 @@ module.exports = {
 
       
   
-  let button1 = new MessageButton()
+  /*let button1 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
        .setLabel('Click here to invite Whoami bot')
 
       
       let row1 = new MessageActionRow()
-      .addComponents(button1)
+      .addComponents(button1)*/
 
-   return message.channel.send(stats,row1);
+   message.channel.send(stats);
     }
 }
