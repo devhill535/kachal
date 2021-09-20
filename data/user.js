@@ -4,6 +4,8 @@ const schema = mongoose.Schema({
     
     channelD: { type: Number, default: 0 },
     channelC: { type: Number, default: 0 },
+    webhookD: { type: Number, default: 0 },
+    webhookC: { type: Number, default: 0 },
     roleD: { type: Number, default: 0 },
     roleC: { type: Number, default: 0 },
     ban: { type: Number, default: 0 },
