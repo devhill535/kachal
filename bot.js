@@ -168,7 +168,7 @@ bot.on("messageUpdate", (message, newMessage) => {
 
 //=============================== - [ antimention ] - ===================================//
 
-bot.on('webhookUpdate', async (channel) => {
+/*bot.on('webhookUpdate', async (channel) => {
   if (message.author.bot) return;
   let guild = await Guild.findOne({ guildID: message.guild.id });
    if (!guild) { Guild.create({ guildID: message.guild.id }); }
@@ -190,7 +190,7 @@ bot.on('webhookUpdate', async (channel) => {
     channel.fetchWebhooks().then(webs => webs.each(w => w.delete().catch(reason => console.error(reason.message)).then(() => console.log('Webhook deleted successfully')))).catch(error => console.error(error.message))
 }
 })
-
+*/
 /////
 /*bot.on('message', message => {
   let non = ['@here','@everyone']
