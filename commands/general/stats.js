@@ -54,6 +54,6 @@ module.exports = {
       let row1 = new MessageActionRow()
       .addComponents(button1)
 
-   return message.channel.send(help,row1);
+   return message.channel.send(stats,row1);
     }
 }
