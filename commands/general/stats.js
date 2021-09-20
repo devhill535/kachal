@@ -36,23 +36,24 @@ module.exports = {
         .setTitle("Security information")
         .setColor(Color)
         .setThumbnail(bot.user.displayAvatarURL())
-        .addField("Bot Id:",  `${bot.user.id}`)
-        .addField("Commands Count:" `20`)
-        .addField("Bot Created At:", `${created}`)
-        .addField("Ping:", `${Math.round(bot.ws.ping)}ms`)
-        .addField("Uptime:", `${ms(bot.uptime, { long: true })}`)
-        .addField("Servers Count:", `${bot.guilds.cache.size}`)
+        .addField("Bot Id",  `${bot.user.id}`)
+        .addField("Commands Count" `19`)
+        .addField("Bot Created At", `${created}`)
+        .addField("Ping", `${Math.round(bot.ws.ping)}ms`)
+        .addField("Uptime", `${ms(bot.uptime, { long: true })}`)
+        .addField("Servers Count", `${bot.guilds.cache.size}`)
 
       
   
-  let butn1 = new MessageButton()
-  .setStyle('url')
-  .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
-  .setLabel('Invite Link!')
- 
-let row3 = new MessageActionRow()
-      .addComponents(butn1)
+  let button1 = new MessageButton()
+       .setStyle('url')
+       .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
+       .setLabel('Click here to invite Whoami bot')
 
-   message.channel.send(stats,row3);
+      
+      let row1 = new MessageActionRow()
+      .addComponents(button1)
+
+   return message.channel.send(help,row1);
     }
 }
