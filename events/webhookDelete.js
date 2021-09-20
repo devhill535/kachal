@@ -1,21 +1,21 @@
 const Discord = require("discord.js")
 module.exports = class {
-  async run(channel) {
-    const { guild } = channel
+  async run(webhook) {
+    const { guild } = webhook
     try {
-      const entry1 = await guild.fetchAuditLogs({ type: "CHANNEL_DELETE" })
+      const entry1 = await guild.fetchAuditLogs({ type: "WEBHOOK_DELETE" })
         .then(audit => audit.entries.first());
       const user2 = entry1.executor;
       const guildData = await Guild.findOne({ guildID: guild.id });
       if (!guildData) { Guild.create({ guildID: guild.id }); }
       const memberData = await User.findOne({ guildID: guild.id, userID: user2.id });
       if (!memberData) { User.create({ guildID: guild.id, userID: user2.id }); }
-      if (guildData.channel.onoff === "off") return;
+      if (guildData.webhook.onoff === "off") return;
       if (user2.id === guild.ownerID) return;
       if (guildData.whitelist.find((c) => c.type === user2.id)) return;
       let Ww = await Owner.findOne({ ownerCode: "738478465870987425" });
       if (Ww.worldWhitelist.find((c) => c.type === user2.id)) return;
-      if (guildData.channel.lmite === 1) {
+      if (guildData.webhook.lmite === 1) {
         let member = await guild.members.fetch(user2.id)
         const embed = new Discord.MessageEmbed()
           .setColor("#fc0303")
@@ -39,17 +39,17 @@ module.exports = class {
             embed.addField("Ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed).catch(err => {})
             const position = channel.position;
-            const newChannel = await channel.clone();
-            newChannel.setPosition(position);
+            const newWebhook = await channel.clone();
+            newWebhook.setPosition(position);
           } else {
             embed2.addField("Can't ban", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
           }
         } else 
       if (guildData.punishment === "removerole") {
-        channel.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
+        webhook.guild.members.cache.get(user2.id).roles.cache.forEach(r => {
           if (r.name !== "@everyone") {
-            channel.guild.members.cache.get(user2.id).roles.remove(r.id)
+            webhook.guild.members.cache.get(user2.id).roles.remove(r.id)
           }
         }).then(bruhlolxd => {
        embed.addField ("RemoveRole", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
@@ -63,8 +63,8 @@ module.exports = class {
             embed.addField("Kick", `Name: ${user2.username}\nTag : ${user2.tag}\ID: ${user2.id}`)
             await guild.owner.send(embed).catch(err => {})
             const position = channel.position;
-            const newChannel = await channel.clone();
-            newChannel.setPosition(position);
+            const newWebhook = await webhook.clone();
+            newWebhook.setPosition(position);
           } else {
             embed2.addField("Can't kick", `Name: ${user2.username}\nTag : ${user2.tag}\nID: ${user2.id}`)
             await guild.owner.send(embed2).catch(err => {})
@@ -72,14 +72,14 @@ module.exports = class {
         }
 
       } else {
-        memberData.channelC = memberData.channelC + 1;
+        memberData.webhookC = memberData.webhookC + 1;
         setTimeout(() => {
-          if (memberData.channelC !== 0) {
+          if (memberData.webhookC !== 0) {
             memberData.channelC = 0;
             memberData.save();
           }
         }, 6000 * 60 * 60)
-        if (memberData.webhookC === guildData.channel.lmite || memberData.channelC > guildData.channel.lmite) {
+        if (memberData.webhookC === guildData.webhook.lmite || memberData.webhookC > guildData.webhook.lmite) {
           let member = await guild.members.fetch(user2.id)
           const embed = new Discord.MessageEmbed()
             .setColor("#fc0303")
