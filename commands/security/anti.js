@@ -13,10 +13,10 @@ module.exports = {
   botPermissions: [ "SEND_MESSAGES", "EMBED_LINKS" ],        
   ownerOnly: false,
   cooldown: 2000,
-  run: async (bot, message, args, dev, data) => {
+  run: async (bot, message, args, dev) => {
   const embed = new Discord.MessageEmbed()
       .setColor(Color)
-      .setTitle(bot.reva.get(data.lang, "general","anti_embed"))
+      .setTitle("List of all commands security")
       .setDescription(`Type: [on,off,<number>]\n\nGuardian: **antichannel, antirole, antiban, antikick, antispam, antibot**`)
   message.channel.send(embed);
     }
