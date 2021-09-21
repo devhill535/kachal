@@ -31,7 +31,7 @@ module.exports = {
   run: async (bot, message, args) => {
 
 let member =
-          message.guild.members.cache.get(args[2]) ||
+          message.guild.members.cache.get(args[1]) ||
           message.mentions.members.first();
 
 ///
