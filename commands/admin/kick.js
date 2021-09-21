@@ -14,7 +14,7 @@ module.exports = {
   cooldown: 6000,
   run: async (client, message, args, dev) => {
 
-    let member =
+    let user =
           message.guild.members.cache.get(args[1]) ||
           message.mentions.members.first();
 
