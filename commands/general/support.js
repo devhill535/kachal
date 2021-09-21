@@ -7,7 +7,7 @@ module.exports = {
   description: "To show server support",
   usage: ["s!support"],
   category: ["General"],
-  enabled: false,
+  enabled: true,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
@@ -16,9 +16,9 @@ module.exports = {
 
 let butn = new MessageButton()
   .setStyle('url')
-  .setURL('https://discord.gg/xZ3Sssr8qN') 
+  .setURL('https://discord.gg/4aP8wq6SjJ') 
   .setLabel('Support Server!')
 
-message.channel.send(`This is a server support **Anti Vandalism** if you need help, enter the server`, butn);
+message.channel.send(`This is a server support **Whoami** if you need help, enter the server`, butn);
     } 
 }
