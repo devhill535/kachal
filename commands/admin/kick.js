@@ -14,7 +14,9 @@ module.exports = {
   cooldown: 6000,
   run: async (client, message, args, dev) => {
 
-    let user = message.mentions.members.first();
+    let member =
+          message.guild.members.cache.get(args[1]) ||
+          message.mentions.members.first();
 
     if (!user)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Usage: s!kick [@User]`)).catch(console.error);
