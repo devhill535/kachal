@@ -15,7 +15,6 @@ module.exports = {
   cooldown: 6000,
   run: async (bot, message, dev) => {
    message.delete();
-   let clear = new Discord.MessageEmbed()
          
 let args = message.content.split(" ").slice(1);
     let messagecount = parseInt(args);
