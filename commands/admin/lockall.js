@@ -18,7 +18,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
       .setColor(Color)
       .setDescription(`${message.guild.channels.cache.size} Channels has been locked`);
-      message.lineReplyNoMention(embed);
+      message.channel.send(embed);
 
     message.guild.channels.cache.filter(c => c.name).forEach(async channel => {
     channel
