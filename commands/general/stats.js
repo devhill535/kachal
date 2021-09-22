@@ -36,7 +36,7 @@ const stats = new Discord.MessageEmbed()
 .setColor(Color) 
 .setThumbnail(bot.user.displayAvatarURL()) 
 .setTitle("Whoami Stats")
-.setDescription(`**Statistics**\n\nServers: ${bot.guilds.cache.size}\nBot Id: ${bot.user.id}\nCommands Count: 19\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${duration1}\n\n**System**\n> MEMORY\nTotal Memory: ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps\nFree Memory: ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps\nHeap Total: ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps\nHeap Usage: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps 
+.setDescription(`**Statistics**\n\nServers: ${bot.guilds.cache.size}\nBot Id: ${bot.user.id}\nCommands Count: 19\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${duration1}\n\nTotal Memory: ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps\nFree Memory: ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps\nHeap Total: ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps\nHeap Usage: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps 
 `)
 
    
