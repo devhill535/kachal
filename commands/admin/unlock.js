@@ -18,7 +18,7 @@ module.exports = {
         SEND_MESSAGES: true
       })
       .then(() => {
-        message.lineReplyNoMention(new Discord.MessageEmbed().setColor(Color).setDescription(`<#${message.channel.id}> Has been unlocked`
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`<#${message.channel.id}> Has been unlocked`
      ));
      });
    }
