@@ -25,7 +25,7 @@ let args = message.content.split(" ").slice(1);
     if (!messagecount) args = "1000";
     message.channel.bulkDelete(messagecount)
     message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I have cleared **${args}** messages.`))
-      .then(messages => setTimeout(() => message.delete(), 1000));
+      .then(messages => setTimeout(() => message.delete(), 1500));
    
 }
 }
