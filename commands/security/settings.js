@@ -103,5 +103,5 @@ run: async (bot, message, args, dev) => {
 
       embed.setDescription(`This is settings security and settings your server`);
 
-      message.lineReplyNoMention(embed)
+      message.channel.send(embed)
      }}
