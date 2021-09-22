@@ -21,7 +21,7 @@ module.exports = {
         SEND_MESSAGES: false
       })
       .then(() => {
-        message.lineReplyNoMention(new Discord.MessageEmbed().setColor(Color).setDescription(` 
+        message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(` 
          <#${message.channel.id}> Has been locked
       `));
      });
