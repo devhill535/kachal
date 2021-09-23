@@ -14,8 +14,11 @@ module.exports = {
     cooldown: 6000,
     run: async (client, message, args, dev) => {
   
-    let user = message.guild.members.cache.get(args[1]) || message.mentions.members.first(); || message.guild.members.cache.find(r => r.user.username == args[1]) || message.guild.members.cache.find(r => r.displayName == args[1]) || message.member;
+   // let user = message.guild.members.cache.get(args[1]) || message.mentions.members.first(); || message.guild.members.cache.find(r => r.user.username == args[1]) || message.guild.members.cache.find(r => r.displayName == args[1]) || message.member;
 
+let user = message.mentions.members.first();
+
+    
     if (!user)
       return message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`Based on the role hierarchy, you cannot ban this user`)).catch(console.error);
 
