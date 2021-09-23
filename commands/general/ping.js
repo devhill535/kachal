@@ -31,7 +31,7 @@ module.exports = {
             .then(msg => {
 
                 let embed = new Discord.MessageEmbed()
-                   .setDescription(`**Bot**: ${bot.ws.ping}ms\n\n**Discord API**: ${Date.now() - date}ms\n\n**DB**: ${ping_db}ms`)
+                   .setDescription(`Bot: ${bot.ws.ping}ms\nDiscord API: ${Date.now() - date}ms\nDB: ${ping_db}ms`)
                    .setColor(Color)
 
                 return msg.edit({ embed })
