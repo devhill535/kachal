@@ -36,7 +36,7 @@ let user = await message.mentions.members.first() || message.guild.members.cache
 
     const embedKick = new Discord.MessageEmbed()
       .setColor(Color)
-      .setDescription(`<:punish:836022893691011092> **${user}** has been banned`)
+      .setDescription(`<:punish:836022893691011092> **${user}** has been kicked`)
 
     message.channel.send(embedKick);
     user.kick();
