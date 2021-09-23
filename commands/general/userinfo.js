@@ -30,9 +30,7 @@ module.exports = {
   cooldown: 2000,
   run: async (bot, message, args) => {
 
-let member =
-          message.guild.members.cache.get(args[1]) ||
-          message.mentions.members.first();
+let member = message.guild.members.cache.get(args[1]) || message.mentions.members.first(); || message.guild.members.cache.find(r => r.user.username == args[1]) || message.guild.members.cache.find(r => r.displayName == args[1]) || message.member;
 
 ///
 let nickname = member.nickname !== undefined && member.nickname !== null ? member.nickname : "None";
