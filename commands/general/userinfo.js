@@ -39,8 +39,6 @@ let nickname = member.nickname !== undefined && member.nickname !== null ? membe
 ///
 const bots = member.user.bot ? "True" : "False";
 ///
-const deleted = member.deleted ? "True" : "False";
-///
 if (member.premiumSince) {
     boost = "Yes"
   } else {
@@ -59,7 +57,6 @@ if (member.premiumSince) {
       .addField("Is Bot", `${bots}`, true)
       .addField("Booster", `${boost}`, true)
       .addField("Flags", `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`, true)
-      .addField("Deleted User" ,`${deleted}`, true)
       .addField("Join", member.joinedAt.toDateString())
       .addField("Creation", member.user.createdAt.toDateString())
       .addField("Roles", `${member.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).length} Roles: <@&${member._roles.join('> <@&')}>`)
