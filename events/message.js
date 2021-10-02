@@ -93,7 +93,7 @@ async run(message,bot) {
 	  timestamps.set(message.author.id, now);
 	  let prefix = guild.prefix;
 	  if (command) command.run(bot, message, args, prefix, data, cmd, command);
-          if (!command) return await message.channel.send(`I don't have command like this`)
+          if (!command) return message.channel.send(`I don't have command like this`)
           setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   }
