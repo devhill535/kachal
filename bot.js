@@ -58,8 +58,8 @@ bot.on("ready", () => {
 });
 
 bot.on("ready", async () => {
- let channel = bot.channels.cache.get("890671956054122587");
-  channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Whoami Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));
+\* let channel = bot.channels.cache.get("890671956054122587");
+  channel.send(new Discord.MessageEmbed().setColor(Color).setTimestamp().setThumbnail(bot.user.displayAvatarURL()).setTitle("Whoami Status").addField("Prefix", "`s!`").addField("Status", "<:enable:840230134899671060> Online").addField("Servers", `${bot.guilds.cache.size}`));*/
   await bot.user.setStatus("idle");
   await bot.user.setActivity(`${prefix}help`, { type: "PLAYING" });
  
