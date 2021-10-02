@@ -19,6 +19,6 @@ let butn = new MessageButton()
   .setURL('https://discord.gg/5RsPXCwG8c') 
   .setLabel('SafetyBot Server!')
 
-message.channel.send(`This is a server support **Whoami** if you need help, enter the server`, butn);
+message.channel.send(`This is a server support **SafetyBot** if you need help, enter the server`, butn);
     } 
 }
