@@ -18,10 +18,10 @@ module.exports = {
          
 let args = message.content.split(" ").slice(1);
     let messagecount = parseInt(args);
-    if (args > 1000) {
-      args = 1000
+    if (args > 100) {
+      args = 100
     }
-    if (!messagecount) args = "1000";
+    if (!messagecount) args = "100";
     message.channel.bulkDelete(messagecount)
     message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I have cleared **${args}** messages.`))
       .then(messages => setTimeout(() => message.delete(), 1500));
