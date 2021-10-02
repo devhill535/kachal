@@ -35,7 +35,7 @@ const stats = new Discord.MessageEmbed()
 
 .setColor(Color) 
 .setThumbnail(bot.user.displayAvatarURL()) 
-.setTitle("Whoami Stats")
+.setTitle("SafetyBot Stats")
 .setDescription(`**Statistics**\n\nServers: ${bot.guilds.cache.size}\nBot Id: ${bot.user.id}\nCommands Count: 19\nBot Created At: ${created}\nPing: ${Math.round(bot.ws.ping)}ms\nUptime: ${duration1}\n\nTotal Memory: ${(os.totalmem() / 1024 / 1024).toFixed(2)} Mbps\nFree Memory: ${(os.freemem() / 1024 / 1024).toFixed(2)} Mbps\nHeap Total: ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps\nHeap Usage: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps 
 `)
 
@@ -43,7 +43,7 @@ const stats = new Discord.MessageEmbed()
       let button1 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
-       .setLabel('Click here to invite Whoami bot')
+       .setLabel('Click here to invite SafetyBot')
 
       
       let row1 = new MessageActionRow()
