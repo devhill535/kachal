@@ -127,10 +127,10 @@ if (message.content.startsWith(prefix + "menu")) {
 })*/
 ////
 
-bot.on('ready', () => {
+/*bot.on('ready', () => {
 let channel = bot.channels.cache.get("890671934826758145");
     if (channel) channel.join();
-});
+});*/
 
 ////
 
