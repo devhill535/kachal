@@ -14,8 +14,9 @@ module.exports = {
   ownerOnly: false,			
   cooldown: 6000,
   run: async (bot, message, dev) => {
-   message.delete();
-         
+  message.delete()
+
+///       
 let args = message.content.split(" ").slice(1);
     let messagecount = parseInt(args);
     if (args > 100) {
@@ -24,7 +25,7 @@ let args = message.content.split(" ").slice(1);
     if (!messagecount) args = "100";
     message.channel.bulkDelete(messagecount)
     message.channel.send(new Discord.MessageEmbed().setColor(Color).setDescription(`I have cleared **${args}** messages.`))
-      .then(messages => setTimeout(() => message.delete(), 1500));
+      .then(msg => msg.delete({timeout:1500})); 
    
 }
 }
