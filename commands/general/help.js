@@ -20,8 +20,8 @@ module.exports = {
     .setColor(Color)
     .setAuthor(Author)
     .setImage(Image)
-    .setDescription(`<@${bot.user.id}> a security bot to protection your server please use **s!help** followed by a command name to get more additional information on a command. For example: **s!help anti**\n\n__Prefix Information__\nPrefix: **s!**\nYou can also mention <@${bot.user.id}> to get prefix info`)
-    .addField("General Section", "`invite`, `support`, `stats`, `serverinfo`, `ping`, `userinfo`, `bots`")
+    .setDescription(`<@${bot.user.id}> a security bot to protection your server please use **s!help** followed by a command name to get more additional information on a command. For example: **s!help anti**`)
+    .addField("General Section", "`invite`, `stats`, `serverinfo`, `userinfo`")
     .addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`")
     .addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`")
     .setFooter(Footer)
@@ -29,11 +29,14 @@ module.exports = {
       let button1 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
-       .setLabel('Click here to invite SafetyBot')
+       .setLabel('Invite Link')
 
-      
+      let button2 = new MessageButton()
+       .setStyle('url')
+       .setURL('https://discord.gg/5pDPxCsr2M') 
+       .setLabel('Support Link')
       let row1 = new MessageActionRow()
-      .addComponents(button1)
+      .addComponents(button1,button2)
 
    return message.channel.send(help,row1);
        } else {
