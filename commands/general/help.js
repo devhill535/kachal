@@ -29,13 +29,13 @@ module.exports = {
       let button1 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
-       .setEmoji(`<:emoji_17:906727879616905266>`)
+       .setEmoji(`🔗`)
        .setLabel('Invite Link')
 
       let button2 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.gg/5pDPxCsr2M') 
-       .setEmoji(`<:emoji_16:906727855218630706>`)
+       .setEmoji(`🗳`)
        .setLabel('Support Link')
      
       let row1 = new MessageActionRow()
