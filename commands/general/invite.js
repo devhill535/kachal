@@ -26,6 +26,7 @@ module.exports = {
   let butn = new MessageButton()
   .setStyle('url')
   .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
+  .setEmoji(`🔗`)
   .setLabel('Invite Link!')
  
 let row = new MessageActionRow()
