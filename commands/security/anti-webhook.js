@@ -8,7 +8,7 @@ module.exports = {
   description: "Prevent others from crating or deleting webhooks",
   usage: ["s!antiwebhook [number/on/off]"],
   category: ["Security"],
-  enabled: true,
+  enabled: false,
   memberPermissions: ["SEND_MESSAGES"],
   botPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
   ownerOnly: false,
