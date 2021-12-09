@@ -32,14 +32,14 @@ module.exports = {
        .setEmoji(`🔗`)
        .setLabel('Invite')
 
-      let button2 = new MessageButton()
+      /*let button2 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.gg/5pDPxCsr2M') 
        .setEmoji(`🗳`)
-       .setLabel('Support')
+       .setLabel('Support')*/
      
       let row1 = new MessageActionRow()
-      .addComponents(button1,button2)
+      .addComponents(button1)
 
    return message.channel.send(help,row1);
        } else {
