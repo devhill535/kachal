@@ -20,7 +20,7 @@ module.exports = {
     .setColor(Color)
     .setAuthor(Author)
     .setImage(Image)
-    .setDescription(`<@${bot.user.id}> a security bot to protection your server please use **s!help** followed by a command name to get more additional information on a command. For example: **s!help anti**`)
+    .setDescription(`<@${bot.user.id}> a security bot to protection your server please use **e!!help** followed by a command name to get more additional information on a command. For example: **e!help anti**`)
     .addField("General Section", "`invite`, `stats`, `serverinfo`, `userinfo`")
     .addField("Moderation Section", "`kick`, `ban`, `purge`, `unbanall`, `lock`, `unlock`, `lockall`, `unlockall`, `prefix`")
     .addField("Security Section", "`settings`, `punishment`, `whitelist`, `anti`")
@@ -28,18 +28,18 @@ module.exports = {
 
       let button1 = new MessageButton()
        .setStyle('url')
-       .setURL('https://discord.com/api/oauth2/authorize?client_id=828270556758540348&permissions=8&scope=bot') 
+       .setURL('https://discord.com/api/oauth2/authorize?client_id=733287493041913877&permissions=8&scope=bot') 
        .setEmoji(`🔗`)
        .setLabel('Invite')
 
-      let button2 = new MessageButton()
+      /*let button2 = new MessageButton()
        .setStyle('url')
        .setURL('https://discord.gg/5pDPxCsr2M') 
        .setEmoji(`🗳`)
-       .setLabel('Support')
+       .setLabel('Support')*/
      
       let row1 = new MessageActionRow()
-      .addComponents(button1,button2)
+      .addComponents(button1)
 
    return message.channel.send(help,row1);
        } else {
