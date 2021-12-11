@@ -28,35 +28,6 @@ const verificationLevels = {
 
 };
 
-const regions = {
-
-	brazil: 'Brazil',
-
-	europe: 'Europe',
-
-	hongkong: 'Hong Kong',
-
-	india: 'India',
-
-	japan: 'Japan',
-
-	russia: 'Russia',
-
-	singapore: 'Singapore',
-
-	southafrica: 'South Africa',
-
-	sydeny: 'Sydeny',
-
-	'us-central': 'US Central',
-
-	'us-east': 'US East',
-
-	'us-west': 'US West',
-
-	'us-south': 'US South'
-
-};
 
 module.exports = {
   name: "serverinfo",
@@ -93,7 +64,6 @@ module.exports = {
 			.addField("Name", `${message.guild.name}`)
                         .addField("ID", `${message.guild.id}`)
                         .addField("Owner", `<@${message.guild.ownerID}>`)
-                        .addField("Region", `${regions[message.guild.region]}`)
                         .addField("Explicit Filter", `${filterLevels[message.guild.explicitContentFilter]}`)
                         .addField("Verification Level", `${verificationLevels[message.guild.verificationLevel]}`)
                         .addField("Time Created", `${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`)
