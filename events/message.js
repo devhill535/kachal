@@ -12,9 +12,7 @@ async run(message,bot) {
   let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
   if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id });} 
   data.user = user;
-  //let prime = await Prime.findOne({ guildID: message.guild.id });
- // if (prime && prime.log === "enable") return;// message.channel.send({ content: `You don't have Premium version` });
-
+  
  if (guild) {
   if (!message.content.toLowerCase().startsWith(guild.prefix.toLowerCase()) && !message.content.toLowerCase().startsWith("<@828270556758540348>")) return;
   let args = message.content.split(" ");
@@ -36,14 +34,6 @@ async run(message,bot) {
   let command = bot.commands.get(cmd);
   if (!command) command = bot.commands.get(bot.aliases.get(cmd));
   if(command) {
-//if(command.prime) {
- /* let data = await Prime.findOne({Guild: message.guild.id})
-  if(!data) return message.channel.send(`This is a premium only command, type s!premium for more info`)
-    
-  if(!data.Permanent && Date.now() > data.time){
-    data.delete();
-  return message.channel.send(`Prime bot on your server ended for buy mor join support server`)
-      }}*/
  
   if (!message.channel.permissionsFor(bot.user).has("SEND_MESSAGES")) return;
   if (!command.enabled) return await message.channel.send(`This command is **Disable** for now`)
