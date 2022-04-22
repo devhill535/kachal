@@ -1,4 +1,3 @@
 
-# By Sakran
 
 # SafetyBot Security
