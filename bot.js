@@ -117,6 +117,7 @@ if (message.content.startsWith(prefix + "menu")) {
                 break;
             }
         }
+
         bot.on("clickMenu", (menu) => {
             if(menu.message.id == menumsg.id) {
                 if(menu.clicker.user.id == message.author.id) menuselection(menu)
